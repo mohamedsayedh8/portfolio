@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Mohamed's Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #60a5fa;
+            --primary-dark: #3b82f6;
+            --accent: #10b981;
+            --danger: #ef4444;
+            --bg: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --border: rgba(255, 255, 255, 0.1);
+            --text-muted: #94a3b8;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', system-ui, sans-serif; }
+        body { background: var(--bg); color: white; padding: 2rem; min-height: 100vh; }
+        .glass { background: var(--card-bg); backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: 1.5rem; }
+        .admin-container { max-width: 1200px; margin: 0 auto; }
+        .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+        
+        .grid-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem; }
+        .card { padding: 1.5rem; margin-bottom: 2rem; }
+        
+        .bookings-table { width: 100%; border-collapse: collapse; }
+        .bookings-table th { text-align: left; padding: 1rem; color: var(--primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--border); }
+        .bookings-table td { padding: 1rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+        
+        .status-pill { padding: 0.3rem 0.8rem; border-radius: 2rem; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+        .status-pending { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .status-paid { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        
+        .action-btn { width: 32px; height: 32px; border-radius: 0.5rem; border: none; cursor: pointer; color: white; transition: 0.2s; margin-right: 0.5rem; }
+        .wa-btn { background: #25D366; }
+        .wa-btn:hover { background: #128C7E; transform: translateY(-2px); }
+        
+        .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-top: 1rem; }
+        .calendar-nav-admin { display: flex; justify-content: space-between; align-items: center; }
+        
+        .calendar-day { 
+            aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
+            border-radius: 0.8rem; font-size: 0.85rem; cursor: pointer; transition: 0.2s;
+            border: 1px solid transparent;
+        }
+        .calendar-day:hover { transform: translateY(-2px); }
+        .calendar-day.selected-admin { border: 2px solid white !important; box-shadow: 0 0 15px rgba(255,255,255,0.2); }
+        
+        .btn { padding: 0.6rem 1.2rem; border-radius: 0.8rem; border: none; font-weight: 600; cursor: pointer; transition: 0.2s; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); }
+        
+        .login-container { max-width: 400px; margin: 10vh auto; padding: 2.5rem; text-align: center; }
+        input { width: 100%; padding: 0.8rem; border-radius: 0.8rem; background: rgba(0,0,0,0.2); border: 1px solid var(--border); color: white; margin-top: 0.5rem; }
+        
+        .sync-link { display: flex; align-items: center; gap: 0.7rem; background: rgba(59, 130, 246, 0.1); padding: 1rem; border-radius: 1rem; border: 1px solid rgba(59,130,246,0.2); margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+    <div id="login-view" class="login-container glass" style="display: block;">
+        <h2 style="margin-bottom: 0.5rem;">M Académie Admin</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.9rem;">Connectez-vous pour gérer vos cours.</p>
+        <form id="login-form">
+            <div style="text-align: left; margin-bottom: 1.5rem;">
+                <label style="font-size: 0.8rem; color: var(--primary);">Email Professeur</label>
+                <input type="email" id="admin-email" required placeholder="admin@macademie.com">
+            </div>
+            <div style="text-align: left; margin-bottom: 2rem;">
+                <label style="font-size: 0.8rem; color: var(--primary);">Mot de passe</label>
+                <input type="password" id="admin-password" required placeholder="••••••••">
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Accéder au Dashboard</button>
+        </form>
+    </div>
+
+    <div id="admin-view" class="admin-container" style="display: none;">
+        <div class="admin-header">
+            <div>
+                <h1 style="font-size: 1.5rem; letter-spacing: -0.02em;">M Académie</h1>
+                <div id="auth-debug" style="margin-top: 0.5rem; font-size: 0.7rem; padding: 0.4rem 0.8rem; border-radius: 0.5rem; display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700;"></div>
+            </div>
+            <button class="btn glass" onclick="logout()" style="color: var(--danger); font-size: 0.8rem;"><i class="fas fa-sign-out-alt"></i> Quitter</button>
+        </div>
+
+        <div class="sync-link">
+            <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 0.8rem; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div style="flex: 1;">
+                <h4 style="font-size: 0.9rem;">Sync iPhone</h4>
+                <p style="font-size: 0.75rem; color: var(--primary);">Lien iCal pour votre calendrier iOS.</p>
+            </div>
+            <code style="background: rgba(0,0,0,0.3); padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 0.7rem;">https://us-central1-mohameds-net.cloudfunctions.net/icalFeed?id=SECRET_KEY</code>
+        </div>
+
+        <div class="grid-layout">
+            <div>
+                <div class="card glass">
+                    <h3 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.7rem;">
+                        <i class="fas fa-list-ul" style="color: var(--primary);"></i> Réservations Récentes
+                    </h3>
+                    <table class="bookings-table">
+                        <thead>
+                            <tr>
+                                <th>Date/Heure</th>
+                                <th>Élève</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookings-list">
+                            <!-- Injected -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div>
+                <div class="card glass">
+                    <div class="calendar-nav-admin" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                        <h3 style="margin:0;"><i class="fas fa-calendar-check" style="color: var(--accent);"></i> Disponibilités</h3>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <button class="btn glass" onclick="changeMonth(-1)" style="padding: 0.3rem 0.6rem;"><i class="fas fa-chevron-left"></i></button>
+                            <span id="admin-month-display" style="font-weight: 800; color: var(--primary); min-width: 100px; text-align: center; text-transform: capitalize;"></span>
+                            <button class="btn glass" onclick="changeMonth(1)" style="padding: 0.3rem 0.6rem;"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <div id="admin-calendar-grid" class="calendar-grid">
+                        <!-- Mini calendar -->
+                    </div>
+                </div>
+
+                <div class="card glass" id="day-detail-card" style="display: none;">
+                    <h4 id="selected-day-title" style="margin-bottom: 0.3rem;">Heures du jour</h4>
+                    <p id="selected-day-subtitle" style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem;"></p>
+                    
+                    <div id="slots-manager-ui">
+                        <button class="btn glass w-100" id="block-day-btn" style="margin-bottom: 1.5rem; border: 1px solid var(--danger); color: var(--danger);"></button>
+                        
+                        <div id="slots-list" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                            <!-- Slots list -->
+                        </div>
+                        
+                        <div style="display: flex; gap: 0.5rem;">
+                            <input type="number" id="new-slot-hour" placeholder="Ajouter (ex: 21)" style="flex: 1; margin: 0; padding: 0.6rem;">
+                            <button class="btn btn-primary" onclick="addSlot()"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                
+                <div class="card glass" id="no-day-selected" style="text-align: center; color: var(--text-muted); padding: 3rem 1.5rem;">
+                    <i class="fas fa-arrow-up" style="font-size: 1.5rem; margin-bottom: 1rem; display: block;"></i>
+                    <p>Sélectionnez un jour pour gérer ses horaires spécifiques.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Toast Notification */
+        #toast {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            padding: 1rem 1.5rem;
+            background: rgba(16, 185, 129, 0.95);
+            color: white;
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            transform: translateY(-150%);
+            transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+            z-index: 9999;
+            font-weight: 600;
+        }
+        #toast.show { transform: translateY(0); }
+        
+        .hour-pill {
+            padding: 0.8rem 1rem;
+            border-radius: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            border: 1.5px solid rgba(255,255,255,0.1);
+        }
+        .hour-pill.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 5px 20px rgba(37, 99, 235, 0.3);
+            border-color: rgba(255,255,255,0.3);
+        }
+        .hour-pill.inactive {
+            background: rgba(255,255,255,0.05);
+            color: rgba(255,255,255,0.2);
+            text-decoration: line-through;
+            border-color: transparent;
+        }
+    </style>
+
+    <div id="toast">Action réussie !</div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, collection, onSnapshot, query, orderBy, doc, updateDoc, setDoc, deleteDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        // CONFIG
+        const firebaseConfig = {
+            apiKey: "AIzaSyDpZNOqxUfG7KZo2g3-7Py254P2GDSzRjo",
+            authDomain: "mohameds-booking.firebaseapp.com",
+            projectId: "mohameds-booking",
+            storageBucket: "mohameds-booking.firebasestorage.app",
+            messagingSenderId: "547186990707",
+            appId: "1:547186990707:web:8e273902d7f3bf2781d406",
+            measurementId: "G-G2HMBCFESR"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        // GLOBAL STATE
+        let disabledDays = [];
+        const STANDARD_HOURS = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+        let disabledSlotsForDay = [];
+        let selectedAdminDate = null;
+        let unsubscribeSlots = null;
+        let adminViewDate = new Date(); // Local state for admin navigation
+
+        // --- GLOBAL EXPORTS ---
+        window.showToast = (msg, color = "rgba(16, 185, 129, 0.95)") => {
+            const t = document.getElementById('toast');
+            if (t) {
+                t.textContent = msg;
+                t.style.background = color;
+                t.classList.add('show');
+                setTimeout(() => t.classList.remove('show'), 3000);
+            }
+        };
+
+        window.openWA = (phone, name) => {
+            const clean = (phone || '').replace(/[^0-9+]/g, '');
+            if (!clean || clean.length < 5) return alert("Numéro invalide pour WhatsApp");
+            window.open(`https://wa.me/${clean}`, '_blank');
+        };
+
+        window.markPaid = async (id) => {
+            try {
+                await updateDoc(doc(db, "bookings", id), { status: 'paid' });
+                window.showToast("Paiement validé !");
+            } catch (err) { window.showToast("Erreur", "var(--danger)"); }
+        };
+
+        window.logout = () => signOut(auth);
+
+        window.selectDate = async (dayKey) => {
+            try {
+                selectedAdminDate = dayKey;
+                const view = document.getElementById('day-detail-card');
+                const placeholder = document.getElementById('no-day-selected');
+                if (placeholder) placeholder.style.display = 'none';
+                if (view) view.style.display = 'block';
+                
+                const dateObj = new Date(dayKey);
+                const formatted = new Intl.DateTimeFormat('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' }).format(dateObj);
+                const title = document.getElementById('selected-day-title');
+                if (title) title.textContent = formatted.charAt(0).toUpperCase() + formatted.slice(1);
+                
+                const blockBtn = document.getElementById('block-day-btn');
+                if (blockBtn) {
+                    const isBlocked = disabledDays.includes(dayKey);
+                    blockBtn.textContent = isBlocked ? "🔓 Débloquer le jour entier" : "🔒 Bloquer le jour entier";
+                    blockBtn.style.background = isBlocked ? 'var(--primary)' : 'rgba(239, 68, 68, 0.15)';
+                    blockBtn.style.color = isBlocked ? 'white' : 'var(--danger)';
+                    blockBtn.style.border = isBlocked ? 'none' : '1px solid var(--danger)';
+                    blockBtn.onclick = () => window.toggleDayBlock(dayKey, !isBlocked);
+                }
+                
+                renderAdminCalendar();
+                
+                // CRUCIAL: Load slot config for this specific day
+                if (unsubscribeSlots) unsubscribeSlots();
+                unsubscribeSlots = onSnapshot(doc(db, "day_configs", dayKey), (snap) => {
+                    disabledSlotsForDay = snap.exists() ? (snap.data().disabled_hours || []) : [];
+                    renderSlotsManager();
+                }, (err) => {
+                    console.error("Slots load error:", err);
+                    alert("Erreur accès horaires: " + err.message);
+                    // Fallback: render anyway
+                    renderSlotsManager();
+                });
+            } catch (err) {
+                alert("Erreur sélection date: " + err.message);
+            }
+        };
+
+        window.toggleDayBlock = async (dayKey, block) => {
+            try {
+                if (block) {
+                    await setDoc(doc(db, "disabled_days", dayKey), { blocked: true });
+                    window.showToast("JOUR BLOQUÉ 🔒", "var(--danger)");
+                } else {
+                    await deleteDoc(doc(db, "disabled_days", dayKey));
+                    window.showToast("JOUR OUVERT 🔓");
+                }
+            } catch (err) { window.showToast("Erreur", "var(--danger)"); }
+        };
+
+        window.toggleHour = async (h, isCurrentlyEnabled, pill) => {
+            if (!selectedAdminDate) return alert("Cliquez sur un jour d'abord !");
+            if (pill) pill.style.opacity = '0.5'; // Visual feedback
+
+            try {
+                let currentDisabled = [...disabledSlotsForDay];
+                if (isCurrentlyEnabled) {
+                    if (!currentDisabled.includes(h)) currentDisabled.push(h);
+                } else {
+                    currentDisabled = currentDisabled.filter(x => x !== h);
+                }
+                
+                await setDoc(doc(db, "day_configs", selectedAdminDate), { 
+                    disabled_hours: currentDisabled,
+                    updatedAt: new Date().toISOString()
+                }, { merge: true });
+                
+                window.showToast(isCurrentlyEnabled ? `🔒 Bloqué ${h}h` : `🔓 Ouvert ${h}h`);
+            } catch (err) {
+                console.error("Save error:", err);
+                alert("Erreur de sauvegarde Firebase. Vérifie tes permissions.");
+            } finally {
+                if (pill) pill.style.opacity = '1';
+            }
+        };
+
+        window.changeMonth = (dir) => {
+            adminViewDate.setMonth(adminViewDate.getMonth() + dir);
+            renderAdminCalendar();
+        };
+
+        window.addSlot = async () => {
+            const input = document.getElementById('new-slot-hour');
+            const h = parseInt(input.value);
+            if (isNaN(h) || h < 0 || h > 23) return;
+            try {
+                const docRef = doc(db, "config", "slots");
+                const snap = await getDoc(docRef);
+                let current = snap.exists() ? snap.data().hours : [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+                if (!current.includes(h)) {
+                    await setDoc(docRef, { hours: [...current, h].sort((a,b)=>a-b) });
+                    window.showToast(`Heure ${h}h ajoutée au planning`);
+                    input.value = '';
+                }
+            } catch (err) { alert("Erreur ajout heure: " + err.message); }
+        };
+
+        // --- RENDERING ---
+        function renderAdminCalendar() {
+            try {
+                const grid = document.getElementById('admin-calendar-grid');
+                if (!grid) return;
+                
+                // STRICT GRID FOR PERFECT ALIGNMENT
+                grid.style.display = 'grid';
+                grid.style.gridTemplateColumns = 'repeat(7, 1fr)';
+                grid.style.gap = '8px';
+                grid.style.padding = '15px';
+                grid.style.minHeight = '300px';
+                grid.innerHTML = '';
+
+                const today = new Date();
+                today.setHours(12, 0, 0, 0); // Normalized to noon
+                // ISOLATED OFFSET CALCULATION
+                const renderYear = adminViewDate.getFullYear();
+                const renderMonth = adminViewDate.getMonth();
+                const firstDayDate = new Date(renderYear, renderMonth, 1, 12, 0, 0);
+                const dayOfWeek = firstDayDate.getDay(); 
+                const offset = (dayOfWeek + 6) % 7; 
+                
+                const daysInMonth = new Date(renderYear, renderMonth + 1, 0).getDate();
+
+                // 1. ADD WEEKDAY HEADERS
+                const dayNames = ['L','M','M','J','V','S','D'];
+                dayNames.forEach(name => {
+                    const hCell = document.createElement('div');
+                    hCell.className = 'calendar-day-header';
+                    hCell.textContent = name;
+                    hCell.style.fontSize = '0.75rem';
+                    hCell.style.fontWeight = '900';
+                    hCell.style.color = 'var(--primary)';
+                    hCell.style.textAlign = 'center';
+                    hCell.style.paddingBottom = '10px';
+                    hCell.style.opacity = '0.7';
+                    grid.appendChild(hCell);
+                });
+
+                // 2. FILL OFFSET SLOTS
+                for (let i = 0; i < offset; i++) {
+                    const el = document.createElement('div');
+                    grid.appendChild(el);
+                }
+
+                // 3. RENDER ACTUAL DAYS
+                for (let d = 1; d <= daysInMonth; d++) {
+                    const mm = (renderMonth + 1).toString().padStart(2, '0');
+                    const dd = d.toString().padStart(2, '0');
+                    const dayKey = `${renderYear}-${mm}-${dd}`;
+                    
+                    const el = document.createElement('div');
+                    el.className = 'calendar-day';
+                    el.textContent = d;
+                    
+                    const isBlocked = disabledDays.includes(dayKey);
+                    const isSelected = selectedAdminDate === dayKey;
+                    
+                    el.style.aspectRatio = '1/1';
+                    el.style.display = 'flex';
+                    el.style.alignItems = 'center';
+                    el.style.justifyContent = 'center';
+                    el.style.borderRadius = '12px';
+                    el.style.fontSize = '0.95rem';
+                    el.style.fontWeight = '800';
+                    el.style.cursor = 'pointer';
+                    el.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                    
+                    if (isBlocked) {
+                        el.style.background = 'rgba(239, 68, 68, 0.15)'; 
+                        el.style.color = '#f87171';
+                        el.style.border = '1px solid rgba(239, 68, 68, 0.3)';
+                    } else if (isSelected) {
+                        el.style.background = '#ffffff';
+                        el.style.color = '#0f172a';
+                        el.style.border = '2px solid var(--primary)';
+                        el.style.boxShadow = '0 0 25px rgba(59, 130, 246, 0.5)';
+                        el.style.transform = 'scale(1.1)';
+                        el.style.zIndex = '10';
+                    } else {
+                        el.style.background = 'rgba(16, 185, 129, 0.1)'; 
+                        el.style.color = '#34d399';
+                        el.style.border = '1px solid rgba(16, 185, 129, 0.2)';
+                    }
+                    
+                    el.onclick = () => window.selectDate(dayKey);
+                    grid.appendChild(el);
+                }
+                
+                const monthDisplay = document.getElementById('admin-month-display');
+                if (monthDisplay) {
+                    const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+                    monthDisplay.textContent = months[renderMonth] + " " + renderYear;
+                }
+            } catch (err) { console.error("Calendar render error:", err); }
+        }
+
+        function renderSlotsManager() {
+            try {
+                const list = document.getElementById('slots-list');
+                if (!list) return;
+                list.innerHTML = '';
+                list.style.display = 'grid';
+                list.style.gridTemplateColumns = 'repeat(auto-fill, minmax(80px, 1fr))';
+                list.style.gap = '10px';
+                
+                const hoursToRender = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+                
+                hoursToRender.forEach(h => {
+                    const pill = document.createElement('div');
+                    const isDisabled = (disabledSlotsForDay || []).includes(h);
+                    pill.textContent = `${h}h`;
+                    
+                    pill.style.padding = '12px';
+                    pill.style.borderRadius = '12px';
+                    pill.style.textAlign = 'center';
+                    pill.style.cursor = 'pointer';
+                    pill.style.fontWeight = '700';
+                    pill.style.transition = '0.2s';
+                    pill.style.border = '1px solid rgba(255,255,255,0.1)';
+
+                    if (isDisabled) {
+                        pill.style.background = 'rgba(255,255,255,0.03)';
+                        pill.style.color = 'rgba(255,255,255,0.2)';
+                        pill.style.textDecoration = 'line-through';
+                    } else {
+                        pill.style.background = 'var(--primary)';
+                        pill.style.color = 'white';
+                        pill.style.boxShadow = '0 8px 20px rgba(59, 130, 246, 0.2)';
+                    }
+
+                    pill.onclick = () => window.toggleHour(h, !isDisabled, pill);
+                    list.appendChild(pill);
+                });
+            } catch (err) { console.error("Slots render error:", err); }
+        }
+
+        // --- AUTH & LOADERS ---
+        onAuthStateChanged(auth, (user) => {
+            const debugEl = document.getElementById('auth-debug');
+            if (user) {
+                if (debugEl) {
+                    debugEl.innerHTML = `<i class="fas fa-user-shield"></i> <span style="opacity:0.6;">Connecté:</span> <span style="color:white;">${user.email}</span>`;
+                    debugEl.style.background = "rgba(59, 130, 246, 0.15)";
+                    debugEl.style.color = "var(--primary)";
+                }
+                
+                document.getElementById('login-view').style.display = 'none';
+                document.getElementById('admin-view').style.display = 'block';
+                
+                // Load once
+                renderAdminCalendar();
+                
+                // Real-time loops
+                onSnapshot(query(collection(db, "bookings"), orderBy("createdAt", "desc")), (snap) => {
+                    const list = document.getElementById('bookings-list');
+                    if (!list) return;
+                    list.innerHTML = '';
+                    if (snap.empty) {
+                        list.innerHTML = '<tr><td colspan="4" style="text-align:center; padding:3rem; color:var(--text-muted); opacity:0.5;">Aucune réservation trouvée.</td></tr>';
+                        return;
+                    }
+                    snap.forEach((docSnap) => {
+                        const data = docSnap.data();
+                        const row = document.createElement('tr');
+                        const sName = data.studentName || 'Élève';
+                        const sPhone = (data.studentPhone || '').replace(/[^0-9+]/g, '');
+                        row.innerHTML = `
+                            <td><div style="font-weight:600; font-size:0.85rem;">${data.date || '---'}</div><div style="font-size:0.75rem; color:var(--primary); font-weight:700;">${data.time || '---'}</div></td>
+                            <td><div style="font-weight:600;">${sName}</div><div style="font-size:0.75rem; color:var(--text-muted);">${sPhone || '---'}</div></td>
+                            <td><span class="status-pill status-${data.status || 'pending'}">${(data.status || 'En attente').toUpperCase()}</span></td>
+                            <td>
+                                <div style="display:flex; gap:0.5rem;">
+                                    <button class="action-btn wa-btn" onclick="openWA('${sPhone}', '${sName.replace(/'/g, "\\'")}')"><i class="fab fa-whatsapp"></i></button>
+                                    <button class="action-btn glass" onclick="markPaid('${docSnap.id}')" style="color:var(--accent);"><i class="fas fa-check"></i></button>
+                                </div>
+                            </td>
+                        `;
+                        list.appendChild(row);
+                    });
+                }, (err) => {
+                    console.error("Firebase Sync Error (Bookings):", err);
+                    window.showToast("Erreur Bookings (Permissions ?)", "var(--danger)");
+                });
+
+                // Load Availability
+                onSnapshot(collection(db, "disabled_days"), (snap) => {
+                    disabledDays = snap.docs.map(d => d.id);
+                    renderAdminCalendar();
+                    if (selectedAdminDate) window.selectDate(selectedAdminDate);
+                }, (err) => {
+                    console.error("Firebase Sync Error (Days):", err);
+                    window.showToast("Erreur Jours (Permissions ?)", "var(--danger)");
+                    renderAdminCalendar(); // Render anyway even if permission fails
+                });
+
+            } else {
+                if (debugEl) {
+                    debugEl.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Session expirée`;
+                    debugEl.style.background = "rgba(239, 68, 68, 0.2)";
+                    debugEl.style.color = "var(--danger)";
+                }
+                document.getElementById('login-view').style.display = 'block';
+                document.getElementById('admin-view').style.display = 'none';
+            }
+        });
+
+        const loginForm = document.getElementById('login-form');
+        if (loginForm) {
+            loginForm.onsubmit = async (e) => {
+                e.preventDefault();
+                const btn = e.target.querySelector('button');
+                try {
+                    btn.disabled = true;
+                    await signInWithEmailAndPassword(auth, document.getElementById('admin-email').value, document.getElementById('admin-password').value);
+                } catch (err) {
+                    alert("Identifiants incorrects: " + err.message);
+                    btn.disabled = false;
+                }
+            };
+        }
+    </script>
+</body>
+</html>

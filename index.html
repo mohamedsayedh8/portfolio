@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark-mode">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Sayed | Elite Developer</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon-premium.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=1600">
+</head>
+<body>
+    <div class="noise"></div>
+    <div id="canvas-container"></div>
+
+    <nav id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <div class="logo-icon">M</div>
+                <span>Mohamed</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero" class="active" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="#about" data-i18n="nav_about">Moi</a></li>
+                <li><a href="#portfolio" data-i18n="nav_apps">Projets</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLanguage('fr')">FR</button>
+                    <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" onclick="setLanguage('ar')">AR</button>
+                </div>
+                <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <h1 data-i18n="hero_title">Inspirer le futur par le <span class="gradient-text">code d'exception</span></h1>
+                <p data-i18n="hero_desc">Développeur Elite créant des expériences mobiles et SaaS innovantes en 2026.</p>
+                <div class="hero-actions">
+                    <a href="#portfolio" class="btn btn-primary" data-i18n="hero_cta_apps">Explorer mes projets</a>
+                    <a href="#contact" class="btn glass" data-i18n="nav_contact">Me contacter</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-grid" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center;">
+                    <div class="about-text">
+                        <h2 class="gradient-text reveal-text" data-i18n="about_title" style="font-size: 2.5rem; margin-bottom: 1.5rem;">Passionné par l'innovation</h2>
+                        <p data-i18n="about_p1" style="font-size: 1.1rem; line-height: 1.8; opacity: 0.8;">Je suis Mohamed Sayed, un développeur dédié à la création d'expériences utilisateur exceptionnelles. Mon approche combine rigueur technique et créativité pour donner vie à des idées ambitieuses.</p>
+                    </div>
+                    <div class="about-stats" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div class="stat-card glass" style="text-align: center; padding: 2rem; border-radius: 2rem;">
+                            <span style="font-size: 3rem; font-weight: 800; color: var(--primary); display: block;">6</span>
+                            <p data-i18n="about_stat_apps" style="font-size: 0.9rem; opacity: 0.6;">Apps Lancées</p>
+                        </div>
+                        <div class="stat-card glass" style="text-align: center; padding: 2rem; border-radius: 2rem;">
+                            <span style="font-size: 3rem; font-weight: 800; color: var(--secondary); display: block;">2026</span>
+                            <p data-i18n="about_stat_year" style="font-size: 0.9rem; opacity: 0.6;">Année Clé</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills" id="skills">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-i18n="skills_title">Expertise Tech</h2>
+                </div>
+                <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                    <div class="app-card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <i class="fas fa-code" style="font-size: 2rem; color: var(--primary);"></i>
+                        <h3 data-i18n="skill_dev_title">Développement</h3>
+                        <p data-i18n="skill_dev_desc" style="opacity: 0.7;">Swift, Flutter, Node.js & React</p>
+                    </div>
+                    <div class="app-card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <i class="fas fa-layer-group" style="font-size: 2rem; color: var(--secondary);"></i>
+                        <h3 data-i18n="skill_ux_title">Design & UX</h3>
+                        <p data-i18n="skill_ux_desc" style="opacity: 0.7;">Interfaces Premium & Expériences Fluides</p>
+                    </div>
+                    <div class="app-card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <i class="fas fa-rocket" style="font-size: 2rem; color: #ffab00;"></i>
+                        <h3 data-i18n="skill_prod_title">Produit</h3>
+                        <p data-i18n="skill_prod_desc" style="opacity: 0.7;">UX Strategy, Launch Management</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Bento Grid -->
+        <section class="portfolio" id="portfolio">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-i18n="portfolio_title">Ecosystème Digital</h2>
+                    <p data-i18n="portfolio_subtitle">Solutions mobiles et plateformes SaaS.</p>
+                </div>
+                
+                <div class="proj-grid">
+
+                    <!-- Zikr -->
+                    <div class="proj-card" data-app="zikr" onclick="openAppModal('zikr')">
+                        <div class="proj-top">
+                            <div class="proj-identity">
+                                <img class="proj-icon" src="assets/images/zikr-icon.png" alt="Zikr">
+                                <div>
+                                    <span class="proj-type" data-i18n="type_app">App</span>
+                                    <h3 class="proj-name">Zikr</h3>
+                                </div>
+                            </div>
+                            <span class="proj-status">Mars 2026</span>
+                        </div>
+                        <p class="proj-tagline" data-i18n="app_zikr_tagline">Votre compagnon spirituel quotidien.</p>
+                        <div class="proj-tech">
+                            <span>Flutter</span><span>AI Agent</span><span>Supabase</span>
+                        </div>
+                        <div class="proj-visual">
+                            <img src="assets/images/zikr_screen_1.png" alt="Zikr">
+                        </div>
+                    </div>
+
+                    <!-- M App -->
+                    <div class="proj-card" data-app="m_app" onclick="openAppModal('m_app')">
+                        <div class="proj-top">
+                            <div class="proj-identity">
+                                <img class="proj-icon" src="assets/images/m-icon-dark.png" alt="M App">
+                                <div>
+                                    <span class="proj-type" data-i18n="type_app">App</span>
+                                    <h3 class="proj-name">M App</h3>
+                                </div>
+                            </div>
+                            <span class="proj-status" data-i18n="status_new">Bientôt</span>
+                        </div>
+                        <p class="proj-tagline" data-i18n="app_m_tagline">Social, Vidéos & Reels.</p>
+                        <div class="proj-tech">
+                            <span>SwiftUI</span><span>Firebase</span>
+                        </div>
+                        <div class="proj-visual">
+                            <img src="assets/images/m_screen_1.png" alt="M App">
+                        </div>
+                    </div>
+
+                    <!-- Locsy -->
+                    <div class="proj-card" data-app="locsy" onclick="openAppModal('locsy')">
+                        <div class="proj-top">
+                            <div class="proj-identity">
+                                <img class="proj-icon" src="assets/images/locsy-icon-dark.png" alt="Locsy">
+                                <div>
+                                    <span class="proj-type" data-i18n="type_app">App</span>
+                                    <h3 class="proj-name">Locsy</h3>
+                                </div>
+                            </div>
+                            <span class="proj-status" data-i18n="status_available">Disponible</span>
+                        </div>
+                        <p class="proj-tagline" data-i18n="app_locsy_tagline">Localisation en temps réel.</p>
+                        <div class="proj-tech">
+                            <span>React Native</span><span>Mapbox</span>
+                        </div>
+                        <div class="proj-visual">
+                            <img src="assets/images/locsy_s1_final.png" alt="Locsy">
+                        </div>
+                    </div>
+
+                    <!-- Kinto -->
+                    <div class="proj-card" data-app="kinto" onclick="openAppModal('kinto')">
+                        <div class="proj-top">
+                            <div class="proj-identity">
+                                <img class="proj-icon" src="assets/images/kinto-icon.png" alt="Kinto">
+                                <div>
+                                    <span class="proj-type" data-i18n="type_app">App</span>
+                                    <h3 class="proj-name">Kinto</h3>
+                                </div>
+                            </div>
+                            <span class="proj-status" data-i18n="status_new">Bientôt</span>
+                        </div>
+                        <p class="proj-tagline" data-i18n="app_kinto_tagline">Finances & Budgets.</p>
+                        <div class="proj-tech">
+                            <span>Swift</span><span>CoreData</span>
+                        </div>
+                        <div class="proj-visual">
+                            <img src="assets/images/kinto-screen1.png" alt="Kinto">
+                        </div>
+                    </div>
+
+                    <!-- Tap0.fr (Wide) -->
+                    <div class="proj-card proj-wide" data-app="tap0" onclick="openAppModal('tap0')">
+                        <div class="proj-wide-text">
+                            <div class="proj-top">
+                                <div class="proj-identity">
+                                    <img class="proj-icon" src="assets/images/tap0-icon.png" alt="Tap0.fr">
+                                    <div>
+                                        <span class="proj-type" data-i18n="type_site">Site</span>
+                                        <h3 class="proj-name">Tap0.fr</h3>
+                                    </div>
+                                </div>
+                                <span class="proj-status">SaaS 🛍️</span>
+                            </div>
+                            <p class="proj-tagline" data-i18n="app_restopass_tagline">Votre commerce digitalisé en 5 min.</p>
+                            <div class="proj-tech">
+                                <span>Next.js 14</span><span>Stripe</span><span>Supabase</span>
+                            </div>
+                        </div>
+                        <div class="proj-wide-screens">
+                            <img src="assets/images/tap0_s1.png" alt="">
+                            <img src="assets/images/tap0_s2.png" alt="">
+                            <img src="assets/images/tap0_s3.png" alt="">
+                        </div>
+                    </div>
+
+                    <!-- Mo Frame -->
+                    <div class="proj-card" data-app="mo_frame" onclick="openAppModal('mo_frame')">
+                        <div class="proj-top">
+                            <div class="proj-identity">
+                                <img class="proj-icon" src="assets/images/mo-frame-icon.png" alt="Mo Frame">
+                                <div>
+                                    <span class="proj-type" data-i18n="type_bot">Bot</span>
+                                    <h3 class="proj-name">Mo Frame</h3>
+                                </div>
+                            </div>
+                            <span class="proj-status">Bot Telegram</span>
+                        </div>
+                        <p class="proj-tagline" data-i18n="app_moframe_tagline">Assistant Multi-plateforme.</p>
+                        <div class="proj-tech">
+                            <span>Electron</span><span>SQLite</span>
+                        </div>
+                        <div class="proj-visual">
+                            <img src="assets/images/mo_frame_s1_final.png" alt="Mo Frame">
+                        </div>
+                    </div>
+
+                    <!-- M Académie (Wide) -->
+                    <div class="proj-card proj-wide" data-app="academy" onclick="openBookingModal()">
+                        <div class="proj-wide-text">
+                            <div class="proj-top">
+                                <div class="proj-identity">
+                                    <img class="proj-icon" src="assets/images/whatsapp-bot-icon.png" alt="M Académie">
+                                    <div>
+                                        <span class="proj-type" data-i18n="type_booking">Booking</span>
+                                        <h3 class="proj-name">M Académie</h3>
+                                    </div>
+                                </div>
+                                <span class="proj-status" data-i18n="status_booking">Réservation</span>
+                            </div>
+                            <p class="proj-tagline" data-i18n="app_academy_tagline">Formation et Coaching.</p>
+                            <div class="proj-tech">
+                                <span>WhatsApp Bot</span><span>Elite Design</span><span>Firebase</span>
+                            </div>
+                        </div>
+                        <div class="proj-wide-screens">
+                            <img src="assets/images/cal_elite_1.png" alt="">
+                            <img src="assets/images/cal_elite_1.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="about" id="experience" style="background: var(--bg-surface);">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-i18n="timeline_title">Parcours Elite 2026</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="timeline-date" data-i18n="timeline_locsy_date">Mars 2026</span>
+                            <h3 data-i18n="timeline_locsy_title">Launch Locsy</h3>
+                            <p data-i18n="timeline_locsy_p">Application de voyage immersive.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="timeline-date" data-i18n="timeline_zikr_date">Mars 2026</span>
+                            <h3 data-i18n="timeline_zikr_title">Launch Zikr</h3>
+                            <p data-i18n="timeline_zikr_p">App spirituelle iOS complète (SwiftUI).</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="timeline-date" data-i18n="timeline_kinto_date">Avril 2026</span>
+                            <h3 data-i18n="timeline_kinto_title">Launch Kinto</h3>
+                            <p data-i18n="timeline_kinto_p">Gestion de budget intelligente & Scanner de reçus.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="timeline-date" data-i18n="timeline_restopass_date">Mai 2026</span>
+                            <h3 data-i18n="timeline_restopass_title">Launch RestoPass</h3>
+                            <p data-i18n="timeline_restopass_p">SaaS RESTO : Menu QR & Wallet.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="timeline-date" data-i18n="timeline_m_date">Bientôt</span>
+                            <h3 data-i18n="timeline_m_title">Launch M App</h3>
+                            <p data-i18n="timeline_m_p">Réseau social dynamique (Expo/Supabase).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="portfolio" id="contact" style="background: rgba(16, 185, 129, 0.03); border-radius: 4rem 4rem 0 0;">
+            <div class="container" style="text-align: center;">
+                <div class="section-title">
+                    <h2 data-i18n="contact_title">Travaillons ensemble</h2>
+                    <p data-i18n="contact_subtitle">Une idée de projet ? Contactez-moi.</p>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 3rem;">
+                    <a href="mailto:contact@mohameds.net" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> contact@mohameds.net
+                    </a>
+                    <a href="https://www.linkedin.com/in/mohamed-elhawawshi-6024a92a5?utm_source=share_via&utm_content=profile&utm_medium=member_ios" class="btn glass" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://x.com/mohamedsayedh8?s=21" class="btn glass" target="_blank">
+                        <i class="fab fa-x-twitter"></i> X
+                    </a>
+                    <a href="https://www.instagram.com/mohamedsayedh8" class="btn glass" target="_blank">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <div class="modal" id="app-modal">
+        <div class="modal-content" id="modal-data"></div>
+    </div>
+
+    <!-- Booking Modal (Admin Sync) -->
+    <div class="modal" id="booking-modal">
+        <div class="modal-content" style="max-width: 1000px; padding: 2rem; position: relative;">
+            <button class="modal-close-icon" onclick="closeBookingModal()"><i class="fas fa-times"></i></button>
+            <div id="booking-root"></div>
+        </div>
+    </div>
+
+    <footer style="padding: 5rem 0; text-align: center; opacity: 0.4;">
+        <p>&copy; 2026 Mohamed Sayed. <span data-i18n="footer_rights">All Rights Reserved.</span></p>
+    </footer>
+
+    <!-- Firebase -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import { getFirestore, collection, addDoc, onSnapshot, query, where, orderBy, doc, getDoc, getDocs, setDoc, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+      import { getAuth, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+      
+      const firebaseConfig = {
+        apiKey: "AIzaSyDpZNOqxUfG7KZo2g3-7Py254P2GDSzRjo",
+        authDomain: "mohameds-booking.firebaseapp.com",
+        projectId: "mohameds-booking",
+        storageBucket: "mohameds-booking.firebasestorage.app",
+        messagingSenderId: "547186990707",
+        appId: "1:547186990707:web:8e273902d7f3bf2781d406",
+        measurementId: "G-G2HMBCFESR"
+      };
+
+      const firebaseApp = initializeApp(firebaseConfig);
+      window.firebaseApp = firebaseApp;
+      window.firebaseSDK = {
+        initializeApp, getFirestore, getAuth, signInWithEmailAndPassword, signOut,
+        collection, addDoc, onSnapshot, query, where, orderBy, doc, getDoc, getDocs, setDoc, deleteDoc, updateDoc
+      };
+    </script>
+
+    <!-- Libs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="module" src="script.js?v=1600"></script>
+</body>
+</html>
