@@ -22,47 +22,6 @@ const apps = {
         screenshots: ['assets/images/zikr_screen_1.png', 'assets/images/zikr_screen_1.png', 'assets/images/zikr_screen_1.png'],
         color: '#10b981'
     },
-    m_app: {
-        id: 'm_app', icon: '🎵', iconUrl: 'assets/images/m-icon-dark.png', name: 'M App',
-        tagline: { 
-            fr: 'Vivez l\'instant présent en 2026.', 
-            en: 'Live the moment in 2026.', 
-            ar: 'عش اللحظة في عام 2026.' 
-        },
-        description: {
-            fr: 'Un réseau social fluide et moderne (Expo/Supabase) axé sur l\'instant présent. Partagez vos moments, appelez vos proches et découvrez du contenu captivant avec une interface ultra-rapide.',
-            en: 'A smooth and modern social network (Expo/Supabase) focused on the instant. Share your moments, call your loved ones, and discover captivating content with an ultra-fast interface.',
-            ar: 'شبكة اجتماعية سريعة وحديثة (Expo/Supabase) تركز على اللحظة. شارك لحظاتك، اتصل بأحبائك واكتشف محتوى جذاباً بواجهة مستخدم متطورة.'
-        },
-        features: {
-            fr: ['Appels Audio/Vidéo HD', 'Partage de Moments (Vidéos)', 'Messagerie instantanée', 'Histoires & Actus quotidiennes'],
-            en: ['HD Audio/Video Calls', 'Moment Sharing (Videos)', 'Instant Messaging', 'Daily Stories & News'],
-            ar: ['مكالمات صوت وفيديو HD', 'مشاركة اللحظات (فيديو)', 'رسائل فورية آمنة', 'قصص وأخبار يومية متجددة']
-        },
-        screenshots: ['assets/images/m_screen_1.png', 'assets/images/m_screen_1.png'],
-        color: '#3b82f6'
-    },
-    locsy: {
-        id: 'locsy', icon: '📍', iconUrl: 'assets/images/locsy-icon-dark.png', name: 'Locsy',
-        tagline: { 
-            fr: 'L\'exploration urbaine réinventée.', 
-            en: 'Urban exploration reinvented.', 
-            ar: 'إعادة ابتكار استكشاف المدن.' 
-        },
-        description: {
-            fr: 'Locsy transforme vos explorations. Que vous soyez touriste ou local, redécouvrez la ville via des parcours uniques générés sur-mesure grâce à l\'IA.',
-            en: 'Locsy transforms your explorations. Whether you are a tourist or a local, rediscover the city through unique tailor-made journeys powered by AI.',
-            ar: 'يقوم Locsy بتحويل استكشافاتك. سواء كنت سائحاً أو مواطناً، اكتشف المدينة من جديد عبر مسارات فريدة مصممة خصيصاً لك باستخدام الذكاء الاصطناعي.'
-        },
-        features: {
-            fr: ['Itinéraires Smart', 'Spots Secrets', 'Guide Vocal', 'Cartes 3D'],
-            en: ['Smart Routes', 'Secret Spots', 'Voice Guide', '3D Maps'],
-            ar: ['مسارات ذكية ومخصصة', 'أماكن سرية مميزة', 'دليل صوتي تفاعلي', 'خرائط ثلاثية الأبعاد']
-        },
-        appStore: 'https://apps.apple.com/fr/app/locsy/id6760738424',
-        screenshots: ['assets/images/locsy_s1_final.png'],
-        color: '#0ea5e9'
-    },
     kinto: {
         id: 'kinto', icon: '💰', iconUrl: 'assets/images/kinto-icon.png', name: 'Kinto',
         tagline: { 
@@ -82,48 +41,6 @@ const apps = {
         },
         screenshots: ['assets/images/kinto-screen1.png', 'assets/images/kinto-screen2.png'],
         color: '#8b5cf6'
-    },
-    mo_frame: {
-        id: 'mo_frame', icon: '🖼️', iconUrl: 'assets/images/mo-frame-icon.png', name: 'Mo Frame',
-        tagline: { 
-            fr: 'Créez des posts stylés en un clic.', 
-            en: 'Create styled posts in one click.', 
-            ar: 'اصنع منشورات مميزة بضغطة واحدة.' 
-        },
-        description: { 
-            fr: 'Un bot Telegram puissant qui transforme vos textes et photos en posts stylés et professionnels pour vos réseaux sociaux.', 
-            en: 'A powerful Telegram bot that transforms your text and photos into professional styled posts for your social media.', 
-            ar: 'بوت Telegram قوي يحول نصوصك وصورك إلى منشورات احترافية وأنيقة لشبكات التواصل الاجتماعي الخاصة بك.' 
-        },
-        features: { 
-            fr: ['Styles Dark/Light', 'Personnalisation du Profile', 'Export HD Rapide'], 
-            en: ['Dark/Light Styles', 'Profile Customization', 'Fast HD Export'], 
-            ar: ['أنماط داكنة وفاتحة', 'تخصيص الملف الشخصي', 'تصدير عالي الجودة وسريع'] 
-        },
-        telegram: 'https://t.me/Moframe_bot',
-        screenshots: ['assets/images/mo_frame_s1_final.png'],
-        color: '#7c3aed'
-    },
-    tap0: {
-        id: 'tap0', icon: '🏪', iconUrl: 'assets/images/tap0-icon.png', name: 'Tap0.fr',
-        tagline: {
-            fr: 'Votre commerce digitalisé en 5 min.',
-            en: 'Your business digitized in 5 min.',
-            ar: 'رقمن تجارتك في 5 دقائق.'
-        },
-        description: {
-            fr: 'Tap0.fr est une solution SaaS complète pour digitaliser tous types de commerces. Gérez votre catalogue, fidélisez vos clients avec des cartes Apple & Google Wallet et suivez vos performances en temps réel.',
-            en: 'Tap0.fr is a complete SaaS solution to digitize all types of businesses. Manage your catalog, build customer loyalty with Apple & Google Wallet cards, and track performance in real-time.',
-            ar: 'Tap0.fr هو حل SaaS كامل لرقمنة جميع أنواع الأنشطة التجارية. أدر منتجاتك، وابنِ ولاء عملائك باستخدام بطاقات المحفظة من Apple و Google، وتابع أداءك في الوقت الفعلي.'
-        },
-        features: { 
-            fr: ['Gestion de Catalogue Universelle', 'Fidélité Apple/Google Wallet', 'Dashboard Analytics & Ventes'], 
-            en: ['Universal Catalog Management', 'Apple/Google Wallet Loyalty', 'Sales & Analytics Dashboard'], 
-            ar: ['إدارة شاملة للمنتجات', 'نظام ولاء المحفظة الذكي', 'لوحة تحليلات ومبيعات متقدمة'] 
-        },
-        screenshots: ['assets/images/tap0_s1.png', 'assets/images/tap0_s2.png', 'assets/images/tap0_s3.png'],
-        website: 'https://tap0.fr',
-        color: '#f97316'
     }
 };
 
@@ -143,22 +60,14 @@ const translations = {
         portfolio_title: 'Ecosystème Digital', portfolio_subtitle: 'Solutions mobiles et plateformes SaaS.',
         status_available: 'Disponible', status_new: 'Bientôt', status_booking: 'Réservation',
         timeline_title: 'Parcours Elite 2026',
-        timeline_locsy_title: 'Launch Locsy', timeline_locsy_p: 'Application de voyage immersive.',
         timeline_zikr_title: 'Launch Zikr', timeline_zikr_p: 'App spirituelle iOS complète (SwiftUI).',
         timeline_kinto_title: 'Launch Kinto', timeline_kinto_p: 'Gestion de budget intelligente & Scanner de reçus.',
-        timeline_restopass_title: 'Launch Tap0.fr', timeline_restopass_p: 'SaaS Commerce : Gestion & Wallet.',
-        timeline_m_title: 'Launch M App', timeline_m_p: 'Réseau social dynamique (Expo/Supabase).',
         contact_title: 'Travaillons ensemble', contact_subtitle: 'Une idée de projet ? Contactez-moi.',
         footer_rights: 'Tous droits réservés.',
         type_app: 'App', type_site: 'Site', type_bot: 'Bot',
         type_booking: 'Outil de Réservation',
         app_zikr_tagline: 'Votre compagnon spirituel quotidien.',
-        app_m_tagline: 'Social, Vidéos & Reels.',
-        app_locsy_tagline: 'Localisation en temps réel.',
-        app_kinto_tagline: 'Finances & Budgets.',
-        app_restopass_tagline: 'Votre commerce digitalisé en 5 min.',
-        app_moframe_tagline: 'Assistant Multi-plateforme.',
-        app_academy_tagline: 'Formation et Coaching.'
+        app_kinto_tagline: 'Finances & Budgets.'
     },
     en: {
         nav_home: 'Home', nav_about: 'About', nav_apps: 'Projects', nav_contact: 'Contact',
