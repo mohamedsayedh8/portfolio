@@ -551,6 +551,10 @@ html[dir="rtl"] .iphone-mockup::before {
   left: 50%;
 }
 
+html[dir="rtl"] .back-link i {
+  transform: scaleX(-1);
+}
+
 /* Responsive */
 @media (max-width: 680px) {
   .apps-grid {
