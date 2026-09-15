@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Sayed — Développeur</title>
-    <meta name="description" content="Mohamed Sayed, développeur mobile. Créateur de Zikr et Kinto.">
+    <title>Kinto — Mohamed Sayed</title>
+    <meta name="description" content="Kinto, gestion de budget avec scanner de reçus et suivi des dépenses.">
     <link rel="icon" type="image/png" href="assets/images/favicon-premium.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
@@ -15,7 +15,7 @@
 
     <nav id="navbar">
         <div class="container nav-inner">
-            <a href="#top" class="logo">Mohamed Sayed</a>
+            <a href="index.html" class="logo">Mohamed Sayed</a>
             <div class="nav-controls">
                 <div class="lang-switcher">
                     <button class="lang-btn active" data-lang="fr" onclick="setLanguage('fr')">FR</button>
@@ -30,32 +30,10 @@
     </nav>
 
     <main id="top">
-        <!-- Hero -->
         <section class="hero">
             <div class="container">
-                <p class="eyebrow" data-i18n="hero_eyebrow">Développeur mobile</p>
-                <h1 data-i18n="hero_title">Je conçois des applications simples et utiles.</h1>
-                <p class="hero-desc" data-i18n="hero_desc">Créateur de Zikr et Kinto. Je m'occupe seul du design, du code et du lancement.</p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary" data-i18n="hero_cta_apps">Voir mes projets</a>
-                    <a href="#contact" class="btn btn-ghost" data-i18n="nav_contact">Me contacter</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section class="projects" id="projects">
-            <div class="container">
-                <h2 class="section-label" data-i18n="portfolio_title">Projets</h2>
-                <div class="apps-grid" id="apps-grid"></div>
-            </div>
-        </section>
-
-        <!-- About -->
-        <section class="about" id="about">
-            <div class="container-narrow">
-                <h2 class="section-label" data-i18n="nav_about">À propos</h2>
-                <p class="about-text" data-i18n="about_p1">Je suis Mohamed Sayed, développeur indépendant. Je conçois et développe des applications mobiles de bout en bout, du design à la mise en ligne.</p>
+                <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> <span data-i18n="link_back">Accueil</span></a>
+                <div class="app-hero" id="app-detail" data-app="kinto"></div>
             </div>
         </section>
 

@@ -1,136 +1,335 @@
 <!DOCTYPE html>
-<html lang="fr" class="dark-mode">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conditions d'utilisation — Kinto</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon-premium.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3000">
 </head>
-<body class="dark-mode">
-    <div id="canvas-container"></div>
-    <nav id="navbar" class="scrolled">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">M</div>
-                <span>Studio Mohamed</span>
-            </a>
+<body>
+
+    <nav id="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">Mohamed Sayed</a>
             <div class="nav-controls">
-                <button class="theme-btn" id="theme-toggle"><i class="fas fa-moon"></i></button>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+                    <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">AR</button>
+                </div>
+                <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème">
+                    <i class="icon-sun"></i>
+                </button>
             </div>
         </div>
     </nav>
 
-    <main class="legal-page">
-        <div class="container">
-            <a href="index.html#portfolio" class="back-to-home">
-                <i class="fas fa-arrow-left"></i> Retour
-            </a>
-            <div class="legal-card">
-                <h1>📋 Conditions d'utilisation — Kinto</h1>
-                <span class="last-updated">Dernière mise à jour : 8 avril 2026</span>
+    <main id="top">
+        <section class="legal-page">
+            <div class="container-narrow">
+                <a href="index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> <span data-i18n="link_back">Accueil</span></a>
+
+                <h1 data-page-i18n="title">📋 Conditions d'utilisation — Kinto</h1>
+                <span class="last-updated" data-page-i18n="updated">Dernière mise à jour : 8 avril 2026</span>
+
                 <div class="legal-content">
+                    <p data-page-i18n="intro">En téléchargeant ou utilisant <strong>Kinto</strong>, vous acceptez les présentes conditions d'utilisation. Veuillez les lire attentivement.</p>
 
-                    <p>En téléchargeant ou utilisant <strong>Kinto</strong>, vous acceptez les présentes conditions d'utilisation. Veuillez les lire attentivement.</p>
-
-                    <h2>1. Description du service</h2>
-                    <p>Kinto est une application de gestion financière personnelle permettant de :</p>
+                    <h2 data-page-i18n="h1">1. Description du service</h2>
+                    <p data-page-i18n="p1">Kinto est une application de gestion financière personnelle permettant de :</p>
                     <ul>
-                        <li>Scanner et analyser des reçus via intelligence artificielle (Anthropic)</li>
-                        <li>Suivre vos dépenses et revenus par catégorie</li>
-                        <li>Définir et gérer des budgets mensuels</li>
-                        <li>Créer et suivre des objectifs d'épargne</li>
+                        <li data-page-i18n="li1a">Scanner et analyser des reçus via intelligence artificielle (Anthropic)</li>
+                        <li data-page-i18n="li1b">Suivre vos dépenses et revenus par catégorie</li>
+                        <li data-page-i18n="li1c">Définir et gérer des budgets mensuels</li>
+                        <li data-page-i18n="li1d">Créer et suivre des objectifs d'épargne</li>
                     </ul>
-                    <p>En utilisant la fonctionnalité de scan, vous consentez explicitement au traitement sécurisé de vos images par nos sous-traitants (Anthropic) pour les besoins exclusifs de l'application.</p>
-                    <p>L'application est disponible en mode invité (données locales) ou avec un compte (synchronisation cloud).</p>
+                    <p data-page-i18n="p1b">En utilisant la fonctionnalité de scan, vous consentez explicitement au traitement sécurisé de vos images par nos sous-traitants (Anthropic) pour les besoins exclusifs de l'application.</p>
+                    <p data-page-i18n="p1c">L'application est disponible en mode invité (données locales) ou avec un compte (synchronisation cloud).</p>
 
-                    <h2>2. Compte utilisateur</h2>
+                    <h2 data-page-i18n="h2">2. Compte utilisateur</h2>
                     <ul>
-                        <li>La création d'un compte est <strong>entièrement optionnelle</strong>. Kinto fonctionne sans inscription.</li>
-                        <li>Vous êtes responsable de la confidentialité de vos identifiants de connexion.</li>
-                        <li>Un seul compte par personne est autorisé.</li>
-                        <li>Vous devez fournir des informations exactes lors de l'inscription.</li>
-                    </ul>
-
-                    <h2>3. Abonnement Premium</h2>
-                    <h3>3.1 Plans disponibles</h3>
-                    <ul>
-                        <li><strong>Mensuel</strong> : 2,99 € / mois</li>
-                        <li><strong>Annuel</strong> : 19,99 € / an (économisez 44 %)</li>
+                        <li data-page-i18n="li2a">La création d'un compte est <strong>entièrement optionnelle</strong>. Kinto fonctionne sans inscription.</li>
+                        <li data-page-i18n="li2b">Vous êtes responsable de la confidentialité de vos identifiants de connexion.</li>
+                        <li data-page-i18n="li2c">Un seul compte par personne est autorisé.</li>
+                        <li data-page-i18n="li2d">Vous devez fournir des informations exactes lors de l'inscription.</li>
                     </ul>
 
-                    <h3>3.2 Avantages Premium</h3>
+                    <h2 data-page-i18n="h3">3. Abonnement Premium</h2>
+                    <h3 data-page-i18n="h3a">3.1 Plans disponibles</h3>
                     <ul>
-                        <li>Scans de reçus illimités (vs 5/mois en gratuit)</li>
-                        <li>Analyses avancées et graphiques détaillés</li>
-                        <li>Objectifs d'épargne illimités (vs 3 en gratuit)</li>
-                        <li>Export des données en CSV</li>
-                        <li>Support prioritaire</li>
-                        <li>Accès à toutes les futures fonctionnalités</li>
+                        <li data-page-i18n="li3a1"><strong>Mensuel</strong> : 2,99 € / mois</li>
+                        <li data-page-i18n="li3a2"><strong>Annuel</strong> : 19,99 € / an (économisez 44 %)</li>
                     </ul>
 
-                    <h3>3.3 Facturation et renouvellement</h3>
+                    <h3 data-page-i18n="h3b">3.2 Avantages Premium</h3>
                     <ul>
-                        <li>Les abonnements sont gérés via Apple App Store ou Google Play.</li>
-                        <li>Le renouvellement est automatique sauf résiliation au moins 24h avant la fin de la période.</li>
-                        <li>Les prix peuvent varier selon votre région et la devise locale.</li>
-                        <li>Aucun remboursement partiel pour les périodes non utilisées, sauf obligation légale.</li>
+                        <li data-page-i18n="li3b1">Scans de reçus illimités (vs 5/mois en gratuit)</li>
+                        <li data-page-i18n="li3b2">Analyses avancées et graphiques détaillés</li>
+                        <li data-page-i18n="li3b3">Objectifs d'épargne illimités (vs 3 en gratuit)</li>
+                        <li data-page-i18n="li3b4">Export des données en CSV</li>
+                        <li data-page-i18n="li3b5">Support prioritaire</li>
+                        <li data-page-i18n="li3b6">Accès à toutes les futures fonctionnalités</li>
                     </ul>
 
-                    <h3>3.4 Résiliation</h3>
-                    <p>Vous pouvez annuler votre abonnement à tout moment depuis les paramètres de votre compte App Store ou Google Play. L'accès Premium reste actif jusqu'à la fin de la période payée.</p>
-
-                    <h2>4. Utilisation acceptable</h2>
-                    <p>Vous vous engagez à ne pas :</p>
+                    <h3 data-page-i18n="h3c">3.3 Facturation et renouvellement</h3>
                     <ul>
-                        <li>Utiliser l'application à des fins illégales ou frauduleuses</li>
-                        <li>Tenter de contourner les systèmes de sécurité ou d'authentification</li>
-                        <li>Scanner des reçus appartenant à d'autres personnes sans leur consentement</li>
-                        <li>Utiliser l'app pour blanchir des revenus ou dissimuler des activités illicites</li>
-                        <li>Revendre, redistribuer ou reproduire l'application</li>
+                        <li data-page-i18n="li3c1">Les abonnements sont gérés via Apple App Store ou Google Play.</li>
+                        <li data-page-i18n="li3c2">Le renouvellement est automatique sauf résiliation au moins 24h avant la fin de la période.</li>
+                        <li data-page-i18n="li3c3">Les prix peuvent varier selon votre région et la devise locale.</li>
+                        <li data-page-i18n="li3c4">Aucun remboursement partiel pour les périodes non utilisées, sauf obligation légale.</li>
                     </ul>
 
-                    <h2>5. Exactitude des données financières</h2>
-                    <p>Kinto est un outil d'aide à la gestion personnelle. Les données affichées dépendent des informations que vous saisissez. Nous ne garantissons pas l'exactitude des analyses IA sur les reçus. L'application ne constitue pas un conseil financier, fiscal ou juridique.</p>
+                    <h3 data-page-i18n="h3d">3.4 Résiliation</h3>
+                    <p data-page-i18n="p3d">Vous pouvez annuler votre abonnement à tout moment depuis les paramètres de votre compte App Store ou Google Play. L'accès Premium reste actif jusqu'à la fin de la période payée.</p>
 
-                    <h2>6. Propriété intellectuelle</h2>
-                    <p>L'application Kinto, son nom, son logo, son interface et son code sont la propriété exclusive de Mohamed Sayed. Toute reproduction ou utilisation commerciale sans autorisation écrite est interdite.</p>
-
-                    <h2>7. Limitation de responsabilité</h2>
-                    <p>Dans les limites permises par la loi applicable :</p>
+                    <h2 data-page-i18n="h4">4. Utilisation acceptable</h2>
+                    <p data-page-i18n="p4">Vous vous engagez à ne pas :</p>
                     <ul>
-                        <li>Nous ne sommes pas responsables des pertes financières résultant de l'utilisation de l'app</li>
-                        <li>Nous ne garantissons pas une disponibilité continue du service (maintenance possible)</li>
-                        <li>En mode invité, la perte de données suite à désinstallation est de la responsabilité de l'utilisateur</li>
+                        <li data-page-i18n="li4a">Utiliser l'application à des fins illégales ou frauduleuses</li>
+                        <li data-page-i18n="li4b">Tenter de contourner les systèmes de sécurité ou d'authentification</li>
+                        <li data-page-i18n="li4c">Scanner des reçus appartenant à d'autres personnes sans leur consentement</li>
+                        <li data-page-i18n="li4d">Utiliser l'app pour blanchir des revenus ou dissimuler des activités illicites</li>
+                        <li data-page-i18n="li4e">Revendre, redistribuer ou reproduire l'application</li>
                     </ul>
 
-                    <h2>8. Modifications du service</h2>
-                    <p>Nous nous réservons le droit de modifier, suspendre ou interrompre tout ou partie du service avec un préavis raisonnable. Les fonctionnalités du plan gratuit peuvent évoluer.</p>
+                    <h2 data-page-i18n="h5">5. Exactitude des données financières</h2>
+                    <p data-page-i18n="p5">Kinto est un outil d'aide à la gestion personnelle. Les données affichées dépendent des informations que vous saisissez. Nous ne garantissons pas l'exactitude des analyses IA sur les reçus. L'application ne constitue pas un conseil financier, fiscal ou juridique.</p>
 
-                    <h2>9. Modifications des conditions</h2>
-                    <p>Ces conditions peuvent être mises à jour. Vous serez notifié des changements importants via l'application. La poursuite de l'utilisation après notification vaut acceptation.</p>
+                    <h2 data-page-i18n="h6">6. Propriété intellectuelle</h2>
+                    <p data-page-i18n="p6">L'application Kinto, son nom, son logo, son interface et son code sont la propriété exclusive de Mohamed Sayed. Toute reproduction ou utilisation commerciale sans autorisation écrite est interdite.</p>
 
-                    <h2>10. Droit applicable</h2>
-                    <p>Ces conditions sont régies par le droit français. Tout litige sera soumis à la compétence des tribunaux français.</p>
+                    <h2 data-page-i18n="h7">7. Limitation de responsabilité</h2>
+                    <p data-page-i18n="p7">Dans les limites permises par la loi applicable :</p>
+                    <ul>
+                        <li data-page-i18n="li7a">Nous ne sommes pas responsables des pertes financières résultant de l'utilisation de l'app</li>
+                        <li data-page-i18n="li7b">Nous ne garantissons pas une disponibilité continue du service (maintenance possible)</li>
+                        <li data-page-i18n="li7c">En mode invité, la perte de données suite à désinstallation est de la responsabilité de l'utilisateur</li>
+                    </ul>
 
-                    <h2>11. Contact</h2>
-                    <p>Pour toute question : <a href="mailto:contact@mohameds.net" style="color: #7C6AF7;">contact@mohameds.net</a></p>
+                    <h2 data-page-i18n="h8">8. Modifications du service</h2>
+                    <p data-page-i18n="p8">Nous nous réservons le droit de modifier, suspendre ou interrompre tout ou partie du service avec un préavis raisonnable. Les fonctionnalités du plan gratuit peuvent évoluer.</p>
 
+                    <h2 data-page-i18n="h9">9. Modifications des conditions</h2>
+                    <p data-page-i18n="p9">Ces conditions peuvent être mises à jour. Vous serez notifié des changements importants via l'application. La poursuite de l'utilisation après notification vaut acceptation.</p>
+
+                    <h2 data-page-i18n="h10">10. Droit applicable</h2>
+                    <p data-page-i18n="p10">Ces conditions sont régies par le droit français. Tout litige sera soumis à la compétence des tribunaux français.</p>
+
+                    <h2 data-page-i18n="h11">11. Contact</h2>
+                    <p><span data-page-i18n="p11">Pour toute question :</span> <a href="mailto:contact@mohameds.net">contact@mohameds.net</a></p>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact" id="contact">
+            <div class="container-narrow">
+                <h2 class="section-label" data-i18n="contact_title">Contact</h2>
+                <p class="contact-desc" data-i18n="contact_subtitle">Une idée de projet ? Écrivez-moi.</p>
+                <div class="social-row">
+                    <a href="mailto:contact@mohameds.net" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/mohamed-elhawawshi-6024a92a5?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/haamosayed" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/haamosayed" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer style="padding: 2rem 0; text-align: center; background: var(--bg);">
-        <div class="container">
-            <p>&copy; 2026 Mohamed. Tous droits réservés. — <a href="kinto-privacy.html" style="color: #7C6AF7;">Politique de confidentialité</a></p>
+    <footer>
+        <div class="container-narrow footer-inner">
+            <p>&copy; 2026 Mohamed Sayed</p>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="script.js?v=9"></script>
+    <script src="script.js?v=3000"></script>
+    <script>
+        window.pageTranslations = {
+            fr: {
+                title: "📋 Conditions d'utilisation — Kinto",
+                updated: "Dernière mise à jour : 8 avril 2026",
+                intro: "En téléchargeant ou utilisant <strong>Kinto</strong>, vous acceptez les présentes conditions d'utilisation. Veuillez les lire attentivement.",
+                h1: "1. Description du service",
+                p1: "Kinto est une application de gestion financière personnelle permettant de :",
+                li1a: "Scanner et analyser des reçus via intelligence artificielle (Anthropic)",
+                li1b: "Suivre vos dépenses et revenus par catégorie",
+                li1c: "Définir et gérer des budgets mensuels",
+                li1d: "Créer et suivre des objectifs d'épargne",
+                p1b: "En utilisant la fonctionnalité de scan, vous consentez explicitement au traitement sécurisé de vos images par nos sous-traitants (Anthropic) pour les besoins exclusifs de l'application.",
+                p1c: "L'application est disponible en mode invité (données locales) ou avec un compte (synchronisation cloud).",
+                h2: "2. Compte utilisateur",
+                li2a: "La création d'un compte est <strong>entièrement optionnelle</strong>. Kinto fonctionne sans inscription.",
+                li2b: "Vous êtes responsable de la confidentialité de vos identifiants de connexion.",
+                li2c: "Un seul compte par personne est autorisé.",
+                li2d: "Vous devez fournir des informations exactes lors de l'inscription.",
+                h3: "3. Abonnement Premium",
+                h3a: "3.1 Plans disponibles",
+                li3a1: "<strong>Mensuel</strong> : 2,99 € / mois",
+                li3a2: "<strong>Annuel</strong> : 19,99 € / an (économisez 44 %)",
+                h3b: "3.2 Avantages Premium",
+                li3b1: "Scans de reçus illimités (vs 5/mois en gratuit)",
+                li3b2: "Analyses avancées et graphiques détaillés",
+                li3b3: "Objectifs d'épargne illimités (vs 3 en gratuit)",
+                li3b4: "Export des données en CSV",
+                li3b5: "Support prioritaire",
+                li3b6: "Accès à toutes les futures fonctionnalités",
+                h3c: "3.3 Facturation et renouvellement",
+                li3c1: "Les abonnements sont gérés via Apple App Store ou Google Play.",
+                li3c2: "Le renouvellement est automatique sauf résiliation au moins 24h avant la fin de la période.",
+                li3c3: "Les prix peuvent varier selon votre région et la devise locale.",
+                li3c4: "Aucun remboursement partiel pour les périodes non utilisées, sauf obligation légale.",
+                h3d: "3.4 Résiliation",
+                p3d: "Vous pouvez annuler votre abonnement à tout moment depuis les paramètres de votre compte App Store ou Google Play. L'accès Premium reste actif jusqu'à la fin de la période payée.",
+                h4: "4. Utilisation acceptable",
+                p4: "Vous vous engagez à ne pas :",
+                li4a: "Utiliser l'application à des fins illégales ou frauduleuses",
+                li4b: "Tenter de contourner les systèmes de sécurité ou d'authentification",
+                li4c: "Scanner des reçus appartenant à d'autres personnes sans leur consentement",
+                li4d: "Utiliser l'app pour blanchir des revenus ou dissimuler des activités illicites",
+                li4e: "Revendre, redistribuer ou reproduire l'application",
+                h5: "5. Exactitude des données financières",
+                p5: "Kinto est un outil d'aide à la gestion personnelle. Les données affichées dépendent des informations que vous saisissez. Nous ne garantissons pas l'exactitude des analyses IA sur les reçus. L'application ne constitue pas un conseil financier, fiscal ou juridique.",
+                h6: "6. Propriété intellectuelle",
+                p6: "L'application Kinto, son nom, son logo, son interface et son code sont la propriété exclusive de Mohamed Sayed. Toute reproduction ou utilisation commerciale sans autorisation écrite est interdite.",
+                h7: "7. Limitation de responsabilité",
+                p7: "Dans les limites permises par la loi applicable :",
+                li7a: "Nous ne sommes pas responsables des pertes financières résultant de l'utilisation de l'app",
+                li7b: "Nous ne garantissons pas une disponibilité continue du service (maintenance possible)",
+                li7c: "En mode invité, la perte de données suite à désinstallation est de la responsabilité de l'utilisateur",
+                h8: "8. Modifications du service",
+                p8: "Nous nous réservons le droit de modifier, suspendre ou interrompre tout ou partie du service avec un préavis raisonnable. Les fonctionnalités du plan gratuit peuvent évoluer.",
+                h9: "9. Modifications des conditions",
+                p9: "Ces conditions peuvent être mises à jour. Vous serez notifié des changements importants via l'application. La poursuite de l'utilisation après notification vaut acceptation.",
+                h10: "10. Droit applicable",
+                p10: "Ces conditions sont régies par le droit français. Tout litige sera soumis à la compétence des tribunaux français.",
+                h11: "11. Contact",
+                p11: "Pour toute question :"
+            },
+            en: {
+                title: "📋 Terms of Use — Kinto",
+                updated: "Last updated: April 8, 2026",
+                intro: "By downloading or using <strong>Kinto</strong>, you agree to these terms of use. Please read them carefully.",
+                h1: "1. Service Description",
+                p1: "Kinto is a personal finance management app that lets you:",
+                li1a: "Scan and analyze receipts using artificial intelligence (Anthropic)",
+                li1b: "Track your spending and income by category",
+                li1c: "Set and manage monthly budgets",
+                li1d: "Create and track savings goals",
+                p1b: "By using the scan feature, you explicitly consent to the secure processing of your images by our subprocessors (Anthropic) for the app's exclusive purposes.",
+                p1c: "The app is available in guest mode (local data) or with an account (cloud sync).",
+                h2: "2. User Account",
+                li2a: "Creating an account is <strong>entirely optional</strong>. Kinto works without registration.",
+                li2b: "You are responsible for keeping your login credentials confidential.",
+                li2c: "Only one account per person is allowed.",
+                li2d: "You must provide accurate information when registering.",
+                h3: "3. Premium Subscription",
+                h3a: "3.1 Available Plans",
+                li3a1: "<strong>Monthly</strong>: €2.99 / month",
+                li3a2: "<strong>Yearly</strong>: €19.99 / year (save 44%)",
+                h3b: "3.2 Premium Benefits",
+                li3b1: "Unlimited receipt scans (vs 5/month on the free plan)",
+                li3b2: "Advanced analytics and detailed charts",
+                li3b3: "Unlimited savings goals (vs 3 on the free plan)",
+                li3b4: "CSV data export",
+                li3b5: "Priority support",
+                li3b6: "Access to all future features",
+                h3c: "3.3 Billing and Renewal",
+                li3c1: "Subscriptions are managed via the Apple App Store or Google Play.",
+                li3c2: "Renewal is automatic unless cancelled at least 24h before the end of the period.",
+                li3c3: "Prices may vary depending on your region and local currency.",
+                li3c4: "No partial refunds for unused periods, except where legally required.",
+                h3d: "3.4 Cancellation",
+                p3d: "You can cancel your subscription at any time from your App Store or Google Play account settings. Premium access remains active until the end of the paid period.",
+                h4: "4. Acceptable Use",
+                p4: "You agree not to:",
+                li4a: "Use the app for illegal or fraudulent purposes",
+                li4b: "Attempt to bypass security or authentication systems",
+                li4c: "Scan receipts belonging to other people without their consent",
+                li4d: "Use the app to launder income or conceal illegal activities",
+                li4e: "Resell, redistribute or reproduce the app",
+                h5: "5. Accuracy of Financial Data",
+                p5: "Kinto is a personal management aid tool. The data displayed depends on the information you enter. We do not guarantee the accuracy of AI analysis on receipts. The app does not constitute financial, tax or legal advice.",
+                h6: "6. Intellectual Property",
+                p6: "The Kinto app, its name, logo, interface and code are the exclusive property of Mohamed Sayed. Any reproduction or commercial use without written authorization is prohibited.",
+                h7: "7. Limitation of Liability",
+                p7: "To the extent permitted by applicable law:",
+                li7a: "We are not liable for financial losses resulting from use of the app",
+                li7b: "We do not guarantee continuous service availability (maintenance may occur)",
+                li7c: "In guest mode, data loss following uninstallation is the user's responsibility",
+                h8: "8. Service Changes",
+                p8: "We reserve the right to modify, suspend or discontinue all or part of the service with reasonable notice. Free plan features may evolve.",
+                h9: "9. Changes to These Terms",
+                p9: "These terms may be updated. You will be notified of significant changes via the app. Continued use after notification constitutes acceptance.",
+                h10: "10. Governing Law",
+                p10: "These terms are governed by French law. Any dispute will be subject to the jurisdiction of French courts.",
+                h11: "11. Contact",
+                p11: "For any question:"
+            },
+            ar: {
+                title: "📋 شروط الاستخدام — Kinto",
+                updated: "آخر تحديث: 8 أبريل 2026",
+                intro: "بتنزيل أو استخدام <strong>Kinto</strong>، فإنك توافق على شروط الاستخدام هذه. يُرجى قراءتها بعناية.",
+                h1: "١. وصف الخدمة",
+                p1: "Kinto هو تطبيق لإدارة المالية الشخصية يتيح لك:",
+                li1a: "مسح الفواتير وتحليلها باستخدام الذكاء الاصطناعي (Anthropic)",
+                li1b: "تتبع مصاريفك ودخلك حسب الفئة",
+                li1c: "تحديد وإدارة ميزانيات شهرية",
+                li1d: "إنشاء وتتبع أهداف ادخار",
+                p1b: "باستخدام ميزة المسح، فإنك توافق صراحةً على المعالجة الآمنة لصورك من قبل مزوّدينا الفرعيين (Anthropic) للأغراض الحصرية للتطبيق.",
+                p1c: "التطبيق متاح في وضع الضيف (بيانات محلية) أو بحساب (مزامنة سحابية).",
+                h2: "٢. حساب المستخدم",
+                li2a: "إنشاء حساب <strong>اختياري بالكامل</strong>. يعمل Kinto دون تسجيل.",
+                li2b: "أنت مسؤول عن سرية بيانات تسجيل الدخول الخاصة بك.",
+                li2c: "يُسمح بحساب واحد فقط لكل شخص.",
+                li2d: "يجب تقديم معلومات دقيقة عند التسجيل.",
+                h3: "٣. الاشتراك المميز",
+                h3a: "٣.١ الخطط المتاحة",
+                li3a1: "<strong>شهري</strong>: 2.99 € / شهر",
+                li3a2: "<strong>سنوي</strong>: 19.99 € / سنة (وفّر 44%)",
+                h3b: "٣.٢ مزايا الاشتراك المميز",
+                li3b1: "مسح فواتير غير محدود (مقابل 5/شهر في النسخة المجانية)",
+                li3b2: "تحليلات متقدمة ورسوم بيانية مفصّلة",
+                li3b3: "أهداف ادخار غير محدودة (مقابل 3 في النسخة المجانية)",
+                li3b4: "تصدير البيانات بصيغة CSV",
+                li3b5: "دعم ذو أولوية",
+                li3b6: "الوصول إلى جميع الميزات المستقبلية",
+                h3c: "٣.٣ الفوترة والتجديد",
+                li3c1: "تُدار الاشتراكات عبر Apple App Store أو Google Play.",
+                li3c2: "التجديد تلقائي ما لم يتم الإلغاء قبل 24 ساعة على الأقل من نهاية الفترة.",
+                li3c3: "قد تختلف الأسعار حسب منطقتك والعملة المحلية.",
+                li3c4: "لا يوجد استرداد جزئي للفترات غير المستخدمة، إلا في حال وجود إلزام قانوني.",
+                h3d: "٣.٤ الإلغاء",
+                p3d: "يمكنك إلغاء اشتراكك في أي وقت من إعدادات حسابك في App Store أو Google Play. يبقى الوصول المميز نشطاً حتى نهاية الفترة المدفوعة.",
+                h4: "٤. الاستخدام المقبول",
+                p4: "تلتزم بعدم:",
+                li4a: "استخدام التطبيق لأغراض غير قانونية أو احتيالية",
+                li4b: "محاولة تجاوز أنظمة الأمان أو المصادقة",
+                li4c: "مسح فواتير تخص أشخاصاً آخرين دون موافقتهم",
+                li4d: "استخدام التطبيق لغسل الأموال أو إخفاء أنشطة غير مشروعة",
+                li4e: "إعادة بيع التطبيق أو توزيعه أو نسخه",
+                h5: "٥. دقة البيانات المالية",
+                p5: "Kinto أداة مساعدة للإدارة الشخصية. تعتمد البيانات المعروضة على المعلومات التي تُدخلها. نحن لا نضمن دقة تحليلات الذكاء الاصطناعي للفواتير. لا يُعد التطبيق استشارة مالية أو ضريبية أو قانونية.",
+                h6: "٦. الملكية الفكرية",
+                p6: "تطبيق Kinto واسمه وشعاره وواجهته وكوده هي ملكية حصرية لمحمد سيد. يُمنع أي نسخ أو استخدام تجاري دون إذن كتابي.",
+                h7: "٧. تحديد المسؤولية",
+                p7: "في الحدود التي يسمح بها القانون المعمول به:",
+                li7a: "نحن غير مسؤولين عن الخسائر المالية الناتجة عن استخدام التطبيق",
+                li7b: "نحن لا نضمن توفراً مستمراً للخدمة (قد تحدث أعمال صيانة)",
+                li7c: "في وضع الضيف، تقع مسؤولية فقدان البيانات بعد إلغاء التثبيت على المستخدم",
+                h8: "٨. تعديلات الخدمة",
+                p8: "نحتفظ بالحق في تعديل الخدمة أو تعليقها أو إيقافها كلياً أو جزئياً مع إشعار معقول. قد تتطور ميزات الخطة المجانية.",
+                h9: "٩. تعديلات الشروط",
+                p9: "قد يتم تحديث هذه الشروط. سيتم إشعارك بالتغييرات المهمة عبر التطبيق. يُعد الاستمرار في الاستخدام بعد الإشعار بمثابة موافقة.",
+                h10: "١٠. القانون المعمول به",
+                p10: "تخضع هذه الشروط للقانون الفرنسي. يخضع أي نزاع لاختصاص المحاكم الفرنسية.",
+                h11: "١١. التواصل",
+                p11: "لأي سؤال:"
+            }
+        };
+    </script>
 </body>
 </html>

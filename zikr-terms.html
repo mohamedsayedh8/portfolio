@@ -1,142 +1,147 @@
 <!DOCTYPE html>
-<html lang="fr" class="dark-mode">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conditions d'Utilisation — Zikr</title>
-    
-    <!-- Fonts -->
+    <link rel="icon" type="image/png" href="assets/images/favicon-premium.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3000">
 </head>
-<body class="dark-mode">
-    <!-- 3D Background -->
-    <div id="canvas-container"></div>
+<body>
 
-    <!-- Navigation -->
-    <nav id="navbar" class="scrolled">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">M</div>
-                <span>Studio Mohamed</span>
-            </a>
+    <nav id="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">Mohamed Sayed</a>
             <div class="nav-controls">
                 <div class="lang-switcher">
-                    <button class="lang-btn active" onclick="setLanguage('fr')">FR</button>
-                    <button class="lang-btn" onclick="setLanguage('en')">EN</button>
-                    <button class="lang-btn" onclick="setLanguage('ar')">AR</button>
+                    <button class="lang-btn active" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+                    <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">AR</button>
                 </div>
-                <!-- Theme Toggle -->
-                <button class="theme-btn" id="theme-toggle">
-                    <i class="fas fa-moon"></i>
+                <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème">
+                    <i class="icon-sun"></i>
                 </button>
             </div>
         </div>
     </nav>
 
-    <main class="legal-page">
-        <div class="container">
-            <a href="index.html#portfolio" class="back-to-home">
-                <i class="fas fa-arrow-left"></i> <span data-i18n="back">Retour</span>
-            </a>
+    <main id="top">
+        <section class="legal-page">
+            <div class="container-narrow">
+                <a href="index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> <span data-i18n="link_back">Accueil</span></a>
 
-            <div class="legal-card">
-                <h1 data-i18n="zikr_terms_title">📋 Conditions d'Utilisation — Zikr</h1>
-                <span class="last-updated" data-i18n="zikr_last_updated">Dernière mise à jour : 21 mars 2026</span>
+                <h1 data-page-i18n="title">📋 Conditions d'Utilisation — Zikr</h1>
+                <span class="last-updated" data-page-i18n="updated">Dernière mise à jour : 21 mars 2026</span>
 
                 <div class="legal-content">
-                    <p data-i18n="zikr_terms_intro">En téléchargeant et utilisant l'application <strong>Zikr</strong>, vous acceptez les présentes conditions d'utilisation.</p>
+                    <p data-page-i18n="intro">En téléchargeant et utilisant l'application <strong>Zikr</strong>, vous acceptez les présentes conditions d'utilisation.</p>
 
-                    <h2 data-i18n="zikr_terms_h1">1. Services fournis</h2>
+                    <h2 data-page-i18n="h1">1. Services fournis</h2>
                     <ul>
-                        <li data-i18n="zikr_terms_li1">Horaires de prière basés sur votre localisation.</li>
-                        <li data-i18n="zikr_terms_li2">Lecture du Coran (Mode Image et Mode Texte).</li>
-                        <li data-i18n="zikr_terms_li3">IA Imam — assistant spirituel islamique.</li>
-                        <li data-i18n="zikr_terms_li4">Compteur de Tasbih et Qibla.</li>
+                        <li data-page-i18n="li1">Horaires de prière basés sur votre localisation.</li>
+                        <li data-page-i18n="li2">Lecture du Coran (Mode Image et Mode Texte).</li>
+                        <li data-page-i18n="li3">IA Imam — assistant spirituel islamique.</li>
+                        <li data-page-i18n="li4">Compteur de Tasbih et Qibla.</li>
                     </ul>
 
-                    <h2 data-i18n="zikr_terms_h3">2. Abonnement Premium</h2>
-                    <p data-i18n="zikr_terms_p1">L'abonnement est géré par Apple. Le renouvellement s'effectue 24h avant la fin de la période.</p>
-                    <p data-i18n="zikr_terms_prices"><strong>Mensuel :</strong> 2,99 € / mois — <strong>Annuel :</strong> 19,99 € / an</p>
+                    <h2 data-page-i18n="h3">2. Abonnement Premium</h2>
+                    <p data-page-i18n="p1">L'abonnement est géré par Apple. Le renouvellement s'effectue 24h avant la fin de la période.</p>
+                    <p data-page-i18n="prices"><strong>Mensuel :</strong> 2,99 € / mois — <strong>Annuel :</strong> 19,99 € / an</p>
 
-                    <h2 data-i18n="zikr_terms_h4">3. IA Imam</h2>
-                    <p data-i18n="zikr_terms_p2">L'IA Imam est limitée aux questions islamiques. Les réponses ne constituent pas un avis religieux officiel.</p>
+                    <h2 data-page-i18n="h4">3. IA Imam</h2>
+                    <p data-page-i18n="p2">L'IA Imam est limitée aux questions islamiques. Les réponses ne constituent pas un avis religieux officiel.</p>
 
-                    <h2 data-i18n="zikr_terms_h5">4. Propriété intellectuelle</h2>
-                    <p data-i18n="zikr_terms_p3">L'application Zikr et son contenu sont la propriété de Studio Mohamed.</p>
+                    <h2 data-page-i18n="h5">4. Propriété intellectuelle</h2>
+                    <p data-page-i18n="p3">L'application Zikr et son contenu sont la propriété de Studio Mohamed.</p>
 
-                    <h2 data-i18n="zikr_terms_h6">5. Contact</h2>
-                    <p><a href="mailto:contact@mohameds.net" style="color: var(--primary); text-decoration: none;">contact@mohameds.net</a></p>
+                    <h2 data-page-i18n="h6">5. Contact</h2>
+                    <p><a href="mailto:contact@mohameds.net">contact@mohameds.net</a></p>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact" id="contact">
+            <div class="container-narrow">
+                <h2 class="section-label" data-i18n="contact_title">Contact</h2>
+                <p class="contact-desc" data-i18n="contact_subtitle">Une idée de projet ? Écrivez-moi.</p>
+                <div class="social-row">
+                    <a href="mailto:contact@mohameds.net" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/mohamed-elhawawshi-6024a92a5?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/haamosayed" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/haamosayed" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer style="padding: 4rem 0; text-align: center; background: transparent;">
-        <div class="container">
-            <p>&copy; 2026 Mohamed. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
-            <div style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.6;">
-                <a href="zikr-privacy.html" style="color: inherit; margin: 0 10px;" data-i18n="nav_privacy">Confidentialité</a>
-                <a href="zikr-terms.html" style="color: inherit; margin: 0 10px;" data-i18n="nav_terms">Conditions</a>
-            </div>
+    <footer>
+        <div class="container-narrow footer-inner">
+            <p>&copy; 2026 Mohamed Sayed</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
-    
+    <script src="script.js?v=3000"></script>
     <script>
-        const translations = {
+        window.pageTranslations = {
             fr: {
-                back: "Retour",
-                zikr_terms_title: "📋 Conditions d'Utilisation — Zikr",
-                zikr_last_updated: "Dernière mise à jour : 21 mars 2026",
-                zikr_terms_intro: "En utilisant Zikr, vous acceptez les présentes conditions d'utilisation.",
-                footer_rights: "Tous droits réservés."
+                title: "📋 Conditions d'Utilisation — Zikr",
+                updated: "Dernière mise à jour : 21 mars 2026",
+                intro: "En téléchargeant et utilisant l'application <strong>Zikr</strong>, vous acceptez les présentes conditions d'utilisation.",
+                h1: "1. Services fournis",
+                li1: "Horaires de prière basés sur votre localisation.",
+                li2: "Lecture du Coran (Mode Image et Mode Texte).",
+                li3: "IA Imam — assistant spirituel islamique.",
+                li4: "Compteur de Tasbih et Qibla.",
+                h3: "2. Abonnement Premium",
+                p1: "L'abonnement est géré par Apple. Le renouvellement s'effectue 24h avant la fin de la période.",
+                prices: "<strong>Mensuel :</strong> 2,99 € / mois — <strong>Annuel :</strong> 19,99 € / an",
+                h4: "3. IA Imam",
+                p2: "L'IA Imam est limitée aux questions islamiques. Les réponses ne constituent pas un avis religieux officiel.",
+                h5: "4. Propriété intellectuelle",
+                p3: "L'application Zikr et son contenu sont la propriété de Studio Mohamed.",
+                h6: "5. Contact"
             },
             en: {
-                back: "Back",
-                zikr_terms_title: "📋 Terms of Use — Zikr",
-                zikr_last_updated: "Last updated: March 21, 2026",
-                zikr_terms_intro: "By using Zikr, you agree to these terms of use.",
-                footer_rights: "All rights reserved."
+                title: "📋 Terms of Use — Zikr",
+                updated: "Last updated: March 21, 2026",
+                intro: "By downloading and using the <strong>Zikr</strong> app, you agree to these terms of use.",
+                h1: "1. Services Provided",
+                li1: "Prayer times based on your location.",
+                li2: "Quran reading (Image Mode and Text Mode).",
+                li3: "AI Imam — Islamic spiritual assistant.",
+                li4: "Tasbih counter and Qibla.",
+                h3: "2. Premium Subscription",
+                p1: "The subscription is managed by Apple. Renewal occurs 24h before the end of the period.",
+                prices: "<strong>Monthly:</strong> €2.99 / month — <strong>Yearly:</strong> €19.99 / year",
+                h4: "3. AI Imam",
+                p2: "The AI Imam is limited to Islamic questions. Its answers do not constitute an official religious ruling.",
+                h5: "4. Intellectual Property",
+                p3: "The Zikr app and its content are the property of Studio Mohamed.",
+                h6: "5. Contact"
             },
             ar: {
-                back: "عودة",
-                zikr_terms_title: "📋 شروط الاستخدام — ذكر",
-                zikr_last_updated: "آخر تحديث: 21 مارس 2026",
-                zikr_terms_intro: "باستخدام ذكر ، فإنك توافق على شروط الاستخدام هذه.",
-                footer_rights: "جميع الحقوق محفوظة."
+                title: "📋 شروط الاستخدام — ذكر",
+                updated: "آخر تحديث: 21 مارس 2026",
+                intro: "بتنزيل واستخدام تطبيق <strong>ذكر</strong>، فإنك توافق على شروط الاستخدام هذه.",
+                h1: "١. الخدمات المقدَّمة",
+                li1: "أوقات صلاة مبنية على موقعك الجغرافي.",
+                li2: "قراءة القرآن الكريم (وضع الصورة ووضع النص).",
+                li3: "الإمام الذكي — مساعد روحي إسلامي.",
+                li4: "عداد التسبيح واتجاه القبلة.",
+                h3: "٢. الاشتراك المميز",
+                p1: "يُدار الاشتراك عبر Apple، ويتم التجديد قبل 24 ساعة من نهاية الفترة.",
+                prices: "<strong>شهري:</strong> 2.99 € / شهر — <strong>سنوي:</strong> 19.99 € / سنة",
+                h4: "٣. الإمام الذكي",
+                p2: "يقتصر الإمام الذكي على الأسئلة الإسلامية، ولا تُعد إجاباته فتوى دينية رسمية.",
+                h5: "٤. الملكية الفكرية",
+                p3: "تطبيق ذكر ومحتواه ملك حصري لـ Studio Mohamed.",
+                h6: "٥. التواصل"
             }
         };
-
-        let currentLanguage = localStorage.getItem('preferredLanguage') || 'fr';
-
-        function setLanguage(lang) {
-            currentLanguage = lang;
-            localStorage.setItem('preferredLanguage', lang);
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.innerText.toLowerCase() === lang) btn.classList.add('active');
-            });
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    el.innerHTML = translations[lang][key];
-                }
-            });
-        }
-        setLanguage(currentLanguage);
     </script>
 </body>
 </html>
