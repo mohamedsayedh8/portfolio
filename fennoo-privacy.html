@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité — Fennoo</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon-premium.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=3000">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">Mohamed Sayed</a>
+            <div class="nav-controls">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+                    <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">AR</button>
+                </div>
+                <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème">
+                    <i class="icon-sun"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="top">
+        <section class="legal-page">
+            <div class="container-narrow">
+                <a href="index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> <span data-i18n="link_back">Accueil</span></a>
+
+                <h1 data-page-i18n="title">🔒 Politique de Confidentialité — Fennoo</h1>
+                <span class="last-updated" data-page-i18n="updated">Dernière mise à jour : 22 septembre 2026</span>
+                <p class="app-identity" data-page-i18n="identity">Application : <strong>Fennoo</strong> (com.fennoo.app) — Éditeur : <strong>Mohamed Sayed</strong></p>
+
+                <div class="legal-content">
+                    <p data-page-i18n="intro">Bienvenue sur <strong>Fennoo</strong>. Nous prenons la protection de vos données personnelles très au sérieux. Cette politique explique comment nous collectons, utilisons et protégeons vos informations.</p>
+
+                    <h2 data-page-i18n="h1">1. Informations collectées</h2>
+                    <ul>
+                        <li data-page-i18n="li1"><strong>Humeurs, journal, gratitude, objectifs et progression</strong> : stockés uniquement sur votre appareil. Jamais envoyés à un serveur, jamais vendus.</li>
+                        <li data-page-i18n="li2"><strong>Réponse du soir</strong> (fonction Premium, désactivée par défaut) : si activée, seule la phrase de gratitude que vous venez d'écrire est envoyée, sans identifiant, pour générer une réponse. Rien n'est conservé côté serveur.</li>
+                        <li data-page-i18n="li3"><strong>Préférences</strong> : thème, langue, ton, rappels — stockés localement sur l'appareil.</li>
+                    </ul>
+
+                    <h2 data-page-i18n="h2">2. Utilisation des données</h2>
+                    <ul>
+                        <li data-page-i18n="li4">Faire fonctionner vos routines de bien-être et votre compagnon virtuel.</li>
+                        <li data-page-i18n="li5">Personnaliser votre expérience dans l'application.</li>
+                        <li data-page-i18n="li6">Envoyer des rappels et notifications (si activé), déclenchés localement sur votre appareil.</li>
+                    </ul>
+
+                    <h2 data-page-i18n="h3">3. Données non collectées</h2>
+                    <p data-page-i18n="p3">Fennoo ne collecte <strong>jamais</strong> : votre nom complet, vos contacts, votre localisation ou vos données bancaires. Aucune publicité, aucun revendeur de données, aucun tracking publicitaire entre apps.</p>
+
+                    <h2 data-page-i18n="h4">4. Services tiers</h2>
+                    <ul>
+                        <li data-page-i18n="li11"><strong>RevenueCat</strong> : gestion de l'abonnement Premium. Reçoit un identifiant anonyme d'appareil et le produit acheté, jamais votre journal ou vos humeurs.</li>
+                        <li data-page-i18n="li12"><strong>Apple StoreKit</strong> : gestion des abonnements via l'App Store.</li>
+                        <li data-page-i18n="li13"><strong>Supabase</strong> : traite uniquement la phrase envoyée pour la Réponse du soir (voir section 1), de façon anonyme et sans conservation.</li>
+                    </ul>
+
+                    <h2 data-page-i18n="h5">5. Vos droits</h2>
+                    <p data-page-i18n="p4">Vous pouvez exporter ou supprimer toutes vos données à tout moment, directement depuis l'application (Réglages > Mes données). Pour toute autre demande :</p>
+                    <p><a href="mailto:contact@mohameds.net">contact@mohameds.net</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact" id="contact">
+            <div class="container-narrow">
+                <h2 class="section-label" data-i18n="contact_title">Contact</h2>
+                <p class="contact-desc" data-i18n="contact_subtitle">Une idée de projet ? Écrivez-moi.</p>
+                <div class="social-row">
+                    <a href="mailto:contact@mohameds.net" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/mohamed-elhawawshi-6024a92a5?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/msayyyed1?s=11" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/msayyyed?stkn=MWQyd2dsbDV5NDJnaw%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container-narrow footer-inner">
+            <p>&copy; 2026 Mohamed Sayed</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=3000"></script>
+    <script>
+        window.pageTranslations = {
+            fr: {
+                title: "🔒 Politique de Confidentialité — Fennoo",
+                updated: "Dernière mise à jour : 22 septembre 2026",
+                identity: "Application : <strong>Fennoo</strong> (com.fennoo.app) — Éditeur : <strong>Mohamed Sayed</strong>",
+                intro: "Bienvenue sur <strong>Fennoo</strong>. Nous prenons la protection de vos données personnelles très au sérieux. Cette politique explique comment nous collectons, utilisons et protégeons vos informations.",
+                h1: "1. Informations collectées",
+                li1: "<strong>Humeurs, journal, gratitude, objectifs et progression</strong> : stockés uniquement sur votre appareil. Jamais envoyés à un serveur, jamais vendus.",
+                li2: "<strong>Réponse du soir</strong> (fonction Premium, désactivée par défaut) : si activée, seule la phrase de gratitude que vous venez d'écrire est envoyée, sans identifiant, pour générer une réponse. Rien n'est conservé côté serveur.",
+                li3: "<strong>Préférences</strong> : thème, langue, ton, rappels — stockés localement sur l'appareil.",
+                h2: "2. Utilisation des données",
+                li4: "Faire fonctionner vos routines de bien-être et votre compagnon virtuel.",
+                li5: "Personnaliser votre expérience dans l'application.",
+                li6: "Envoyer des rappels et notifications (si activé), déclenchés localement sur votre appareil.",
+                h3: "3. Données non collectées",
+                p3: "Fennoo ne collecte <strong>jamais</strong> : votre nom complet, vos contacts, votre localisation ou vos données bancaires. Aucune publicité, aucun revendeur de données, aucun tracking publicitaire entre apps.",
+                h4: "4. Services tiers",
+                li11: "<strong>RevenueCat</strong> : gestion de l'abonnement Premium. Reçoit un identifiant anonyme d'appareil et le produit acheté, jamais votre journal ou vos humeurs.",
+                li12: "<strong>Apple StoreKit</strong> : gestion des abonnements via l'App Store.",
+                li13: "<strong>Supabase</strong> : traite uniquement la phrase envoyée pour la Réponse du soir (voir section 1), de façon anonyme et sans conservation.",
+                h5: "5. Vos droits",
+                p4: "Vous pouvez exporter ou supprimer toutes vos données à tout moment, directement depuis l'application (Réglages > Mes données). Pour toute autre demande :"
+            },
+            en: {
+                title: "🔒 Privacy Policy — Fennoo",
+                updated: "Last updated: September 22, 2026",
+                identity: "App: <strong>Fennoo</strong> (com.fennoo.app) — Publisher: <strong>Mohamed Sayed</strong>",
+                intro: "Welcome to <strong>Fennoo</strong>. We take the protection of your personal data very seriously. This policy explains how we collect, use and protect your information.",
+                h1: "1. Information We Collect",
+                li1: "<strong>Moods, journal, gratitude entries, goals and progress</strong>: stored only on your device. Never sent to a server, never sold.",
+                li2: "<strong>Evening reply</strong> (Premium feature, off by default): if enabled, only the gratitude sentence you just wrote is sent, without an identifier, to generate a reply. Nothing is stored on the server.",
+                li3: "<strong>Preferences</strong>: theme, language, tone, reminders — stored locally on your device.",
+                h2: "2. How We Use Your Data",
+                li4: "Run your wellness routines and virtual companion.",
+                li5: "Personalize your experience in the app.",
+                li6: "Send reminders and notifications (if enabled), triggered locally on your device.",
+                h3: "3. Data We Never Collect",
+                p3: "Fennoo <strong>never</strong> collects: your full name, your contacts, your location or your banking details. No ads, no data brokers, no cross-app ad tracking.",
+                h4: "4. Third-Party Services",
+                li11: "<strong>RevenueCat</strong>: Premium subscription management. Receives an anonymous device identifier and the product purchased, never your journal or moods.",
+                li12: "<strong>Apple StoreKit</strong>: subscription management via the App Store.",
+                li13: "<strong>Supabase</strong>: processes only the sentence sent for the Evening Reply feature (see section 1), anonymously and without retention.",
+                h5: "5. Your Rights",
+                p4: "You can export or delete all your data at any time, directly from the app (Settings > My Data). For any other request:"
+            },
+            ar: {
+                title: "🔒 سياسة الخصوصية — Fennoo",
+                updated: "آخر تحديث: 22 سبتمبر 2026",
+                identity: "التطبيق: <strong>Fennoo</strong> (com.fennoo.app) — الناشر: <strong>Mohamed Sayed</strong>",
+                intro: "مرحباً بك في <strong>Fennoo</strong>. نولي حماية بياناتك الشخصية أهمية قصوى. توضح هذه السياسة كيفية جمع معلوماتك واستخدامها وحمايتها.",
+                h1: "١. المعلومات التي نجمعها",
+                li1: "<strong>المزاج واليوميات والامتنان والأهداف والتقدم</strong>: تُخزَّن فقط على جهازك. لا تُرسل أبداً إلى خادم ولا تُباع أبداً.",
+                li2: "<strong>الرد المسائي</strong> (ميزة مميزة، معطلة افتراضيًا): إذا فُعِّلت، تُرسل فقط جملة الامتنان التي كتبتها للتو، دون معرّف، لإنشاء رد. لا يُحفظ أي شيء على الخادم.",
+                li3: "<strong>التفضيلات</strong>: المظهر واللغة والنبرة والتذكيرات — مخزّنة محلياً على جهازك.",
+                h2: "٢. كيفية استخدام بياناتك",
+                li4: "تشغيل روتينات العافية ورفيقك الافتراضي.",
+                li5: "تخصيص تجربتك داخل التطبيق.",
+                li6: "إرسال تذكيرات وإشعارات (في حال التفعيل)، تُشغَّل محلياً على جهازك.",
+                h3: "٣. بيانات لا نقوم بجمعها أبداً",
+                p3: "لا يجمع Fennoo <strong>أبداً</strong>: اسمك الكامل، جهات اتصالك، موقعك الجغرافي أو بياناتك المصرفية. لا إعلانات، لا سماسرة بيانات، لا تتبع إعلاني بين التطبيقات.",
+                h4: "٤. خدمات الأطراف الثالثة",
+                li11: "<strong>RevenueCat</strong>: إدارة الاشتراك المميز. يتلقى معرّف جهاز مجهول والمنتج المشترى، وليس يومياتك أو مزاجك أبداً.",
+                li12: "<strong>Apple StoreKit</strong>: إدارة الاشتراكات عبر App Store.",
+                li13: "<strong>Supabase</strong>: يعالج فقط الجملة المرسلة لميزة الرد المسائي (انظر القسم 1)، بشكل مجهول ودون احتفاظ.",
+                h5: "٥. حقوقك",
+                p4: "يمكنك تصدير أو حذف جميع بياناتك في أي وقت، مباشرة من التطبيق (الإعدادات > بياناتي). لأي طلب آخر:"
+            }
+        };
+    </script>
+</body>
+</html>

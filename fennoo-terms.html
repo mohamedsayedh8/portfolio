@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions d'Utilisation — Fennoo</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon-premium.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=3000">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">Mohamed Sayed</a>
+            <div class="nav-controls">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+                    <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">AR</button>
+                </div>
+                <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème">
+                    <i class="icon-sun"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="top">
+        <section class="legal-page">
+            <div class="container-narrow">
+                <a href="index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> <span data-i18n="link_back">Accueil</span></a>
+
+                <h1 data-page-i18n="title">📋 Conditions d'Utilisation — Fennoo</h1>
+                <span class="last-updated" data-page-i18n="updated">Dernière mise à jour : 22 septembre 2026</span>
+
+                <div class="legal-content">
+                    <p data-page-i18n="intro">En téléchargeant et utilisant l'application <strong>Fennoo</strong>, vous acceptez les présentes conditions d'utilisation.</p>
+
+                    <h2 data-page-i18n="h1">1. Services fournis</h2>
+                    <ul>
+                        <li data-page-i18n="li1">Un compagnon virtuel (fennec ou loutre) qui évolue avec vos routines de bien-être.</li>
+                        <li data-page-i18n="li2">Objectifs personnels, exercices guidés (respiration, pauses, étirements), humeur et journal de gratitude.</li>
+                        <li data-page-i18n="li3">Expéditions, boutique et badges pour suivre votre progression.</li>
+                        <li data-page-i18n="li4">Fennoo propose des routines de bien-être à but informatif et motivationnel. Ce n'est pas un dispositif médical, ni un outil de diagnostic, et cela ne remplace pas l'avis d'un professionnel de santé.</li>
+                    </ul>
+
+                    <h2 data-page-i18n="h3">2. Abonnement Premium</h2>
+                    <p data-page-i18n="p1">L'abonnement est géré par Apple et se renouvelle automatiquement au tarif affiché au moment de l'achat, sauf annulation au moins 24h avant la fin de la période en cours, depuis les réglages de votre compte Apple.</p>
+                    <p data-page-i18n="prices"><strong>Mensuel :</strong> 6,99 € / mois — <strong>Annuel :</strong> 39,99 € / an</p>
+
+                    <h2 data-page-i18n="h4">3. Réponse du soir</h2>
+                    <p data-page-i18n="p2">Fonction Premium optionnelle et désactivée par défaut : elle génère une courte réponse à votre phrase de gratitude. Ce n'est pas un avis médical ni thérapeutique.</p>
+
+                    <h2 data-page-i18n="h5">4. Propriété intellectuelle</h2>
+                    <p data-page-i18n="p3">L'application Fennoo et son contenu (textes, illustrations, personnages) sont la propriété de Mohamed Sayed et ne peuvent pas être copiés ou redistribués sans autorisation.</p>
+
+                    <h2 data-page-i18n="h6">5. Contact</h2>
+                    <p><a href="mailto:contact@mohameds.net">contact@mohameds.net</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact" id="contact">
+            <div class="container-narrow">
+                <h2 class="section-label" data-i18n="contact_title">Contact</h2>
+                <p class="contact-desc" data-i18n="contact_subtitle">Une idée de projet ? Écrivez-moi.</p>
+                <div class="social-row">
+                    <a href="mailto:contact@mohameds.net" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/mohamed-elhawawshi-6024a92a5?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/msayyyed1?s=11" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/msayyyed?stkn=MWQyd2dsbDV5NDJnaw%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container-narrow footer-inner">
+            <p>&copy; 2026 Mohamed Sayed</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=3000"></script>
+    <script>
+        window.pageTranslations = {
+            fr: {
+                title: "📋 Conditions d'Utilisation — Fennoo",
+                updated: "Dernière mise à jour : 22 septembre 2026",
+                intro: "En téléchargeant et utilisant l'application <strong>Fennoo</strong>, vous acceptez les présentes conditions d'utilisation.",
+                h1: "1. Services fournis",
+                li1: "Un compagnon virtuel (fennec ou loutre) qui évolue avec vos routines de bien-être.",
+                li2: "Objectifs personnels, exercices guidés (respiration, pauses, étirements), humeur et journal de gratitude.",
+                li3: "Expéditions, boutique et badges pour suivre votre progression.",
+                li4: "Fennoo propose des routines de bien-être à but informatif et motivationnel. Ce n'est pas un dispositif médical, ni un outil de diagnostic, et cela ne remplace pas l'avis d'un professionnel de santé.",
+                h3: "2. Abonnement Premium",
+                p1: "L'abonnement est géré par Apple et se renouvelle automatiquement au tarif affiché au moment de l'achat, sauf annulation au moins 24h avant la fin de la période en cours, depuis les réglages de votre compte Apple.",
+                prices: "<strong>Mensuel :</strong> 6,99 € / mois — <strong>Annuel :</strong> 39,99 € / an",
+                h4: "3. Réponse du soir",
+                p2: "Fonction Premium optionnelle et désactivée par défaut : elle génère une courte réponse à votre phrase de gratitude. Ce n'est pas un avis médical ni thérapeutique.",
+                h5: "4. Propriété intellectuelle",
+                p3: "L'application Fennoo et son contenu (textes, illustrations, personnages) sont la propriété de Mohamed Sayed et ne peuvent pas être copiés ou redistribués sans autorisation.",
+                h6: "5. Contact"
+            },
+            en: {
+                title: "📋 Terms of Use — Fennoo",
+                updated: "Last updated: September 22, 2026",
+                intro: "By downloading and using the <strong>Fennoo</strong> app, you agree to these terms of use.",
+                h1: "1. Services Provided",
+                li1: "A virtual companion (fennec or otter) that grows with your wellness routines.",
+                li2: "Personal goals, guided exercises (breathing, pauses, stretches), mood tracking and gratitude journal.",
+                li3: "Expeditions, a shop and badges to track your progress.",
+                li4: "Fennoo offers wellness routines for informational and motivational purposes. It is not a medical device or a diagnostic tool, and it does not replace the advice of a healthcare professional.",
+                h3: "2. Premium Subscription",
+                p1: "The subscription is managed by Apple and renews automatically at the price shown at purchase, unless cancelled at least 24h before the end of the current period, from your Apple account settings.",
+                prices: "<strong>Monthly:</strong> €6.99 / month — <strong>Yearly:</strong> €39.99 / year",
+                h4: "3. Evening Reply",
+                p2: "An optional Premium feature, off by default: it generates a short reply to your gratitude sentence. It is not medical or therapeutic advice.",
+                h5: "4. Intellectual Property",
+                p3: "The Fennoo app and its content (text, illustrations, characters) are the property of Mohamed Sayed and may not be copied or redistributed without permission.",
+                h6: "5. Contact"
+            },
+            ar: {
+                title: "📋 شروط الاستخدام — Fennoo",
+                updated: "آخر تحديث: 22 سبتمبر 2026",
+                intro: "بتنزيل واستخدام تطبيق <strong>Fennoo</strong>، فإنك توافق على شروط الاستخدام هذه.",
+                h1: "١. الخدمات المقدَّمة",
+                li1: "رفيق افتراضي (ثعلب فنك أو قندس الماء) ينمو مع روتيناتك الصحية.",
+                li2: "أهداف شخصية، تمارين موجهة (تنفس، استراحات، تمدد)، تتبع المزاج ويوميات الامتنان.",
+                li3: "رحلات استكشافية ومتجر وأوسمة لتتبع تقدمك.",
+                li4: "يقدم Fennoo روتينات صحية لأغراض إعلامية وتحفيزية. إنه ليس جهازًا طبيًا أو أداة تشخيص، ولا يغني عن استشارة أخصائي رعاية صحية.",
+                h3: "٢. الاشتراك المميز",
+                p1: "يُدار الاشتراك عبر Apple ويتجدد تلقائيًا بالسعر المعروض عند الشراء، ما لم يُلغَ قبل 24 ساعة على الأقل من نهاية الفترة الحالية، من إعدادات حساب Apple الخاص بك.",
+                prices: "<strong>شهري:</strong> 6.99 € / شهر — <strong>سنوي:</strong> 39.99 € / سنة",
+                h4: "٣. الرد المسائي",
+                p2: "ميزة مميزة اختيارية ومعطلة افتراضيًا: تولّد ردًا قصيرًا على جملة الامتنان الخاصة بك. إنها ليست نصيحة طبية أو علاجية.",
+                h5: "٤. الملكية الفكرية",
+                p3: "تطبيق Fennoo ومحتواه (النصوص والرسوم والشخصيات) ملك لـ Mohamed Sayed ولا يجوز نسخه أو إعادة توزيعه دون إذن.",
+                h6: "٥. التواصل"
+            }
+        };
+    </script>
+</body>
+</html>
