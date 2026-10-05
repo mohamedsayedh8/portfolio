@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Zikr — أذكار · قرآن · مواقيت الصلاة</title>
+    <meta name="description" content="حمّل تطبيق Zikr: أذكار الصباح والمساء مع العدّاد، القرآن الكريم، مواقيت الصلاة والأذان. Download Zikr.">
+    <meta name="theme-color" content="#052a1b">
+    <meta property="og:title" content="Zikr — أذكار · قرآن · مواقيت الصلاة">
+    <meta property="og:description" content="حمّل التطبيق — App Store & Google Play">
+    <meta property="og:image" content="https://mohameds.net/assets/images/zikr-og.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="../assets/images/zikr-appicon.png">
+    <link rel="apple-touch-icon" href="../assets/images/zikr-appicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Tajawal:wght@500;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-top: #031a10;
+            --bg-bot: #0a4a2f;
+            --gold: #e7c46a;
+            --text: #ffffff;
+            --soft: #cfe0d6;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        html, body { min-height: 100%; }
+        body {
+            font-family: 'Tajawal', 'Inter', system-ui, -apple-system, sans-serif;
+            color: var(--text);
+            background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bot) 100%) fixed;
+            background-color: var(--bg-top);
+            overflow-x: hidden;
+        }
+        body::before { /* faint gold glow behind the phones */
+            content: ""; position: fixed; inset: 0; pointer-events: none;
+            background: radial-gradient(520px 520px at 50% 52%, rgba(120,190,120,.22), transparent 70%);
+        }
+        .lang {
+            position: absolute; top: max(14px, env(safe-area-inset-top)); inset-inline-end: 16px;
+            display: flex; gap: 6px; z-index: 2;
+        }
+        .lang button {
+            font: 700 12px 'Inter', sans-serif; letter-spacing: .04em; color: var(--soft);
+            background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
+            border-radius: 999px; padding: 6px 11px; cursor: pointer;
+        }
+        .lang button.on { color: #0a2a1b; background: var(--gold); border-color: var(--gold); }
+        main {
+            position: relative; z-index: 1; min-height: 100svh;
+            max-width: 480px; margin: 0 auto;
+            padding: max(58px, calc(env(safe-area-inset-top) + 44px)) 22px max(28px, env(safe-area-inset-bottom));
+            display: flex; flex-direction: column; align-items: center; text-align: center;
+        }
+        .brand { display: flex; align-items: center; gap: 12px; }
+        .brand img { width: 56px; height: 56px; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,.35); }
+        .brand span { font: 800 30px 'Inter', sans-serif; letter-spacing: -.02em; }
+        h1 { margin-top: 18px; font-size: clamp(26px, 7.4vw, 34px); font-weight: 800; line-height: 1.35; }
+        h1 em { font-style: normal; color: var(--gold); }
+        .sub { margin-top: 8px; color: var(--soft); font-size: 16px; font-weight: 500; }
+        .hero { margin: 18px 0 8px; width: min(100%, 360px); flex: 1 1 auto; display: flex; align-items: center; }
+        .hero img { width: 100%; height: auto; display: block; filter: drop-shadow(0 22px 30px rgba(0,0,0,.35)); }
+        .stores { width: 100%; display: grid; gap: 12px; margin-top: 10px; }
+        .store {
+            display: flex; align-items: center; justify-content: center; gap: 14px;
+            padding: 15px 18px; border-radius: 16px; text-decoration: none;
+            font-family: 'Inter', sans-serif; direction: ltr;
+            transition: transform .12s ease;
+        }
+        .store:active { transform: scale(.98); }
+        .store i { font-size: 30px; }
+        .store small { display: block; font-size: 11px; font-weight: 500; opacity: .75; text-align: left; line-height: 1.2; }
+        .store b { display: block; font-size: 21px; font-weight: 700; line-height: 1.15; text-align: left; letter-spacing: -.01em; }
+        .store.ios { background: #fff; color: #0b0b0b; }
+        .store.android { background: var(--gold); color: #0a2a1b; }
+        .note { margin-top: 16px; color: rgba(207,224,214,.7); font-size: 13px; }
+        @media (max-height: 700px) { .hero { display: none; } }
+    </style>
+</head>
+<body>
+    <div class="lang" dir="ltr">
+        <button data-l="ar" class="on">AR</button><button data-l="fr">FR</button><button data-l="en">EN</button>
+    </div>
+    <main>
+        <div class="brand"><img src="../assets/images/zikr-appicon.png" alt="Zikr"><span>Zikr</span></div>
+        <h1 data-k="h1"></h1>
+        <p class="sub" data-k="sub"></p>
+        <div class="hero"><img src="../assets/images/zikr-go-hero.webp" alt="Zikr" width="843" height="900"></div>
+        <div class="stores">
+            <a class="store ios" id="ios" href="https://apps.apple.com/fr/app/zikr/id6759991511" rel="noopener">
+                <i class="fab fa-apple"></i><span><small data-k="dl_on">Download on the</small><b>App Store</b></span>
+            </a>
+            <a class="store android" id="android" href="https://play.google.com/store/apps/details?id=com.mohamed.zikr" rel="noopener">
+                <i class="fab fa-google-play"></i><span><small data-k="get_on">GET IT ON</small><b>Google Play</b></span>
+            </a>
+        </div>
+        <p class="note" data-k="note"></p>
+    </main>
+    <script>
+        var T = {
+            ar: { dir: 'rtl', h1: 'أذكارك وقرآنك <em>ومواقيت صلاتك</em><br>في تطبيق واحد', sub: 'أذكار · قرآن · صلاة', note: 'اختر متجرك وابدأ الآن', dl_on: 'Download on the', get_on: 'GET IT ON' },
+            fr: { dir: 'ltr', h1: 'Tes adhkar, ton Coran <em>et tes horaires de prière</em><br>dans une seule app', sub: 'Adhkar · Coran · Prière', note: 'Choisis ton store et c\'est parti', dl_on: 'Download on the', get_on: 'GET IT ON' },
+            en: { dir: 'ltr', h1: 'Your adhkar, Quran <em>and prayer times</em><br>in one app', sub: 'Adhkar · Quran · Prayer', note: 'Pick your store and start now', dl_on: 'Download on the', get_on: 'GET IT ON' }
+        };
+        function setLang(l) {
+            var t = T[l] || T.ar;
+            document.documentElement.lang = l; document.documentElement.dir = t.dir;
+            document.querySelectorAll('[data-k]').forEach(function (el) { el.innerHTML = t[el.getAttribute('data-k')]; });
+            document.querySelectorAll('.lang button').forEach(function (b) { b.classList.toggle('on', b.dataset.l === l); });
+            try { localStorage.setItem('zikr_go_lang', l); } catch (e) {}
+        }
+        document.querySelectorAll('.lang button').forEach(function (b) { b.onclick = function () { setLang(b.dataset.l); }; });
+        var saved = null; try { saved = localStorage.getItem('zikr_go_lang'); } catch (e) {}
+        var nav = (navigator.language || 'ar').slice(0, 2).toLowerCase();
+        setLang(saved || (T[nav] ? nav : 'ar'));
+    </script>
+</body>
+</html>
