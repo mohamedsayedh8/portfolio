@@ -2,9 +2,10 @@
 const translations = {
     fr: {
         nav_projects: 'Projets', nav_about: 'À propos', nav_contact: 'Contact',
+        intro_caption: 'Créativité en mouvement',
         hero_eyebrow: 'Développeur mobile',
         hero_title: 'Je conçois des applications simples et utiles.',
-        hero_desc: 'Créateur de Zikr, Kinto et Fennoo. Je m\'occupe seul du design, du code et du lancement.',
+        hero_desc: 'Je crée des applications mobiles pensées avec soin, de la première idée à leur lancement.',
         hero_cta_apps: 'Voir mes projets',
         portfolio_title: 'Projets',
         link_appstore: 'App Store',
@@ -18,9 +19,10 @@ const translations = {
     },
     en: {
         nav_projects: 'Projects', nav_about: 'About', nav_contact: 'Contact',
+        intro_caption: 'Creativity in motion',
         hero_eyebrow: 'Mobile developer',
         hero_title: 'I build simple, useful apps.',
-        hero_desc: 'Creator of Zikr, Kinto and Fennoo. I handle design, development and launch on my own.',
+        hero_desc: 'I create thoughtful mobile apps, from the first idea to launch.',
         hero_cta_apps: 'View my projects',
         portfolio_title: 'Projects',
         link_appstore: 'App Store',
@@ -34,9 +36,10 @@ const translations = {
     },
     ar: {
         nav_projects: 'المشاريع', nav_about: 'عني', nav_contact: 'تواصل',
+        intro_caption: 'إبداع يتحرك',
         hero_eyebrow: 'مطوّر تطبيقات موبايل',
         hero_title: 'أصمم تطبيقات بسيطة ومفيدة.',
-        hero_desc: 'مطور تطبيقات Zikr وKinto وFennoo. أتولى بنفسي التصميم والبرمجة والإطلاق.',
+        hero_desc: 'أصمم تطبيقات موبايل بعناية، من الفكرة الأولى حتى الإطلاق.',
         hero_cta_apps: 'مشاهدة مشاريعي',
         portfolio_title: 'المشاريع',
         link_appstore: 'App Store',
@@ -88,29 +91,17 @@ const appsData = {
             ar: 'يبسّط Kinto إدارة ميزانيتك: امسح فواتيرك، وتتبّع مصاريفك حسب الفئة، واحصل على رؤية واضحة لدخلك ومدخراتك، كل ذلك من واجهة بسيطة.'
         }
     },
-    fennoo: {
-        icon: 'assets/images/fennoo-icon.png',
-        screenshot: 'assets/images/fennoo_screen_1.png',
-        appStore: null,
-        googlePlay: null,
-        privacy: 'fennoo-privacy.html',
-        terms: 'fennoo-terms.html',
-        tagline: {
-            fr: 'Un compagnon pour vos petites routines de bien-être.',
-            en: 'A companion for your little wellness routines.',
-            ar: 'رفيق لعاداتك الصحية الصغيرة.'
-        },
-        description: {
-            fr: 'Fennoo transforme le bien-être quotidien en un jeu doux : prenez soin d\'un compagnon virtuel (fennec ou loutre) en respirant, en notant votre humeur, en tenant un journal de gratitude et en accomplissant de petits objectifs. Tout reste sur votre appareil.',
-            en: 'Fennoo turns daily wellness into a gentle game: take care of a virtual companion (fennec or otter) by breathing, tracking your mood, keeping a gratitude journal and completing small goals. Everything stays on your device.',
-            ar: 'يحوّل Fennoo العناية اليومية بالنفس إلى لعبة لطيفة: اعتنِ برفيق افتراضي (ثعلب فنك أو قندس الماء) عبر التنفس وتسجيل مزاجك وكتابة يوميات الامتنان وإنجاز أهداف صغيرة. كل شيء يبقى على جهازك.'
-        }
-    }
 };
 
-let currentLang = 'fr';
+function detectBrowserLanguage() {
+    const preferences = navigator.languages?.length ? navigator.languages : [navigator.language || 'fr'];
+    return preferences.map(value => value.toLowerCase().split('-')[0]).find(value => translations[value]) || 'fr';
+}
 
-window.setLanguage = function(lang) {
+let currentLang = detectBrowserLanguage();
+
+window.setLanguage = function(lang, remember = true) {
+    if (!translations[lang]) lang = 'fr';
     currentLang = lang;
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
@@ -139,7 +130,9 @@ window.setLanguage = function(lang) {
         });
     }
 
-    try { localStorage.setItem('lang', lang); } catch (e) {}
+    if (remember) {
+        try { localStorage.setItem('lang-manual', lang); } catch (e) {}
+    }
 };
 
 window.toggleTheme = function() {
@@ -208,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let savedLang = null;
     try {
         savedTheme = localStorage.getItem('theme');
-        savedLang = localStorage.getItem('lang');
+        savedLang = localStorage.getItem('lang-manual');
     } catch (e) {}
 
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -218,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderAppCards();
     renderAppDetail();
-    setLanguage(savedLang || 'fr');
+    setLanguage(savedLang || detectBrowserLanguage(), false);
 
     // Reveal content as it enters the viewport, with a graceful fallback.
     document.documentElement.classList.add('motion-ready');
@@ -237,4 +230,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.14, rootMargin: '0px 0px -36px 0px' });
 
     revealItems.forEach(item => revealObserver.observe(item));
+
+    const intro = document.getElementById('brand-intro');
+    if (intro && document.documentElement.classList.contains('intro-active')) {
+        setTimeout(() => {
+            intro.classList.add('is-finished');
+            document.documentElement.classList.remove('intro-active');
+            setTimeout(() => intro.remove(), 900);
+        }, 2050);
+    } else if (intro) {
+        intro.remove();
+    }
 });

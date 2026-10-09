@@ -3,6 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (() => {
+            const supported = ['fr', 'en', 'ar'];
+            let lang = '';
+            try { lang = localStorage.getItem('lang-manual') || ''; } catch (e) {}
+            if (!supported.includes(lang)) {
+                const preferences = navigator.languages?.length ? navigator.languages : [navigator.language || 'fr'];
+                lang = preferences.map(value => value.toLowerCase().split('-')[0]).find(value => supported.includes(value)) || 'fr';
+            }
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('intro-active');
+        })();
+    </script>
     <title>Mohamed Sayed — Développeur</title>
     <meta name="description" content="Mohamed Sayed, développeur indépendant. Je crée des applications mobiles utiles, soignées et accessibles.">
     <link rel="canonical" href="https://mohamedelhawawshi.com/">
@@ -14,9 +28,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=4100">
+    <link rel="stylesheet" href="style.css?v=4200">
 </head>
 <body>
+
+    <div class="brand-intro" id="brand-intro" aria-hidden="true">
+        <div class="brand-intro-mark">
+            <svg viewBox="0 0 100 100" role="presentation">
+                <path class="mark-orbit" d="M50 6a44 44 0 1 1-31.1 12.9"></path>
+                <path class="mark-letter" d="M25 70V31l25 25 25-25v39"></path>
+                <path class="mark-spark" d="M79 18v10M74 23h10"></path>
+            </svg>
+        </div>
+        <span class="brand-intro-name">Mohamed Sayed<span>.</span></span>
+        <span class="brand-intro-caption" data-i18n="intro_caption">Créativité en mouvement</span>
+    </div>
 
     <nav id="navbar">
         <div class="container nav-inner">
@@ -90,6 +116,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=4100"></script>
+    <script src="script.js?v=4200"></script>
 </body>
 </html>
