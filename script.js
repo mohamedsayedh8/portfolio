@@ -1,10 +1,10 @@
 // --- UI Translations ---
 const translations = {
     fr: {
-        nav_about: 'Moi', nav_contact: 'Contact',
+        nav_projects: 'Projets', nav_about: 'À propos', nav_contact: 'Contact',
         hero_eyebrow: 'Développeur mobile',
         hero_title: 'Je conçois des applications simples et utiles.',
-        hero_desc: 'Créateur de Zikr et Kinto. Je m\'occupe seul du design, du code et du lancement.',
+        hero_desc: 'Créateur de Zikr, Kinto et Fennoo. Je m\'occupe seul du design, du code et du lancement.',
         hero_cta_apps: 'Voir mes projets',
         portfolio_title: 'Projets',
         link_appstore: 'App Store',
@@ -17,10 +17,10 @@ const translations = {
         contact_subtitle: 'Une idée de projet ? Écrivez-moi.'
     },
     en: {
-        nav_about: 'About', nav_contact: 'Contact',
+        nav_projects: 'Projects', nav_about: 'About', nav_contact: 'Contact',
         hero_eyebrow: 'Mobile developer',
         hero_title: 'I build simple, useful apps.',
-        hero_desc: 'Creator of Zikr and Kinto. I handle design, development and launch on my own.',
+        hero_desc: 'Creator of Zikr, Kinto and Fennoo. I handle design, development and launch on my own.',
         hero_cta_apps: 'View my projects',
         portfolio_title: 'Projects',
         link_appstore: 'App Store',
@@ -33,10 +33,10 @@ const translations = {
         contact_subtitle: 'Have a project in mind? Get in touch.'
     },
     ar: {
-        nav_about: 'عني', nav_contact: 'تواصل',
+        nav_projects: 'المشاريع', nav_about: 'عني', nav_contact: 'تواصل',
         hero_eyebrow: 'مطوّر تطبيقات موبايل',
         hero_title: 'أصمم تطبيقات بسيطة ومفيدة.',
-        hero_desc: 'مطور تطبيقات Zikr وKinto. أتولى بنفسي التصميم والبرمجة والإطلاق.',
+        hero_desc: 'مطور تطبيقات Zikr وKinto وFennoo. أتولى بنفسي التصميم والبرمجة والإطلاق.',
         hero_cta_apps: 'مشاهدة مشاريعي',
         portfolio_title: 'المشاريع',
         link_appstore: 'App Store',
@@ -86,6 +86,24 @@ const appsData = {
             fr: 'Kinto simplifie la gestion de votre budget : scannez vos reçus, suivez vos dépenses par catégorie et gardez une vue claire sur vos revenus et vos économies, le tout depuis une interface épurée.',
             en: 'Kinto makes budgeting simple: scan your receipts, track spending by category and keep a clear view of your income and savings, all from a clean interface.',
             ar: 'يبسّط Kinto إدارة ميزانيتك: امسح فواتيرك، وتتبّع مصاريفك حسب الفئة، واحصل على رؤية واضحة لدخلك ومدخراتك، كل ذلك من واجهة بسيطة.'
+        }
+    },
+    fennoo: {
+        icon: 'assets/images/fennoo-icon.png',
+        screenshot: 'assets/images/fennoo_screen_1.png',
+        appStore: null,
+        googlePlay: null,
+        privacy: 'fennoo-privacy.html',
+        terms: 'fennoo-terms.html',
+        tagline: {
+            fr: 'Un compagnon pour vos petites routines de bien-être.',
+            en: 'A companion for your little wellness routines.',
+            ar: 'رفيق لعاداتك الصحية الصغيرة.'
+        },
+        description: {
+            fr: 'Fennoo transforme le bien-être quotidien en un jeu doux : prenez soin d\'un compagnon virtuel (fennec ou loutre) en respirant, en notant votre humeur, en tenant un journal de gratitude et en accomplissant de petits objectifs. Tout reste sur votre appareil.',
+            en: 'Fennoo turns daily wellness into a gentle game: take care of a virtual companion (fennec or otter) by breathing, tracking your mood, keeping a gratitude journal and completing small goals. Everything stays on your device.',
+            ar: 'يحوّل Fennoo العناية اليومية بالنفس إلى لعبة لطيفة: اعتنِ برفيق افتراضي (ثعلب فنك أو قندس الماء) عبر التنفس وتسجيل مزاجك وكتابة يوميات الامتنان وإنجاز أهداف صغيرة. كل شيء يبقى على جهازك.'
         }
     }
 };
@@ -138,7 +156,7 @@ function renderAppCards() {
     grid.innerHTML = Object.keys(appsData).map(id => {
         const app = appsData[id];
         return `
-            <a class="app-card" href="${id}.html">
+            <a class="app-card" href="${id}.html" data-reveal style="--reveal-delay: ${Object.keys(appsData).indexOf(id) * 110}ms">
                 <div class="iphone-mockup">
                     <div class="screen"><img src="${app.screenshot}" alt="${id}"></div>
                 </div>
@@ -201,4 +219,22 @@ document.addEventListener('DOMContentLoaded', () => {
     renderAppCards();
     renderAppDetail();
     setLanguage(savedLang || 'fr');
+
+    // Reveal content as it enters the viewport, with a graceful fallback.
+    document.documentElement.classList.add('motion-ready');
+    const revealItems = document.querySelectorAll('[data-reveal]');
+    if (!('IntersectionObserver' in window)) {
+        revealItems.forEach(item => item.classList.add('is-visible'));
+        return;
+    }
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.14, rootMargin: '0px 0px -36px 0px' });
+
+    revealItems.forEach(item => revealObserver.observe(item));
 });

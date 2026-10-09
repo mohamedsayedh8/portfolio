@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Sayed — Développeur</title>
-    <meta name="description" content="Mohamed Sayed, développeur mobile. Créateur de Zikr et Kinto.">
+    <meta name="description" content="Mohamed Sayed, développeur indépendant. Je crée des applications mobiles utiles, soignées et accessibles.">
+    <link rel="canonical" href="https://mohamedelhawawshi.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mohamedelhawawshi.com/">
+    <meta property="og:title" content="Mohamed Sayed — Développeur indépendant">
+    <meta property="og:description" content="Applications mobiles pensées avec soin, de la première idée à la mise en ligne.">
     <link rel="icon" type="image/png" href="assets/images/favicon-premium.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=3000">
+    <link rel="stylesheet" href="style.css?v=4100">
 </head>
 <body>
 
     <nav id="navbar">
         <div class="container nav-inner">
-            <a href="#top" class="logo">Mohamed Sayed</a>
+            <a href="#top" class="logo">Mohamed Sayed<span class="logo-dot">.</span></a>
+            <div class="nav-links" aria-label="Navigation principale">
+                <a href="#projects" data-i18n="nav_projects">Projets</a>
+                <a href="#about" data-i18n="nav_about">À propos</a>
+                <a href="#contact" data-i18n="nav_contact">Contact</a>
+            </div>
             <div class="nav-controls">
                 <div class="lang-switcher">
                     <button class="lang-btn active" data-lang="fr" onclick="setLanguage('fr')">FR</button>
@@ -33,10 +43,10 @@
         <!-- Hero -->
         <section class="hero">
             <div class="container">
-                <p class="eyebrow" data-i18n="hero_eyebrow">Développeur mobile</p>
-                <h1 data-i18n="hero_title">Je conçois des applications simples et utiles.</h1>
-                <p class="hero-desc" data-i18n="hero_desc">Créateur de Zikr et Kinto. Je m'occupe seul du design, du code et du lancement.</p>
-                <div class="hero-actions">
+                <p class="eyebrow" data-reveal style="--reveal-delay: 80ms" data-i18n="hero_eyebrow">Développeur mobile</p>
+                <h1 data-reveal style="--reveal-delay: 160ms" data-i18n="hero_title">Je conçois des applications simples et utiles.</h1>
+                <p class="hero-desc" data-reveal style="--reveal-delay: 240ms" data-i18n="hero_desc">Créateur de Zikr et Kinto. Je m'occupe seul du design, du code et du lancement.</p>
+                <div class="hero-actions" data-reveal style="--reveal-delay: 320ms">
                     <a href="#projects" class="btn btn-primary" data-i18n="hero_cta_apps">Voir mes projets</a>
                     <a href="#contact" class="btn btn-ghost" data-i18n="nav_contact">Me contacter</a>
                 </div>
@@ -46,7 +56,7 @@
         <!-- Projects -->
         <section class="projects" id="projects">
             <div class="container">
-                <h2 class="section-label" data-i18n="portfolio_title">Projets</h2>
+                <h2 class="section-label" data-reveal data-i18n="portfolio_title">Projets</h2>
                 <div class="apps-grid" id="apps-grid"></div>
             </div>
         </section>
@@ -54,18 +64,18 @@
         <!-- About -->
         <section class="about" id="about">
             <div class="container-narrow">
-                <h2 class="section-label" data-i18n="nav_about">À propos</h2>
-                <p class="about-text" data-i18n="about_p1">Je suis Mohamed Sayed, développeur indépendant. Je conçois et développe des applications mobiles de bout en bout, du design à la mise en ligne.</p>
+                <h2 class="section-label" data-reveal data-i18n="nav_about">À propos</h2>
+                <p class="about-text" data-reveal style="--reveal-delay: 120ms" data-i18n="about_p1">Je suis Mohamed Sayed, développeur indépendant. Je conçois et développe des applications mobiles de bout en bout, du design à la mise en ligne.</p>
             </div>
         </section>
 
         <!-- Contact -->
         <section class="contact" id="contact">
             <div class="container-narrow">
-                <h2 class="section-label" data-i18n="contact_title">Contact</h2>
-                <p class="contact-desc" data-i18n="contact_subtitle">Une idée de projet ? Écrivez-moi.</p>
-                <div class="social-row">
-                    <a href="mailto:contact@mohameds.net" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <h2 class="section-label" data-reveal data-i18n="contact_title">Contact</h2>
+                <p class="contact-desc" data-reveal style="--reveal-delay: 120ms" data-i18n="contact_subtitle">Une idée de projet ? Écrivez-moi.</p>
+                <div class="social-row" data-reveal style="--reveal-delay: 220ms">
+                    <a href="mailto:contact@mohamedelhawawshi.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     <a href="https://www.linkedin.com/in/mohamed-elhawawshi-6024a92a5?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://x.com/msayyyed1?s=11" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
                     <a href="https://www.instagram.com/msayyyed?stkn=MWQyd2dsbDV5NDJnaw%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -80,6 +90,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=3000"></script>
+    <script src="script.js?v=4100"></script>
 </body>
 </html>

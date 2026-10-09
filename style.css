@@ -1,5 +1,5 @@
 /*
-  Mohameds.net — Minimal Design System
+  Mohamed Elhawawshi — Portfolio Design System
 */
 
 :root {
@@ -582,4 +582,119 @@ html[dir="rtl"] .back-link i {
   .legal-row {
     justify-content: center;
   }
+}
+
+
+/* Motion and polish */
+:root {
+  --accent-soft: color-mix(in srgb, var(--accent) 12%, transparent);
+  --shadow-card: 0 24px 70px -42px rgba(15, 157, 100, 0.42);
+}
+
+#navbar {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.8rem, 2.2vw, 1.6rem);
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover, .nav-links a:focus-visible { color: var(--accent); }
+.logo-dot { color: var(--accent); }
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: min(76svh, 740px);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: min(66vw, 760px);
+  aspect-ratio: 1;
+  right: -22%;
+  top: -26%;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-soft) 0%, color-mix(in srgb, var(--accent-soft) 45%, transparent) 42%, transparent 70%);
+  animation: hero-drift 12s ease-in-out infinite alternate;
+}
+
+.hero h1 { font-size: clamp(2.6rem, 7vw, 4.7rem); max-width: 13ch; }
+.hero-desc { font-size: clamp(1rem, 1.6vw, 1.15rem); }
+
+.btn-primary { box-shadow: 0 8px 24px -14px var(--accent); }
+.btn-primary:hover { opacity: 1; transform: translateY(-2px); box-shadow: 0 12px 28px -12px var(--accent); }
+.btn-ghost:hover { transform: translateY(-2px); }
+
+.app-card {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 0 transparent;
+  transition: transform 0.45s cubic-bezier(.2,.75,.25,1), border-color 0.3s ease, box-shadow 0.4s ease, background-color 0.3s ease;
+}
+.app-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle at 50% 0%, var(--accent-soft), transparent 54%);
+  transition: opacity 0.4s ease;
+}
+.app-card:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card);
+}
+.app-card:hover::before { opacity: 1; }
+.app-card > * { position: relative; }
+.app-card .iphone-mockup { transition: transform 0.55s cubic-bezier(.2,.75,.25,1); }
+.app-card:hover .iphone-mockup { transform: translateY(-5px) rotate(-2deg) scale(1.025); }
+.app-card:nth-child(even):hover .iphone-mockup { transform: translateY(-5px) rotate(2deg) scale(1.025); }
+
+.social-row a:hover { transform: translateY(-4px) scale(1.06); box-shadow: 0 8px 22px -14px var(--accent); }
+:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 70%, white); outline-offset: 4px; }
+
+.motion-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.72s cubic-bezier(.2,.7,.2,1), transform 0.72s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.motion-ready [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+
+@keyframes hero-drift {
+  from { transform: translate3d(-3%, 1%, 0) scale(0.94); }
+  to { transform: translate3d(3%, -2%, 0) scale(1.06); }
+}
+
+@media (max-width: 680px) {
+  .nav-inner { flex-wrap: wrap; gap: 0.65rem; }
+  .nav-links { order: 3; width: 100%; justify-content: center; margin: 0; padding-top: 0.35rem; }
+  .nav-controls { margin-left: auto; gap: 0.8rem; }
+  .hero { min-height: 66svh; padding-top: 4rem; }
+  .hero::before { width: 110vw; right: -52%; top: -10%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  .motion-ready [data-reveal] { opacity: 1; transform: none; }
 }
