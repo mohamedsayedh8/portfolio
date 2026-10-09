@@ -3,6 +3,7 @@ const translations = {
     fr: {
         nav_projects: 'Projets', nav_about: 'À propos', nav_contact: 'Contact',
         intro_caption: 'Créativité en mouvement',
+        visual_caption: 'Design · Code · Idées',
         hero_eyebrow: 'Développeur mobile',
         hero_title: 'Je conçois des applications simples et utiles.',
         hero_desc: 'Je crée des applications mobiles pensées avec soin, de la première idée à leur lancement.',
@@ -20,6 +21,7 @@ const translations = {
     en: {
         nav_projects: 'Projects', nav_about: 'About', nav_contact: 'Contact',
         intro_caption: 'Creativity in motion',
+        visual_caption: 'Design · Code · Ideas',
         hero_eyebrow: 'Mobile developer',
         hero_title: 'I build simple, useful apps.',
         hero_desc: 'I create thoughtful mobile apps, from the first idea to launch.',
@@ -37,6 +39,7 @@ const translations = {
     ar: {
         nav_projects: 'المشاريع', nav_about: 'عني', nav_contact: 'تواصل',
         intro_caption: 'إبداع يتحرك',
+        visual_caption: 'تصميم · برمجة · أفكار',
         hero_eyebrow: 'مطوّر تطبيقات موبايل',
         hero_title: 'أصمم تطبيقات بسيطة ومفيدة.',
         hero_desc: 'أصمم تطبيقات موبايل بعناية، من الفكرة الأولى حتى الإطلاق.',
@@ -149,12 +152,14 @@ function renderAppCards() {
     grid.innerHTML = Object.keys(appsData).map(id => {
         const app = appsData[id];
         return `
-            <a class="app-card" href="${id}.html" data-reveal style="--reveal-delay: ${Object.keys(appsData).indexOf(id) * 110}ms">
-                <div class="iphone-mockup">
-                    <div class="screen"><img src="${app.screenshot}" alt="${id}"></div>
+            <a class="app-card" href="${id}.html" data-reveal data-tilt style="--reveal-delay: ${Object.keys(appsData).indexOf(id) * 110}ms">
+                <div class="app-card-inner">
+                    <div class="iphone-mockup">
+                        <div class="screen"><img src="${app.screenshot}" alt="${id}"></div>
+                    </div>
+                    <h3 class="app-card-name">${id.charAt(0).toUpperCase() + id.slice(1)}</h3>
+                    <p class="app-card-tagline" data-app="${id}" data-app-field="tagline">${app.tagline[currentLang]}</p>
                 </div>
-                <h3 class="app-card-name">${id.charAt(0).toUpperCase() + id.slice(1)}</h3>
-                <p class="app-card-tagline" data-app="${id}" data-app-field="tagline">${app.tagline[currentLang]}</p>
             </a>
         `;
     }).join('');
@@ -230,6 +235,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.14, rootMargin: '0px 0px -36px 0px' });
 
     revealItems.forEach(item => revealObserver.observe(item));
+
+    // Pointer-driven perspective is enabled only for precise, non-touch pointers.
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('[data-tilt]').forEach(surface => {
+            surface.addEventListener('pointermove', event => {
+                const bounds = surface.getBoundingClientRect();
+                const x = (event.clientX - bounds.left) / bounds.width;
+                const y = (event.clientY - bounds.top) / bounds.height;
+                surface.style.setProperty('--tilt-x', `${(0.5 - y) * 9}deg`);
+                surface.style.setProperty('--tilt-y', `${(x - 0.5) * 11}deg`);
+                surface.style.setProperty('--shine-x', `${x * 100}%`);
+                surface.style.setProperty('--shine-y', `${y * 100}%`);
+                surface.classList.add('is-tilting');
+            });
+            surface.addEventListener('pointerleave', () => {
+                surface.style.removeProperty('--tilt-x');
+                surface.style.removeProperty('--tilt-y');
+                surface.style.removeProperty('--shine-x');
+                surface.style.removeProperty('--shine-y');
+                surface.classList.remove('is-tilting');
+            });
+        });
+    }
+
+    const progressBar = document.getElementById('scroll-progress');
+    if (progressBar) {
+        let progressFrame = 0;
+        const updateProgress = () => {
+            if (progressFrame) return;
+            progressFrame = requestAnimationFrame(() => {
+                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+                progressBar.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`;
+                progressFrame = 0;
+            });
+        };
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
 
     const intro = document.getElementById('brand-intro');
     if (intro && document.documentElement.classList.contains('intro-active')) {
