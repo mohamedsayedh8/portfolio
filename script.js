@@ -4,35 +4,33 @@ const translations = {
         nav_projects: 'Projets', nav_about: 'À propos', nav_contact: 'Contact',
         intro_caption: 'Créativité en mouvement',
         visual_caption: 'Design · Code · Idées',
-        hero_eyebrow: 'Développeur mobile',
-        hero_title: 'Je conçois des applications simples et utiles.',
-        hero_desc: 'Je crée des applications mobiles pensées avec soin, de la première idée à leur lancement.',
+        hero_eyebrow: 'Créateur digital indépendant',
+        hero_title: 'Je transforme des idées en produits digitaux.',
+        hero_desc: 'Applications, SaaS et sites web : je conçois des expériences utiles, soignées et prêtes à être lancées.',
         hero_cta_apps: 'Voir mes projets',
         link_appstore: 'App Store',
         link_googleplay: 'Google Play',
         link_privacy: 'Confidentialité',
         link_terms: 'Conditions',
         link_back: 'Accueil',
+        screens_kicker: 'Aperçu de l’application', screens_title: 'Pensée dans chaque détail.',
         project_category: 'Application mobile',
         project_open: 'Découvrir le projet',
         portfolio_kicker: 'Sélection · 2026',
         portfolio_title: 'Des idées transformées en produits.',
-        portfolio_intro: 'Des applications pensées pour répondre à des besoins concrets du quotidien.',
-        lab_kicker: 'Dans le laboratoire',
-        lab_title: 'Pistes et prototypes.',
-        lab_intro: 'Des concepts visuels qui explorent de nouvelles idées d’applications.',
-        concept_label: 'Concept visuel',
-        tap0_title: 'Tableau de bord commercial',
-        tap0_description: 'Une exploration autour du suivi des ventes, des commandes et des stocks.',
-        restopass_title: 'Menu de restaurant',
-        restopass_description: 'Une expérience de menu numérique et de commande pensée pour les restaurants.',
-        calelite_title: 'Réservation de séances',
-        calelite_description: 'Une piste d’interface pour consulter les créneaux et réserver une formation.',
-        whatsapp_title: 'Assistant conversationnel',
-        whatsapp_description: 'Un concept de service client guidé par une conversation sur WhatsApp.',
+        portfolio_intro: 'Deux applications conçues avec soin, de l’idée à leur mise en ligne.',
+        services_kicker: 'Ce que je crée',
+        services_title: 'Des idées aux produits du quotidien.',
+        services_intro: 'Je t’aide à choisir le bon format et à le construire de bout en bout.',
+        service_apps_title: 'Applications mobiles',
+        service_apps_text: 'Des apps iOS et Android pensées pour être rapides, intuitives et agréables à utiliser.',
+        service_saas_title: 'SaaS & outils web',
+        service_saas_text: 'Des plateformes web utiles, avec les fonctionnalités et les abonnements adaptés à ton activité.',
+        service_sites_title: 'Sites web',
+        service_sites_text: 'Des sites modernes, rapides et adaptés à tous les écrans, conçus pour présenter ton activité.',
         approach_kicker: 'Ma façon de travailler',
-        approach_title: 'De l’idée à l’application.',
-        approach_intro: 'Un processus simple, avec le design et le développement réunis au même endroit.',
+        approach_title: 'De l’idée au lancement.',
+        approach_intro: 'Un accompagnement complet, du premier échange à la mise en ligne de ton produit.',
         approach_1_title: 'Comprendre',
         approach_1_text: 'Clarifier le besoin, les utilisateurs et l’essentiel à construire.',
         approach_2_title: 'Concevoir',
@@ -41,7 +39,7 @@ const translations = {
         approach_3_text: 'Développer, peaufiner et préparer le produit pour sa mise en ligne.',
         about_title: 'Indépendant par choix. Attentif à chaque détail.',
         about_cta: 'Parlons de ton idée',
-        about_p1: 'Je suis Mohamed Sayed, développeur indépendant. Je conçois et développe des applications mobiles de bout en bout, du design à la mise en ligne.',
+        about_p1: 'Je suis Mohamed Sayed, développeur indépendant. Je crée des applications mobiles, des SaaS et des sites web, du design à la mise en ligne.',
         contact_title: 'Contact',
         contact_subtitle: 'Une idée de projet ? Écrivez-moi.'
     },
@@ -49,35 +47,33 @@ const translations = {
         nav_projects: 'Projects', nav_about: 'About', nav_contact: 'Contact',
         intro_caption: 'Creativity in motion',
         visual_caption: 'Design · Code · Ideas',
-        hero_eyebrow: 'Mobile developer',
-        hero_title: 'I build simple, useful apps.',
-        hero_desc: 'I create thoughtful mobile apps, from the first idea to launch.',
+        hero_eyebrow: 'Independent digital creator',
+        hero_title: 'I turn ideas into digital products.',
+        hero_desc: 'Apps, SaaS and websites: I design thoughtful, useful experiences, ready to launch.',
         hero_cta_apps: 'View my projects',
         link_appstore: 'App Store',
         link_googleplay: 'Google Play',
         link_privacy: 'Privacy',
         link_terms: 'Terms',
         link_back: 'Home',
+        screens_kicker: 'App preview', screens_title: 'Considered in every detail.',
         project_category: 'Mobile app',
         project_open: 'Explore the project',
         portfolio_kicker: 'Selected work · 2026',
         portfolio_title: 'Ideas, shaped into products.',
-        portfolio_intro: 'Apps designed to meet real needs in everyday life.',
-        lab_kicker: 'In the lab',
-        lab_title: 'Ideas and prototypes.',
-        lab_intro: 'Visual concepts exploring new directions for mobile products.',
-        concept_label: 'Visual concept',
-        tap0_title: 'Sales dashboard',
-        tap0_description: 'An exploration of sales, order and inventory tracking.',
-        restopass_title: 'Restaurant menu',
-        restopass_description: 'A digital menu and ordering experience for restaurants.',
-        calelite_title: 'Session booking',
-        calelite_description: 'An interface concept for browsing time slots and booking a training session.',
-        whatsapp_title: 'Conversational assistant',
-        whatsapp_description: 'A customer support concept guided by a conversation on WhatsApp.',
+        portfolio_intro: 'Two thoughtfully built apps, from the first idea to launch.',
+        services_kicker: 'What I create',
+        services_title: 'Ideas made useful.',
+        services_intro: 'I help you choose the right format and build it from start to finish.',
+        service_apps_title: 'Mobile apps',
+        service_apps_text: 'iOS and Android apps designed to feel fast, intuitive and enjoyable to use.',
+        service_saas_title: 'SaaS & web tools',
+        service_saas_text: 'Useful web platforms, with features and subscriptions tailored to your business.',
+        service_sites_title: 'Websites',
+        service_sites_text: 'Modern, fast and responsive websites that present your business clearly.',
         approach_kicker: 'How I work',
-        approach_title: 'From idea to app.',
-        approach_intro: 'A clear process, bringing design and development together.',
+        approach_title: 'From idea to launch.',
+        approach_intro: 'End-to-end support, from the first conversation to your product launch.',
         approach_1_title: 'Understand',
         approach_1_text: 'Clarify the need, the people using it and what matters most.',
         approach_2_title: 'Design',
@@ -86,7 +82,7 @@ const translations = {
         approach_3_text: 'Develop, refine and prepare the product for release.',
         about_title: 'Independent by choice. Careful with every detail.',
         about_cta: 'Let’s talk about your idea',
-        about_p1: 'I\'m Mohamed Sayed, an independent developer. I design and build mobile apps end to end, from design to launch.',
+        about_p1: 'I\'m Mohamed Sayed, an independent developer. I build mobile apps, SaaS products and websites, from design to launch.',
         contact_title: 'Contact',
         contact_subtitle: 'Have a project in mind? Get in touch.'
     },
@@ -94,35 +90,33 @@ const translations = {
         nav_projects: 'المشاريع', nav_about: 'عني', nav_contact: 'تواصل',
         intro_caption: 'إبداع يتحرك',
         visual_caption: 'تصميم · برمجة · أفكار',
-        hero_eyebrow: 'مطوّر تطبيقات موبايل',
-        hero_title: 'أصمم تطبيقات بسيطة ومفيدة.',
-        hero_desc: 'أصمم تطبيقات موبايل بعناية، من الفكرة الأولى حتى الإطلاق.',
+        hero_eyebrow: 'مطور رقمي مستقل',
+        hero_title: 'أحوّل الأفكار إلى منتجات رقمية.',
+        hero_desc: 'تطبيقات ومنصات SaaS ومواقع ويب: أصمم تجارب مفيدة ومتقنة وجاهزة للإطلاق.',
         hero_cta_apps: 'مشاهدة مشاريعي',
         link_appstore: 'App Store',
         link_googleplay: 'Google Play',
         link_privacy: 'سياسة الخصوصية',
         link_terms: 'الشروط',
         link_back: 'الرئيسية',
+        screens_kicker: 'نظرة على التطبيق', screens_title: 'عناية في كل تفصيل.',
         project_category: 'تطبيق للهواتف',
         project_open: 'اكتشف المشروع',
         portfolio_kicker: 'مشاريع مختارة · 2026',
         portfolio_title: 'أفكار تتحول إلى منتجات.',
-        portfolio_intro: 'تطبيقات مصممة لتلبية احتياجات حقيقية في الحياة اليومية.',
-        lab_kicker: 'في المختبر',
-        lab_title: 'أفكار ونماذج أولية.',
-        lab_intro: 'مفاهيم بصرية تستكشف اتجاهات جديدة لتطبيقات الهاتف.',
-        concept_label: 'مفهوم بصري',
-        tap0_title: 'لوحة متابعة المبيعات',
-        tap0_description: 'استكشاف لمتابعة المبيعات والطلبات والمخزون.',
-        restopass_title: 'قائمة مطعم',
-        restopass_description: 'تجربة قائمة رقمية وطلب الطعام للمطاعم.',
-        calelite_title: 'حجز الجلسات',
-        calelite_description: 'تصميم أولي لاستعراض المواعيد وحجز جلسة تدريب.',
-        whatsapp_title: 'مساعد محادثة',
-        whatsapp_description: 'فكرة لخدمة العملاء عبر محادثة على واتساب.',
+        portfolio_intro: 'تطبيقان صُمّما بعناية من الفكرة إلى الإطلاق.',
+        services_kicker: 'ما الذي أصممه',
+        services_title: 'أحوّل الأفكار إلى منتجات مفيدة.',
+        services_intro: 'أساعدك في اختيار الشكل المناسب وبنائه من البداية حتى الإطلاق.',
+        service_apps_title: 'تطبيقات الهاتف',
+        service_apps_text: 'تطبيقات iOS وAndroid سريعة وسهلة وممتعة في الاستخدام.',
+        service_saas_title: 'منصات SaaS وأدوات الويب',
+        service_saas_text: 'منصات ويب عملية بميزات واشتراكات تناسب نشاطك.',
+        service_sites_title: 'مواقع الويب',
+        service_sites_text: 'مواقع حديثة وسريعة ومتوافقة مع مختلف الشاشات للتعريف بنشاطك.',
         approach_kicker: 'طريقة عملي',
-        approach_title: 'من الفكرة إلى التطبيق.',
-        approach_intro: 'خطوات واضحة تجمع التصميم والتطوير في مكان واحد.',
+        approach_title: 'من الفكرة إلى الإطلاق.',
+        approach_intro: 'مرافقة كاملة من أول نقاش إلى إطلاق منتجك.',
         approach_1_title: 'الفهم',
         approach_1_text: 'تحديد الاحتياج والمستخدمين وما يستحق البناء أولاً.',
         approach_2_title: 'التصميم',
@@ -131,7 +125,7 @@ const translations = {
         approach_3_text: 'برمجة المنتج وتحسينه وتجهيزه للإطلاق.',
         about_title: 'أعمل بشكل مستقل، وأهتم بكل تفصيل.',
         about_cta: 'لنتحدث عن فكرتك',
-        about_p1: 'أنا محمد سيد، مطور مستقل. أصمم وأطور تطبيقات الموبايل من الألف إلى الياء.',
+        about_p1: 'أنا محمد سيد، مطور مستقل. أصمم تطبيقات الهاتف ومنتجات SaaS ومواقع الويب من التصميم حتى الإطلاق.',
         contact_title: 'تواصل',
         contact_subtitle: 'لديك فكرة مشروع؟ راسلني.'
     }
@@ -142,6 +136,8 @@ const appsData = {
     zikr: {
         icon: 'assets/images/zikr-icon.png',
         screenshot: 'assets/images/zikr_screen_1.png',
+        screenshots: ['assets/images/zikr_screen_1.png', 'assets/images/zikr_screen_2.png', 'assets/images/zikr_screen_3.png'],
+        features: { fr: ['Coran', 'Adhkar', 'Horaires de prière'], en: ['Quran', 'Adhkar', 'Prayer times'], ar: ['القرآن الكريم', 'الأذكار', 'مواقيت الصلاة'] },
         appStore: 'https://apps.apple.com/fr/app/zikr/id6759991511',
         googlePlay: 'https://play.google.com/store/apps/details?id=com.mohamed.zikr',
         privacy: 'zikr-privacy.html',
@@ -156,6 +152,8 @@ const appsData = {
     kinto: {
         icon: 'assets/images/kinto-icon.png',
         screenshot: 'assets/images/kinto-screen1.png',
+        screenshots: ['assets/images/kinto-screen1.png', 'assets/images/kinto-screen2.png', 'assets/images/kinto-screen3.png'],
+        features: { fr: ['Scan des reçus', 'Dépenses par catégorie', 'Revenus & économies'], en: ['Receipt scanning', 'Spending by category', 'Income & savings'], ar: ['مسح الإيصالات', 'المصروفات حسب الفئة', 'الدخل والادخار'] },
         appStore: 'https://apps.apple.com/fr/app/kinto/id6761582723',
         googlePlay: null,
         privacy: 'kinto-privacy.html',
@@ -167,35 +165,6 @@ const appsData = {
             ar: 'يبسّط Kinto إدارة ميزانيتك: امسح فواتيرك، وتتبّع مصاريفك حسب الفئة، واحصل على رؤية واضحة لدخلك ومدخراتك، كل ذلك من واجهة بسيطة.'
         }
     },
-    locsy: {
-        icon: 'assets/images/locsy-icon.png',
-        screenshot: 'assets/images/locsy_screen_1.png',
-        visualMode: 'cover',
-        appStore: null,
-        googlePlay: null,
-        privacy: 'locsy-privacy.html',
-        terms: 'locsy-terms.html',
-        tagline: { fr: 'Les bonnes adresses, au bon moment.', en: 'Great places, right when you need them.', ar: 'أماكن رائعة، في الوقت المناسب.' },
-        description: {
-            fr: 'Explorez des lieux et des activités à proximité, préparez vos itinéraires et gardez vos découvertes préférées.',
-            en: 'Explore nearby places and activities, plan routes and save the discoveries you want to revisit.',
-            ar: 'اكتشف الأماكن والأنشطة القريبة، وخطط لمساراتك، واحفظ اكتشافاتك المفضلة.'
-        }
-    },
-    m: {
-        icon: 'assets/images/m-icon-dark.png',
-        screenshot: 'assets/images/m_screen_1.png',
-        appStore: null,
-        googlePlay: null,
-        privacy: 'm-privacy.html',
-        terms: 'm-terms.html',
-        tagline: { fr: 'Vos conversations, simplement.', en: 'Your conversations, made simple.', ar: 'محادثاتك ببساطة.' },
-        description: {
-            fr: 'Une expérience de messagerie mobile centrée sur vos conversations et conçue avec une interface épurée.',
-            en: 'A mobile messaging experience centered on your conversations, with a clean interface.',
-            ar: 'تجربة مراسلة على الهاتف تضع محادثاتك في المقدمة ضمن واجهة بسيطة.'
-        }
-    }
 };
 
 function detectBrowserLanguage() {
@@ -203,12 +172,6 @@ function detectBrowserLanguage() {
     return preferences.map(value => value.toLowerCase().split('-')[0]).find(value => translations[value]) || 'fr';
 }
 
-const concepts = [
-    { id: 'tap0', image: 'assets/images/tap0_s1.png', icon: 'fa-solid fa-chart-line' },
-    { id: 'restopass', image: 'assets/images/restopass_s1.png', icon: 'fa-solid fa-utensils' },
-    { id: 'calelite', image: 'assets/images/cal_elite_1.png', icon: 'fa-regular fa-calendar-check' },
-    { id: 'whatsapp', image: 'assets/images/whatsapp_bot_s1.png', icon: 'fa-brands fa-whatsapp' }
-];
 
 let currentLang = detectBrowserLanguage();
 
@@ -279,20 +242,6 @@ function renderAppCards() {
     }).join('');
 }
 
-function renderConceptCards() {
-    const grid = document.getElementById('lab-grid');
-    if (!grid) return;
-    grid.innerHTML = concepts.map((concept, index) => `
-        <article class="lab-card" data-reveal style="--reveal-delay:${index * 80}ms">
-            <div class="lab-card-image"><img src="${concept.image}" alt="" loading="lazy"><span class="lab-card-icon"><i class="${concept.icon}"></i></span></div>
-            <div class="lab-card-copy">
-                <span class="app-card-category" data-i18n="concept_label">Concept visuel</span>
-                <h3 data-i18n="${concept.id}_title"></h3>
-                <p data-i18n="${concept.id}_description"></p>
-            </div>
-        </article>
-    `).join('');
-}
 
 // --- Render an app detail page ---
 function renderAppDetail() {
@@ -316,6 +265,7 @@ function renderAppDetail() {
             <h1>${name}</h1>
             <p class="tagline" data-app="${appId}" data-app-field="tagline">${app.tagline[currentLang]}</p>
             <p class="app-description" data-app="${appId}" data-app-field="description">${app.description[currentLang]}</p>
+            <ul class="feature-list" aria-label="${name}">${app.features[currentLang].map(feature => `<li>${feature}</li>`).join('')}</ul>
             <div class="install-row">
                 ${app.appStore ? `<a class="install-btn" href="${app.appStore}" target="_blank" rel="noopener"><i class="fab fa-apple"></i><span data-i18n="link_appstore">App Store</span></a>` : ''}
                 ${app.googlePlay ? `<a class="install-btn" href="${app.googlePlay}" target="_blank" rel="noopener"><i class="fab fa-google-play"></i><span data-i18n="link_googleplay">Google Play</span></a>` : ''}
@@ -325,6 +275,10 @@ function renderAppDetail() {
                 <a href="${app.terms}" data-i18n="link_terms">Conditions</a>
             </div>
         </div>
+        <section class="app-gallery" aria-label="${name} — captures d’écran">
+            <div class="app-gallery-heading"><span class="eyebrow" data-i18n="screens_kicker">Aperçu de l’application</span><h2 data-i18n="screens_title">Pensée dans chaque détail.</h2></div>
+            <div class="app-gallery-grid">${app.screenshots.map((image, index) => `<figure data-reveal style="--reveal-delay:${index * 100}ms"><div class="iphone-mockup"><div class="screen"><img src="${image}" alt="${name} — écran ${index + 1}" loading="lazy"></div></div></figure>`).join('')}</div>
+        </section>
     `;
 
     document.title = `${name} — Mohamed Sayed`;
@@ -344,7 +298,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     renderAppCards();
-    renderConceptCards();
     renderAppDetail();
     setLanguage(savedLang || detectBrowserLanguage(), false);
 

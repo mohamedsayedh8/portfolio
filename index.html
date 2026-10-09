@@ -17,18 +17,18 @@
             if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('intro-active');
         })();
     </script>
-    <title>Mohamed Sayed — Développeur</title>
+    <title>Mohamed Sayed — Apps, SaaS Mohamed Sayed — Développeur</title> sites web</title>
     <meta name="description" content="Mohamed Sayed, développeur indépendant. Je crée des applications mobiles utiles, soignées et accessibles.">
     <link rel="canonical" href="https://mohamedelhawawshi.com/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mohamedelhawawshi.com/">
-    <meta property="og:title" content="Mohamed Sayed — Développeur indépendant">
-    <meta property="og:description" content="Applications mobiles pensées avec soin, de la première idée à la mise en ligne.">
+    <meta property="og:title" content="Mohamed Sayed — Apps, SaaS Mohamed Sayed — Développeur indépendant sites web">
+    <meta property="og:description" content="Applications, SaaS et sites web pensés avec soin, de la première idée à la mise en ligne.">
     <link rel="icon" type="image/png" href="assets/images/favicon-premium.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=4500">
+    <link rel="stylesheet" href="style.css?v=4600">
 </head>
 <body class="home-page">
 
@@ -107,15 +107,19 @@
             </div>
         </section>
 
-        <!-- Early visual concepts -->
-        <section class="lab" id="lab">
+        <!-- Services -->
+        <section class="services" id="services">
             <div class="container">
                 <div class="section-heading" data-reveal>
-                    <p class="eyebrow" data-i18n="lab_kicker">Dans le laboratoire</p>
-                    <h2 class="section-label" data-i18n="lab_title">Pistes et prototypes.</h2>
-                    <p class="section-intro" data-i18n="lab_intro">Des concepts visuels qui explorent de nouvelles idées d’applications.</p>
+                    <p class="eyebrow" data-i18n="services_kicker">Ce que je crée</p>
+                    <h2 class="section-label" data-i18n="services_title">Des idées aux produits du quotidien.</h2>
+                    <p class="section-intro" data-i18n="services_intro">Je t’aide à choisir le bon format et à le construire de bout en bout.</p>
                 </div>
-                <div class="lab-grid" id="lab-grid"></div>
+                <div class="services-grid">
+                    <article class="service-card" data-reveal style="--reveal-delay:80ms"><span class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></span><span class="service-index">01</span><h3 data-i18n="service_apps_title">Applications mobiles</h3><p data-i18n="service_apps_text">Des apps iOS et Android pensées pour être rapides, intuitives et agréables à utiliser.</p><span class="service-orbit"></span></article>
+                    <article class="service-card" data-reveal style="--reveal-delay:160ms"><span class="service-icon"><i class="fa-solid fa-layer-group"></i></span><span class="service-index">02</span><h3 data-i18n="service_saas_title">SaaS &amp; outils web</h3><p data-i18n="service_saas_text">Des plateformes web utiles, avec les fonctionnalités et les abonnements adaptés à ton activité.</p><span class="service-orbit"></span></article>
+                    <article class="service-card" data-reveal style="--reveal-delay:240ms"><span class="service-icon"><i class="fa-solid fa-globe"></i></span><span class="service-index">03</span><h3 data-i18n="service_sites_title">Sites web</h3><p data-i18n="service_sites_text">Des sites modernes, rapides et adaptés à tous les écrans, conçus pour présenter ton activité.</p><span class="service-orbit"></span></article>
+                </div>
             </div>
         </section>
 
@@ -156,7 +160,7 @@
                 <div class="about-panel" data-reveal>
                     <p class="eyebrow" data-i18n="nav_about">À propos</p>
                     <h2 class="about-title" data-i18n="about_title">Indépendant par choix. Attentif à chaque détail.</h2>
-                    <p class="about-text" data-i18n="about_p1">Je suis Mohamed Sayed, développeur indépendant. Je conçois et développe des applications mobiles de bout en bout, du design à la mise en ligne.</p>
+                    <p class="about-text" data-i18n="about_p1">Je suis Mohamed Sayed, développeur indépendant. Je crée des applications mobiles, des SaaS et des sites web, du design à la mise en ligne.</p>
                     <a class="text-link" href="#contact"><span data-i18n="about_cta">Parlons de ton idée</span><i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -183,6 +187,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=4500"></script>
+    <script src="script.js?v=4600"></script>
 </body>
 </html>
