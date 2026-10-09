@@ -28,9 +28,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=4300">
+    <link rel="stylesheet" href="style.css?v=4500">
 </head>
-<body>
+<body class="home-page">
 
     <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
@@ -48,7 +48,6 @@
 
     <nav id="navbar">
         <div class="container nav-inner">
-            <a href="#top" class="logo">Mohamed Sayed<span class="logo-dot">.</span></a>
             <div class="nav-links" aria-label="Navigation principale">
                 <a href="#projects" data-i18n="nav_projects">Projets</a>
                 <a href="#about" data-i18n="nav_about">À propos</a>
@@ -99,16 +98,67 @@
         <!-- Projects -->
         <section class="projects" id="projects">
             <div class="container">
-                <h2 class="section-label" data-reveal data-i18n="portfolio_title">Projets</h2>
+                <div class="section-heading" data-reveal>
+                    <p class="eyebrow" data-i18n="portfolio_kicker">Sélection · 2026</p>
+                    <h2 class="section-label" data-i18n="portfolio_title">Des idées transformées en produits.</h2>
+                    <p class="section-intro" data-i18n="portfolio_intro">Des applications pensées pour résoudre de vrais besoins du quotidien.</p>
+                </div>
                 <div class="apps-grid" id="apps-grid"></div>
+            </div>
+        </section>
+
+        <!-- Early visual concepts -->
+        <section class="lab" id="lab">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <p class="eyebrow" data-i18n="lab_kicker">Dans le laboratoire</p>
+                    <h2 class="section-label" data-i18n="lab_title">Pistes et prototypes.</h2>
+                    <p class="section-intro" data-i18n="lab_intro">Des concepts visuels qui explorent de nouvelles idées d’applications.</p>
+                </div>
+                <div class="lab-grid" id="lab-grid"></div>
+            </div>
+        </section>
+
+        <!-- Approach -->
+        <section class="approach" id="approach">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <p class="eyebrow" data-i18n="approach_kicker">Ma façon de travailler</p>
+                    <h2 class="section-label" data-i18n="approach_title">De l’idée à l’application.</h2>
+                    <p class="section-intro" data-i18n="approach_intro">Un processus simple, avec le design et le développement réunis au même endroit.</p>
+                </div>
+                <div class="approach-grid">
+                    <article class="approach-card" data-reveal style="--reveal-delay: 80ms">
+                        <span class="approach-number">01</span>
+                        <span class="approach-icon"><i class="fa-regular fa-lightbulb"></i></span>
+                        <h3 data-i18n="approach_1_title">Comprendre</h3>
+                        <p data-i18n="approach_1_text">Clarifier le besoin, les utilisateurs et l’essentiel à construire.</p>
+                    </article>
+                    <article class="approach-card" data-reveal style="--reveal-delay: 160ms">
+                        <span class="approach-number">02</span>
+                        <span class="approach-icon"><i class="fa-solid fa-pen-ruler"></i></span>
+                        <h3 data-i18n="approach_2_title">Concevoir</h3>
+                        <p data-i18n="approach_2_text">Créer une expérience claire, cohérente et agréable à utiliser.</p>
+                    </article>
+                    <article class="approach-card" data-reveal style="--reveal-delay: 240ms">
+                        <span class="approach-number">03</span>
+                        <span class="approach-icon"><i class="fa-solid fa-code"></i></span>
+                        <h3 data-i18n="approach_3_title">Construire</h3>
+                        <p data-i18n="approach_3_text">Développer, peaufiner et préparer le produit pour sa mise en ligne.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
         <!-- About -->
         <section class="about" id="about">
             <div class="container-narrow">
-                <h2 class="section-label" data-reveal data-i18n="nav_about">À propos</h2>
-                <p class="about-text" data-reveal style="--reveal-delay: 120ms" data-i18n="about_p1">Je suis Mohamed Sayed, développeur indépendant. Je conçois et développe des applications mobiles de bout en bout, du design à la mise en ligne.</p>
+                <div class="about-panel" data-reveal>
+                    <p class="eyebrow" data-i18n="nav_about">À propos</p>
+                    <h2 class="about-title" data-i18n="about_title">Indépendant par choix. Attentif à chaque détail.</h2>
+                    <p class="about-text" data-i18n="about_p1">Je suis Mohamed Sayed, développeur indépendant. Je conçois et développe des applications mobiles de bout en bout, du design à la mise en ligne.</p>
+                    <a class="text-link" href="#contact"><span data-i18n="about_cta">Parlons de ton idée</span><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
             </div>
         </section>
 
@@ -133,6 +183,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=4300"></script>
+    <script src="script.js?v=4500"></script>
 </body>
 </html>
