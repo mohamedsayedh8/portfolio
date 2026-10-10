@@ -1411,3 +1411,23 @@ html[dir="rtl"] .footer-contact:hover i { transform: translate(-2px,-2px); }
 html[dir="rtl"] .contact-project-options { justify-content: flex-start; }
 @media (max-width: 420px) { .contact-project-options { gap: .45rem; } .project-choice > span { min-height: 40px; padding: .5rem .72rem; font-size: .74rem; } }
 @media (prefers-reduced-motion: reduce) { .project-choice > span { transition: none !important; } }
+
+/* The process timeline advances as visitors move through the section. */
+.approach-grid { position: relative; --process-progress: 0; }
+.approach-grid::before,.approach-grid::after { position: absolute; top: 49px; left: 16.66%; right: 16.66%; height: 2px; content: ""; pointer-events: none; }
+.approach-grid::before { background: color-mix(in srgb,var(--accent) 18%,var(--border)); }
+.approach-grid::after { right: auto; width: 66.68%; transform: scaleX(var(--process-progress)); transform-origin: left center; background: linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 24%,white)); box-shadow: 0 0 16px color-mix(in srgb,var(--accent) 45%,transparent); transition: transform .35s ease-out; }
+html[dir="rtl"] .approach-grid::after { transform-origin: right center; }
+.approach-card { z-index: 1; }
+.approach-card.is-current { border-color: color-mix(in srgb,var(--accent) 40%,var(--border)); box-shadow: 0 20px 58px rgba(0,0,0,.1),0 0 34px color-mix(in srgb,var(--accent) 8%,transparent),inset 0 1px rgba(255,255,255,.13); }
+.approach-card.is-current .approach-icon { animation: process-step-arrive .72s cubic-bezier(.2,.75,.25,1) both; }
+@keyframes process-step-arrive { 0% { transform: scale(.88) rotate(-8deg); box-shadow: 0 0 0 0 color-mix(in srgb,var(--accent) 24%,transparent); } 65% { transform: scale(1.12) rotate(3deg); box-shadow: 0 0 0 9px color-mix(in srgb,var(--accent) 0%,transparent); } 100% { transform: scale(1) rotate(0); box-shadow: 0 0 0 0 transparent; } }
+@media (max-width: 760px) {
+  .approach-grid { gap: .85rem; }
+  .approach-grid::before,.approach-grid::after { top: 0; bottom: 0; left: 49px; right: auto; width: 2px; height: auto; }
+  .approach-grid::after { transform: scaleY(var(--process-progress)); transform-origin: top center; }
+  html[dir="rtl"] .approach-grid::before,html[dir="rtl"] .approach-grid::after { left: auto; right: 49px; }
+  html[dir="rtl"] .approach-grid::after { transform-origin: top center; }
+  .approach-card { min-height: 215px; }
+}
+@media (prefers-reduced-motion: reduce) { .approach-grid::after { transition: none; } .approach-card.is-current .approach-icon { animation: none !important; } }

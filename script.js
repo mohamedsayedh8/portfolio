@@ -367,6 +367,27 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('input[name="contact-project"]').forEach(input => input.addEventListener('change', updateContactMailto));
     setLanguage(savedLang || detectBrowserLanguage(), false);
 
+    const processGrid = document.querySelector('.approach-grid');
+    const processSteps = processGrid ? [...processGrid.querySelectorAll('.approach-card')] : [];
+    if (processGrid && processSteps.length) {
+        let processFrame = 0;
+        const updateProcess = () => {
+            if (processFrame) return;
+            processFrame = requestAnimationFrame(() => {
+                const bounds = processGrid.getBoundingClientRect();
+                const span = window.innerHeight + bounds.height;
+                const progress = span > 0 ? Math.max(0, Math.min(1, (window.innerHeight - bounds.top) / span)) : 0;
+                const activeIndex = Math.min(processSteps.length - 1, Math.floor(progress * processSteps.length));
+                processGrid.style.setProperty('--process-progress', progress.toFixed(3));
+                processSteps.forEach((step, index) => step.classList.toggle('is-current', index === activeIndex));
+                processFrame = 0;
+            });
+        };
+        window.addEventListener('scroll', updateProcess, { passive: true });
+        window.addEventListener('resize', updateProcess, { passive: true });
+        updateProcess();
+    }
+
     const navbar = document.getElementById('navbar');
     if (navbar) {
         let previousScrollY = window.scrollY;
