@@ -1349,3 +1349,29 @@ html[dir="rtl"] .motion-ribbon-track { animation-name: ribbon-travel-rtl; }
   .about-panel::before,
   .app-gallery-grid figure::before { animation: none !important; transition: none !important; }
 }
+
+
+/* Small product details make each project tile easier to scan. */
+.app-card-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .42rem;
+  margin: .95rem 0 .2rem;
+  padding: 0;
+  list-style: none;
+}
+.app-card-features li {
+  padding: .38rem .62rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, transparent);
+  border-radius: 99px;
+  color: color-mix(in srgb, var(--text) 84%, var(--accent));
+  background: color-mix(in srgb, var(--accent) 7%, var(--bg));
+  font-size: .69rem;
+  font-weight: 650;
+  line-height: 1.25;
+  transition: transform .25s ease, background-color .25s ease, border-color .25s ease;
+}
+.app-card:hover .app-card-features li { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 44%, transparent); background: color-mix(in srgb, var(--accent) 12%, var(--bg)); }
+@media (max-width: 620px) { .app-card-features { gap: .35rem; } .app-card-features li { font-size: .66rem; } }
+@media (prefers-reduced-motion: reduce) { .app-card-features li { transition: none; } }

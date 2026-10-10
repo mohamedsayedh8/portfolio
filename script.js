@@ -214,6 +214,17 @@ window.setLanguage = function(lang, remember = true) {
         }
     });
 
+    document.querySelectorAll('[data-feature-list]').forEach(el => {
+        const app = appsData[el.getAttribute('data-app')];
+        const features = app?.features?.[lang];
+        if (!features) return;
+        el.replaceChildren(...features.map(label => {
+            const item = document.createElement('li');
+            item.textContent = label;
+            return item;
+        }));
+    });
+
     if (window.pageTranslations) {
         const pt = window.pageTranslations[lang] || window.pageTranslations.en;
         document.querySelectorAll('[data-page-i18n]').forEach(el => {
@@ -252,6 +263,7 @@ function renderAppCards() {
                     <h3 class="app-card-name">${name}</h3>
                     <p class="app-card-tagline" data-app="${id}" data-app-field="tagline">${app.tagline[currentLang]}</p>
                     <p class="app-card-description" data-app="${id}" data-app-field="description">${app.description[currentLang]}</p>
+                    <ul class="app-card-features" data-app="${id}" data-feature-list aria-label="${name}">${app.features[currentLang].map(feature => `<li>${feature}</li>`).join('')}</ul>
                     <span class="app-card-link"><span data-i18n="project_open">Découvrir le projet</span><i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </a>
@@ -282,7 +294,7 @@ function renderAppDetail() {
             <h1>${name}</h1>
             <p class="tagline" data-app="${appId}" data-app-field="tagline">${app.tagline[currentLang]}</p>
             <p class="app-description" data-app="${appId}" data-app-field="description">${app.description[currentLang]}</p>
-            <ul class="feature-list" aria-label="${name}">${app.features[currentLang].map(feature => `<li>${feature}</li>`).join('')}</ul>
+            <ul class="feature-list" data-app="${appId}" data-feature-list aria-label="${name}">${app.features[currentLang].map(feature => `<li>${feature}</li>`).join('')}</ul>
             <div class="install-row">
                 ${app.appStore ? `<a class="install-btn" href="${app.appStore}" target="_blank" rel="noopener"><i class="fab fa-apple"></i><span data-i18n="link_appstore">App Store</span></a>` : ''}
                 ${app.googlePlay ? `<a class="install-btn" href="${app.googlePlay}" target="_blank" rel="noopener"><i class="fab fa-google-play"></i><span data-i18n="link_googleplay">Google Play</span></a>` : ''}
