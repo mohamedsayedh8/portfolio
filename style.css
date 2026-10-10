@@ -1454,3 +1454,13 @@ html[dir="rtl"] .approach-grid::after { transform-origin: right center; }
 html[dir="rtl"] .faq-answer p { padding-right: 4.25rem; padding-left: 4.25rem; }
 @media (max-width: 520px) { .faq-item summary { grid-template-columns: 1.6rem 1fr 1.8rem; gap: .55rem; min-height: 68px; padding: .9rem; font-size: .85rem; } .faq-answer p,html[dir="rtl"] .faq-answer p { padding-right: 3.05rem; padding-left: 3.05rem; font-size: .82rem; } }
 @media (prefers-reduced-motion: reduce) { .faq-item,.faq-toggle,.faq-answer,.faq-answer p { transition: none !important; } .faq-item:hover { transform: none; } }
+
+/* The floating hero labels are shortcuts into the matching service cards. */
+.visual-chip { appearance: none; cursor: pointer; text-align: left; font-family: inherit; transition: border-color .25s ease,box-shadow .25s ease,filter .25s ease; }
+.visual-chip:hover,.visual-chip:focus-visible { border-color: rgba(166,245,202,.72); box-shadow: 0 20px 44px rgba(0,0,0,.4),0 0 28px rgba(52,211,153,.18),inset 0 1px rgba(255,255,255,.14); filter: brightness(1.12); }
+.visual-chip:focus-visible { outline: 2px solid #a6f5ca; outline-offset: 4px; }
+.visual-chip:active { filter: brightness(1.2); }
+.service-card.is-highlighted { animation: service-highlight 1.5s cubic-bezier(.2,.75,.25,1) both; }
+@keyframes service-highlight { 0%,100% { border-color: color-mix(in srgb,var(--text) 11%,transparent); box-shadow: 0 18px 52px rgba(0,0,0,.08),inset 0 1px rgba(255,255,255,.12); } 28%,68% { border-color: color-mix(in srgb,var(--accent) 78%,white); box-shadow: 0 0 0 5px color-mix(in srgb,var(--accent) 10%,transparent),0 24px 70px rgba(0,0,0,.18),0 0 58px color-mix(in srgb,var(--accent) 24%,transparent); } }
+html[dir="rtl"] .visual-chip { text-align: right; }
+@media (prefers-reduced-motion: reduce) { .service-card.is-highlighted { animation: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent); } }

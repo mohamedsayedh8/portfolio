@@ -6,6 +6,7 @@ const translations = {
         opening_skip: 'Entrer ↗', opening_kicker: 'APPLICATIONS · SAAS · WEB', opening_subtitle: 'Des idées qui prennent vie.', opening_footer: 'DESIGN · CODE · MOUVEMENT',
         visual_caption: 'Tape sur le M ✦',
         logo_game_hint: 'Faire jaillir les étoiles',
+        visual_jump_apps: 'Aller au service des applications', visual_jump_saas: 'Aller au service SaaS', visual_jump_web: 'Aller au service des sites web',
         visual_chip_apps: 'APPS', visual_chip_saas: 'SAAS', visual_chip_web: 'WEB',
         hero_eyebrow: 'Créateur digital indépendant',
         hero_title: 'Je transforme des idées en produits digitaux.',
@@ -62,6 +63,7 @@ const translations = {
         opening_skip: 'Enter ↗', opening_kicker: 'APPS · SAAS · WEB', opening_subtitle: 'Ideas brought to life.', opening_footer: 'DESIGN · CODE · MOTION',
         visual_caption: 'Tap the M ✦',
         logo_game_hint: 'Make the stars burst',
+        visual_jump_apps: 'Go to mobile app services', visual_jump_saas: 'Go to SaaS services', visual_jump_web: 'Go to website services',
         visual_chip_apps: 'APPS', visual_chip_saas: 'SAAS', visual_chip_web: 'WEB',
         hero_eyebrow: 'Independent digital creator',
         hero_title: 'I turn ideas into digital products.',
@@ -118,6 +120,7 @@ const translations = {
         opening_skip: 'دخول ↗', opening_kicker: 'تطبيقات · SaaS · ويب', opening_subtitle: 'أفكار تتحول إلى واقع.', opening_footer: 'تصميم · برمجة · حركة',
         visual_caption: 'اضغط على M ✦',
         logo_game_hint: 'أطلق النجوم',
+        visual_jump_apps: 'انتقل إلى خدمات التطبيقات', visual_jump_saas: 'انتقل إلى خدمات SaaS', visual_jump_web: 'انتقل إلى خدمات المواقع',
         visual_chip_apps: 'تطبيقات', visual_chip_saas: 'SAAS', visual_chip_web: 'ويب',
         hero_eyebrow: 'مطور رقمي مستقل',
         hero_title: 'أحوّل الأفكار إلى منتجات رقمية.',
@@ -469,6 +472,18 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    document.querySelectorAll('[data-service-target]').forEach(chip => {
+        chip.addEventListener('click', () => {
+            const service = document.querySelector(`.service-card[data-service="${chip.dataset.serviceTarget}"]`);
+            if (!service) return;
+            service.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+            service.classList.remove('is-highlighted');
+            void service.offsetWidth;
+            service.classList.add('is-highlighted');
+            window.setTimeout(() => service.classList.remove('is-highlighted'), 1500);
+        });
+    });
 
     const logoTrigger = document.getElementById('hero-play');
     if (logoTrigger) {
