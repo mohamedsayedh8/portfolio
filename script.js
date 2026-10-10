@@ -2,7 +2,6 @@
 const translations = {
     fr: {
         nav_projects: 'Projets', nav_services: 'Services', nav_about: 'À propos', nav_contact: 'Contact',
-        intro_caption: 'Créativité en mouvement',
         visual_caption: 'Tape sur le M ✦',
         logo_game_hint: 'Faire jaillir les étoiles',
         visual_chip_apps: 'APPS', visual_chip_saas: 'SAAS', visual_chip_web: 'WEB',
@@ -48,7 +47,6 @@ const translations = {
     },
     en: {
         nav_projects: 'Projects', nav_services: 'Services', nav_about: 'About', nav_contact: 'Contact',
-        intro_caption: 'Creativity in motion',
         visual_caption: 'Tap the M ✦',
         logo_game_hint: 'Make the stars burst',
         visual_chip_apps: 'APPS', visual_chip_saas: 'SAAS', visual_chip_web: 'WEB',
@@ -94,7 +92,6 @@ const translations = {
     },
     ar: {
         nav_projects: 'المشاريع', nav_services: 'الخدمات', nav_about: 'عني', nav_contact: 'تواصل',
-        intro_caption: 'إبداع يتحرك',
         visual_caption: 'اضغط على M ✦',
         logo_game_hint: 'أطلق النجوم',
         visual_chip_apps: 'تطبيقات', visual_chip_saas: 'SAAS', visual_chip_web: 'ويب',
@@ -413,14 +410,4 @@ document.addEventListener('DOMContentLoaded', () => {
         updateProgress();
     }
 
-    const intro = document.getElementById('brand-intro');
-    if (intro && document.documentElement.classList.contains('intro-active')) {
-        setTimeout(() => {
-            intro.classList.add('is-finished');
-            document.documentElement.classList.remove('intro-active');
-            setTimeout(() => intro.remove(), 520);
-        }, 950);
-    } else if (intro) {
-        intro.remove();
-    }
 });

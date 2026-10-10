@@ -14,12 +14,6 @@
             }
             document.documentElement.lang = lang;
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            let introSeen = false;
-            try {
-                introSeen = sessionStorage.getItem('brand-intro-seen') === '1';
-                if (!introSeen) sessionStorage.setItem('brand-intro-seen', '1');
-            } catch (e) {}
-            if (!introSeen && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('intro-active');
         })();
     </script>
     <title>Mohamed Sayed — Apps, SaaS &amp; sites web</title>
@@ -34,23 +28,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=5100">
+    <link rel="stylesheet" href="style.css?v=5200">
 </head>
 <body class="home-page">
 
     <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
-
-    <div class="brand-intro" id="brand-intro" aria-hidden="true">
-        <div class="brand-intro-mark">
-            <svg viewBox="0 0 100 100" role="presentation">
-                <path class="mark-orbit" d="M50 6a44 44 0 1 1-31.1 12.9"></path>
-                <path class="mark-letter" d="M25 70V31l25 25 25-25v39"></path>
-                <path class="mark-spark" d="M79 18v10M74 23h10"></path>
-            </svg>
-        </div>
-        <span class="brand-intro-name">Mohamed Sayed<span>.</span></span>
-        <span class="brand-intro-caption" data-i18n="intro_caption">Créativité en mouvement</span>
-    </div>
 
     <nav id="navbar">
         <div class="container nav-inner">
@@ -124,9 +106,9 @@
                     <p class="section-intro" data-i18n="services_intro">Je t’aide à choisir le bon format et à le construire de bout en bout.</p>
                 </div>
                 <div class="services-grid">
-                    <article class="service-card" data-reveal style="--reveal-delay:80ms"><span class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></span><span class="service-index">01</span><h3 data-i18n="service_apps_title">Applications mobiles</h3><p data-i18n="service_apps_text">Des apps iOS et Android pensées pour être rapides, intuitives et agréables à utiliser.</p><span class="service-orbit"></span></article>
-                    <article class="service-card" data-reveal style="--reveal-delay:160ms"><span class="service-icon"><i class="fa-solid fa-layer-group"></i></span><span class="service-index">02</span><h3 data-i18n="service_saas_title">SaaS &amp; outils web</h3><p data-i18n="service_saas_text">Des plateformes web utiles, avec les fonctionnalités et les abonnements adaptés à ton activité.</p><span class="service-orbit"></span></article>
-                    <article class="service-card" data-reveal style="--reveal-delay:240ms"><span class="service-icon"><i class="fa-solid fa-globe"></i></span><span class="service-index">03</span><h3 data-i18n="service_sites_title">Sites web</h3><p data-i18n="service_sites_text">Des sites modernes, rapides et adaptés à tous les écrans, conçus pour présenter ton activité.</p><span class="service-orbit"></span></article>
+                    <article class="service-card" data-reveal data-tilt style="--reveal-delay:80ms"><span class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></span><span class="service-index">01</span><h3 data-i18n="service_apps_title">Applications mobiles</h3><p data-i18n="service_apps_text">Des apps iOS et Android pensées pour être rapides, intuitives et agréables à utiliser.</p><span class="service-orbit"></span></article>
+                    <article class="service-card" data-reveal data-tilt style="--reveal-delay:160ms"><span class="service-icon"><i class="fa-solid fa-layer-group"></i></span><span class="service-index">02</span><h3 data-i18n="service_saas_title">SaaS &amp; outils web</h3><p data-i18n="service_saas_text">Des plateformes web utiles, avec les fonctionnalités et les abonnements adaptés à ton activité.</p><span class="service-orbit"></span></article>
+                    <article class="service-card" data-reveal data-tilt style="--reveal-delay:240ms"><span class="service-icon"><i class="fa-solid fa-globe"></i></span><span class="service-index">03</span><h3 data-i18n="service_sites_title">Sites web</h3><p data-i18n="service_sites_text">Des sites modernes, rapides et adaptés à tous les écrans, conçus pour présenter ton activité.</p><span class="service-orbit"></span></article>
                 </div>
             </div>
         </section>
@@ -140,19 +122,19 @@
                     <p class="section-intro" data-i18n="approach_intro">Un processus simple, avec le design et le développement réunis au même endroit.</p>
                 </div>
                 <div class="approach-grid">
-                    <article class="approach-card" data-reveal style="--reveal-delay: 80ms">
+                    <article class="approach-card" data-reveal data-tilt style="--reveal-delay: 80ms">
                         <span class="approach-number">01</span>
                         <span class="approach-icon"><i class="fa-regular fa-lightbulb"></i></span>
                         <h3 data-i18n="approach_1_title">Comprendre</h3>
                         <p data-i18n="approach_1_text">Clarifier le besoin, les utilisateurs et l’essentiel à construire.</p>
                     </article>
-                    <article class="approach-card" data-reveal style="--reveal-delay: 160ms">
+                    <article class="approach-card" data-reveal data-tilt style="--reveal-delay: 160ms">
                         <span class="approach-number">02</span>
                         <span class="approach-icon"><i class="fa-solid fa-pen-ruler"></i></span>
                         <h3 data-i18n="approach_2_title">Concevoir</h3>
                         <p data-i18n="approach_2_text">Créer une expérience claire, cohérente et agréable à utiliser.</p>
                     </article>
-                    <article class="approach-card" data-reveal style="--reveal-delay: 240ms">
+                    <article class="approach-card" data-reveal data-tilt style="--reveal-delay: 240ms">
                         <span class="approach-number">03</span>
                         <span class="approach-icon"><i class="fa-solid fa-code"></i></span>
                         <h3 data-i18n="approach_3_title">Construire</h3>
@@ -195,6 +177,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=5100"></script>
+    <script src="script.js?v=5200"></script>
 </body>
 </html>
