@@ -1375,3 +1375,24 @@ html[dir="rtl"] .motion-ribbon-track { animation-name: ribbon-travel-rtl; }
 .app-card:hover .app-card-features li { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 44%, transparent); background: color-mix(in srgb, var(--accent) 12%, var(--bg)); }
 @media (max-width: 620px) { .app-card-features { gap: .35rem; } .app-card-features li { font-size: .66rem; } }
 @media (prefers-reduced-motion: reduce) { .app-card-features li { transition: none; } }
+
+/* A more useful closing section that carries the portfolio identity through to the end. */
+.site-footer { position: relative; overflow: hidden; padding: 3.75rem 0 1.25rem; border-top: 1px solid var(--border); background: radial-gradient(ellipse at 16% 0%, color-mix(in srgb,var(--accent) 10%,transparent),transparent 42%), color-mix(in srgb,var(--bg-subtle) 62%,transparent); }
+.site-footer::before { position: absolute; top: 0; left: 0; width: 100%; height: 1px; content: ""; background: linear-gradient(90deg,transparent,color-mix(in srgb,var(--accent) 62%,transparent),transparent); opacity: .7; }
+.footer-inner { position: relative; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 2rem; }
+.footer-brand { display: inline-flex; align-items: center; gap: .85rem; width: fit-content; color: var(--text); font-weight: 700; line-height: 1.35; text-decoration: none; }
+.footer-mark { display: grid; width: 46px; height: 46px; place-items: center; border: 1px solid color-mix(in srgb,var(--accent) 48%,transparent); border-radius: 15px; color: var(--accent); background: color-mix(in srgb,var(--accent) 10%,var(--bg)); box-shadow: 0 0 28px color-mix(in srgb,var(--accent) 12%,transparent),inset 0 1px rgba(255,255,255,.12); font-size: 1.2rem; transition: transform .35s cubic-bezier(.2,.75,.25,1),box-shadow .35s ease; }
+.footer-brand:hover .footer-mark { transform: translateY(-3px) rotate(-7deg); box-shadow: 0 8px 30px color-mix(in srgb,var(--accent) 23%,transparent); }
+.footer-period { color: var(--accent); }
+.footer-brand small { display: block; margin-top: .22rem; color: var(--text-muted); font-size: .7rem; font-weight: 500; letter-spacing: .025em; }
+.footer-note { justify-self: end; max-width: 42ch; color: var(--text-muted); font-size: .88rem; line-height: 1.75; text-align: right; }
+.footer-bottom { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: .25rem; padding-top: 1.1rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: .75rem; }
+.footer-contact,.footer-top { display: inline-flex; align-items: center; gap: .5rem; color: var(--text-muted); text-decoration: none; transition: color .2s ease,transform .2s ease; }
+.footer-contact:hover,.footer-top:hover { color: var(--accent); }
+.footer-contact:hover i { transform: translate(2px,-2px); }
+.footer-top i { display: grid; width: 29px; height: 29px; place-items: center; border: 1px solid var(--border); border-radius: 50%; color: var(--accent); transition: transform .25s ease,border-color .25s ease; }
+.footer-top:hover i { transform: translateY(-3px); border-color: color-mix(in srgb,var(--accent) 48%,transparent); }
+html[dir="rtl"] .footer-note { justify-self: start; text-align: left; }
+html[dir="rtl"] .footer-contact:hover i { transform: translate(-2px,-2px); }
+@media (max-width: 620px) { .site-footer { padding-top: 2.75rem; } .footer-inner { grid-template-columns: 1fr; gap: 1.25rem; } .footer-note { justify-self: start; text-align: start; } .footer-bottom { display: grid; grid-template-columns: 1fr auto; row-gap: .85rem; } .footer-contact { grid-row: 2; } .footer-top { grid-column: 2; grid-row: 1 / span 2; align-self: center; } }
+@media (prefers-reduced-motion: reduce) { .footer-mark,.footer-contact,.footer-top,.footer-top i { transition: none !important; } }

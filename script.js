@@ -45,7 +45,11 @@ const translations = {
         about_p1: 'Je suis Mohamed Sayed, développeur indépendant. Je crée des applications mobiles, des SaaS et des sites web, du design à la mise en ligne.',
         contact_title: 'Contact',
         contact_subtitle: 'Tu as une idée à lancer ? Parle-moi de ton projet.',
-        contact_cta: 'M’écrire'
+        contact_cta: 'M’écrire',
+        footer_role: 'Apps · SaaS · Sites web',
+        footer_note: 'Des produits numériques conçus avec soin, de l’idée à la mise en ligne.',
+        footer_contact: 'Parlons de ton projet',
+        footer_top: 'Retour en haut'
     },
     en: {
         nav_projects: 'Projects', nav_services: 'Services', nav_about: 'About', nav_contact: 'Contact',
@@ -92,7 +96,11 @@ const translations = {
         about_p1: 'I\'m Mohamed Sayed, an independent developer. I build mobile apps, SaaS products and websites, from design to launch.',
         contact_title: 'Contact',
         contact_subtitle: 'Have an idea to launch? Tell me about your project.',
-        contact_cta: 'Email me'
+        contact_cta: 'Email me',
+        footer_role: 'Apps · SaaS · Websites',
+        footer_note: 'Digital products, thoughtfully made from the first idea to launch.',
+        footer_contact: 'Tell me about your project',
+        footer_top: 'Back to top'
     },
     ar: {
         nav_projects: 'المشاريع', nav_services: 'الخدمات', nav_about: 'عني', nav_contact: 'تواصل',
@@ -139,7 +147,11 @@ const translations = {
         about_p1: 'أنا محمد سيد، مطور مستقل. أصمم تطبيقات الهاتف ومنتجات SaaS ومواقع الويب من التصميم حتى الإطلاق.',
         contact_title: 'تواصل',
         contact_subtitle: 'هل لديك فكرة تريد إطلاقها؟ أخبرني عن مشروعك.',
-        contact_cta: 'راسلني'
+        contact_cta: 'راسلني',
+        footer_role: 'تطبيقات · SaaS · مواقع ويب',
+        footer_note: 'منتجات رقمية متقنة من الفكرة الأولى حتى الإطلاق.',
+        footer_contact: 'لنتحدث عن مشروعك',
+        footer_top: 'العودة إلى الأعلى'
     }
 };
 
