@@ -3,6 +3,7 @@ const translations = {
     fr: {
         skip_content: 'Aller au contenu',
         back_to_top_aria: 'Retourner en haut',
+        gallery_dialog_label: 'Aperçu des captures d’écran', gallery_close: 'Fermer l’aperçu', gallery_previous: 'Écran précédent', gallery_next: 'Écran suivant', gallery_open: 'Agrandir cette capture', gallery_counter: 'Écran {current} sur {total}',
         theme_to_light: 'Passer au thème clair', theme_to_dark: 'Passer au thème sombre',
         nav_projects: 'Projets', nav_services: 'Services', nav_about: 'À propos', nav_contact: 'Contact',
         ribbon_apps: 'Applications', ribbon_saas: 'SaaS & outils', ribbon_web: 'Sites web', ribbon_design: 'Design', ribbon_code: 'Développement',
@@ -70,6 +71,7 @@ const translations = {
     en: {
         skip_content: 'Skip to content',
         back_to_top_aria: 'Back to top',
+        gallery_dialog_label: 'Screenshot preview', gallery_close: 'Close preview', gallery_previous: 'Previous screenshot', gallery_next: 'Next screenshot', gallery_open: 'Enlarge this screenshot', gallery_counter: 'Screen {current} of {total}',
         theme_to_light: 'Switch to light theme', theme_to_dark: 'Switch to dark theme',
         nav_projects: 'Projects', nav_services: 'Services', nav_about: 'About', nav_contact: 'Contact',
         ribbon_apps: 'Applications', ribbon_saas: 'SaaS & tools', ribbon_web: 'Websites', ribbon_design: 'Design', ribbon_code: 'Development',
@@ -137,6 +139,7 @@ const translations = {
     ar: {
         skip_content: 'انتقل إلى المحتوى',
         back_to_top_aria: 'العودة إلى الأعلى',
+        gallery_dialog_label: 'معاينة لقطات الشاشة', gallery_close: 'إغلاق المعاينة', gallery_previous: 'الصورة السابقة', gallery_next: 'الصورة التالية', gallery_open: 'تكبير هذه الصورة', gallery_counter: 'الصورة {current} من {total}',
         theme_to_light: 'التبديل إلى الوضع الفاتح', theme_to_dark: 'التبديل إلى الوضع الداكن',
         nav_projects: 'المشاريع', nav_services: 'الخدمات', nav_about: 'عني', nav_contact: 'تواصل',
         ribbon_apps: 'تطبيقات', ribbon_saas: 'منصات وأدوات', ribbon_web: 'مواقع ويب', ribbon_design: 'تصميم', ribbon_code: 'تطوير',
@@ -313,6 +316,10 @@ window.setLanguage = function(lang, remember = true) {
         if (t[key]) el.setAttribute('aria-label', t[key]);
     });
 
+    document.querySelectorAll('[data-gallery-index]').forEach(el => {
+        el.setAttribute('aria-label', `${t.gallery_open} — ${Number(el.dataset.galleryIndex) + 1}`);
+    });
+
     document.querySelectorAll('[data-app-field]').forEach(el => {
         const appId = el.getAttribute('data-app');
         const field = el.getAttribute('data-app-field');
@@ -426,11 +433,120 @@ function renderAppDetail() {
         </div>
         <section class="app-gallery" aria-label="${name} — captures d’écran">
             <div class="app-gallery-heading"><span class="eyebrow" data-i18n="screens_kicker">Aperçu de l’application</span><h2 data-i18n="screens_title">Pensée dans chaque détail.</h2></div>
-            <div class="app-gallery-grid">${app.screenshots.map((image, index) => `<figure data-reveal style="--reveal-delay:${index * 100}ms"><div class="iphone-mockup"><div class="screen"><img src="${image}" alt="${name} — écran ${index + 1}" loading="lazy"></div></div></figure>`).join('')}</div>
+            <div class="app-gallery-grid">${app.screenshots.map((image, index) => `<figure data-reveal data-gallery-index="${index}" role="button" tabindex="0" aria-label="${translations[currentLang].gallery_open} — ${index + 1}" style="--reveal-delay:${index * 100}ms"><div class="iphone-mockup"><div class="screen"><img src="${image}" alt="${name} — écran ${index + 1}" loading="lazy"></div></div></figure>`).join('')}</div>
         </section>
     `;
 
     document.title = `${name} — Mohamed Sayed`;
+}
+
+function initProjectLightbox() {
+    const gallery = document.querySelector('.app-gallery-grid');
+    if (!gallery) return;
+    const triggers = [...gallery.querySelectorAll('[data-gallery-index]')];
+    const images = triggers.map(trigger => trigger.querySelector('img')).filter(Boolean);
+    if (!images.length || typeof HTMLDialogElement === 'undefined') return;
+
+    const dialog = document.createElement('dialog');
+    dialog.className = 'gallery-lightbox';
+    dialog.innerHTML = `
+        <div class="gallery-lightbox-shell">
+            <button class="lightbox-close" type="button"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+            <div class="lightbox-stage"><img class="lightbox-image" alt="" draggable="false"></div>
+            <div class="lightbox-footer">
+                <button class="lightbox-arrow lightbox-previous" type="button"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+                <span class="lightbox-counter" aria-live="polite"></span>
+                <button class="lightbox-arrow lightbox-next" type="button"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            </div>
+        </div>`;
+    dialog.setAttribute('aria-label', translations[currentLang].gallery_dialog_label);
+    document.body.appendChild(dialog);
+
+    const image = dialog.querySelector('.lightbox-image');
+    const counter = dialog.querySelector('.lightbox-counter');
+    const closeButton = dialog.querySelector('.lightbox-close');
+    const previousButton = dialog.querySelector('.lightbox-previous');
+    const nextButton = dialog.querySelector('.lightbox-next');
+    const stage = dialog.querySelector('.lightbox-stage');
+    let currentIndex = 0;
+    let opener = null;
+    let previousOverflow = '';
+
+    const labels = () => translations[currentLang] || translations.fr;
+    const setControlLabels = () => {
+        const t = labels();
+        dialog.setAttribute('aria-label', t.gallery_dialog_label);
+        closeButton.setAttribute('aria-label', t.gallery_close);
+        previousButton.setAttribute('aria-label', t.gallery_previous);
+        nextButton.setAttribute('aria-label', t.gallery_next);
+    };
+    const showImage = index => {
+        currentIndex = (index + images.length) % images.length;
+        const source = images[currentIndex];
+        image.classList.remove('is-changing');
+        void image.offsetWidth;
+        image.classList.add('is-changing');
+        image.src = source.currentSrc || source.src;
+        image.alt = source.alt;
+        counter.textContent = labels().gallery_counter
+            .replace('{current}', String(currentIndex + 1))
+            .replace('{total}', String(images.length));
+        [-1, 1].forEach(offset => {
+            const adjacent = images[(currentIndex + offset + images.length) % images.length];
+            const preload = new Image();
+            preload.src = adjacent.currentSrc || adjacent.src;
+        });
+    };
+    const openAt = (index, trigger) => {
+        opener = trigger;
+        previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        setControlLabels();
+        showImage(index);
+        dialog.showModal();
+        closeButton.focus();
+    };
+
+    triggers.forEach((trigger, index) => {
+        trigger.addEventListener('click', () => openAt(index, trigger));
+        trigger.addEventListener('keydown', event => {
+            if (event.key !== 'Enter' && event.key !== ' ') return;
+            event.preventDefault();
+            openAt(index, trigger);
+        });
+    });
+    closeButton.addEventListener('click', () => dialog.close());
+    previousButton.addEventListener('click', () => showImage(currentIndex - 1));
+    nextButton.addEventListener('click', () => showImage(currentIndex + 1));
+    dialog.addEventListener('click', event => {
+        if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', () => {
+        document.body.style.overflow = previousOverflow;
+        opener?.focus();
+    });
+    document.addEventListener('keydown', event => {
+        if (!dialog.open) return;
+        const rtl = document.documentElement.dir === 'rtl';
+        if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            showImage(currentIndex + (rtl ? -1 : 1));
+        } else if (event.key === 'ArrowLeft') {
+            event.preventDefault();
+            showImage(currentIndex + (rtl ? 1 : -1));
+        }
+    });
+
+    let swipeStart = null;
+    stage.addEventListener('pointerdown', event => { swipeStart = event.clientX; }, { passive: true });
+    stage.addEventListener('pointerup', event => {
+        if (swipeStart === null) return;
+        const distance = event.clientX - swipeStart;
+        swipeStart = null;
+        if (Math.abs(distance) < 48) return;
+        const rtl = document.documentElement.dir === 'rtl';
+        showImage(currentIndex + ((distance < 0) !== rtl ? 1 : -1));
+    }, { passive: true });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -448,6 +564,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderAppCards();
     renderAppDetail();
+    initProjectLightbox();
     document.querySelectorAll('input[name="contact-project"], input[name="contact-stage"]').forEach(input => input.addEventListener('change', updateContactMailto));
     const copyButton = document.getElementById('contact-copy');
     copyButton?.addEventListener('click', async () => {
