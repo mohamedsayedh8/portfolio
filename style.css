@@ -1183,3 +1183,40 @@ html.intro-active .opening-screen { display: grid; }
   .opening-screen { display:none; }
   html.intro-active,html.intro-active body { overflow:auto; }
 }
+
+/* Mobile: navigation and display controls live in separate glass capsules. */
+@media (max-width: 620px) {
+  .nav-inner {
+    flex-direction: column;
+    gap: .48rem;
+    max-width: calc(100vw - 1rem);
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .nav-links,
+  .nav-controls {
+    border: 1px solid color-mix(in srgb, var(--text) 13%, transparent);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    box-shadow: 0 12px 34px rgba(0,0,0,.16), inset 0 1px rgba(255,255,255,.12);
+    backdrop-filter: blur(22px) saturate(155%);
+    -webkit-backdrop-filter: blur(22px) saturate(155%);
+  }
+  .nav-links { padding: .68rem .9rem; }
+  .nav-links a { font-size: clamp(.78rem, 3.6vw, .9rem); }
+  .nav-controls { gap: .35rem; padding: .22rem .38rem; }
+  .lang-btn { min-width: 34px; min-height: 34px; padding: .25rem .38rem; font-size: .75rem; }
+  .theme-btn { width: 34px; height: 34px; font-size: .8rem; }
+}
+@media (max-width: 360px) {
+  .nav-inner { gap: .4rem; }
+  .nav-links { gap: .32rem; padding: .58rem .62rem; }
+  .nav-links a { font-size: .72rem; }
+  .nav-controls { gap: .25rem; }
+  .lang-btn { min-width: 30px; }
+}
