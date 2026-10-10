@@ -34,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=5912">
+    <link rel="stylesheet" href="style.css?v=5913">
 </head>
 <body class="home-page">
     <a class="skip-link" href="#top" data-i18n="skip_content">Aller au contenu</a>
@@ -75,11 +75,11 @@
             </div>
             <div class="nav-controls">
                 <div class="lang-switcher">
-                    <button class="lang-btn active" data-lang="fr" onclick="setLanguage('fr')">FR</button>
-                    <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
-                    <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">AR</button>
+                    <button class="lang-btn active" data-lang="fr" aria-pressed="true" onclick="setLanguage('fr')">FR</button>
+                    <button class="lang-btn" data-lang="en" aria-pressed="false" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" data-lang="ar" aria-pressed="false" onclick="setLanguage('ar')">AR</button>
                 </div>
-                <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème">
+                <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()" aria-label="Passer au thème sombre" aria-pressed="false">
                     <i class="icon-sun"></i>
                 </button>
             </div>
@@ -260,6 +260,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=5909"></script>
+    <script src="script.js?v=5910"></script>
 </body>
 </html>

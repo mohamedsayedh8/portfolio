@@ -833,9 +833,13 @@ body.home-page .hero .container {
 .nav-links a:hover::after, .nav-links a.is-active::after { left: .1rem; right: .1rem; }
 .nav-controls { gap: .8rem; }
 .lang-switcher { gap: .35rem; }
-.lang-btn { border-radius: 99px; padding: .32rem .4rem; transition: color .2s ease, background .2s ease; }
+.lang-btn { min-width: 36px; min-height: 36px; border-radius: 99px; padding: .32rem .4rem; transition: color .2s ease, background .2s ease, transform .2s ease; }
 .lang-btn.active { background: var(--accent-soft); color: var(--accent); }
-.theme-btn { border: 0; background: var(--accent-soft); }
+.lang-btn:active { transform: scale(.9); }
+.theme-btn { border: 0; background: var(--accent-soft); transition: color .25s ease,background .25s ease,box-shadow .25s ease,transform .25s cubic-bezier(.2,.75,.25,1); }
+.theme-btn:hover { color: var(--accent); box-shadow: 0 0 0 5px color-mix(in srgb,var(--accent) 8%,transparent); transform: rotate(-10deg); }
+.theme-btn:active { transform: scale(.88) rotate(-18deg); }
+.theme-btn:focus-visible,.lang-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 body.home-page .hero .container {
   width: 100%;

@@ -2,6 +2,7 @@
 const translations = {
     fr: {
         skip_content: 'Aller au contenu',
+        theme_to_light: 'Passer au thème clair', theme_to_dark: 'Passer au thème sombre',
         nav_projects: 'Projets', nav_services: 'Services', nav_about: 'À propos', nav_contact: 'Contact',
         ribbon_apps: 'Applications', ribbon_saas: 'SaaS & outils', ribbon_web: 'Sites web', ribbon_design: 'Design', ribbon_code: 'Développement',
         opening_skip: 'Entrer ↗', opening_kicker: 'APPLICATIONS · SAAS · WEB', opening_subtitle: 'Des idées qui prennent vie.', opening_footer: 'DESIGN · CODE · MOUVEMENT',
@@ -64,6 +65,7 @@ const translations = {
     },
     en: {
         skip_content: 'Skip to content',
+        theme_to_light: 'Switch to light theme', theme_to_dark: 'Switch to dark theme',
         nav_projects: 'Projects', nav_services: 'Services', nav_about: 'About', nav_contact: 'Contact',
         ribbon_apps: 'Applications', ribbon_saas: 'SaaS & tools', ribbon_web: 'Websites', ribbon_design: 'Design', ribbon_code: 'Development',
         opening_skip: 'Enter ↗', opening_kicker: 'APPS · SAAS · WEB', opening_subtitle: 'Ideas brought to life.', opening_footer: 'DESIGN · CODE · MOTION',
@@ -126,6 +128,7 @@ const translations = {
     },
     ar: {
         skip_content: 'انتقل إلى المحتوى',
+        theme_to_light: 'التبديل إلى الوضع الفاتح', theme_to_dark: 'التبديل إلى الوضع الداكن',
         nav_projects: 'المشاريع', nav_services: 'الخدمات', nav_about: 'عني', nav_contact: 'تواصل',
         ribbon_apps: 'تطبيقات', ribbon_saas: 'منصات وأدوات', ribbon_web: 'مواقع ويب', ribbon_design: 'تصميم', ribbon_code: 'تطوير',
         opening_skip: 'دخول ↗', opening_kicker: 'تطبيقات · SaaS · ويب', opening_subtitle: 'أفكار تتحول إلى واقع.', opening_footer: 'تصميم · برمجة · حركة',
@@ -256,7 +259,12 @@ window.setLanguage = function(lang, remember = true) {
     currentLang = lang;
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        const selected = btn.dataset.lang === lang;
+        btn.classList.toggle('active', selected);
+        btn.setAttribute('aria-pressed', String(selected));
+    });
+    updateThemeButton(lang);
 
     const t = translations[lang] || translations.en;
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -304,9 +312,19 @@ window.setLanguage = function(lang, remember = true) {
     }
 };
 
+function updateThemeButton(lang = currentLang) {
+    const button = document.getElementById('theme-toggle');
+    if (!button) return;
+    const isDark = document.body.classList.contains('dark-mode');
+    button.setAttribute('aria-pressed', String(isDark));
+    const labels = translations[lang] || translations.fr;
+    button.setAttribute('aria-label', isDark ? labels.theme_to_light : labels.theme_to_dark);
+}
+
 window.toggleTheme = function() {
     document.body.classList.toggle('dark-mode');
     const isDark = document.body.classList.contains('dark-mode');
+    updateThemeButton();
     try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) {}
 };
 
