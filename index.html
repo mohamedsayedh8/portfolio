@@ -34,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=5913">
+    <link rel="stylesheet" href="style.css?v=5914">
 </head>
 <body class="home-page">
     <a class="skip-link" href="#top" data-i18n="skip_content">Aller au contenu</a>
@@ -235,6 +235,14 @@
                         <label class="project-choice"><input type="radio" name="contact-project" value="site"><span><i class="fa-solid fa-globe" aria-hidden="true"></i><span data-i18n="contact_project_site">Un site web</span></span></label>
                     </div>
                 </fieldset>
+                <fieldset class="contact-project-picker contact-stage-picker" data-reveal style="--reveal-delay: 190ms">
+                    <legend data-i18n="contact_stage_label">Où en est ton projet ? (facultatif)</legend>
+                    <div class="contact-project-options">
+                        <label class="project-choice"><input type="radio" name="contact-stage" value="idea"><span><i class="fa-regular fa-lightbulb" aria-hidden="true"></i><span data-i18n="contact_stage_idea">J’ai une idée</span></span></label>
+                        <label class="project-choice"><input type="radio" name="contact-stage" value="design"><span><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i><span data-i18n="contact_stage_design">J’ai une maquette</span></span></label>
+                        <label class="project-choice"><input type="radio" name="contact-stage" value="existing"><span><i class="fa-solid fa-arrow-rotate-right" aria-hidden="true"></i><span data-i18n="contact_stage_existing">Un produit existe déjà</span></span></label>
+                    </div>
+                </fieldset>
                 <a class="btn btn-primary contact-email" id="contact-email-link" href="mailto:contact@mohamedelhawawshi.com" data-reveal style="--reveal-delay: 220ms"><i class="fa-solid fa-paper-plane"></i><span data-i18n="contact_cta">M’écrire</span></a>
                 <div class="social-row" data-reveal style="--reveal-delay: 260ms">
                     <a href="https://www.linkedin.com/in/mohamed-elhawawshi-6024a92a5?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -260,6 +268,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=5910"></script>
+    <script src="script.js?v=5911"></script>
 </body>
 </html>

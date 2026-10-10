@@ -54,6 +54,7 @@ const translations = {
         contact_subtitle: 'Tu as une idée à lancer ? Parle-moi de ton projet.',
         contact_cta: 'M’écrire',
         contact_project_label: 'Tu veux créer…', contact_project_app: 'Une app', contact_project_saas: 'Un SaaS', contact_project_site: 'Un site web',
+        contact_stage_label: 'Où en est ton projet ? (facultatif)', contact_stage_idea: 'J’ai une idée', contact_stage_design: 'J’ai une maquette', contact_stage_existing: 'Un produit existe déjà',
         footer_role: 'Apps · SaaS · Sites web',
         footer_note: 'Des produits numériques conçus avec soin, de l’idée à la mise en ligne.',
         footer_contact: 'Parlons de ton projet',
@@ -117,6 +118,7 @@ const translations = {
         contact_subtitle: 'Have an idea to launch? Tell me about your project.',
         contact_cta: 'Email me',
         contact_project_label: 'What are you looking to build?', contact_project_app: 'An app', contact_project_saas: 'A SaaS', contact_project_site: 'A website',
+        contact_stage_label: 'Where is your project right now? (optional)', contact_stage_idea: 'I have an idea', contact_stage_design: 'I have a design', contact_stage_existing: 'I have an existing product',
         footer_role: 'Apps · SaaS · Websites',
         footer_note: 'Digital products, thoughtfully made from the first idea to launch.',
         footer_contact: 'Tell me about your project',
@@ -180,6 +182,7 @@ const translations = {
         contact_subtitle: 'هل لديك فكرة تريد إطلاقها؟ أخبرني عن مشروعك.',
         contact_cta: 'راسلني',
         contact_project_label: 'ما الذي تريد إنشاءه؟', contact_project_app: 'تطبيق', contact_project_saas: 'منصة SaaS', contact_project_site: 'موقع ويب',
+        contact_stage_label: 'ما المرحلة الحالية لمشروعك؟ (اختياري)', contact_stage_idea: 'لدي فكرة', contact_stage_design: 'لدي تصميم', contact_stage_existing: 'لدي منتج قائم',
         footer_role: 'تطبيقات · SaaS · مواقع ويب',
         footer_note: 'منتجات رقمية متقنة من الفكرة الأولى حتى الإطلاق.',
         footer_contact: 'لنتحدث عن مشروعك',
@@ -245,10 +248,22 @@ function updateContactMailto() {
         ar: { app: 'تطبيقاً للهاتف', saas: 'منصة SaaS أو أداة ويب', site: 'موقع ويب' }
     };
     const project = projectNames[currentLang]?.[selected] || projectNames.fr[selected];
+    const stage = document.querySelector('input[name="contact-stage"]:checked')?.value;
+    const stageNames = {
+        fr: { idea: 'une idée à préciser', design: 'une maquette à développer', existing: 'un produit à améliorer' },
+        en: { idea: 'an idea to shape', design: 'a design to build', existing: 'an existing product to improve' },
+        ar: { idea: 'فكرة تحتاج إلى تطوير', design: 'تصميماً يحتاج إلى تنفيذ', existing: 'منتجاً قائماً يحتاج إلى تحسين' }
+    };
+    const stagePrompts = {
+        fr: 'Le projet en est à ce stade :',
+        en: 'The project is currently at this stage:',
+        ar: 'مشروعي حالياً في هذه المرحلة:'
+    };
+    const stageLine = stage ? `\n\n${stagePrompts[currentLang]} ${stageNames[currentLang]?.[stage] || stageNames.fr[stage]}.` : '';
     const message = {
-        fr: `Bonjour Mohamed,\n\nJ’aimerais échanger avec toi au sujet de ${project}.\n\nVoici quelques détails sur mon idée :\n`,
-        en: `Hi Mohamed,\n\nI’d like to talk with you about ${project}.\n\nHere are a few details about my idea:\n`,
-        ar: `مرحباً محمد،\n\nأود التحدث معك حول ${project}.\n\nإليك بعض التفاصيل عن فكرتي:\n`
+        fr: `Bonjour Mohamed,\n\nJ’aimerais parler avec toi d’un projet concernant ${project}.${stageLine}\n\nVoici quelques détails sur mon idée :\n`,
+        en: `Hi Mohamed,\n\nI’d like to talk with you about ${project}.${stageLine}\n\nHere are a few details about my idea:\n`,
+        ar: `مرحباً محمد،\n\nأود التحدث معك حول ${project}.${stageLine}\n\nإليك بعض التفاصيل عن فكرتي:\n`
     }[currentLang];
     const subject = { fr: 'Parlons de mon projet', en: 'Let’s talk about my project', ar: 'لنتحدث عن مشروعي' }[currentLang];
     link.href = `mailto:contact@mohamedelhawawshi.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
@@ -412,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderAppCards();
     renderAppDetail();
-    document.querySelectorAll('input[name="contact-project"]').forEach(input => input.addEventListener('change', updateContactMailto));
+    document.querySelectorAll('input[name="contact-project"], input[name="contact-stage"]').forEach(input => input.addEventListener('change', updateContactMailto));
     document.querySelectorAll('[data-project-choice]').forEach(link => {
         link.addEventListener('click', () => {
             const choice = document.querySelector(`input[name="contact-project"][value="${link.dataset.projectChoice}"]`);
