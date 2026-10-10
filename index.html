@@ -34,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=5918">
+    <link rel="stylesheet" href="style.css?v=5920">
 </head>
 <body class="home-page">
     <a class="skip-link" href="#top" data-i18n="skip_content">Aller au contenu</a>
@@ -74,6 +74,7 @@
                 <a href="#contact" data-i18n="nav_contact">Contact</a>
             </div>
             <div class="nav-controls">
+                <button class="command-open" id="command-open" type="button" data-i18n-aria="command_open" aria-label="Ouvrir les raccourcis" title="Raccourcis · ⌘K"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
                 <div class="lang-switcher">
                     <button class="lang-btn active" data-lang="fr" aria-pressed="true" onclick="setLanguage('fr')">FR</button>
                     <button class="lang-btn" data-lang="en" aria-pressed="false" onclick="setLanguage('en')">EN</button>
@@ -279,6 +280,14 @@
         <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
     </button>
 
-    <script src="script.js?v=5915"></script>
+    <dialog class="command-dialog" id="command-dialog" aria-label="Raccourcis du portfolio">
+        <div class="command-panel">
+            <label class="command-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="command-search" type="search" autocomplete="off" data-i18n-placeholder="command_search" placeholder="Que veux-tu faire ?" aria-label="Rechercher une action"><kbd>ESC</kbd></label>
+            <p class="command-section-label" data-i18n="command_navigation">Navigation</p><div class="command-items" id="command-items"></div>
+            <footer class="command-hint"><span><kbd>↑</kbd><kbd>↓</kbd> parcourir</span><span><kbd>↵</kbd> ouvrir</span><span><kbd>⌘ K</kbd> raccourcis</span></footer>
+        </div>
+    </dialog>
+
+    <script src="script.js?v=5917"></script>
 </body>
 </html>

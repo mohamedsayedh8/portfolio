@@ -1607,3 +1607,24 @@ html[dir="rtl"] .visual-chip { text-align: right; }
   .lightbox-close,.lightbox-arrow { width: 54px; height: 54px; }
 }
 @media (prefers-reduced-motion: reduce) { .gallery-lightbox-shell,.lightbox-image.is-changing { animation: none !important; } .lightbox-close,.lightbox-arrow { transition: none !important; } }
+
+/* Searchable command palette: the same 12 shortcuts work with mouse, touch, or keyboard. */
+.command-open { display:grid; width:40px; height:40px; place-items:center; border:1px solid var(--border); border-radius:50%; color:var(--text-muted); background:color-mix(in srgb,var(--bg) 62%,transparent); cursor:pointer; transition:color .2s ease,border-color .2s ease,transform .2s ease; }
+.command-open:hover,.command-open:focus-visible { color:var(--accent); border-color:var(--accent); transform:scale(1.06); outline:none; }
+.command-dialog { width:min(92vw,560px); max-width:none; max-height:min(78dvh,620px); padding:0; overflow:hidden; border:1px solid color-mix(in srgb,var(--accent) 24%,var(--border)); border-radius:22px; color:var(--text); background:color-mix(in srgb,var(--bg) 88%,#111); box-shadow:0 32px 100px rgba(0,0,0,.55); }
+.command-dialog::backdrop { background:rgba(3,6,5,.68); backdrop-filter:blur(9px); }
+.command-panel { padding:1rem; }
+.command-search { display:flex; align-items:center; gap:.75rem; padding:.9rem 1rem; border:1px solid var(--border); border-radius:14px; color:var(--accent); background:color-mix(in srgb,var(--bg) 76%,transparent); }
+.command-search input { flex:1; min-width:0; border:0; outline:0; color:var(--text); background:transparent; font:inherit; font-size:.95rem; }
+.command-search kbd,.command-hint kbd,.command-item kbd { padding:.15rem .38rem; border:1px solid var(--border); border-radius:6px; color:var(--text-muted); background:color-mix(in srgb,var(--bg-subtle) 65%,transparent); font:600 .68rem/1.4 inherit; }
+.command-section-label { margin:1rem .55rem .4rem; color:var(--text-muted); font-size:.67rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+.command-items { display:grid; gap:.2rem; max-height:48dvh; overflow:auto; }
+.command-item { display:flex; min-height:46px; align-items:center; gap:.8rem; padding:.65rem .75rem; border:0; border-radius:10px; color:var(--text); background:transparent; text-align:start; font:inherit; cursor:pointer; }
+.command-item i { width:1.2rem; color:var(--accent); text-align:center; }
+.command-item span { flex:1; }
+.command-item.is-active,.command-item:hover { background:color-mix(in srgb,var(--accent) 11%,var(--bg)); }
+.command-empty { padding:.8rem; color:var(--text-muted); text-align:center; }
+.command-hint { display:flex; justify-content:space-between; gap:.5rem; margin-top:.7rem; padding:.65rem .3rem 0; border-top:1px solid var(--border); color:var(--text-muted); font-size:.67rem; }
+.command-hint span { display:flex; align-items:center; gap:.2rem; }
+@media (max-width:620px) { .command-open { width:44px; height:44px; } .command-dialog { width:calc(100vw - 20px); max-height:72dvh; margin:auto auto 10px; border-radius:20px; } .command-panel { padding:.7rem; } .command-hint { font-size:.58rem; } }
+@media (prefers-reduced-motion:reduce) { .command-open { transition:none; } }
