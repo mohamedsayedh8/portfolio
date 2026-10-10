@@ -2,6 +2,7 @@
 const translations = {
     fr: {
         nav_projects: 'Projets', nav_services: 'Services', nav_about: 'À propos', nav_contact: 'Contact',
+        ribbon_apps: 'Applications', ribbon_saas: 'SaaS & outils', ribbon_web: 'Sites web', ribbon_design: 'Design', ribbon_code: 'Développement',
         opening_skip: 'Entrer ↗', opening_kicker: 'APPLICATIONS · SAAS · WEB', opening_subtitle: 'Des idées qui prennent vie.', opening_footer: 'DESIGN · CODE · MOUVEMENT',
         visual_caption: 'Tape sur le M ✦',
         logo_game_hint: 'Faire jaillir les étoiles',
@@ -48,6 +49,7 @@ const translations = {
     },
     en: {
         nav_projects: 'Projects', nav_services: 'Services', nav_about: 'About', nav_contact: 'Contact',
+        ribbon_apps: 'Applications', ribbon_saas: 'SaaS & tools', ribbon_web: 'Websites', ribbon_design: 'Design', ribbon_code: 'Development',
         opening_skip: 'Enter ↗', opening_kicker: 'APPS · SAAS · WEB', opening_subtitle: 'Ideas brought to life.', opening_footer: 'DESIGN · CODE · MOTION',
         visual_caption: 'Tap the M ✦',
         logo_game_hint: 'Make the stars burst',
@@ -94,6 +96,7 @@ const translations = {
     },
     ar: {
         nav_projects: 'المشاريع', nav_services: 'الخدمات', nav_about: 'عني', nav_contact: 'تواصل',
+        ribbon_apps: 'تطبيقات', ribbon_saas: 'منصات وأدوات', ribbon_web: 'مواقع ويب', ribbon_design: 'تصميم', ribbon_code: 'تطوير',
         opening_skip: 'دخول ↗', opening_kicker: 'تطبيقات · SaaS · ويب', opening_subtitle: 'أفكار تتحول إلى واقع.', opening_footer: 'تصميم · برمجة · حركة',
         visual_caption: 'اضغط على M ✦',
         logo_game_hint: 'أطلق النجوم',
