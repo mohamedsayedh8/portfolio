@@ -796,6 +796,7 @@ body.home-page .hero .container {
 .chip-icon { display: grid; place-items: center; width: 29px; height: 29px; border-radius: 9px; color: #071c12; background: linear-gradient(145deg,#a6f5ca,#47d49a); font-size: .78rem; }
 .chip-zikr { top: 18%; left: 4%; transform: translateZ(90px) rotate(-9deg); animation: chip-float 5.2s ease-in-out infinite; }
 .chip-kinto { right: 0; bottom: 22%; transform: translateZ(110px) rotate(7deg); animation: chip-float 6s -1.8s ease-in-out infinite; }
+.chip-web { right: 11%; top: 12%; transform: translateZ(75px) rotate(7deg); animation: chip-float 5.8s -2.4s ease-in-out infinite; }
 .visual-caption { position: absolute; left: 50%; bottom: 7%; display: flex; align-items: center; gap: .55rem; padding: .55rem .85rem; border: 1px solid rgba(255,255,255,.09); border-radius: 99px; color: rgba(237,249,242,.72); background: rgba(16,20,18,.65); font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; transform: translateX(-50%) translateZ(50px); backdrop-filter: blur(10px); }
 .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #65e5a4; box-shadow: 0 0 12px #65e5a4; }
 .visual-spark { position: absolute; color: #a6f5ca; text-shadow: 0 0 18px rgba(102,229,164,.8); transform: translateZ(75px); animation: spark-float 3.2s ease-in-out infinite; }
@@ -856,8 +857,8 @@ body.home-page .hero .container {
 }
 
 .nav-inner .logo { display: none; }
-.nav-links { margin: 0; gap: clamp(.8rem, 2vw, 1.4rem); }
-.nav-links a { color: var(--text); opacity: .76; }
+.nav-links { margin: 0; gap: clamp(.65rem, 1.8vw, 1.2rem); }
+.nav-links a { color: var(--text); opacity: .76; font-size: .78rem; font-weight: 600; }
 .nav-links a:hover { opacity: 1; }
 .nav-controls { gap: .8rem; }
 .lang-switcher { gap: .35rem; }
@@ -930,8 +931,8 @@ html[dir="rtl"] .app-card:hover .app-card-link i { transform: translateX(-4px); 
   .hero-visual { grid-row: 1; }
   .approach-grid { grid-template-columns: 1fr; }
     .nav-inner { flex-wrap: nowrap; gap: .75rem; padding: .45rem .65rem; }
-  .nav-links { order: initial; width: auto; gap: .75rem; padding: 0; margin: 0; }
-  .nav-links a { font-size: .72rem; }
+  .nav-links { order: initial; width: auto; gap: .55rem; padding: 0; margin: 0; }
+  .nav-links a { font-size: .68rem; }
   .nav-controls { margin: 0; gap: .4rem; }
   .lang-switcher { gap: .1rem; }
   .lang-btn { font-size: .7rem; padding: .25rem .3rem; }
@@ -964,3 +965,7 @@ html[dir="rtl"] .app-card:hover .app-card-link i { transform: translateX(-4px); 
 .app-gallery-grid figure:hover { transform: translateY(-8px) rotateY(3deg); box-shadow: 0 32px 85px rgba(0,0,0,.24); }
 .app-gallery-grid .iphone-mockup { width: 100%; max-width: none; margin: 0; }
 @media (max-width: 760px) { .services-grid { grid-template-columns: 1fr; } .service-card { min-height: 220px; } .app-gallery-grid figure { padding: .38rem; border-radius: 1.55rem; } .app-gallery-grid .iphone-mockup { border-radius: 1.35rem; } .app-gallery-grid .iphone-mockup::before { display: none; } .app-gallery-grid figure:nth-child(2) { margin-top: 1.1rem; } }
+
+.contact-email { margin: .1rem 0 1.45rem; border-radius: 99px; box-shadow: 0 10px 32px color-mix(in srgb,var(--accent) 17%,transparent); }
+.contact-email:hover { transform: translateY(-3px); box-shadow: 0 15px 40px color-mix(in srgb,var(--accent) 26%,transparent); }
+@media (max-width: 420px) { .nav-inner { gap: .45rem; } .nav-links { gap: .4rem; } .nav-links a { font-size: .62rem; } .nav-controls { gap: .25rem; } .lang-btn { padding: .2rem .24rem; } }

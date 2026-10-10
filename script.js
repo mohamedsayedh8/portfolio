@@ -1,9 +1,10 @@
 // --- UI Translations ---
 const translations = {
     fr: {
-        nav_projects: 'Projets', nav_about: 'À propos', nav_contact: 'Contact',
+        nav_projects: 'Projets', nav_services: 'Services', nav_about: 'À propos', nav_contact: 'Contact',
         intro_caption: 'Créativité en mouvement',
         visual_caption: 'Design · Code · Idées',
+        visual_chip_apps: 'APPS', visual_chip_saas: 'SAAS', visual_chip_web: 'WEB',
         hero_eyebrow: 'Créateur digital indépendant',
         hero_title: 'Je transforme des idées en produits digitaux.',
         hero_desc: 'Applications, SaaS et sites web : je conçois des expériences utiles, soignées et prêtes à être lancées.',
@@ -41,12 +42,14 @@ const translations = {
         about_cta: 'Parlons de ton idée',
         about_p1: 'Je suis Mohamed Sayed, développeur indépendant. Je crée des applications mobiles, des SaaS et des sites web, du design à la mise en ligne.',
         contact_title: 'Contact',
-        contact_subtitle: 'Une idée de projet ? Écrivez-moi.'
+        contact_subtitle: 'Tu as une idée à lancer ? Parle-moi de ton projet.',
+        contact_cta: 'M’écrire'
     },
     en: {
-        nav_projects: 'Projects', nav_about: 'About', nav_contact: 'Contact',
+        nav_projects: 'Projects', nav_services: 'Services', nav_about: 'About', nav_contact: 'Contact',
         intro_caption: 'Creativity in motion',
         visual_caption: 'Design · Code · Ideas',
+        visual_chip_apps: 'APPS', visual_chip_saas: 'SAAS', visual_chip_web: 'WEB',
         hero_eyebrow: 'Independent digital creator',
         hero_title: 'I turn ideas into digital products.',
         hero_desc: 'Apps, SaaS and websites: I design thoughtful, useful experiences, ready to launch.',
@@ -84,12 +87,14 @@ const translations = {
         about_cta: 'Let’s talk about your idea',
         about_p1: 'I\'m Mohamed Sayed, an independent developer. I build mobile apps, SaaS products and websites, from design to launch.',
         contact_title: 'Contact',
-        contact_subtitle: 'Have a project in mind? Get in touch.'
+        contact_subtitle: 'Have an idea to launch? Tell me about your project.',
+        contact_cta: 'Email me'
     },
     ar: {
-        nav_projects: 'المشاريع', nav_about: 'عني', nav_contact: 'تواصل',
+        nav_projects: 'المشاريع', nav_services: 'الخدمات', nav_about: 'عني', nav_contact: 'تواصل',
         intro_caption: 'إبداع يتحرك',
         visual_caption: 'تصميم · برمجة · أفكار',
+        visual_chip_apps: 'تطبيقات', visual_chip_saas: 'SAAS', visual_chip_web: 'ويب',
         hero_eyebrow: 'مطور رقمي مستقل',
         hero_title: 'أحوّل الأفكار إلى منتجات رقمية.',
         hero_desc: 'تطبيقات ومنصات SaaS ومواقع ويب: أصمم تجارب مفيدة ومتقنة وجاهزة للإطلاق.',
@@ -127,7 +132,8 @@ const translations = {
         about_cta: 'لنتحدث عن فكرتك',
         about_p1: 'أنا محمد سيد، مطور مستقل. أصمم تطبيقات الهاتف ومنتجات SaaS ومواقع الويب من التصميم حتى الإطلاق.',
         contact_title: 'تواصل',
-        contact_subtitle: 'لديك فكرة مشروع؟ راسلني.'
+        contact_subtitle: 'هل لديك فكرة تريد إطلاقها؟ أخبرني عن مشروعك.',
+        contact_cta: 'راسلني'
     }
 };
 
