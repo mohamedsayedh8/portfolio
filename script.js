@@ -325,6 +325,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealItems.forEach(item => revealObserver.observe(item));
 
+    const sectionLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+    if ('IntersectionObserver' in window && sectionLinks.length) {
+        const sectionObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                sectionLinks.forEach(link => link.classList.toggle('is-active', link.hash === `#${entry.target.id}`));
+            });
+        }, { rootMargin: '-28% 0px -58% 0px', threshold: 0 });
+        sectionLinks.forEach(link => {
+            const section = document.querySelector(link.hash);
+            if (section) sectionObserver.observe(section);
+        });
+    }
+
     // Pointer-driven perspective is enabled only for precise, non-touch pointers.
     if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         document.querySelectorAll('[data-tilt]').forEach(surface => {
@@ -332,8 +346,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const bounds = surface.getBoundingClientRect();
                 const x = (event.clientX - bounds.left) / bounds.width;
                 const y = (event.clientY - bounds.top) / bounds.height;
-                surface.style.setProperty('--tilt-x', `${(0.5 - y) * 9}deg`);
-                surface.style.setProperty('--tilt-y', `${(x - 0.5) * 11}deg`);
+                surface.style.setProperty('--tilt-x', `${(0.5 - y) * 6}deg`);
+                surface.style.setProperty('--tilt-y', `${(x - 0.5) * 7}deg`);
                 surface.style.setProperty('--shine-x', `${x * 100}%`);
                 surface.style.setProperty('--shine-y', `${y * 100}%`);
                 surface.classList.add('is-tilting');
@@ -369,8 +383,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             intro.classList.add('is-finished');
             document.documentElement.classList.remove('intro-active');
-            setTimeout(() => intro.remove(), 900);
-        }, 2050);
+            setTimeout(() => intro.remove(), 520);
+        }, 950);
     } else if (intro) {
         intro.remove();
     }

@@ -14,7 +14,12 @@
             }
             document.documentElement.lang = lang;
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('intro-active');
+            let introSeen = false;
+            try {
+                introSeen = sessionStorage.getItem('brand-intro-seen') === '1';
+                if (!introSeen) sessionStorage.setItem('brand-intro-seen', '1');
+            } catch (e) {}
+            if (!introSeen && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('intro-active');
         })();
     </script>
     <title>Mohamed Sayed — Apps, SaaS &amp; sites web</title>
@@ -29,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=4700">
+    <link rel="stylesheet" href="style.css?v=5000">
 </head>
 <body class="home-page">
 
@@ -191,6 +196,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=4700"></script>
+    <script src="script.js?v=5000"></script>
 </body>
 </html>
