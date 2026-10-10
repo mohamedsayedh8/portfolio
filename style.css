@@ -1241,3 +1241,111 @@ html[dir="rtl"] .motion-ribbon-track { animation-name: ribbon-travel-rtl; }
 @keyframes ribbon-travel-rtl { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 @media (max-width: 620px) { .motion-ribbon { padding: .85rem 0; } .motion-ribbon-track { animation-duration: 27s; } .motion-ribbon-set { gap: 1.2rem; letter-spacing: .09em; } }
 @media (prefers-reduced-motion: reduce) { .motion-ribbon-track, .motion-ribbon-set i { animation: none !important; } .motion-ribbon-track { transform: none; } .motion-ribbon { mask-image: none; } }
+
+/* Shared depth and entrance motion for every content tile. */
+.app-card,
+.service-card,
+.approach-card,
+.about-panel,
+.app-gallery-grid figure {
+  position: relative;
+  isolation: isolate;
+  transform-style: preserve-3d;
+  transition: transform .48s cubic-bezier(.18,.72,.22,1),
+              border-color .35s ease,
+              box-shadow .45s ease,
+              background-color .35s ease;
+}
+.app-card::before,
+.service-card::before,
+.approach-card::before,
+.about-panel::before,
+.app-gallery-grid figure::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0 12% auto;
+  height: 1px;
+  border-radius: 99px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 74%, white), transparent);
+  opacity: .42;
+  transform: scaleX(.44);
+  transform-origin: center;
+  transition: opacity .4s ease, transform .55s cubic-bezier(.18,.72,.22,1);
+}
+.app-card::before { inset: 0; height: 100%; border-radius: inherit; background: radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--accent) 13%, transparent), transparent 58%); opacity: 0; transform: none; }
+.app-card:hover::before, .app-card:focus-visible::before { opacity: 1; }
+.app-card.is-visible::before,
+.service-card.is-visible::before,
+.approach-card.is-visible::before,
+.about-panel.is-visible::before,
+.app-gallery-grid figure.is-visible::before { animation: tile-glint 1.15s .16s cubic-bezier(.18,.72,.22,1) both; }
+
+.motion-ready .app-card.is-visible,
+.motion-ready .service-card.is-visible,
+.motion-ready .approach-card.is-visible,
+.motion-ready .about-panel.is-visible,
+.motion-ready .app-gallery-grid figure.is-visible {
+  animation: tile-arrive .82s cubic-bezier(.18,.72,.22,1) backwards;
+  animation-delay: calc(var(--reveal-delay, 0ms) + 70ms);
+}
+.app-card:hover,
+.app-card:focus-visible,
+.service-card:hover,
+.service-card:focus-visible,
+.approach-card:hover,
+.approach-card:focus-visible,
+.about-panel:hover,
+.app-gallery-grid figure:hover {
+  border-color: color-mix(in srgb, var(--accent) 48%, var(--border));
+  box-shadow: 0 26px 74px rgba(0,0,0,.17), 0 0 38px color-mix(in srgb, var(--accent) 12%, transparent), inset 0 1px rgba(255,255,255,.16);
+}
+.app-card:hover,
+.app-card:focus-visible,
+.service-card:hover,
+.service-card:focus-visible,
+.approach-card:hover,
+.approach-card:focus-visible,
+.app-gallery-grid figure:hover { transform: translateY(-8px) rotateX(1.5deg) scale(1.008); }
+.about-panel:hover { transform: translateY(-6px) scale(1.006); }
+.service-card:hover::before,
+.service-card:focus-visible::before,
+.approach-card:hover::before,
+.approach-card:focus-visible::before,
+.about-panel:hover::before,
+.app-gallery-grid figure:hover::before { opacity: .95; transform: scaleX(1); }
+.service-card:active,
+.approach-card:active,
+.app-card:active,
+.app-gallery-grid figure:active { transform: scale(.985); }
+.service-card:active .service-icon,
+.approach-card:active .approach-icon { transform: scale(.9) rotate(-8deg); }
+
+@keyframes tile-arrive {
+  0% { opacity: 0; filter: blur(7px); }
+  68% { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; filter: blur(0); }
+}
+@keyframes tile-glint { 0% { opacity: 0; transform: scaleX(.2); } 42% { opacity: .95; transform: scaleX(1); } 100% { opacity: .48; transform: scaleX(.72); } }
+@media (max-width: 760px) {
+  .motion-ready .app-card.is-visible,
+  .motion-ready .service-card.is-visible,
+  .motion-ready .approach-card.is-visible,
+  .motion-ready .about-panel.is-visible,
+  .motion-ready .app-gallery-grid figure.is-visible { animation-duration: .72s; }
+  .service-card:active .service-icon,
+  .approach-card:active .approach-icon { box-shadow: 0 0 28px color-mix(in srgb, var(--accent) 22%, transparent); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-ready .app-card.is-visible,
+  .motion-ready .service-card.is-visible,
+  .motion-ready .approach-card.is-visible,
+  .motion-ready .about-panel.is-visible,
+  .motion-ready .app-gallery-grid figure.is-visible { animation: none !important; }
+  .app-card::before,
+  .service-card::before,
+  .approach-card::before,
+  .about-panel::before,
+  .app-gallery-grid figure::before { animation: none !important; transition: none !important; }
+}
