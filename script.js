@@ -33,6 +33,7 @@ const translations = {
         service_saas_text: 'Des plateformes web utiles, avec les fonctionnalités et les abonnements adaptés à ton activité.',
         service_sites_title: 'Sites web',
         service_sites_text: 'Des sites modernes, rapides et adaptés à tous les écrans, conçus pour présenter ton activité.',
+        service_cta: 'Parlons de ton projet',
         approach_kicker: 'Ma façon de travailler',
         approach_title: 'De l’idée au lancement.',
         approach_intro: 'Un accompagnement complet, du premier échange à la mise en ligne de ton produit.',
@@ -91,6 +92,7 @@ const translations = {
         service_saas_text: 'Useful web platforms, with features and subscriptions tailored to your business.',
         service_sites_title: 'Websites',
         service_sites_text: 'Modern, fast and responsive websites that present your business clearly.',
+        service_cta: 'Tell me about your project',
         approach_kicker: 'How I work',
         approach_title: 'From idea to launch.',
         approach_intro: 'End-to-end support, from the first conversation to your product launch.',
@@ -149,6 +151,7 @@ const translations = {
         service_saas_text: 'منصات ويب عملية بميزات واشتراكات تناسب نشاطك.',
         service_sites_title: 'مواقع الويب',
         service_sites_text: 'مواقع حديثة وسريعة ومتوافقة مع مختلف الشاشات للتعريف بنشاطك.',
+        service_cta: 'لنتحدث عن مشروعك',
         approach_kicker: 'طريقة عملي',
         approach_title: 'من الفكرة إلى الإطلاق.',
         approach_intro: 'مرافقة كاملة من أول نقاش إلى إطلاق منتجك.',
@@ -383,6 +386,14 @@ document.addEventListener('DOMContentLoaded', () => {
     renderAppCards();
     renderAppDetail();
     document.querySelectorAll('input[name="contact-project"]').forEach(input => input.addEventListener('change', updateContactMailto));
+    document.querySelectorAll('[data-project-choice]').forEach(link => {
+        link.addEventListener('click', () => {
+            const choice = document.querySelector(`input[name="contact-project"][value="${link.dataset.projectChoice}"]`);
+            if (!choice) return;
+            choice.checked = true;
+            updateContactMailto();
+        });
+    });
     setLanguage(savedLang || detectBrowserLanguage(), false);
 
     const processGrid = document.querySelector('.approach-grid');

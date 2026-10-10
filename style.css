@@ -923,6 +923,11 @@ html[dir="rtl"] .app-card:hover .app-card-link i { transform: translateX(-4px); 
 .service-index { position: absolute; top: 1.5rem; right: 1.5rem; color: color-mix(in srgb,var(--text) 25%,transparent); font-size: .72rem; font-weight: 700; letter-spacing: .12em; }
 .service-card h3 { position: relative; z-index: 1; margin-bottom: .55rem; font-size: 1.12rem; }
 .service-card p { position: relative; z-index: 1; max-width: 34ch; color: var(--text-muted); font-size: .88rem; line-height: 1.75; }
+.service-card-link { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: .55rem; width: fit-content; min-height: 44px; margin-top: .85rem; color: var(--accent); font-size: .8rem; font-weight: 700; text-decoration: none; }
+.service-card-link i { transition: transform .22s ease; }
+.service-card-link:hover i,.service-card-link:focus-visible i { transform: translateX(4px); }
+.service-card-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+html[dir="rtl"] .service-card-link:hover i,html[dir="rtl"] .service-card-link:focus-visible i { transform: translateX(-4px); }
 .service-orbit { position: absolute; z-index: -1; right: -44px; bottom: -72px; width: 190px; height: 190px; border: 1px solid color-mix(in srgb,var(--accent) 15%,transparent); border-radius: 50%; box-shadow: 0 0 0 22px color-mix(in srgb,var(--accent) 3%,transparent),0 0 0 48px color-mix(in srgb,var(--accent) 2%,transparent); transition: transform .7s ease; }
 .service-card:hover .service-orbit { transform: scale(1.18) rotate(18deg); }
 .app-hero-info .feature-list { display: flex; flex-wrap: wrap; gap: .55rem; margin: 1.15rem 0 1.5rem; padding: 0; list-style: none; }
@@ -1446,6 +1451,7 @@ html[dir="rtl"] .approach-grid::after { transform-origin: right center; }
   html[dir="rtl"] .approach-grid::before,html[dir="rtl"] .approach-grid::after { left: auto; right: 49px; }
   html[dir="rtl"] .approach-grid::after { transform-origin: top center; }
   .approach-card { min-height: 215px; }
+  .service-card-link { min-height: 48px; }
 }
 @media (prefers-reduced-motion: reduce) { .approach-grid::after { transition: none; } .approach-card.is-current .approach-icon { animation: none !important; } }
 
