@@ -2,6 +2,7 @@
 const translations = {
     fr: {
         nav_projects: 'Projets', nav_services: 'Services', nav_about: 'À propos', nav_contact: 'Contact',
+        opening_skip: 'Entrer ↗', opening_kicker: 'APPLICATIONS · SAAS · WEB', opening_subtitle: 'Des idées qui prennent vie.', opening_footer: 'DESIGN · CODE · MOUVEMENT',
         visual_caption: 'Tape sur le M ✦',
         logo_game_hint: 'Faire jaillir les étoiles',
         visual_chip_apps: 'APPS', visual_chip_saas: 'SAAS', visual_chip_web: 'WEB',
@@ -47,6 +48,7 @@ const translations = {
     },
     en: {
         nav_projects: 'Projects', nav_services: 'Services', nav_about: 'About', nav_contact: 'Contact',
+        opening_skip: 'Enter ↗', opening_kicker: 'APPS · SAAS · WEB', opening_subtitle: 'Ideas brought to life.', opening_footer: 'DESIGN · CODE · MOTION',
         visual_caption: 'Tap the M ✦',
         logo_game_hint: 'Make the stars burst',
         visual_chip_apps: 'APPS', visual_chip_saas: 'SAAS', visual_chip_web: 'WEB',
@@ -92,6 +94,7 @@ const translations = {
     },
     ar: {
         nav_projects: 'المشاريع', nav_services: 'الخدمات', nav_about: 'عني', nav_contact: 'تواصل',
+        opening_skip: 'دخول ↗', opening_kicker: 'تطبيقات · SaaS · ويب', opening_subtitle: 'أفكار تتحول إلى واقع.', opening_footer: 'تصميم · برمجة · حركة',
         visual_caption: 'اضغط على M ✦',
         logo_game_hint: 'أطلق النجوم',
         visual_chip_apps: 'تطبيقات', visual_chip_saas: 'SAAS', visual_chip_web: 'ويب',
@@ -312,6 +315,21 @@ document.addEventListener('DOMContentLoaded', () => {
     renderAppDetail();
     setLanguage(savedLang || detectBrowserLanguage(), false);
 
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+        let previousScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth > 620) return;
+            const currentScrollY = Math.max(0, window.scrollY);
+            if (currentScrollY < 56 || currentScrollY < previousScrollY - 5) {
+                navbar.classList.remove('nav-hidden');
+            } else if (currentScrollY > previousScrollY + 5) {
+                navbar.classList.add('nav-hidden');
+            }
+            previousScrollY = currentScrollY;
+        }, { passive: true });
+    }
+
     // Reveal content as it enters the viewport, with a graceful fallback.
     document.documentElement.classList.add('motion-ready');
     const revealItems = document.querySelectorAll('[data-reveal]');
@@ -408,6 +426,27 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         window.addEventListener('scroll', updateProgress, { passive: true });
         updateProgress();
+    }
+
+    const openingScreen = document.getElementById('opening-screen');
+    if (openingScreen && document.documentElement.classList.contains('intro-active')) {
+        let finished = false;
+        const finishOpening = () => {
+            if (finished) return;
+            finished = true;
+            openingScreen.classList.add('is-leaving');
+            window.setTimeout(() => {
+                document.documentElement.classList.remove('intro-active');
+                openingScreen.remove();
+            }, 620);
+        };
+        document.getElementById('opening-skip')?.addEventListener('click', finishOpening);
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') finishOpening();
+        }, { once: true });
+        window.setTimeout(finishOpening, 3000);
+    } else if (openingScreen) {
+        openingScreen.remove();
     }
 
 });
