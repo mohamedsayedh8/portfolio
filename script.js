@@ -15,6 +15,7 @@ const translations = {
         hero_title: 'Je transforme des idées en produits digitaux.',
         hero_desc: 'Applications, SaaS et sites web : je conçois des expériences utiles, soignées et prêtes à être lancées.',
         hero_cta_apps: 'Voir mes projets',
+        hero_scroll: 'Explorer les projets', projects_swipe: 'Fais glisser pour explorer',
         link_appstore: 'App Store',
         link_googleplay: 'Google Play',
         link_privacy: 'Confidentialité',
@@ -56,6 +57,7 @@ const translations = {
         contact_cta: 'M’écrire',
         contact_project_label: 'Tu veux créer…', contact_project_app: 'Une app', contact_project_saas: 'Un SaaS', contact_project_site: 'Un site web',
         contact_stage_label: 'Où en est ton projet ? (facultatif)', contact_stage_idea: 'J’ai une idée', contact_stage_design: 'J’ai une maquette', contact_stage_existing: 'Un produit existe déjà',
+        contact_summary: 'Ton message indiquera', contact_stage_unspecified: 'avancement à préciser', contact_copy: 'Copier l’adresse e-mail', contact_copy_done: 'Adresse e-mail copiée.', contact_copy_failed: 'Copie impossible. Écris à contact@mohamedelhawawshi.com.',
         footer_role: 'Apps · SaaS · Sites web',
         footer_note: 'Des produits numériques conçus avec soin, de l’idée à la mise en ligne.',
         footer_contact: 'Parlons de ton projet',
@@ -80,6 +82,7 @@ const translations = {
         hero_title: 'I turn ideas into digital products.',
         hero_desc: 'Apps, SaaS and websites: I design thoughtful, useful experiences, ready to launch.',
         hero_cta_apps: 'View my projects',
+        hero_scroll: 'Explore the projects', projects_swipe: 'Swipe to explore',
         link_appstore: 'App Store',
         link_googleplay: 'Google Play',
         link_privacy: 'Privacy',
@@ -121,6 +124,7 @@ const translations = {
         contact_cta: 'Email me',
         contact_project_label: 'What are you looking to build?', contact_project_app: 'An app', contact_project_saas: 'A SaaS', contact_project_site: 'A website',
         contact_stage_label: 'Where is your project right now? (optional)', contact_stage_idea: 'I have an idea', contact_stage_design: 'I have a design', contact_stage_existing: 'I have an existing product',
+        contact_summary: 'Your message will include', contact_stage_unspecified: 'stage to be discussed', contact_copy: 'Copy email address', contact_copy_done: 'Email address copied.', contact_copy_failed: 'Could not copy. Email contact@mohamedelhawawshi.com.',
         footer_role: 'Apps · SaaS · Websites',
         footer_note: 'Digital products, thoughtfully made from the first idea to launch.',
         footer_contact: 'Tell me about your project',
@@ -145,6 +149,7 @@ const translations = {
         hero_title: 'أحوّل الأفكار إلى منتجات رقمية.',
         hero_desc: 'تطبيقات ومنصات SaaS ومواقع ويب: أصمم تجارب مفيدة ومتقنة وجاهزة للإطلاق.',
         hero_cta_apps: 'مشاهدة مشاريعي',
+        hero_scroll: 'استكشف المشاريع', projects_swipe: 'اسحب لاستكشاف المشاريع',
         link_appstore: 'App Store',
         link_googleplay: 'Google Play',
         link_privacy: 'سياسة الخصوصية',
@@ -186,6 +191,7 @@ const translations = {
         contact_cta: 'راسلني',
         contact_project_label: 'ما الذي تريد إنشاءه؟', contact_project_app: 'تطبيق', contact_project_saas: 'منصة SaaS', contact_project_site: 'موقع ويب',
         contact_stage_label: 'ما المرحلة الحالية لمشروعك؟ (اختياري)', contact_stage_idea: 'لدي فكرة', contact_stage_design: 'لدي تصميم', contact_stage_existing: 'لدي منتج قائم',
+        contact_summary: 'ستتضمن رسالتك', contact_stage_unspecified: 'المرحلة تحتاج إلى توضيح', contact_copy: 'نسخ البريد الإلكتروني', contact_copy_done: 'تم نسخ البريد الإلكتروني.', contact_copy_failed: 'تعذر النسخ. راسل contact@mohamedelhawawshi.com.',
         footer_role: 'تطبيقات · SaaS · مواقع ويب',
         footer_note: 'منتجات رقمية متقنة من الفكرة الأولى حتى الإطلاق.',
         footer_contact: 'لنتحدث عن مشروعك',
@@ -270,6 +276,18 @@ function updateContactMailto() {
     }[currentLang];
     const subject = { fr: 'Parlons de mon projet', en: 'Let’s talk about my project', ar: 'لنتحدث عن مشروعي' }[currentLang];
     link.href = `mailto:contact@mohamedelhawawshi.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+    updateContactSummary();
+}
+
+function updateContactSummary() {
+    const summary = document.getElementById('contact-summary');
+    if (!summary) return;
+    const labels = translations[currentLang] || translations.fr;
+    const project = document.querySelector('input[name="contact-project"]:checked')?.value || 'app';
+    const stage = document.querySelector('input[name="contact-stage"]:checked')?.value;
+    const projectLabel = labels[`contact_project_${project}`];
+    const stageLabel = stage ? labels[`contact_stage_${stage}`] : labels.contact_stage_unspecified;
+    summary.textContent = `${labels.contact_summary} : ${projectLabel} · ${stageLabel}`;
 }
 
 window.setLanguage = function(lang, remember = true) {
@@ -356,7 +374,7 @@ function renderAppCards() {
         const name = app.name || id.charAt(0).toUpperCase() + id.slice(1);
         const preview = app.visualMode === 'cover'
             ? `<div class="project-preview project-preview-cover"><img src="${app.screenshot}" alt="${name}" loading="lazy"></div>`
-            : `<div class="project-preview project-preview-device"><div class="iphone-mockup"><div class="screen"><img src="${app.screenshot}" alt="${name}" loading="lazy"></div></div></div>`;
+            : `<div class="project-preview project-preview-device"><div class="iphone-mockup"><div class="screen">${app.screenshots.map((image, index) => `<img class="project-preview-slide project-preview-slide-${index + 1}" src="${image}" alt="${index === 0 ? name : ''}" ${index ? 'aria-hidden="true"' : ''} loading="lazy">`).join('')}</div></div></div>`;
         return `
             <a class="app-card" href="${id}.html" data-reveal data-tilt style="--reveal-delay: ${Object.keys(appsData).indexOf(id) * 110}ms">
                 <div class="app-card-inner">
@@ -431,6 +449,18 @@ document.addEventListener('DOMContentLoaded', () => {
     renderAppCards();
     renderAppDetail();
     document.querySelectorAll('input[name="contact-project"], input[name="contact-stage"]').forEach(input => input.addEventListener('change', updateContactMailto));
+    const copyButton = document.getElementById('contact-copy');
+    copyButton?.addEventListener('click', async () => {
+        const status = document.getElementById('contact-copy-status');
+        try {
+            await navigator.clipboard.writeText('contact@mohamedelhawawshi.com');
+            status.textContent = translations[currentLang].contact_copy_done;
+            copyButton.classList.add('is-copied');
+            window.setTimeout(() => copyButton.classList.remove('is-copied'), 900);
+        } catch (error) {
+            status.textContent = translations[currentLang].contact_copy_failed;
+        }
+    });
     document.querySelectorAll('[data-project-choice]').forEach(link => {
         link.addEventListener('click', () => {
             const choice = document.querySelector(`input[name="contact-project"][value="${link.dataset.projectChoice}"]`);
@@ -440,6 +470,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     setLanguage(savedLang || detectBrowserLanguage(), false);
+
+    const projectsRail = document.getElementById('apps-grid');
+    const railProgressFill = document.getElementById('projects-rail-progress-fill');
+    if (projectsRail && railProgressFill) {
+        const updateRailProgress = () => {
+            const range = projectsRail.scrollWidth - projectsRail.clientWidth;
+            const progress = range > 0 ? Math.abs(projectsRail.scrollLeft) / range : 0;
+            railProgressFill.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`;
+        };
+        projectsRail.addEventListener('scroll', updateRailProgress, { passive: true });
+        window.addEventListener('resize', updateRailProgress, { passive: true });
+        updateRailProgress();
+    }
+
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.addEventListener('toggle', () => {
+            if (!item.open) return;
+            document.querySelectorAll('.faq-item[open]').forEach(other => {
+                if (other !== item) other.open = false;
+            });
+        });
+    });
 
     const processGrid = document.querySelector('.approach-grid');
     const processSteps = processGrid ? [...processGrid.querySelectorAll('.approach-card')] : [];

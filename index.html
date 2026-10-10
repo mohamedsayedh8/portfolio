@@ -34,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=5915">
+    <link rel="stylesheet" href="style.css?v=5916">
 </head>
 <body class="home-page">
     <a class="skip-link" href="#top" data-i18n="skip_content">Aller au contenu</a>
@@ -98,6 +98,7 @@
                         <a href="#projects" class="btn btn-primary" data-i18n="hero_cta_apps">Voir mes projets</a>
                         <a href="#contact" class="btn btn-ghost" data-i18n="nav_contact">Me contacter</a>
                     </div>
+                    <a class="hero-scroll-cue" href="#projects" data-reveal style="--reveal-delay: 390ms"><span class="scroll-cue-icon"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i></span><span data-i18n="hero_scroll">Explorer les projets</span></a>
                 </div>
                 <div class="hero-visual" data-tilt data-reveal style="--reveal-delay: 360ms">
                     <div class="hero-visual-inner">
@@ -136,6 +137,8 @@
                     <p class="section-intro" data-i18n="portfolio_intro">Des applications pensées pour résoudre de vrais besoins du quotidien.</p>
                 </div>
                 <div class="apps-grid" id="apps-grid"></div>
+                <div class="projects-rail-progress" aria-hidden="true"><span id="projects-rail-progress-fill"></span></div>
+                <p class="project-swipe-hint"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span data-i18n="projects_swipe">Fais glisser pour explorer</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></p>
             </div>
         </section>
 
@@ -243,7 +246,10 @@
                         <label class="project-choice"><input type="radio" name="contact-stage" value="existing"><span><i class="fa-solid fa-arrow-rotate-right" aria-hidden="true"></i><span data-i18n="contact_stage_existing">Un produit existe déjà</span></span></label>
                     </div>
                 </fieldset>
+                <p class="contact-summary" id="contact-summary" aria-live="polite" data-reveal style="--reveal-delay: 205ms"></p>
                 <a class="btn btn-primary contact-email" id="contact-email-link" href="mailto:contact@mohamedelhawawshi.com" data-reveal style="--reveal-delay: 220ms"><i class="fa-solid fa-paper-plane"></i><span data-i18n="contact_cta">M’écrire</span></a>
+                <button class="contact-copy" id="contact-copy" type="button" data-reveal style="--reveal-delay: 240ms"><i class="fa-regular fa-copy" aria-hidden="true"></i><span data-i18n="contact_copy">Copier l’adresse e-mail</span></button>
+                <p class="contact-copy-status" id="contact-copy-status" role="status" aria-live="polite"></p>
                 <div class="social-row" data-reveal style="--reveal-delay: 260ms">
                     <a href="https://www.linkedin.com/in/mohamed-elhawawshi-6024a92a5?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://x.com/msayyyed1?s=11" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
@@ -273,6 +279,6 @@
         <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
     </button>
 
-    <script src="script.js?v=5912"></script>
+    <script src="script.js?v=5913"></script>
 </body>
 </html>
