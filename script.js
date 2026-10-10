@@ -3,7 +3,8 @@ const translations = {
     fr: {
         nav_projects: 'Projets', nav_services: 'Services', nav_about: 'À propos', nav_contact: 'Contact',
         intro_caption: 'Créativité en mouvement',
-        visual_caption: 'Design · Code · Idées',
+        visual_caption: 'Tape sur le M ✦',
+        logo_game_hint: 'Faire jaillir les étoiles',
         visual_chip_apps: 'APPS', visual_chip_saas: 'SAAS', visual_chip_web: 'WEB',
         hero_eyebrow: 'Créateur digital indépendant',
         hero_title: 'Je transforme des idées en produits digitaux.',
@@ -48,7 +49,8 @@ const translations = {
     en: {
         nav_projects: 'Projects', nav_services: 'Services', nav_about: 'About', nav_contact: 'Contact',
         intro_caption: 'Creativity in motion',
-        visual_caption: 'Design · Code · Ideas',
+        visual_caption: 'Tap the M ✦',
+        logo_game_hint: 'Make the stars burst',
         visual_chip_apps: 'APPS', visual_chip_saas: 'SAAS', visual_chip_web: 'WEB',
         hero_eyebrow: 'Independent digital creator',
         hero_title: 'I turn ideas into digital products.',
@@ -93,7 +95,8 @@ const translations = {
     ar: {
         nav_projects: 'المشاريع', nav_services: 'الخدمات', nav_about: 'عني', nav_contact: 'تواصل',
         intro_caption: 'إبداع يتحرك',
-        visual_caption: 'تصميم · برمجة · أفكار',
+        visual_caption: 'اضغط على M ✦',
+        logo_game_hint: 'أطلق النجوم',
         visual_chip_apps: 'تطبيقات', visual_chip_saas: 'SAAS', visual_chip_web: 'ويب',
         hero_eyebrow: 'مطور رقمي مستقل',
         hero_title: 'أحوّل الأفكار إلى منتجات رقمية.',
@@ -192,6 +195,11 @@ window.setLanguage = function(lang, remember = true) {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (t[key]) el.textContent = t[key];
+    });
+
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+        const key = el.getAttribute('data-i18n-aria');
+        if (t[key]) el.setAttribute('aria-label', t[key]);
     });
 
     document.querySelectorAll('[data-app-field]').forEach(el => {
@@ -359,6 +367,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 surface.style.removeProperty('--shine-y');
                 surface.classList.remove('is-tilting');
             });
+        });
+    }
+
+    const logoTrigger = document.getElementById('hero-play');
+    if (logoTrigger) {
+        let tapCount = 0;
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        logoTrigger.addEventListener('click', () => {
+            tapCount += 1;
+            logoTrigger.classList.remove('is-celebrating');
+            void logoTrigger.offsetWidth;
+            logoTrigger.classList.add('is-celebrating');
+            window.setTimeout(() => logoTrigger.classList.remove('is-celebrating'), 600);
+
+            if (reducedMotion) return;
+            const scene = logoTrigger.closest('.hero-visual-inner');
+            if (!scene) return;
+            const particleCount = 12 + (tapCount % 3) * 4;
+            for (let index = 0; index < particleCount; index += 1) {
+                const particle = document.createElement('span');
+                particle.className = 'game-particle';
+                particle.setAttribute('aria-hidden', 'true');
+                particle.style.setProperty('--angle', `${(360 / particleCount) * index}deg`);
+                particle.style.setProperty('--distance', `${74 + (index % 4) * 17}px`);
+                scene.appendChild(particle);
+                window.setTimeout(() => particle.remove(), 900);
+            }
         });
     }
 
