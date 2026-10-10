@@ -1,6 +1,7 @@
 // --- UI Translations ---
 const translations = {
     fr: {
+        skip_content: 'Aller au contenu',
         nav_projects: 'Projets', nav_services: 'Services', nav_about: 'À propos', nav_contact: 'Contact',
         ribbon_apps: 'Applications', ribbon_saas: 'SaaS & outils', ribbon_web: 'Sites web', ribbon_design: 'Design', ribbon_code: 'Développement',
         opening_skip: 'Entrer ↗', opening_kicker: 'APPLICATIONS · SAAS · WEB', opening_subtitle: 'Des idées qui prennent vie.', opening_footer: 'DESIGN · CODE · MOUVEMENT',
@@ -58,6 +59,7 @@ const translations = {
         faq_q3: 'Comment démarrer une discussion ?', faq_a3: 'Choisis le type de projet dans le formulaire de contact et raconte-moi ton idée. On pourra ensuite définir ensemble la prochaine étape.'
     },
     en: {
+        skip_content: 'Skip to content',
         nav_projects: 'Projects', nav_services: 'Services', nav_about: 'About', nav_contact: 'Contact',
         ribbon_apps: 'Applications', ribbon_saas: 'SaaS & tools', ribbon_web: 'Websites', ribbon_design: 'Design', ribbon_code: 'Development',
         opening_skip: 'Enter ↗', opening_kicker: 'APPS · SAAS · WEB', opening_subtitle: 'Ideas brought to life.', opening_footer: 'DESIGN · CODE · MOTION',
@@ -115,6 +117,7 @@ const translations = {
         faq_q3: 'How do we get started?', faq_a3: 'Choose a project type in the contact section and tell me about your idea. Then we can agree on a useful next step.'
     },
     ar: {
+        skip_content: 'انتقل إلى المحتوى',
         nav_projects: 'المشاريع', nav_services: 'الخدمات', nav_about: 'عني', nav_contact: 'تواصل',
         ribbon_apps: 'تطبيقات', ribbon_saas: 'منصات وأدوات', ribbon_web: 'مواقع ويب', ribbon_design: 'تصميم', ribbon_code: 'تطوير',
         opening_skip: 'دخول ↗', opening_kicker: 'تطبيقات · SaaS · ويب', opening_subtitle: 'أفكار تتحول إلى واقع.', opening_footer: 'تصميم · برمجة · حركة',

@@ -63,6 +63,23 @@ img {
 }
 
 /* Nav */
+.skip-link {
+  position: fixed;
+  z-index: 2000;
+  top: .8rem;
+  inset-inline-start: .8rem;
+  padding: .75rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 58%, var(--border));
+  border-radius: 999px;
+  color: var(--text);
+  background: var(--surface, var(--bg));
+  box-shadow: 0 12px 36px rgba(0,0,0,.28);
+  text-decoration: none;
+  translate: 0 -160%;
+  transition: translate .2s ease;
+}
+.skip-link:focus-visible { translate: 0 0; }
+
 #navbar {
   position: sticky;
   top: 0;
