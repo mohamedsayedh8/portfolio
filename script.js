@@ -50,7 +50,11 @@ const translations = {
         footer_role: 'Apps · SaaS · Sites web',
         footer_note: 'Des produits numériques conçus avec soin, de l’idée à la mise en ligne.',
         footer_contact: 'Parlons de ton projet',
-        footer_top: 'Retour en haut'
+        footer_top: 'Retour en haut',
+        faq_kicker: 'Avant de commencer', faq_title: 'Quelques réponses utiles.',
+        faq_q1: 'Quels types de projets réalises-tu ?', faq_a1: 'Je conçois des applications mobiles, des produits SaaS et des sites web, selon le besoin et les personnes qui vont les utiliser.',
+        faq_q2: 'Peux-tu accompagner le projet jusqu’à sa mise en ligne ?', faq_a2: 'Oui. On clarifie d’abord le besoin, puis je peux concevoir, développer et préparer le produit pour son lancement.',
+        faq_q3: 'Comment démarrer une discussion ?', faq_a3: 'Choisis le type de projet dans le formulaire de contact et raconte-moi ton idée. On pourra ensuite définir ensemble la prochaine étape.'
     },
     en: {
         nav_projects: 'Projects', nav_services: 'Services', nav_about: 'About', nav_contact: 'Contact',
@@ -102,7 +106,11 @@ const translations = {
         footer_role: 'Apps · SaaS · Websites',
         footer_note: 'Digital products, thoughtfully made from the first idea to launch.',
         footer_contact: 'Tell me about your project',
-        footer_top: 'Back to top'
+        footer_top: 'Back to top',
+        faq_kicker: 'Before we begin', faq_title: 'A few useful answers.',
+        faq_q1: 'What kinds of projects do you build?', faq_a1: 'I design mobile apps, SaaS products and websites around the needs of the people who will use them.',
+        faq_q2: 'Can you take a project through launch?', faq_a2: 'Yes. We first clarify the need, then I can design, develop and prepare the product for launch.',
+        faq_q3: 'How do we get started?', faq_a3: 'Choose a project type in the contact section and tell me about your idea. Then we can agree on a useful next step.'
     },
     ar: {
         nav_projects: 'المشاريع', nav_services: 'الخدمات', nav_about: 'عني', nav_contact: 'تواصل',
@@ -154,7 +162,11 @@ const translations = {
         footer_role: 'تطبيقات · SaaS · مواقع ويب',
         footer_note: 'منتجات رقمية متقنة من الفكرة الأولى حتى الإطلاق.',
         footer_contact: 'لنتحدث عن مشروعك',
-        footer_top: 'العودة إلى الأعلى'
+        footer_top: 'العودة إلى الأعلى',
+        faq_kicker: 'قبل أن نبدأ', faq_title: 'إجابات سريعة ومفيدة.',
+        faq_q1: 'ما أنواع المشاريع التي تنفذها؟', faq_a1: 'أصمم تطبيقات الهاتف ومنتجات SaaS ومواقع الويب وفق احتياجات المشروع والأشخاص الذين سيستخدمونه.',
+        faq_q2: 'هل يمكنك متابعة المشروع حتى إطلاقه؟', faq_a2: 'نعم. نحدد الاحتياج أولاً، ثم أستطيع تصميم المنتج وتطويره وتجهيزه للإطلاق.',
+        faq_q3: 'كيف نبدأ الحديث؟', faq_a3: 'اختر نوع المشروع في قسم التواصل وأخبرني عن فكرتك، ثم نحدد معاً الخطوة التالية.'
     }
 };
 
