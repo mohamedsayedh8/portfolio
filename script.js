@@ -46,6 +46,7 @@ const translations = {
         contact_title: 'Contact',
         contact_subtitle: 'Tu as une idée à lancer ? Parle-moi de ton projet.',
         contact_cta: 'M’écrire',
+        contact_project_label: 'Tu veux créer…', contact_project_app: 'Une app', contact_project_saas: 'Un SaaS', contact_project_site: 'Un site web',
         footer_role: 'Apps · SaaS · Sites web',
         footer_note: 'Des produits numériques conçus avec soin, de l’idée à la mise en ligne.',
         footer_contact: 'Parlons de ton projet',
@@ -97,6 +98,7 @@ const translations = {
         contact_title: 'Contact',
         contact_subtitle: 'Have an idea to launch? Tell me about your project.',
         contact_cta: 'Email me',
+        contact_project_label: 'What are you looking to build?', contact_project_app: 'An app', contact_project_saas: 'A SaaS', contact_project_site: 'A website',
         footer_role: 'Apps · SaaS · Websites',
         footer_note: 'Digital products, thoughtfully made from the first idea to launch.',
         footer_contact: 'Tell me about your project',
@@ -148,6 +150,7 @@ const translations = {
         contact_title: 'تواصل',
         contact_subtitle: 'هل لديك فكرة تريد إطلاقها؟ أخبرني عن مشروعك.',
         contact_cta: 'راسلني',
+        contact_project_label: 'ما الذي تريد إنشاءه؟', contact_project_app: 'تطبيق', contact_project_saas: 'منصة SaaS', contact_project_site: 'موقع ويب',
         footer_role: 'تطبيقات · SaaS · مواقع ويب',
         footer_note: 'منتجات رقمية متقنة من الفكرة الأولى حتى الإطلاق.',
         footer_contact: 'لنتحدث عن مشروعك',
@@ -199,6 +202,25 @@ function detectBrowserLanguage() {
 
 let currentLang = detectBrowserLanguage();
 
+function updateContactMailto() {
+    const link = document.getElementById('contact-email-link');
+    if (!link) return;
+    const selected = document.querySelector('input[name="contact-project"]:checked')?.value || 'app';
+    const projectNames = {
+        fr: { app: 'une application mobile', saas: 'un SaaS ou un outil web', site: 'un site web' },
+        en: { app: 'a mobile app', saas: 'a SaaS or web tool', site: 'a website' },
+        ar: { app: 'تطبيقاً للهاتف', saas: 'منصة SaaS أو أداة ويب', site: 'موقع ويب' }
+    };
+    const project = projectNames[currentLang]?.[selected] || projectNames.fr[selected];
+    const message = {
+        fr: `Bonjour Mohamed,\n\nJ’aimerais échanger avec toi au sujet de ${project}.\n\nVoici quelques détails sur mon idée :\n`,
+        en: `Hi Mohamed,\n\nI’d like to talk with you about ${project}.\n\nHere are a few details about my idea:\n`,
+        ar: `مرحباً محمد،\n\nأود التحدث معك حول ${project}.\n\nإليك بعض التفاصيل عن فكرتي:\n`
+    }[currentLang];
+    const subject = { fr: 'Parlons de mon projet', en: 'Let’s talk about my project', ar: 'لنتحدث عن مشروعي' }[currentLang];
+    link.href = `mailto:contact@mohamedelhawawshi.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+}
+
 window.setLanguage = function(lang, remember = true) {
     if (!translations[lang]) lang = 'fr';
     currentLang = lang;
@@ -244,6 +266,8 @@ window.setLanguage = function(lang, remember = true) {
             if (pt[key]) el.innerHTML = pt[key];
         });
     }
+
+    updateContactMailto();
 
     if (remember) {
         try { localStorage.setItem('lang-manual', lang); } catch (e) {}
@@ -340,6 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderAppCards();
     renderAppDetail();
+    document.querySelectorAll('input[name="contact-project"]').forEach(input => input.addEventListener('change', updateContactMailto));
     setLanguage(savedLang || detectBrowserLanguage(), false);
 
     const navbar = document.getElementById('navbar');
