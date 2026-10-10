@@ -2,6 +2,7 @@
 const translations = {
     fr: {
         skip_content: 'Aller au contenu',
+        back_to_top_aria: 'Retourner en haut',
         theme_to_light: 'Passer au thème clair', theme_to_dark: 'Passer au thème sombre',
         nav_projects: 'Projets', nav_services: 'Services', nav_about: 'À propos', nav_contact: 'Contact',
         ribbon_apps: 'Applications', ribbon_saas: 'SaaS & outils', ribbon_web: 'Sites web', ribbon_design: 'Design', ribbon_code: 'Développement',
@@ -66,6 +67,7 @@ const translations = {
     },
     en: {
         skip_content: 'Skip to content',
+        back_to_top_aria: 'Back to top',
         theme_to_light: 'Switch to light theme', theme_to_dark: 'Switch to dark theme',
         nav_projects: 'Projects', nav_services: 'Services', nav_about: 'About', nav_contact: 'Contact',
         ribbon_apps: 'Applications', ribbon_saas: 'SaaS & tools', ribbon_web: 'Websites', ribbon_design: 'Design', ribbon_code: 'Development',
@@ -130,6 +132,7 @@ const translations = {
     },
     ar: {
         skip_content: 'انتقل إلى المحتوى',
+        back_to_top_aria: 'العودة إلى الأعلى',
         theme_to_light: 'التبديل إلى الوضع الفاتح', theme_to_dark: 'التبديل إلى الوضع الداكن',
         nav_projects: 'المشاريع', nav_services: 'الخدمات', nav_about: 'عني', nav_contact: 'تواصل',
         ribbon_apps: 'تطبيقات', ribbon_saas: 'منصات وأدوات', ribbon_web: 'مواقع ويب', ribbon_design: 'تصميم', ribbon_code: 'تطوير',
@@ -569,6 +572,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const progressBar = document.getElementById('scroll-progress');
+    const scrollTopButton = document.getElementById('scroll-top');
+    const scrollTopProgress = document.getElementById('scroll-top-progress');
+    scrollTopButton?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    });
     if (progressBar) {
         let progressFrame = 0;
         const updateProgress = () => {
@@ -577,6 +585,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
                 const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
                 progressBar.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`;
+                if (scrollTopProgress) scrollTopProgress.style.strokeDashoffset = `${125.66 * (1 - progress)}`;
+                if (scrollTopButton) {
+                    const isVisible = window.scrollY > 520;
+                    scrollTopButton.classList.toggle('is-visible', isVisible);
+                    scrollTopButton.setAttribute('aria-hidden', String(!isVisible));
+                    scrollTopButton.tabIndex = isVisible ? 0 : -1;
+                }
                 progressFrame = 0;
             });
         };
