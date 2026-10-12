@@ -3,7 +3,7 @@ const translations = {
     fr: {
         skip_content: 'Aller au contenu',
         back_to_top_aria: 'Retourner en haut',
-        command_open: 'Ouvrir les raccourcis', command_search: 'Que veux-tu faire ?', command_navigation: 'Raccourcis du portfolio', command_projects: 'Voir les projets', command_services: 'Voir les services', command_about: 'À propos', command_contact: 'Contacter Mohamed', command_french: 'Afficher en français', command_english: 'Afficher en anglais', command_arabic: 'Afficher en arabe', command_theme: 'Changer le thème', command_zikr: 'Découvrir Zikr', command_kinto: 'Découvrir Kinto', command_fadz: 'Découvrir Fadz', command_propriopilot: 'Découvrir ProprioPilot', command_heinsen: 'Découvrir Heinsen Prono', command_copy_email: 'Copier l’adresse e-mail', command_top: 'Retourner en haut', command_copied: 'Adresse copiée', command_no_results: 'Aucune action trouvée',
+        command_open: 'Ouvrir les raccourcis', command_search: 'Que veux-tu faire ?', command_navigation: 'Raccourcis du portfolio', command_projects: 'Voir les projets', command_services: 'Voir les services', command_about: 'À propos', command_contact: 'Contacter Mohamed', command_french: 'Afficher en français', command_english: 'Afficher en anglais', command_arabic: 'Afficher en arabe', command_theme: 'Changer le thème', command_zikr: 'Découvrir Zikr', command_kinto: 'Découvrir Kinto', command_fadz: 'Découvrir Fadz', command_propriopilot: 'Découvrir ProprioPilot', command_copy_email: 'Copier l’adresse e-mail', command_top: 'Retourner en haut', command_copied: 'Adresse copiée', command_no_results: 'Aucune action trouvée',
         gallery_dialog_label: 'Aperçu des captures d’écran', gallery_close: 'Fermer l’aperçu', gallery_previous: 'Écran précédent', gallery_next: 'Écran suivant', gallery_open: 'Agrandir cette capture', gallery_counter: 'Écran {current} sur {total}',
         theme_to_light: 'Passer au thème clair', theme_to_dark: 'Passer au thème sombre',
         nav_projects: 'Projets', nav_services: 'Services', nav_about: 'À propos', nav_contact: 'Contact',
@@ -72,7 +72,7 @@ const translations = {
     en: {
         skip_content: 'Skip to content',
         back_to_top_aria: 'Back to top',
-        command_open: 'Open shortcuts', command_search: 'What would you like to do?', command_navigation: 'Portfolio shortcuts', command_projects: 'View projects', command_services: 'View services', command_about: 'About', command_contact: 'Contact Mohamed', command_french: 'Switch to French', command_english: 'Switch to English', command_arabic: 'Switch to Arabic', command_theme: 'Switch theme', command_zikr: 'Explore Zikr', command_kinto: 'Explore Kinto', command_fadz: 'Explore Fadz', command_propriopilot: 'Explore ProprioPilot', command_heinsen: 'Explore Heinsen Prono', command_copy_email: 'Copy email address', command_top: 'Back to top', command_copied: 'Email address copied', command_no_results: 'No actions found',
+        command_open: 'Open shortcuts', command_search: 'What would you like to do?', command_navigation: 'Portfolio shortcuts', command_projects: 'View projects', command_services: 'View services', command_about: 'About', command_contact: 'Contact Mohamed', command_french: 'Switch to French', command_english: 'Switch to English', command_arabic: 'Switch to Arabic', command_theme: 'Switch theme', command_zikr: 'Explore Zikr', command_kinto: 'Explore Kinto', command_fadz: 'Explore Fadz', command_propriopilot: 'Explore ProprioPilot', command_copy_email: 'Copy email address', command_top: 'Back to top', command_copied: 'Email address copied', command_no_results: 'No actions found',
         gallery_dialog_label: 'Screenshot preview', gallery_close: 'Close preview', gallery_previous: 'Previous screenshot', gallery_next: 'Next screenshot', gallery_open: 'Enlarge this screenshot', gallery_counter: 'Screen {current} of {total}',
         theme_to_light: 'Switch to light theme', theme_to_dark: 'Switch to dark theme',
         nav_projects: 'Projects', nav_services: 'Services', nav_about: 'About', nav_contact: 'Contact',
@@ -141,7 +141,7 @@ const translations = {
     ar: {
         skip_content: 'انتقل إلى المحتوى',
         back_to_top_aria: 'العودة إلى الأعلى',
-        command_open: 'فتح الاختصارات', command_search: 'ماذا تريد أن تفعل؟', command_navigation: 'اختصارات الموقع', command_projects: 'عرض المشاريع', command_services: 'عرض الخدمات', command_about: 'نبذة عني', command_contact: 'التواصل مع محمد', command_french: 'التبديل إلى الفرنسية', command_english: 'التبديل إلى الإنجليزية', command_arabic: 'عرض العربية', command_theme: 'تغيير المظهر', command_zikr: 'اكتشف ذكر', command_kinto: 'اكتشف كينتو', command_fadz: 'اكتشف Fadz', command_propriopilot: 'اكتشف ProprioPilot', command_heinsen: 'اكتشف Heinsen Prono', command_copy_email: 'نسخ البريد الإلكتروني', command_top: 'العودة إلى الأعلى', command_copied: 'تم نسخ البريد الإلكتروني', command_no_results: 'لم يتم العثور على إجراء',
+        command_open: 'فتح الاختصارات', command_search: 'ماذا تريد أن تفعل؟', command_navigation: 'اختصارات الموقع', command_projects: 'عرض المشاريع', command_services: 'عرض الخدمات', command_about: 'نبذة عني', command_contact: 'التواصل مع محمد', command_french: 'التبديل إلى الفرنسية', command_english: 'التبديل إلى الإنجليزية', command_arabic: 'عرض العربية', command_theme: 'تغيير المظهر', command_zikr: 'اكتشف ذكر', command_kinto: 'اكتشف كينتو', command_fadz: 'اكتشف Fadz', command_propriopilot: 'اكتشف ProprioPilot', command_copy_email: 'نسخ البريد الإلكتروني', command_top: 'العودة إلى الأعلى', command_copied: 'تم نسخ البريد الإلكتروني', command_no_results: 'لم يتم العثور على إجراء',
         gallery_dialog_label: 'معاينة لقطات الشاشة', gallery_close: 'إغلاق المعاينة', gallery_previous: 'الصورة السابقة', gallery_next: 'الصورة التالية', gallery_open: 'تكبير هذه الصورة', gallery_counter: 'الصورة {current} من {total}',
         theme_to_light: 'التبديل إلى الوضع الفاتح', theme_to_dark: 'التبديل إلى الوضع الداكن',
         nav_projects: 'المشاريع', nav_services: 'الخدمات', nav_about: 'عني', nav_contact: 'تواصل',
@@ -288,26 +288,6 @@ const appsData = {
             fr: 'ProprioPilot réunit loyers, quittances, relances et exports comptables dans un espace clair. Les propriétaires suivent leurs encaissements, génèrent une quittance en un clic et préparent leur comptabilité sans passer leurs soirées dessus.',
             en: 'ProprioPilot brings rent, receipts, reminders and accounting exports together in one clear space. Landlords track payments, generate a receipt in one click and prepare their accounts without losing their evenings.',
             ar: 'يجمع ProprioPilot الإيجارات والإيصالات والتذكيرات وتصدير المحاسبة في مساحة واحدة واضحة. يتابع الملاك مدفوعاتهم، ويُصدرون الإيصال بنقرة واحدة، ويجهّزون محاسبتهم دون قضاء أمسياتهم في ذلك.'
-        }
-    },
-    'heinsen-prono': {
-        name: 'Heinsen Prono',
-        kind: 'web',
-        category: { fr: 'Site web & abonnement', en: 'Website & subscription', ar: 'موقع واشتراكات' },
-        icon: 'assets/images/heinsen-prono-icon.jpg',
-        screenshot: 'assets/images/heinsen-prono-screen1.jpg',
-        screenshots: ['assets/images/heinsen-prono-screen1.jpg', 'assets/images/heinsen-prono-screen2.jpg', 'assets/images/heinsen-prono-screen3.jpg'],
-        features: { fr: ['Offres & paiement en ligne', 'Accès VIP automatique', 'Rapide et adapté au mobile'], en: ['Offers & online payment', 'Automatic VIP access', 'Fast and mobile-friendly'], ar: ['باقات ودفع إلكتروني', 'وصول VIP تلقائي', 'سريع ومتوافق مع الهاتف'] },
-        website: 'https://heinsen-prono.com',
-        appStore: null,
-        googlePlay: null,
-        privacy: null,
-        terms: null,
-        tagline: { fr: 'Des analyses. Une gestion. Une méthode.', en: 'Analysis. Management. Method.', ar: 'تحليلات. إدارة. منهجية.' },
-        description: {
-            fr: 'Site vitrine et espace d’abonnement d’une communauté de pronostics sportifs : présentation des offres, paiement en ligne et accès automatique au canal VIP Telegram.',
-            en: 'Showcase site and subscription space for a sports-picks community: offers, online payment and automatic access to the VIP Telegram channel.',
-            ar: 'موقع تعريفي ومساحة اشتراك لمجتمع توقعات رياضية: عرض الباقات، ودفع إلكتروني، ووصول تلقائي إلى قناة VIP على تيليجرام.'
         }
     },
 };
@@ -458,7 +438,7 @@ function initCommandPalette() {
         ['lang-fr','command_french','fa-globe'], ['lang-en','command_english','fa-globe'],
         ['lang-ar','command_arabic','fa-globe'], ['theme','command_theme','fa-circle-half-stroke'],
         ['zikr','command_zikr','fa-mobile-screen-button'], ['kinto','command_kinto','fa-mobile-screen-button'],
-        ['fadz','command_fadz','fa-scissors'], ['propriopilot','command_propriopilot','fa-house'], ['heinsen','command_heinsen','fa-chart-line'],
+        ['fadz','command_fadz','fa-scissors'], ['propriopilot','command_propriopilot','fa-house'],
         ['email','command_copy_email','fa-copy'], ['top','command_top','fa-arrow-up']
     ];
     let active = 0;
@@ -471,7 +451,7 @@ function initCommandPalette() {
     const open = () => { input.value = ''; active = 0; render(); dialog.showModal(); requestAnimationFrame(() => input.focus()); };
     const run = async id => {
         dialog.close();
-        const routes = {projects:'#projects',services:'#services',about:'#about',contact:'#contact',zikr:'zikr.html',kinto:'kinto.html',fadz:'fadz.html',propriopilot:'propriopilot.html',heinsen:'heinsen-prono.html',top:'#top'};
+        const routes = {projects:'#projects',services:'#services',about:'#about',contact:'#contact',zikr:'zikr.html',kinto:'kinto.html',fadz:'fadz.html',propriopilot:'propriopilot.html',top:'#top'};
         if (routes[id]) { location.href = routes[id]; return; }
         if (id.startsWith('lang-')) { window.setLanguage(id.slice(5)); return; }
         if (id === 'theme') { window.toggleTheme(); return; }
