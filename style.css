@@ -1628,3 +1628,9 @@ html[dir="rtl"] .visual-chip { text-align: right; }
 .command-hint span { display:flex; align-items:center; gap:.2rem; }
 @media (max-width:620px) { .command-open { width:44px; height:44px; } .command-dialog { width:calc(100vw - 20px); max-height:72dvh; margin:auto auto 10px; border-radius:20px; } .command-panel { padding:.7rem; } .command-hint { font-size:.58rem; } }
 @media (prefers-reduced-motion:reduce) { .command-open { transition:none; } }
+
+.project-note { margin: -.6rem 0 1.4rem; color: var(--text-muted); font-size: .85rem; }
+
+/* Project pages: let the single mobile column shrink so the screenshot gallery never widens the page. */
+.app-hero > * { min-width: 0; }
+@media (max-width: 680px) { .app-hero { grid-template-columns: minmax(0, 1fr); } }

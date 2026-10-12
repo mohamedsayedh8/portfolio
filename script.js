@@ -3,7 +3,7 @@ const translations = {
     fr: {
         skip_content: 'Aller au contenu',
         back_to_top_aria: 'Retourner en haut',
-        command_open: 'Ouvrir les raccourcis', command_search: 'Que veux-tu faire ?', command_navigation: 'Raccourcis du portfolio', command_projects: 'Voir les projets', command_services: 'Voir les services', command_about: 'À propos', command_contact: 'Contacter Mohamed', command_french: 'Afficher en français', command_english: 'Afficher en anglais', command_arabic: 'Afficher en arabe', command_theme: 'Changer le thème', command_zikr: 'Découvrir Zikr', command_kinto: 'Découvrir Kinto', command_copy_email: 'Copier l’adresse e-mail', command_top: 'Retourner en haut', command_copied: 'Adresse copiée', command_no_results: 'Aucune action trouvée',
+        command_open: 'Ouvrir les raccourcis', command_search: 'Que veux-tu faire ?', command_navigation: 'Raccourcis du portfolio', command_projects: 'Voir les projets', command_services: 'Voir les services', command_about: 'À propos', command_contact: 'Contacter Mohamed', command_french: 'Afficher en français', command_english: 'Afficher en anglais', command_arabic: 'Afficher en arabe', command_theme: 'Changer le thème', command_zikr: 'Découvrir Zikr', command_kinto: 'Découvrir Kinto', command_fadz: 'Découvrir Fadz', command_propriopilot: 'Découvrir ProprioPilot', command_heinsen: 'Découvrir Heinsen Prono', command_copy_email: 'Copier l’adresse e-mail', command_top: 'Retourner en haut', command_copied: 'Adresse copiée', command_no_results: 'Aucune action trouvée',
         gallery_dialog_label: 'Aperçu des captures d’écran', gallery_close: 'Fermer l’aperçu', gallery_previous: 'Écran précédent', gallery_next: 'Écran suivant', gallery_open: 'Agrandir cette capture', gallery_counter: 'Écran {current} sur {total}',
         theme_to_light: 'Passer au thème clair', theme_to_dark: 'Passer au thème sombre',
         nav_projects: 'Projets', nav_services: 'Services', nav_about: 'À propos', nav_contact: 'Contact',
@@ -20,15 +20,15 @@ const translations = {
         hero_scroll: 'Explorer les projets', projects_swipe: 'Fais glisser pour explorer',
         link_appstore: 'App Store',
         link_googleplay: 'Google Play',
+        link_website: 'Visiter le site',
         link_privacy: 'Confidentialité',
         link_terms: 'Conditions',
         link_back: 'Accueil',
-        screens_kicker: 'Aperçu de l’application', screens_title: 'Pensée dans chaque détail.',
-        project_category: 'Application mobile',
+        screens_kicker: 'Aperçu de l’application', screens_kicker_web: 'Aperçu du projet', screens_title: 'Pensée dans chaque détail.',
         project_open: 'Découvrir le projet',
         portfolio_kicker: 'Sélection · 2026',
         portfolio_title: 'Des idées transformées en produits.',
-        portfolio_intro: 'Deux applications conçues avec soin, de l’idée à leur mise en ligne.',
+        portfolio_intro: 'Applications, plateformes et sites web conçus avec soin, de l’idée à leur mise en ligne.',
         services_kicker: 'Ce que je crée',
         services_title: 'Des idées aux produits du quotidien.',
         services_intro: 'Je t’aide à choisir le bon format et à le construire de bout en bout.',
@@ -72,7 +72,7 @@ const translations = {
     en: {
         skip_content: 'Skip to content',
         back_to_top_aria: 'Back to top',
-        command_open: 'Open shortcuts', command_search: 'What would you like to do?', command_navigation: 'Portfolio shortcuts', command_projects: 'View projects', command_services: 'View services', command_about: 'About', command_contact: 'Contact Mohamed', command_french: 'Switch to French', command_english: 'Switch to English', command_arabic: 'Switch to Arabic', command_theme: 'Switch theme', command_zikr: 'Explore Zikr', command_kinto: 'Explore Kinto', command_copy_email: 'Copy email address', command_top: 'Back to top', command_copied: 'Email address copied', command_no_results: 'No actions found',
+        command_open: 'Open shortcuts', command_search: 'What would you like to do?', command_navigation: 'Portfolio shortcuts', command_projects: 'View projects', command_services: 'View services', command_about: 'About', command_contact: 'Contact Mohamed', command_french: 'Switch to French', command_english: 'Switch to English', command_arabic: 'Switch to Arabic', command_theme: 'Switch theme', command_zikr: 'Explore Zikr', command_kinto: 'Explore Kinto', command_fadz: 'Explore Fadz', command_propriopilot: 'Explore ProprioPilot', command_heinsen: 'Explore Heinsen Prono', command_copy_email: 'Copy email address', command_top: 'Back to top', command_copied: 'Email address copied', command_no_results: 'No actions found',
         gallery_dialog_label: 'Screenshot preview', gallery_close: 'Close preview', gallery_previous: 'Previous screenshot', gallery_next: 'Next screenshot', gallery_open: 'Enlarge this screenshot', gallery_counter: 'Screen {current} of {total}',
         theme_to_light: 'Switch to light theme', theme_to_dark: 'Switch to dark theme',
         nav_projects: 'Projects', nav_services: 'Services', nav_about: 'About', nav_contact: 'Contact',
@@ -89,15 +89,15 @@ const translations = {
         hero_scroll: 'Explore the projects', projects_swipe: 'Swipe to explore',
         link_appstore: 'App Store',
         link_googleplay: 'Google Play',
+        link_website: 'Visit the website',
         link_privacy: 'Privacy',
         link_terms: 'Terms',
         link_back: 'Home',
-        screens_kicker: 'App preview', screens_title: 'Considered in every detail.',
-        project_category: 'Mobile app',
+        screens_kicker: 'App preview', screens_kicker_web: 'Project preview', screens_title: 'Considered in every detail.',
         project_open: 'Explore the project',
         portfolio_kicker: 'Selected work · 2026',
         portfolio_title: 'Ideas, shaped into products.',
-        portfolio_intro: 'Two thoughtfully built apps, from the first idea to launch.',
+        portfolio_intro: 'Apps, platforms and websites, thoughtfully built from the first idea to launch.',
         services_kicker: 'What I create',
         services_title: 'Ideas made useful.',
         services_intro: 'I help you choose the right format and build it from start to finish.',
@@ -141,7 +141,7 @@ const translations = {
     ar: {
         skip_content: 'انتقل إلى المحتوى',
         back_to_top_aria: 'العودة إلى الأعلى',
-        command_open: 'فتح الاختصارات', command_search: 'ماذا تريد أن تفعل؟', command_navigation: 'اختصارات الموقع', command_projects: 'عرض المشاريع', command_services: 'عرض الخدمات', command_about: 'نبذة عني', command_contact: 'التواصل مع محمد', command_french: 'التبديل إلى الفرنسية', command_english: 'التبديل إلى الإنجليزية', command_arabic: 'عرض العربية', command_theme: 'تغيير المظهر', command_zikr: 'اكتشف ذكر', command_kinto: 'اكتشف كينتو', command_copy_email: 'نسخ البريد الإلكتروني', command_top: 'العودة إلى الأعلى', command_copied: 'تم نسخ البريد الإلكتروني', command_no_results: 'لم يتم العثور على إجراء',
+        command_open: 'فتح الاختصارات', command_search: 'ماذا تريد أن تفعل؟', command_navigation: 'اختصارات الموقع', command_projects: 'عرض المشاريع', command_services: 'عرض الخدمات', command_about: 'نبذة عني', command_contact: 'التواصل مع محمد', command_french: 'التبديل إلى الفرنسية', command_english: 'التبديل إلى الإنجليزية', command_arabic: 'عرض العربية', command_theme: 'تغيير المظهر', command_zikr: 'اكتشف ذكر', command_kinto: 'اكتشف كينتو', command_fadz: 'اكتشف Fadz', command_propriopilot: 'اكتشف ProprioPilot', command_heinsen: 'اكتشف Heinsen Prono', command_copy_email: 'نسخ البريد الإلكتروني', command_top: 'العودة إلى الأعلى', command_copied: 'تم نسخ البريد الإلكتروني', command_no_results: 'لم يتم العثور على إجراء',
         gallery_dialog_label: 'معاينة لقطات الشاشة', gallery_close: 'إغلاق المعاينة', gallery_previous: 'الصورة السابقة', gallery_next: 'الصورة التالية', gallery_open: 'تكبير هذه الصورة', gallery_counter: 'الصورة {current} من {total}',
         theme_to_light: 'التبديل إلى الوضع الفاتح', theme_to_dark: 'التبديل إلى الوضع الداكن',
         nav_projects: 'المشاريع', nav_services: 'الخدمات', nav_about: 'عني', nav_contact: 'تواصل',
@@ -158,15 +158,15 @@ const translations = {
         hero_scroll: 'استكشف المشاريع', projects_swipe: 'اسحب لاستكشاف المشاريع',
         link_appstore: 'App Store',
         link_googleplay: 'Google Play',
+        link_website: 'زيارة الموقع',
         link_privacy: 'سياسة الخصوصية',
         link_terms: 'الشروط',
         link_back: 'الرئيسية',
-        screens_kicker: 'نظرة على التطبيق', screens_title: 'عناية في كل تفصيل.',
-        project_category: 'تطبيق للهواتف',
+        screens_kicker: 'نظرة على التطبيق', screens_kicker_web: 'نظرة على المشروع', screens_title: 'عناية في كل تفصيل.',
         project_open: 'اكتشف المشروع',
         portfolio_kicker: 'مشاريع مختارة · 2026',
         portfolio_title: 'أفكار تتحول إلى منتجات.',
-        portfolio_intro: 'تطبيقان صُمّما بعناية من الفكرة إلى الإطلاق.',
+        portfolio_intro: 'تطبيقات ومنصات ومواقع صُمّمت بعناية من الفكرة إلى الإطلاق.',
         services_kicker: 'ما الذي أصممه',
         services_title: 'أحوّل الأفكار إلى منتجات مفيدة.',
         services_intro: 'أساعدك في اختيار الشكل المناسب وبنائه من البداية حتى الإطلاق.',
@@ -212,6 +212,9 @@ const translations = {
 // --- Apps data (used on the home cards and on each app's dedicated page) ---
 const appsData = {
     zikr: {
+        name: 'Zikr',
+        kind: 'app',
+        category: { fr: 'Application mobile', en: 'Mobile app', ar: 'تطبيق للهواتف' },
         icon: 'assets/images/zikr-icon.png',
         screenshot: 'assets/images/zikr_screen_1.png',
         screenshots: ['assets/images/zikr_screen_1.png', 'assets/images/zikr_screen_2.png', 'assets/images/zikr_screen_3.png'],
@@ -228,6 +231,9 @@ const appsData = {
         }
     },
     kinto: {
+        name: 'Kinto',
+        kind: 'app',
+        category: { fr: 'Application mobile', en: 'Mobile app', ar: 'تطبيق للهواتف' },
         icon: 'assets/images/kinto-icon.png',
         screenshot: 'assets/images/kinto-screen1.png',
         screenshots: ['assets/images/kinto-screen1.png', 'assets/images/kinto-screen2.png', 'assets/images/kinto-screen3.png'],
@@ -241,6 +247,67 @@ const appsData = {
             fr: 'Kinto simplifie la gestion de votre budget : scannez vos reçus, suivez vos dépenses par catégorie et gardez une vue claire sur vos revenus et vos économies, le tout depuis une interface épurée.',
             en: 'Kinto makes budgeting simple: scan your receipts, track spending by category and keep a clear view of your income and savings, all from a clean interface.',
             ar: 'يبسّط Kinto إدارة ميزانيتك: امسح فواتيرك، وتتبّع مصاريفك حسب الفئة، واحصل على رؤية واضحة لدخلك ومدخراتك، كل ذلك من واجهة بسيطة.'
+        }
+    },
+    fadz: {
+        name: 'Fadz',
+        kind: 'web',
+        category: { fr: 'Plateforme de réservation', en: 'Booking platform', ar: 'منصة حجوزات' },
+        icon: 'assets/images/fadz-icon.png',
+        screenshot: 'assets/images/fadz-screen1.jpg',
+        screenshots: ['assets/images/fadz-screen1.jpg', 'assets/images/fadz-screen2.jpg', 'assets/images/fadz-screen3.jpg'],
+        features: { fr: ['Réservation en 3 secondes', 'Salon ou à domicile', 'File d’attente en direct'], en: ['Booking in 3 seconds', 'Salon or at home', 'Live queue'], ar: ['حجز في 3 ثوانٍ', 'في الصالون أو المنزل', 'قائمة انتظار مباشرة'] },
+        website: 'https://fadz.fr',
+        appStore: null,
+        googlePlay: null,
+        privacy: null,
+        terms: null,
+        note: { fr: 'Applications iOS et Android bientôt disponibles.', en: 'iOS and Android apps coming soon.', ar: 'تطبيقات iOS وAndroid قريباً.' },
+        tagline: { fr: 'Ton coiffeur, maintenant.', en: 'Your barber, right now.', ar: 'حلاقك، الآن.' },
+        description: {
+            fr: 'Fadz met en relation clients et coiffeurs ou barbiers indépendants : réservation en quelques secondes, en salon ou à domicile, ou place dans la file d’attente en direct. Les professionnels gèrent leur agenda, leurs clients et leur activité au même endroit.',
+            en: 'Fadz connects clients with independent hairdressers and barbers: book in seconds, in the salon or at home, or join the live queue. Professionals manage their schedule, clients and business in one place.',
+            ar: 'يربط Fadz العملاء بالحلاقين والمصففين المستقلين: احجز في ثوانٍ، في الصالون أو في المنزل، أو انضم إلى قائمة الانتظار المباشرة. ويدير المحترفون مواعيدهم وعملاءهم ونشاطهم في مكان واحد.'
+        }
+    },
+    propriopilot: {
+        name: 'ProprioPilot',
+        kind: 'web',
+        category: { fr: 'SaaS · Gestion locative', en: 'SaaS · Rental management', ar: 'SaaS · إدارة الإيجارات' },
+        icon: 'assets/images/propriopilot-icon.svg',
+        screenshot: 'assets/images/propriopilot-screen1.jpg',
+        screenshots: ['assets/images/propriopilot-screen1.jpg', 'assets/images/propriopilot-screen2.jpg', 'assets/images/propriopilot-screen3.jpg'],
+        features: { fr: ['Loyers & quittances', 'Relances', 'Exports comptables'], en: ['Rent & receipts', 'Reminders', 'Accounting exports'], ar: ['الإيجارات والإيصالات', 'التذكيرات', 'تصدير المحاسبة'] },
+        website: 'https://propriopilot.com',
+        appStore: null,
+        googlePlay: null,
+        privacy: null,
+        terms: null,
+        tagline: { fr: 'La gestion locative, enfin simple.', en: 'Rental management, finally simple.', ar: 'إدارة الإيجارات، ببساطة أخيراً.' },
+        description: {
+            fr: 'ProprioPilot réunit loyers, quittances, relances et exports comptables dans un espace clair. Les propriétaires suivent leurs encaissements, génèrent une quittance en un clic et préparent leur comptabilité sans passer leurs soirées dessus.',
+            en: 'ProprioPilot brings rent, receipts, reminders and accounting exports together in one clear space. Landlords track payments, generate a receipt in one click and prepare their accounts without losing their evenings.',
+            ar: 'يجمع ProprioPilot الإيجارات والإيصالات والتذكيرات وتصدير المحاسبة في مساحة واحدة واضحة. يتابع الملاك مدفوعاتهم، ويُصدرون الإيصال بنقرة واحدة، ويجهّزون محاسبتهم دون قضاء أمسياتهم في ذلك.'
+        }
+    },
+    'heinsen-prono': {
+        name: 'Heinsen Prono',
+        kind: 'web',
+        category: { fr: 'Site web & abonnement', en: 'Website & subscription', ar: 'موقع واشتراكات' },
+        icon: 'assets/images/heinsen-prono-icon.jpg',
+        screenshot: 'assets/images/heinsen-prono-screen1.jpg',
+        screenshots: ['assets/images/heinsen-prono-screen1.jpg', 'assets/images/heinsen-prono-screen2.jpg', 'assets/images/heinsen-prono-screen3.jpg'],
+        features: { fr: ['Offres & paiement en ligne', 'Accès VIP automatique', 'Rapide et adapté au mobile'], en: ['Offers & online payment', 'Automatic VIP access', 'Fast and mobile-friendly'], ar: ['باقات ودفع إلكتروني', 'وصول VIP تلقائي', 'سريع ومتوافق مع الهاتف'] },
+        website: 'https://heinsen-prono.com',
+        appStore: null,
+        googlePlay: null,
+        privacy: null,
+        terms: null,
+        tagline: { fr: 'Des analyses. Une gestion. Une méthode.', en: 'Analysis. Management. Method.', ar: 'تحليلات. إدارة. منهجية.' },
+        description: {
+            fr: 'Site vitrine et espace d’abonnement d’une communauté de pronostics sportifs : présentation des offres, paiement en ligne et accès automatique au canal VIP Telegram.',
+            en: 'Showcase site and subscription space for a sports-picks community: offers, online payment and automatic access to the VIP Telegram channel.',
+            ar: 'موقع تعريفي ومساحة اشتراك لمجتمع توقعات رياضية: عرض الباقات، ودفع إلكتروني، ووصول تلقائي إلى قناة VIP على تيليجرام.'
         }
     },
 };
@@ -391,6 +458,7 @@ function initCommandPalette() {
         ['lang-fr','command_french','fa-globe'], ['lang-en','command_english','fa-globe'],
         ['lang-ar','command_arabic','fa-globe'], ['theme','command_theme','fa-circle-half-stroke'],
         ['zikr','command_zikr','fa-mobile-screen-button'], ['kinto','command_kinto','fa-mobile-screen-button'],
+        ['fadz','command_fadz','fa-scissors'], ['propriopilot','command_propriopilot','fa-house'], ['heinsen','command_heinsen','fa-chart-line'],
         ['email','command_copy_email','fa-copy'], ['top','command_top','fa-arrow-up']
     ];
     let active = 0;
@@ -403,7 +471,7 @@ function initCommandPalette() {
     const open = () => { input.value = ''; active = 0; render(); dialog.showModal(); requestAnimationFrame(() => input.focus()); };
     const run = async id => {
         dialog.close();
-        const routes = {projects:'#projects',services:'#services',about:'#about',contact:'#contact',zikr:'zikr.html',kinto:'kinto.html',top:'#top'};
+        const routes = {projects:'#projects',services:'#services',about:'#about',contact:'#contact',zikr:'zikr.html',kinto:'kinto.html',fadz:'fadz.html',propriopilot:'propriopilot.html',heinsen:'heinsen-prono.html',top:'#top'};
         if (routes[id]) { location.href = routes[id]; return; }
         if (id.startsWith('lang-')) { window.setLanguage(id.slice(5)); return; }
         if (id === 'theme') { window.toggleTheme(); return; }
@@ -445,7 +513,7 @@ function renderAppCards() {
             <a class="app-card" href="${id}.html" data-reveal data-tilt style="--reveal-delay: ${Object.keys(appsData).indexOf(id) * 110}ms">
                 <div class="app-card-inner">
                     ${preview}
-                    <span class="app-card-category" data-i18n="project_category">Application mobile</span>
+                    <span class="app-card-category" data-app="${id}" data-app-field="category">${app.category[currentLang]}</span>
                     <h3 class="app-card-name">${name}</h3>
                     <p class="app-card-tagline" data-app="${id}" data-app-field="tagline">${app.tagline[currentLang]}</p>
                     <p class="app-card-description" data-app="${id}" data-app-field="description">${app.description[currentLang]}</p>
@@ -467,7 +535,8 @@ function renderAppDetail() {
     const app = appsData[appId];
     if (!app) return;
 
-    const name = appId.charAt(0).toUpperCase() + appId.slice(1);
+    const name = app.name || appId.charAt(0).toUpperCase() + appId.slice(1);
+    const kickerKey = app.kind === 'web' ? 'screens_kicker_web' : 'screens_kicker';
 
     root.innerHTML = `
         <div class="app-hero-media">
@@ -482,16 +551,18 @@ function renderAppDetail() {
             <p class="app-description" data-app="${appId}" data-app-field="description">${app.description[currentLang]}</p>
             <ul class="feature-list" data-app="${appId}" data-feature-list aria-label="${name}">${app.features[currentLang].map(feature => `<li>${feature}</li>`).join('')}</ul>
             <div class="install-row">
+                ${app.website ? `<a class="install-btn" href="${app.website}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i><span data-i18n="link_website">Visiter le site</span></a>` : ''}
                 ${app.appStore ? `<a class="install-btn" href="${app.appStore}" target="_blank" rel="noopener"><i class="fab fa-apple"></i><span data-i18n="link_appstore">App Store</span></a>` : ''}
                 ${app.googlePlay ? `<a class="install-btn" href="${app.googlePlay}" target="_blank" rel="noopener"><i class="fab fa-google-play"></i><span data-i18n="link_googleplay">Google Play</span></a>` : ''}
             </div>
-            <div class="legal-row">
+            ${app.note ? `<p class="project-note" data-app="${appId}" data-app-field="note">${app.note[currentLang]}</p>` : ''}
+            ${app.privacy && app.terms ? `<div class="legal-row">
                 <a href="${app.privacy}" data-i18n="link_privacy">Confidentialité</a>
                 <a href="${app.terms}" data-i18n="link_terms">Conditions</a>
-            </div>
+            </div>` : ''}
         </div>
         <section class="app-gallery" aria-label="${name} — captures d’écran">
-            <div class="app-gallery-heading"><span class="eyebrow" data-i18n="screens_kicker">Aperçu de l’application</span><h2 data-i18n="screens_title">Pensée dans chaque détail.</h2></div>
+            <div class="app-gallery-heading"><span class="eyebrow" data-i18n="${kickerKey}">Aperçu de l’application</span><h2 data-i18n="screens_title">Pensée dans chaque détail.</h2></div>
             <div class="app-gallery-grid">${app.screenshots.map((image, index) => `<figure data-reveal data-gallery-index="${index}" role="button" tabindex="0" aria-label="${translations[currentLang].gallery_open} — ${index + 1}" style="--reveal-delay:${index * 100}ms"><div class="iphone-mockup"><div class="screen"><img src="${image}" alt="${name} — écran ${index + 1}" loading="lazy"></div></div></figure>`).join('')}</div>
         </section>
     `;
