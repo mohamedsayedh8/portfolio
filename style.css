@@ -1634,3 +1634,8 @@ html[dir="rtl"] .visual-chip { text-align: right; }
 /* Project pages: let the single mobile column shrink so the screenshot gallery never widens the page. */
 .app-hero > * { min-width: 0; }
 @media (max-width: 680px) { .app-hero { grid-template-columns: minmax(0, 1fr); } }
+
+/* Keyboard-shortcut palette is a desktop feature: hidden on phones and touch tablets. */
+@media (max-width: 760px), (hover: none) and (pointer: coarse) {
+  .command-open, .command-dialog { display: none !important; }
+}

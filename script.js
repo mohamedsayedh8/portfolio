@@ -412,6 +412,7 @@ function initCommandPalette() {
     const list = document.getElementById('command-items');
     const opener = document.getElementById('command-open');
     if (!dialog || !input || !list || !opener) return;
+    if (window.matchMedia('(max-width: 760px), (hover: none) and (pointer: coarse)').matches) return;
     const commands = [
         ['projects','command_projects','fa-grid-2'], ['services','command_services','fa-layer-group'],
         ['about','command_about','fa-user'], ['contact','command_contact','fa-paper-plane'],
