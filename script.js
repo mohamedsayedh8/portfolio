@@ -3,7 +3,7 @@ const translations = {
     fr: {
         skip_content: 'Aller au contenu',
         back_to_top_aria: 'Retourner en haut',
-        command_open: 'Ouvrir les raccourcis', command_search: 'Que veux-tu faire ?', command_navigation: 'Raccourcis du portfolio', command_projects: 'Voir les projets', command_services: 'Voir les services', command_about: 'À propos', command_contact: 'Contacter Mohamed', command_french: 'Afficher en français', command_english: 'Afficher en anglais', command_arabic: 'Afficher en arabe', command_theme: 'Changer le thème', command_zikr: 'Découvrir Zikr', command_kinto: 'Découvrir Kinto', command_fadz: 'Découvrir Fadz', command_copy_email: 'Copier l’adresse e-mail', command_top: 'Retourner en haut', command_copied: 'Adresse copiée', command_no_results: 'Aucune action trouvée',
+        command_open: 'Ouvrir les raccourcis', command_search: 'Que veux-tu faire ?', command_navigation: 'Raccourcis du portfolio', command_projects: 'Voir les projets', command_services: 'Voir les services', command_about: 'À propos', command_contact: 'Contacter Mohamed', command_french: 'Afficher en français', command_english: 'Afficher en anglais', command_arabic: 'Afficher en arabe', command_theme: 'Changer le thème', command_theme_auto: 'Thème automatique (système)', command_zikr: 'Découvrir Zikr', command_kinto: 'Découvrir Kinto', command_fadz: 'Découvrir Fadz', command_copy_email: 'Copier l’adresse e-mail', command_top: 'Retourner en haut', command_copied: 'Adresse copiée', command_no_results: 'Aucune action trouvée',
         gallery_dialog_label: 'Aperçu des captures d’écran', gallery_close: 'Fermer l’aperçu', gallery_previous: 'Écran précédent', gallery_next: 'Écran suivant', gallery_open: 'Agrandir cette capture', gallery_counter: 'Écran {current} sur {total}',
         theme_to_light: 'Passer au thème clair', theme_to_dark: 'Passer au thème sombre',
         nav_projects: 'Projets', nav_services: 'Services', nav_about: 'À propos', nav_contact: 'Contact',
@@ -72,7 +72,7 @@ const translations = {
     en: {
         skip_content: 'Skip to content',
         back_to_top_aria: 'Back to top',
-        command_open: 'Open shortcuts', command_search: 'What would you like to do?', command_navigation: 'Portfolio shortcuts', command_projects: 'View projects', command_services: 'View services', command_about: 'About', command_contact: 'Contact Mohamed', command_french: 'Switch to French', command_english: 'Switch to English', command_arabic: 'Switch to Arabic', command_theme: 'Switch theme', command_zikr: 'Explore Zikr', command_kinto: 'Explore Kinto', command_fadz: 'Explore Fadz', command_copy_email: 'Copy email address', command_top: 'Back to top', command_copied: 'Email address copied', command_no_results: 'No actions found',
+        command_open: 'Open shortcuts', command_search: 'What would you like to do?', command_navigation: 'Portfolio shortcuts', command_projects: 'View projects', command_services: 'View services', command_about: 'About', command_contact: 'Contact Mohamed', command_french: 'Switch to French', command_english: 'Switch to English', command_arabic: 'Switch to Arabic', command_theme: 'Switch theme', command_theme_auto: 'Automatic theme (system)', command_zikr: 'Explore Zikr', command_kinto: 'Explore Kinto', command_fadz: 'Explore Fadz', command_copy_email: 'Copy email address', command_top: 'Back to top', command_copied: 'Email address copied', command_no_results: 'No actions found',
         gallery_dialog_label: 'Screenshot preview', gallery_close: 'Close preview', gallery_previous: 'Previous screenshot', gallery_next: 'Next screenshot', gallery_open: 'Enlarge this screenshot', gallery_counter: 'Screen {current} of {total}',
         theme_to_light: 'Switch to light theme', theme_to_dark: 'Switch to dark theme',
         nav_projects: 'Projects', nav_services: 'Services', nav_about: 'About', nav_contact: 'Contact',
@@ -141,7 +141,7 @@ const translations = {
     ar: {
         skip_content: 'انتقل إلى المحتوى',
         back_to_top_aria: 'العودة إلى الأعلى',
-        command_open: 'فتح الاختصارات', command_search: 'ماذا تريد أن تفعل؟', command_navigation: 'اختصارات الموقع', command_projects: 'عرض المشاريع', command_services: 'عرض الخدمات', command_about: 'نبذة عني', command_contact: 'التواصل مع محمد', command_french: 'التبديل إلى الفرنسية', command_english: 'التبديل إلى الإنجليزية', command_arabic: 'عرض العربية', command_theme: 'تغيير المظهر', command_zikr: 'اكتشف ذكر', command_kinto: 'اكتشف كينتو', command_fadz: 'اكتشف Fadz', command_copy_email: 'نسخ البريد الإلكتروني', command_top: 'العودة إلى الأعلى', command_copied: 'تم نسخ البريد الإلكتروني', command_no_results: 'لم يتم العثور على إجراء',
+        command_open: 'فتح الاختصارات', command_search: 'ماذا تريد أن تفعل؟', command_navigation: 'اختصارات الموقع', command_projects: 'عرض المشاريع', command_services: 'عرض الخدمات', command_about: 'نبذة عني', command_contact: 'التواصل مع محمد', command_french: 'التبديل إلى الفرنسية', command_english: 'التبديل إلى الإنجليزية', command_arabic: 'عرض العربية', command_theme: 'تغيير المظهر', command_theme_auto: 'مظهر تلقائي (النظام)', command_zikr: 'اكتشف ذكر', command_kinto: 'اكتشف كينتو', command_fadz: 'اكتشف Fadz', command_copy_email: 'نسخ البريد الإلكتروني', command_top: 'العودة إلى الأعلى', command_copied: 'تم نسخ البريد الإلكتروني', command_no_results: 'لم يتم العثور على إجراء',
         gallery_dialog_label: 'معاينة لقطات الشاشة', gallery_close: 'إغلاق المعاينة', gallery_previous: 'الصورة السابقة', gallery_next: 'الصورة التالية', gallery_open: 'تكبير هذه الصورة', gallery_counter: 'الصورة {current} من {total}',
         theme_to_light: 'التبديل إلى الوضع الفاتح', theme_to_dark: 'التبديل إلى الوضع الداكن',
         nav_projects: 'المشاريع', nav_services: 'الخدمات', nav_about: 'عني', nav_contact: 'تواصل',
@@ -406,6 +406,13 @@ window.toggleTheme = function() {
     try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) {}
 };
 
+window.resetThemeToSystem = function() {
+    try { localStorage.removeItem('theme'); } catch (e) {}
+    const dark = !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.body.classList.toggle('dark-mode', dark);
+    updateThemeButton();
+};
+
 function initCommandPalette() {
     const dialog = document.getElementById('command-dialog');
     const input = document.getElementById('command-search');
@@ -417,7 +424,7 @@ function initCommandPalette() {
         ['projects','command_projects','fa-grid-2'], ['services','command_services','fa-layer-group'],
         ['about','command_about','fa-user'], ['contact','command_contact','fa-paper-plane'],
         ['lang-fr','command_french','fa-globe'], ['lang-en','command_english','fa-globe'],
-        ['lang-ar','command_arabic','fa-globe'], ['theme','command_theme','fa-circle-half-stroke'],
+        ['lang-ar','command_arabic','fa-globe'], ['theme','command_theme','fa-circle-half-stroke'], ['theme-auto','command_theme_auto','fa-wand-magic-sparkles'],
         ['zikr','command_zikr','fa-mobile-screen-button'], ['kinto','command_kinto','fa-mobile-screen-button'],
         ['fadz','command_fadz','fa-scissors'],
         ['email','command_copy_email','fa-copy'], ['top','command_top','fa-arrow-up']
@@ -436,6 +443,7 @@ function initCommandPalette() {
         if (routes[id]) { location.href = routes[id]; return; }
         if (id.startsWith('lang-')) { window.setLanguage(id.slice(5)); return; }
         if (id === 'theme') { window.toggleTheme(); return; }
+        if (id === 'theme-auto') { window.resetThemeToSystem(); return; }
         if (id === 'email') {
             try { await navigator.clipboard.writeText('contact@mohamedelhawawshi.com'); }
             catch { location.href = 'mailto:contact@mohamedelhawawshi.com'; }
@@ -651,6 +659,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
         document.body.classList.add('dark-mode');
+    }
+
+    if (window.matchMedia) {
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+        const followSystem = event => {
+            let stored = null;
+            try { stored = localStorage.getItem('theme'); } catch (e) {}
+            if (stored === 'dark' || stored === 'light') return;
+            document.body.classList.toggle('dark-mode', event.matches);
+            updateThemeButton();
+        };
+        if (systemTheme.addEventListener) systemTheme.addEventListener('change', followSystem);
+        else if (systemTheme.addListener) systemTheme.addListener(followSystem);
     }
 
     renderAppCards();
