@@ -59,7 +59,7 @@ const translations = {
         contact_cta: 'M’écrire',
         contact_project_label: 'Tu veux créer…', contact_project_app: 'Une app', contact_project_saas: 'Un SaaS', contact_project_site: 'Un site web',
         contact_stage_label: 'Où en est ton projet ? (facultatif)', contact_stage_idea: 'J’ai une idée', contact_stage_design: 'J’ai une maquette', contact_stage_existing: 'Un produit existe déjà',
-        contact_summary: 'Ton message indiquera', contact_stage_unspecified: 'avancement à préciser', contact_copy: 'Copier l’adresse e-mail', contact_copy_done: 'Adresse e-mail copiée.', contact_copy_failed: 'Copie impossible. Écris à contact@mohamedelhawawshi.com.',
+        contact_summary: 'Ton message indiquera', contact_stage_unspecified: 'avancement à préciser', contact_copy: 'Copier l’adresse e-mail', contact_copy_done: 'Adresse e-mail copiée.', contact_copy_failed: 'Copie impossible. Écris à contact@mohameds.net.',
         footer_role: 'Apps · SaaS · Sites web',
         footer_note: 'Des produits numériques conçus avec soin, de l’idée à la mise en ligne.',
         footer_contact: 'Parlons de ton projet',
@@ -128,7 +128,7 @@ const translations = {
         contact_cta: 'Email me',
         contact_project_label: 'What are you looking to build?', contact_project_app: 'An app', contact_project_saas: 'A SaaS', contact_project_site: 'A website',
         contact_stage_label: 'Where is your project right now? (optional)', contact_stage_idea: 'I have an idea', contact_stage_design: 'I have a design', contact_stage_existing: 'I have an existing product',
-        contact_summary: 'Your message will include', contact_stage_unspecified: 'stage to be discussed', contact_copy: 'Copy email address', contact_copy_done: 'Email address copied.', contact_copy_failed: 'Could not copy. Email contact@mohamedelhawawshi.com.',
+        contact_summary: 'Your message will include', contact_stage_unspecified: 'stage to be discussed', contact_copy: 'Copy email address', contact_copy_done: 'Email address copied.', contact_copy_failed: 'Could not copy. Email contact@mohameds.net.',
         footer_role: 'Apps · SaaS · Websites',
         footer_note: 'Digital products, thoughtfully made from the first idea to launch.',
         footer_contact: 'Tell me about your project',
@@ -197,7 +197,7 @@ const translations = {
         contact_cta: 'راسلني',
         contact_project_label: 'ما الذي تريد إنشاءه؟', contact_project_app: 'تطبيق', contact_project_saas: 'منصة SaaS', contact_project_site: 'موقع ويب',
         contact_stage_label: 'ما المرحلة الحالية لمشروعك؟ (اختياري)', contact_stage_idea: 'لدي فكرة', contact_stage_design: 'لدي تصميم', contact_stage_existing: 'لدي منتج قائم',
-        contact_summary: 'ستتضمن رسالتك', contact_stage_unspecified: 'المرحلة تحتاج إلى توضيح', contact_copy: 'نسخ البريد الإلكتروني', contact_copy_done: 'تم نسخ البريد الإلكتروني.', contact_copy_failed: 'تعذر النسخ. راسل contact@mohamedelhawawshi.com.',
+        contact_summary: 'ستتضمن رسالتك', contact_stage_unspecified: 'المرحلة تحتاج إلى توضيح', contact_copy: 'نسخ البريد الإلكتروني', contact_copy_done: 'تم نسخ البريد الإلكتروني.', contact_copy_failed: 'تعذر النسخ. راسل contact@mohameds.net.',
         footer_role: 'تطبيقات · SaaS · مواقع ويب',
         footer_note: 'منتجات رقمية متقنة من الفكرة الأولى حتى الإطلاق.',
         footer_contact: 'لنتحدث عن مشروعك',
@@ -308,7 +308,7 @@ function updateContactMailto() {
         ar: `مرحباً محمد،\n\nأود التحدث معك حول ${project}.${stageLine}\n\nإليك بعض التفاصيل عن فكرتي:\n`
     }[currentLang];
     const subject = { fr: 'Parlons de mon projet', en: 'Let’s talk about my project', ar: 'لنتحدث عن مشروعي' }[currentLang];
-    link.href = `mailto:contact@mohamedelhawawshi.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+    link.href = `mailto:contact@mohameds.net?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
     updateContactSummary();
 }
 
@@ -445,8 +445,8 @@ function initCommandPalette() {
         if (id === 'theme') { window.toggleTheme(); return; }
         if (id === 'theme-auto') { window.resetThemeToSystem(); return; }
         if (id === 'email') {
-            try { await navigator.clipboard.writeText('contact@mohamedelhawawshi.com'); }
-            catch { location.href = 'mailto:contact@mohamedelhawawshi.com'; }
+            try { await navigator.clipboard.writeText('contact@mohameds.net'); }
+            catch { location.href = 'mailto:contact@mohameds.net'; }
             opener.setAttribute('aria-label', label('command_copied'));
             window.setTimeout(() => opener.setAttribute('aria-label', label('command_open')), 1600);
         }
@@ -683,7 +683,7 @@ document.addEventListener('DOMContentLoaded', () => {
     copyButton?.addEventListener('click', async () => {
         const status = document.getElementById('contact-copy-status');
         try {
-            await navigator.clipboard.writeText('contact@mohamedelhawawshi.com');
+            await navigator.clipboard.writeText('contact@mohameds.net');
             status.textContent = translations[currentLang].contact_copy_done;
             copyButton.classList.add('is-copied');
             window.setTimeout(() => copyButton.classList.remove('is-copied'), 900);
