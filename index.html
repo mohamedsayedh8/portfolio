@@ -14,12 +14,6 @@
             }
             document.documentElement.lang = lang;
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            let seen = false;
-            try {
-                seen = sessionStorage.getItem('portfolio-opening-v2') === '1';
-                if (!seen) sessionStorage.setItem('portfolio-opening-v2', '1');
-            } catch (e) {}
-            if (!seen && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('intro-active');
         })();
     </script>
     <title>Mohamed Sayed — Développeur d’applications mobiles</title>
@@ -51,34 +45,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=6400">
+    <link rel="stylesheet" href="style.css?v=6502">
 </head>
 <body class="home-page">
     <a class="skip-link" href="#top" data-i18n="skip_content">Aller au contenu</a>
-
-    <div class="opening-screen" id="opening-screen">
-        <div class="opening-frame">
-            <div class="opening-top">
-                <span class="opening-brand"><span class="opening-mini-mark">M</span> Mohamed Sayed</span>
-                <span class="opening-index">PORTFOLIO <i>·</i> 2026</span>
-                <button class="opening-skip" id="opening-skip" type="button" data-i18n="opening_skip">Entrer ↗</button>
-            </div>
-            <div class="opening-center">
-                <span class="opening-kicker" data-i18n="opening_kicker">APPLICATIONS · SAAS · WEB</span>
-                <div class="opening-emblem">
-                    <svg viewBox="0 0 120 120" role="presentation">
-                        <circle class="opening-ring" cx="60" cy="60" r="47"></circle>
-                        <path class="opening-letter" d="M34 83V39l26 27 26-27v44"></path>
-                        <path class="opening-spark" d="M91 23v13M84.5 29.5h13"></path>
-                    </svg>
-                </div>
-                <h1 class="opening-name">Mohamed <span>Sayed</span><i>.</i></h1>
-                <p class="opening-subtitle" data-i18n="opening_subtitle">Des idées qui prennent vie.</p>
-                <div class="opening-progress"><span></span></div>
-            </div>
-            <div class="opening-bottom"><span data-i18n="opening_footer">DESIGN <i>·</i> CODE <i>·</i> MOUVEMENT</span><span>01 <i>—</i> 03</span></div>
-        </div>
-    </div>
 
     <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
@@ -198,8 +168,6 @@
                     <p class="section-intro" data-i18n="portfolio_intro">Applications, plateformes et sites web conçus avec soin, de l’idée à leur mise en ligne.</p>
                 </div>
                 <div class="apps-grid" id="apps-grid"></div>
-                <div class="projects-rail-progress" aria-hidden="true"><span id="projects-rail-progress-fill"></span></div>
-                <p class="project-swipe-hint"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span data-i18n="projects_swipe">Fais glisser pour explorer</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></p>
             </div>
         </section>
 
@@ -284,6 +252,6 @@
         </div>
     </dialog>
 
-    <script src="script.js?v=6400"></script>
+    <script src="script.js?v=6500"></script>
 </body>
 </html>

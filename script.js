@@ -37,10 +37,6 @@ const translations = {
         ribbon_web: 'Sites web',
         ribbon_design: 'Design',
         ribbon_code: 'Développement',
-        opening_skip: 'Entrer ↗',
-        opening_kicker: 'APPLICATIONS · SAAS · WEB',
-        opening_subtitle: 'Des idées qui prennent vie.',
-        opening_footer: 'DESIGN · CODE · MOUVEMENT',
         visual_caption: 'Tape sur le M ✦',
         logo_game_hint: 'Faire jaillir les étoiles',
         visual_chip_apps: 'APPS',
@@ -49,7 +45,6 @@ const translations = {
         hero_desc: 'Je conçois et lance des produits utiles, de l’idée à l’App Store et à Google Play.',
         hero_cta_apps: 'Voir mes projets',
         hero_scroll: 'En savoir plus',
-        projects_swipe: 'Fais glisser pour explorer',
         link_appstore: 'App Store',
         link_googleplay: 'Google Play',
         link_website: 'Visiter le site',
@@ -156,10 +151,6 @@ const translations = {
         ribbon_web: 'Websites',
         ribbon_design: 'Design',
         ribbon_code: 'Development',
-        opening_skip: 'Enter ↗',
-        opening_kicker: 'APPS · SAAS · WEB',
-        opening_subtitle: 'Ideas brought to life.',
-        opening_footer: 'DESIGN · CODE · MOTION',
         visual_caption: 'Tap the M ✦',
         logo_game_hint: 'Make the stars burst',
         visual_chip_apps: 'APPS',
@@ -168,7 +159,6 @@ const translations = {
         hero_desc: 'I design and launch useful products, from the first idea to the App Store and Google Play.',
         hero_cta_apps: 'View my projects',
         hero_scroll: 'Learn more',
-        projects_swipe: 'Swipe to explore',
         link_appstore: 'App Store',
         link_googleplay: 'Google Play',
         link_website: 'Visit the website',
@@ -275,10 +265,6 @@ const translations = {
         ribbon_web: 'مواقع ويب',
         ribbon_design: 'تصميم',
         ribbon_code: 'تطوير',
-        opening_skip: 'دخول ↗',
-        opening_kicker: 'تطبيقات · SaaS · ويب',
-        opening_subtitle: 'أفكار تتحول إلى واقع.',
-        opening_footer: 'تصميم · برمجة · حركة',
         visual_caption: 'اضغط على M ✦',
         logo_game_hint: 'أطلق النجوم',
         visual_chip_apps: 'تطبيقات',
@@ -287,7 +273,6 @@ const translations = {
         hero_desc: 'أصمم وأطلق منتجات مفيدة، من الفكرة الأولى حتى App Store وGoogle Play.',
         hero_cta_apps: 'مشاهدة مشاريعي',
         hero_scroll: 'اعرف المزيد',
-        projects_swipe: 'اسحب لاستكشاف المشاريع',
         link_appstore: 'App Store',
         link_googleplay: 'Google Play',
         link_website: 'زيارة الموقع',
@@ -597,7 +582,7 @@ function renderAppCards() {
         const name = app.name || id.charAt(0).toUpperCase() + id.slice(1);
         const preview = app.visualMode === 'cover'
             ? `<div class="project-preview project-preview-cover"><img src="${app.screenshot}" alt="${name}" loading="lazy"></div>`
-            : `<div class="project-preview project-preview-device"><div class="iphone-mockup"><div class="screen">${app.screenshots.map((image, index) => `<img class="project-preview-slide project-preview-slide-${index + 1}" src="${image}" alt="${index === 0 ? name : ''}" ${index ? 'aria-hidden="true"' : ''} loading="lazy">`).join('')}</div></div></div>`;
+            : `<div class="project-preview project-preview-device"><div class="iphone-mockup"><div class="screen"><img class="project-preview-slide" src="${app.screenshots[0]}" alt="${name}" loading="lazy" decoding="async"></div></div></div>`;
         return `
             <a class="app-card" href="${id}.html" data-reveal data-tilt style="--reveal-delay: ${Object.keys(appsData).indexOf(id) * 110}ms">
                 <div class="app-card-inner">
@@ -628,23 +613,25 @@ function renderAppDetail() {
     const kickerKey = app.kind === 'web' ? 'screens_kicker_web' : 'screens_kicker';
 
     root.innerHTML = `
-        <div class="app-hero-media">
-            ${app.visualMode === 'cover'
-                ? `<div class="app-hero-cover"><img src="${app.screenshot}" alt="${name}"></div>`
-                : `<div class="iphone-mockup large"><div class="screen"><img src="${app.screenshot}" alt="${name}"></div></div>`}
-        </div>
-        <div class="app-hero-info">
+        <div class="app-hero-head app-hero-info">
             <img class="app-icon-lg" src="${app.icon}" alt="${name}">
             <h1>${name}</h1>
             <p class="tagline" data-app="${appId}" data-app-field="tagline">${app.tagline[currentLang]}</p>
-            <p class="app-description" data-app="${appId}" data-app-field="description">${app.description[currentLang]}</p>
-            <ul class="feature-list" data-app="${appId}" data-feature-list aria-label="${name}">${app.features[currentLang].map(feature => `<li>${feature}</li>`).join('')}</ul>
             <div class="install-row">
                 ${app.website ? `<a class="install-btn" href="${app.website}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i><span data-i18n="link_website">Visiter le site</span></a>` : ''}
                 ${app.appStore ? `<a class="install-btn" href="${app.appStore}" target="_blank" rel="noopener"><i class="fab fa-apple"></i><span data-i18n="link_appstore">App Store</span></a>` : ''}
                 ${app.googlePlay ? `<a class="install-btn" href="${app.googlePlay}" target="_blank" rel="noopener"><i class="fab fa-google-play"></i><span data-i18n="link_googleplay">Google Play</span></a>` : ''}
             </div>
             ${app.note ? `<p class="project-note" data-app="${appId}" data-app-field="note">${app.note[currentLang]}</p>` : ''}
+        </div>
+        <div class="app-hero-media">
+            ${app.visualMode === 'cover'
+                ? `<div class="app-hero-cover"><img src="${app.screenshot}" alt="${name}"></div>`
+                : `<div class="iphone-mockup large"><div class="screen"><img src="${app.screenshot}" alt="${name}"></div></div>`}
+        </div>
+        <div class="app-hero-body app-hero-info">
+            <p class="app-description" data-app="${appId}" data-app-field="description">${app.description[currentLang]}</p>
+            <ul class="feature-list" data-app="${appId}" data-feature-list aria-label="${name}">${app.features[currentLang].map(feature => `<li>${feature}</li>`).join('')}</ul>
             ${app.privacy && app.terms ? `<div class="legal-row">
                 <a href="${app.privacy}" data-i18n="link_privacy">Confidentialité</a>
                 <a href="${app.terms}" data-i18n="link_terms">Conditions</a>
@@ -813,19 +800,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     setLanguage(savedLang || detectBrowserLanguage(), false);
 
-    const projectsRail = document.getElementById('apps-grid');
-    const railProgressFill = document.getElementById('projects-rail-progress-fill');
-    if (projectsRail && railProgressFill) {
-        const updateRailProgress = () => {
-            const range = projectsRail.scrollWidth - projectsRail.clientWidth;
-            const progress = range > 0 ? Math.abs(projectsRail.scrollLeft) / range : 0;
-            railProgressFill.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`;
-        };
-        projectsRail.addEventListener('scroll', updateRailProgress, { passive: true });
-        window.addEventListener('resize', updateRailProgress, { passive: true });
-        updateRailProgress();
-    }
-
     const navbar = document.getElementById('navbar');
     if (navbar) {
         let previousScrollY = window.scrollY;
@@ -950,26 +924,4 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', updateProgress, { passive: true });
         updateProgress();
     }
-
-    const openingScreen = document.getElementById('opening-screen');
-    if (openingScreen && document.documentElement.classList.contains('intro-active')) {
-        let finished = false;
-        const finishOpening = () => {
-            if (finished) return;
-            finished = true;
-            openingScreen.classList.add('is-leaving');
-            window.setTimeout(() => {
-                document.documentElement.classList.remove('intro-active');
-                openingScreen.remove();
-            }, 620);
-        };
-        document.getElementById('opening-skip')?.addEventListener('click', finishOpening);
-        document.addEventListener('keydown', event => {
-            if (event.key === 'Escape') finishOpening();
-        }, { once: true });
-        window.setTimeout(finishOpening, 3000);
-    } else if (openingScreen) {
-        openingScreen.remove();
-    }
-
 });
