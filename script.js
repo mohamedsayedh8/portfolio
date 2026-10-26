@@ -66,7 +66,7 @@ const translations = {
         portfolio_intro: 'Applications, plateformes et sites web conçus avec soin, de l’idée à leur mise en ligne.',
         about_title: 'Indépendant par choix. Attentif à chaque détail.',
         about_cta: 'Parlons de ton idée',
-        about_p1: 'Je m’appelle Mohamed Sayed, développeur indépendant basé en France. Je conçois et je développe des applications mobiles, des plateformes et des sites web, de la première idée à la mise en ligne.',
+        about_p1: 'Je m’appelle Mohamed Sayed, développeur indépendant basé à Paris et étudiant en première année de licence d’informatique. Je conçois et je développe des applications mobiles, des plateformes et des sites web, de la première idée à la mise en ligne.',
         contact_title: 'Contact',
         contact_subtitle: 'Une question, une idée ou un projet ? Écrivez-moi.',
         contact_cta: 'M’écrire',
@@ -84,9 +84,8 @@ const translations = {
         hero_role: 'Développeur d’applications mobiles, de plateformes et de sites web.',
         about_p2: 'En 2026, j’ai lancé Zikr, une application spirituelle disponible sur l’App Store et Google Play, puis Kinto, une application de budget. Je développe aujourd’hui Fadz, une plateforme de réservation pour les coiffeurs et barbiers indépendants.',
         about_p3: 'Je soigne les détails : des interfaces claires, des produits disponibles en plusieurs langues, dont l’arabe avec lecture de droite à gauche.',
-        fact_location: 'Basé en France',
+        fact_location: 'Basé à Paris',
         fact_status: 'Développeur indépendant',
-        fact_languages: 'Produits en 5 langues',
         fact_stores: 'App Store & Google Play',
         skills_kicker: 'Compétences',
         skills_title: 'Ce que je maîtrise.',
@@ -113,7 +112,12 @@ const translations = {
         journey_mar: 'Mars 2026',
         journey_fadz_text: 'Plateforme de réservation pour coiffeurs et barbiers indépendants. Site en ligne, applications iOS et Android en préparation.',
         journey_kinto_text: 'Application de budget avec scan de reçus, disponible sur l’App Store.',
-        journey_zikr_text: 'Application spirituelle — Coran, Adhkar, horaires de prière — disponible sur l’App Store et Google Play.'
+        journey_zikr_text: 'Application spirituelle — Coran, Adhkar, horaires de prière — disponible sur l’App Store et Google Play.',
+        fact_study: 'Étudiant en licence 1 d’informatique',
+        fact_spoken: 'Arabe et français courants · Anglais (bases)',
+        journey_study_date: 'En cours',
+        journey_study_title: 'Licence 1 Informatique',
+        journey_study_text: 'Première année de licence d’informatique, en parallèle du développement de mes produits.'
     },
     en: {
         skip_content: 'Skip to content',
@@ -181,7 +185,7 @@ const translations = {
         portfolio_intro: 'Apps, platforms and websites, thoughtfully built from the first idea to launch.',
         about_title: 'Independent by choice. Careful with every detail.',
         about_cta: 'Let’s talk about your idea',
-        about_p1: 'I’m Mohamed Sayed, an independent developer based in France. I design and build mobile apps, platforms and websites, from the first idea to launch.',
+        about_p1: 'I’m Mohamed Sayed, an independent developer based in Paris and a first-year computer science student. I design and build mobile apps, platforms and websites, from the first idea to launch.',
         contact_title: 'Contact',
         contact_subtitle: 'A question, an idea or a project? Get in touch.',
         contact_cta: 'Email me',
@@ -199,9 +203,8 @@ const translations = {
         hero_role: 'Mobile app, platform and website developer.',
         about_p2: 'In 2026 I launched Zikr, a spiritual app available on the App Store and Google Play, then Kinto, a budgeting app. I’m now building Fadz, a booking platform for independent hairdressers and barbers.',
         about_p3: 'I care about the details: clear interfaces and products available in several languages, including Arabic with right-to-left reading.',
-        fact_location: 'Based in France',
+        fact_location: 'Based in Paris',
         fact_status: 'Independent developer',
-        fact_languages: 'Products in 5 languages',
         fact_stores: 'App Store & Google Play',
         skills_kicker: 'Skills',
         skills_title: 'What I do best.',
@@ -228,7 +231,12 @@ const translations = {
         journey_mar: 'March 2026',
         journey_fadz_text: 'Booking platform for independent hairdressers and barbers. Website live, iOS and Android apps in the works.',
         journey_kinto_text: 'Budgeting app with receipt scanning, available on the App Store.',
-        journey_zikr_text: 'Spiritual app — Quran, Adhkar, prayer times — available on the App Store and Google Play.'
+        journey_zikr_text: 'Spiritual app — Quran, Adhkar, prayer times — available on the App Store and Google Play.',
+        fact_study: 'First-year computer science student',
+        fact_spoken: 'Fluent in Arabic and French · English (basic)',
+        journey_study_date: 'Ongoing',
+        journey_study_title: 'Bachelor’s in Computer Science, year 1',
+        journey_study_text: 'First year of a computer science degree, alongside building my products.'
     },
     ar: {
         skip_content: 'انتقل إلى المحتوى',
@@ -296,7 +304,7 @@ const translations = {
         portfolio_intro: 'تطبيقات ومنصات ومواقع صُمّمت بعناية من الفكرة إلى الإطلاق.',
         about_title: 'أعمل بشكل مستقل، وأهتم بكل تفصيل.',
         about_cta: 'لنتحدث عن فكرتك',
-        about_p1: 'أنا محمد سيد، مطوّر مستقل مقيم في فرنسا. أصمم وأطوّر تطبيقات الهاتف والمنصات ومواقع الويب، من الفكرة الأولى حتى الإطلاق.',
+        about_p1: 'أنا محمد سيد، مطوّر مستقل مقيم في باريس وطالب في السنة الأولى من الإجازة في علوم الحاسوب. أصمم وأطوّر تطبيقات الهاتف والمنصات ومواقع الويب، من الفكرة الأولى حتى الإطلاق.',
         contact_title: 'تواصل',
         contact_subtitle: 'سؤال أو فكرة أو مشروع؟ راسلني.',
         contact_cta: 'راسلني',
@@ -314,9 +322,8 @@ const translations = {
         hero_role: 'مطوّر تطبيقات هاتف ومنصات ومواقع ويب.',
         about_p2: 'في عام 2026 أطلقت «ذكر»، تطبيقاً روحياً متاحاً على App Store وGoogle Play، ثم Kinto، تطبيقاً لإدارة الميزانية. أعمل اليوم على Fadz، منصة حجوزات للحلاقين والمصففين المستقلين.',
         about_p3: 'أهتم بالتفاصيل: واجهات واضحة ومنتجات متاحة بعدة لغات، منها العربية مع القراءة من اليمين إلى اليسار.',
-        fact_location: 'مقيم في فرنسا',
+        fact_location: 'مقيم في باريس',
         fact_status: 'مطوّر مستقل',
-        fact_languages: 'منتجات بخمس لغات',
         fact_stores: 'App Store وGoogle Play',
         skills_kicker: 'المهارات',
         skills_title: 'ما أتقنه.',
@@ -343,7 +350,12 @@ const translations = {
         journey_mar: 'مارس 2026',
         journey_fadz_text: 'منصة حجوزات للحلاقين والمصففين المستقلين. الموقع متاح، وتطبيقا iOS وAndroid قيد الإعداد.',
         journey_kinto_text: 'تطبيق للميزانية مع مسح الفواتير، متاح على App Store.',
-        journey_zikr_text: 'تطبيق روحي — القرآن الكريم والأذكار وأوقات الصلاة — متاح على App Store وGoogle Play.'
+        journey_zikr_text: 'تطبيق روحي — القرآن الكريم والأذكار وأوقات الصلاة — متاح على App Store وGoogle Play.',
+        fact_study: 'طالب في السنة الأولى – علوم الحاسوب',
+        fact_spoken: 'العربية والفرنسية بطلاقة · الإنجليزية (أساسية)',
+        journey_study_date: 'قيد الدراسة',
+        journey_study_title: 'السنة الأولى – علوم الحاسوب',
+        journey_study_text: 'السنة الأولى من الدراسة الجامعية في علوم الحاسوب، بالتوازي مع تطوير منتجاتي.'
     }
 };
 
