@@ -3,21 +3,53 @@ const translations = {
     fr: {
         skip_content: 'Aller au contenu',
         back_to_top_aria: 'Retourner en haut',
-        command_open: 'Ouvrir les raccourcis', command_search: 'Que veux-tu faire ?', command_navigation: 'Raccourcis du portfolio', command_projects: 'Voir les projets', command_services: 'Voir les services', command_about: 'À propos', command_contact: 'Contacter Mohamed', command_french: 'Afficher en français', command_english: 'Afficher en anglais', command_arabic: 'Afficher en arabe', command_theme: 'Changer le thème', command_theme_auto: 'Thème automatique (système)', command_zikr: 'Découvrir Zikr', command_kinto: 'Découvrir Kinto', command_fadz: 'Découvrir Fadz', command_copy_email: 'Copier l’adresse e-mail', command_top: 'Retourner en haut', command_copied: 'Adresse copiée', command_no_results: 'Aucune action trouvée',
-        gallery_dialog_label: 'Aperçu des captures d’écran', gallery_close: 'Fermer l’aperçu', gallery_previous: 'Écran précédent', gallery_next: 'Écran suivant', gallery_open: 'Agrandir cette capture', gallery_counter: 'Écran {current} sur {total}',
-        theme_to_light: 'Passer au thème clair', theme_to_dark: 'Passer au thème sombre',
-        nav_projects: 'Projets', nav_services: 'Services', nav_about: 'À propos', nav_contact: 'Contact',
-        ribbon_apps: 'Applications', ribbon_saas: 'SaaS & outils', ribbon_web: 'Sites web', ribbon_design: 'Design', ribbon_code: 'Développement',
-        opening_skip: 'Entrer ↗', opening_kicker: 'APPLICATIONS · SAAS · WEB', opening_subtitle: 'Des idées qui prennent vie.', opening_footer: 'DESIGN · CODE · MOUVEMENT',
+        command_open: 'Ouvrir les raccourcis',
+        command_search: 'Que veux-tu faire ?',
+        command_navigation: 'Raccourcis du portfolio',
+        command_projects: 'Voir les projets',
+        command_about: 'À propos',
+        command_contact: 'Contacter Mohamed',
+        command_french: 'Afficher en français',
+        command_english: 'Afficher en anglais',
+        command_arabic: 'Afficher en arabe',
+        command_theme: 'Changer le thème',
+        command_theme_auto: 'Thème automatique (système)',
+        command_zikr: 'Découvrir Zikr',
+        command_kinto: 'Découvrir Kinto',
+        command_fadz: 'Découvrir Fadz',
+        command_copy_email: 'Copier l’adresse e-mail',
+        command_top: 'Retourner en haut',
+        command_copied: 'Adresse copiée',
+        command_no_results: 'Aucune action trouvée',
+        gallery_dialog_label: 'Aperçu des captures d’écran',
+        gallery_close: 'Fermer l’aperçu',
+        gallery_previous: 'Écran précédent',
+        gallery_next: 'Écran suivant',
+        gallery_open: 'Agrandir cette capture',
+        gallery_counter: 'Écran {current} sur {total}',
+        theme_to_light: 'Passer au thème clair',
+        theme_to_dark: 'Passer au thème sombre',
+        nav_projects: 'Projets',
+        nav_about: 'À propos',
+        nav_contact: 'Contact',
+        ribbon_apps: 'Applications',
+        ribbon_saas: 'SaaS & outils',
+        ribbon_web: 'Sites web',
+        ribbon_design: 'Design',
+        ribbon_code: 'Développement',
+        opening_skip: 'Entrer ↗',
+        opening_kicker: 'APPLICATIONS · SAAS · WEB',
+        opening_subtitle: 'Des idées qui prennent vie.',
+        opening_footer: 'DESIGN · CODE · MOUVEMENT',
         visual_caption: 'Tape sur le M ✦',
         logo_game_hint: 'Faire jaillir les étoiles',
-        visual_jump_apps: 'Aller au service des applications', visual_jump_saas: 'Aller au service SaaS', visual_jump_web: 'Aller au service des sites web',
-        visual_chip_apps: 'APPS', visual_chip_saas: 'SAAS', visual_chip_web: 'WEB',
-        hero_eyebrow: 'Créateur digital indépendant',
-        hero_title: 'Je transforme des idées en produits digitaux.',
-        hero_desc: 'Applications, SaaS et sites web : je conçois des expériences utiles, soignées et prêtes à être lancées.',
+        visual_chip_apps: 'APPS',
+        visual_chip_web: 'WEB',
+        hero_eyebrow: 'Développeur indépendant · Ouvert aux nouveaux projets',
+        hero_desc: 'Je conçois et lance des produits utiles, de l’idée à l’App Store et à Google Play.',
         hero_cta_apps: 'Voir mes projets',
-        hero_scroll: 'Explorer les projets', projects_swipe: 'Fais glisser pour explorer',
+        hero_scroll: 'En savoir plus',
+        projects_swipe: 'Fais glisser pour explorer',
         link_appstore: 'App Store',
         link_googleplay: 'Google Play',
         link_website: 'Visiter le site',
@@ -25,69 +57,114 @@ const translations = {
         link_terms: 'Conditions',
         link_delete: 'Suppression du compte',
         link_back: 'Accueil',
-        screens_kicker: 'Aperçu de l’application', screens_kicker_web: 'Aperçu du projet', screens_title: 'Pensée dans chaque détail.',
+        screens_kicker: 'Aperçu de l’application',
+        screens_kicker_web: 'Aperçu du projet',
+        screens_title: 'Pensée dans chaque détail.',
         project_open: 'Découvrir le projet',
         portfolio_kicker: 'Sélection · 2026',
         portfolio_title: 'Des idées transformées en produits.',
         portfolio_intro: 'Applications, plateformes et sites web conçus avec soin, de l’idée à leur mise en ligne.',
-        services_kicker: 'Ce que je crée',
-        services_title: 'Des idées aux produits du quotidien.',
-        services_intro: 'Je t’aide à choisir le bon format et à le construire de bout en bout.',
-        service_apps_title: 'Applications mobiles',
-        service_apps_text: 'Des apps iOS et Android pensées pour être rapides, intuitives et agréables à utiliser.',
-        service_saas_title: 'SaaS & outils web',
-        service_saas_text: 'Des plateformes web utiles, avec les fonctionnalités et les abonnements adaptés à ton activité.',
-        service_sites_title: 'Sites web',
-        service_sites_text: 'Des sites modernes, rapides et adaptés à tous les écrans, conçus pour présenter ton activité.',
-        service_cta: 'Parlons de ton projet',
-        service_app_tag1: 'iOS', service_app_tag2: 'Android', service_app_tag3: 'Publication',
-        service_saas_tag1: 'Plateforme', service_saas_tag2: 'Comptes', service_saas_tag3: 'Outils métier',
-        service_web_tag1: 'Design', service_web_tag2: 'Mobile', service_web_tag3: 'Référencement',
-        approach_kicker: 'Ma façon de travailler',
-        approach_title: 'De l’idée au lancement.',
-        approach_intro: 'Un accompagnement complet, du premier échange à la mise en ligne de ton produit.',
-        approach_1_title: 'Comprendre',
-        approach_1_text: 'Clarifier le besoin, les utilisateurs et l’essentiel à construire.',
-        approach_2_title: 'Concevoir',
-        approach_2_text: 'Créer une expérience claire, cohérente et agréable à utiliser.',
-        approach_3_title: 'Construire',
-        approach_3_text: 'Développer, peaufiner et préparer le produit pour sa mise en ligne.',
         about_title: 'Indépendant par choix. Attentif à chaque détail.',
         about_cta: 'Parlons de ton idée',
-        about_p1: 'Je suis Mohamed Sayed, développeur indépendant. Je crée des applications mobiles, des SaaS et des sites web, du design à la mise en ligne.',
+        about_p1: 'Je m’appelle Mohamed Sayed, développeur indépendant basé en France. Je conçois et je développe des applications mobiles, des plateformes et des sites web, de la première idée à la mise en ligne.',
         contact_title: 'Contact',
-        contact_subtitle: 'Tu as une idée à lancer ? Parle-moi de ton projet.',
+        contact_subtitle: 'Une question, une idée ou un projet ? Écrivez-moi.',
         contact_cta: 'M’écrire',
-        contact_project_label: 'Tu veux créer…', contact_project_app: 'Une app', contact_project_saas: 'Un SaaS', contact_project_site: 'Un site web',
-        contact_stage_label: 'Où en est ton projet ? (facultatif)', contact_stage_idea: 'J’ai une idée', contact_stage_design: 'J’ai une maquette', contact_stage_existing: 'Un produit existe déjà',
-        contact_summary: 'Ton message indiquera', contact_stage_unspecified: 'avancement à préciser', contact_copy: 'Copier l’adresse e-mail', contact_copy_done: 'Adresse e-mail copiée.', contact_copy_failed: 'Copie impossible. Écris à contact@mohameds.net.',
-        footer_role: 'Apps · SaaS · Sites web',
-        footer_note: 'Des produits numériques conçus avec soin, de l’idée à la mise en ligne.',
-        footer_contact: 'Parlons de ton projet',
+        contact_copy: 'Copier l’adresse e-mail',
+        contact_copy_done: 'Adresse e-mail copiée.',
+        contact_copy_failed: 'Copie impossible. Écris à contact@mohameds.net.',
+        footer_role: 'Développeur indépendant',
+        footer_note: 'Applications, plateformes et sites web conçus avec soin.',
+        footer_contact: 'Me contacter',
         footer_top: 'Retour en haut',
-        faq_kicker: 'Avant de commencer', faq_title: 'Quelques réponses utiles.',
-        faq_q1: 'Quels types de projets réalises-tu ?', faq_a1: 'Je conçois des applications mobiles, des produits SaaS et des sites web, selon le besoin et les personnes qui vont les utiliser.',
-        faq_q2: 'Peux-tu accompagner le projet jusqu’à sa mise en ligne ?', faq_a2: 'Oui. On clarifie d’abord le besoin, puis je peux concevoir, développer et préparer le produit pour son lancement.',
-        faq_q3: 'Comment démarrer une discussion ?', faq_a3: 'Choisis le type de projet dans le formulaire de contact et raconte-moi ton idée. On pourra ensuite définir ensemble la prochaine étape.'
+        nav_journey: 'Parcours',
+        command_journey: 'Voir le parcours',
+        visual_chip_design: 'DESIGN',
+        hero_hello: 'Bonjour, je suis',
+        hero_role: 'Développeur d’applications mobiles, de plateformes et de sites web.',
+        about_p2: 'En 2026, j’ai lancé Zikr, une application spirituelle disponible sur l’App Store et Google Play, puis Kinto, une application de budget. Je développe aujourd’hui Fadz, une plateforme de réservation pour les coiffeurs et barbiers indépendants.',
+        about_p3: 'Je soigne les détails : des interfaces claires, des produits disponibles en plusieurs langues, dont l’arabe avec lecture de droite à gauche.',
+        fact_location: 'Basé en France',
+        fact_status: 'Développeur indépendant',
+        fact_languages: 'Produits en 5 langues',
+        fact_stores: 'App Store & Google Play',
+        skills_kicker: 'Compétences',
+        skills_title: 'Ce que je maîtrise.',
+        skills_intro: 'De l’idée au produit en ligne, sans intermédiaire.',
+        skill_1_title: 'Conception produit',
+        skill_1_text: 'Transformer une idée en parcours clair : le besoin, les écrans, les détails qui comptent.',
+        skill_1_tag1: 'Cadrage',
+        skill_1_tag2: 'Parcours',
+        skill_1_tag3: 'Interface',
+        skill_2_title: 'Applications iOS & Android',
+        skill_2_text: 'Des applications rapides et soignées, publiées sur l’App Store et Google Play.',
+        skill_2_tag3: 'Publication',
+        skill_3_title: 'Plateformes & sites web',
+        skill_3_text: 'Sites, comptes utilisateurs, abonnements et paiements en ligne.',
+        skill_3_tag1: 'Sites web',
+        skill_3_tag2: 'Comptes',
+        skill_3_tag3: 'Paiements',
+        skill_4_title: 'Produits multilingues',
+        skill_4_text: 'Interfaces en français, anglais, arabe (de droite à gauche), espagnol et allemand.',
+        journey_kicker: 'Parcours',
+        journey_title: 'Du premier lancement à aujourd’hui.',
+        journey_now: 'Aujourd’hui',
+        journey_apr: 'Avril 2026',
+        journey_mar: 'Mars 2026',
+        journey_fadz_text: 'Plateforme de réservation pour coiffeurs et barbiers indépendants. Site en ligne, applications iOS et Android en préparation.',
+        journey_kinto_text: 'Application de budget avec scan de reçus, disponible sur l’App Store.',
+        journey_zikr_text: 'Application spirituelle — Coran, Adhkar, horaires de prière — disponible sur l’App Store et Google Play.'
     },
     en: {
         skip_content: 'Skip to content',
         back_to_top_aria: 'Back to top',
-        command_open: 'Open shortcuts', command_search: 'What would you like to do?', command_navigation: 'Portfolio shortcuts', command_projects: 'View projects', command_services: 'View services', command_about: 'About', command_contact: 'Contact Mohamed', command_french: 'Switch to French', command_english: 'Switch to English', command_arabic: 'Switch to Arabic', command_theme: 'Switch theme', command_theme_auto: 'Automatic theme (system)', command_zikr: 'Explore Zikr', command_kinto: 'Explore Kinto', command_fadz: 'Explore Fadz', command_copy_email: 'Copy email address', command_top: 'Back to top', command_copied: 'Email address copied', command_no_results: 'No actions found',
-        gallery_dialog_label: 'Screenshot preview', gallery_close: 'Close preview', gallery_previous: 'Previous screenshot', gallery_next: 'Next screenshot', gallery_open: 'Enlarge this screenshot', gallery_counter: 'Screen {current} of {total}',
-        theme_to_light: 'Switch to light theme', theme_to_dark: 'Switch to dark theme',
-        nav_projects: 'Projects', nav_services: 'Services', nav_about: 'About', nav_contact: 'Contact',
-        ribbon_apps: 'Applications', ribbon_saas: 'SaaS & tools', ribbon_web: 'Websites', ribbon_design: 'Design', ribbon_code: 'Development',
-        opening_skip: 'Enter ↗', opening_kicker: 'APPS · SAAS · WEB', opening_subtitle: 'Ideas brought to life.', opening_footer: 'DESIGN · CODE · MOTION',
+        command_open: 'Open shortcuts',
+        command_search: 'What would you like to do?',
+        command_navigation: 'Portfolio shortcuts',
+        command_projects: 'View projects',
+        command_about: 'About',
+        command_contact: 'Contact Mohamed',
+        command_french: 'Switch to French',
+        command_english: 'Switch to English',
+        command_arabic: 'Switch to Arabic',
+        command_theme: 'Switch theme',
+        command_theme_auto: 'Automatic theme (system)',
+        command_zikr: 'Explore Zikr',
+        command_kinto: 'Explore Kinto',
+        command_fadz: 'Explore Fadz',
+        command_copy_email: 'Copy email address',
+        command_top: 'Back to top',
+        command_copied: 'Email address copied',
+        command_no_results: 'No actions found',
+        gallery_dialog_label: 'Screenshot preview',
+        gallery_close: 'Close preview',
+        gallery_previous: 'Previous screenshot',
+        gallery_next: 'Next screenshot',
+        gallery_open: 'Enlarge this screenshot',
+        gallery_counter: 'Screen {current} of {total}',
+        theme_to_light: 'Switch to light theme',
+        theme_to_dark: 'Switch to dark theme',
+        nav_projects: 'Projects',
+        nav_about: 'About',
+        nav_contact: 'Contact',
+        ribbon_apps: 'Applications',
+        ribbon_saas: 'SaaS & tools',
+        ribbon_web: 'Websites',
+        ribbon_design: 'Design',
+        ribbon_code: 'Development',
+        opening_skip: 'Enter ↗',
+        opening_kicker: 'APPS · SAAS · WEB',
+        opening_subtitle: 'Ideas brought to life.',
+        opening_footer: 'DESIGN · CODE · MOTION',
         visual_caption: 'Tap the M ✦',
         logo_game_hint: 'Make the stars burst',
-        visual_jump_apps: 'Go to mobile app services', visual_jump_saas: 'Go to SaaS services', visual_jump_web: 'Go to website services',
-        visual_chip_apps: 'APPS', visual_chip_saas: 'SAAS', visual_chip_web: 'WEB',
-        hero_eyebrow: 'Independent digital creator',
-        hero_title: 'I turn ideas into digital products.',
-        hero_desc: 'Apps, SaaS and websites: I design thoughtful, useful experiences, ready to launch.',
+        visual_chip_apps: 'APPS',
+        visual_chip_web: 'WEB',
+        hero_eyebrow: 'Independent developer · Open to new projects',
+        hero_desc: 'I design and launch useful products, from the first idea to the App Store and Google Play.',
         hero_cta_apps: 'View my projects',
-        hero_scroll: 'Explore the projects', projects_swipe: 'Swipe to explore',
+        hero_scroll: 'Learn more',
+        projects_swipe: 'Swipe to explore',
         link_appstore: 'App Store',
         link_googleplay: 'Google Play',
         link_website: 'Visit the website',
@@ -95,69 +172,114 @@ const translations = {
         link_terms: 'Terms',
         link_delete: 'Account deletion',
         link_back: 'Home',
-        screens_kicker: 'App preview', screens_kicker_web: 'Project preview', screens_title: 'Considered in every detail.',
+        screens_kicker: 'App preview',
+        screens_kicker_web: 'Project preview',
+        screens_title: 'Considered in every detail.',
         project_open: 'Explore the project',
         portfolio_kicker: 'Selected work · 2026',
         portfolio_title: 'Ideas, shaped into products.',
         portfolio_intro: 'Apps, platforms and websites, thoughtfully built from the first idea to launch.',
-        services_kicker: 'What I create',
-        services_title: 'Ideas made useful.',
-        services_intro: 'I help you choose the right format and build it from start to finish.',
-        service_apps_title: 'Mobile apps',
-        service_apps_text: 'iOS and Android apps designed to feel fast, intuitive and enjoyable to use.',
-        service_saas_title: 'SaaS & web tools',
-        service_saas_text: 'Useful web platforms, with features and subscriptions tailored to your business.',
-        service_sites_title: 'Websites',
-        service_sites_text: 'Modern, fast and responsive websites that present your business clearly.',
-        service_cta: 'Tell me about your project',
-        service_app_tag1: 'iOS', service_app_tag2: 'Android', service_app_tag3: 'Store launch',
-        service_saas_tag1: 'Platform', service_saas_tag2: 'Accounts', service_saas_tag3: 'Business tools',
-        service_web_tag1: 'Design', service_web_tag2: 'Responsive', service_web_tag3: 'SEO',
-        approach_kicker: 'How I work',
-        approach_title: 'From idea to launch.',
-        approach_intro: 'End-to-end support, from the first conversation to your product launch.',
-        approach_1_title: 'Understand',
-        approach_1_text: 'Clarify the need, the people using it and what matters most.',
-        approach_2_title: 'Design',
-        approach_2_text: 'Shape a clear, coherent experience that feels good to use.',
-        approach_3_title: 'Build',
-        approach_3_text: 'Develop, refine and prepare the product for release.',
         about_title: 'Independent by choice. Careful with every detail.',
         about_cta: 'Let’s talk about your idea',
-        about_p1: 'I\'m Mohamed Sayed, an independent developer. I build mobile apps, SaaS products and websites, from design to launch.',
+        about_p1: 'I’m Mohamed Sayed, an independent developer based in France. I design and build mobile apps, platforms and websites, from the first idea to launch.',
         contact_title: 'Contact',
-        contact_subtitle: 'Have an idea to launch? Tell me about your project.',
+        contact_subtitle: 'A question, an idea or a project? Get in touch.',
         contact_cta: 'Email me',
-        contact_project_label: 'What are you looking to build?', contact_project_app: 'An app', contact_project_saas: 'A SaaS', contact_project_site: 'A website',
-        contact_stage_label: 'Where is your project right now? (optional)', contact_stage_idea: 'I have an idea', contact_stage_design: 'I have a design', contact_stage_existing: 'I have an existing product',
-        contact_summary: 'Your message will include', contact_stage_unspecified: 'stage to be discussed', contact_copy: 'Copy email address', contact_copy_done: 'Email address copied.', contact_copy_failed: 'Could not copy. Email contact@mohameds.net.',
-        footer_role: 'Apps · SaaS · Websites',
-        footer_note: 'Digital products, thoughtfully made from the first idea to launch.',
-        footer_contact: 'Tell me about your project',
+        contact_copy: 'Copy email address',
+        contact_copy_done: 'Email address copied.',
+        contact_copy_failed: 'Could not copy. Email contact@mohameds.net.',
+        footer_role: 'Independent developer',
+        footer_note: 'Apps, platforms and websites, thoughtfully made.',
+        footer_contact: 'Get in touch',
         footer_top: 'Back to top',
-        faq_kicker: 'Before we begin', faq_title: 'A few useful answers.',
-        faq_q1: 'What kinds of projects do you build?', faq_a1: 'I design mobile apps, SaaS products and websites around the needs of the people who will use them.',
-        faq_q2: 'Can you take a project through launch?', faq_a2: 'Yes. We first clarify the need, then I can design, develop and prepare the product for launch.',
-        faq_q3: 'How do we get started?', faq_a3: 'Choose a project type in the contact section and tell me about your idea. Then we can agree on a useful next step.'
+        nav_journey: 'Journey',
+        command_journey: 'View journey',
+        visual_chip_design: 'DESIGN',
+        hero_hello: 'Hi, I’m',
+        hero_role: 'Mobile app, platform and website developer.',
+        about_p2: 'In 2026 I launched Zikr, a spiritual app available on the App Store and Google Play, then Kinto, a budgeting app. I’m now building Fadz, a booking platform for independent hairdressers and barbers.',
+        about_p3: 'I care about the details: clear interfaces and products available in several languages, including Arabic with right-to-left reading.',
+        fact_location: 'Based in France',
+        fact_status: 'Independent developer',
+        fact_languages: 'Products in 5 languages',
+        fact_stores: 'App Store & Google Play',
+        skills_kicker: 'Skills',
+        skills_title: 'What I do best.',
+        skills_intro: 'From idea to live product, with no middleman.',
+        skill_1_title: 'Product design',
+        skill_1_text: 'Turning an idea into a clear experience: the need, the screens, the details that matter.',
+        skill_1_tag1: 'Scoping',
+        skill_1_tag2: 'User flows',
+        skill_1_tag3: 'Interface',
+        skill_2_title: 'iOS & Android apps',
+        skill_2_text: 'Fast, polished apps published on the App Store and Google Play.',
+        skill_2_tag3: 'Publishing',
+        skill_3_title: 'Platforms & websites',
+        skill_3_text: 'Websites, user accounts, subscriptions and online payments.',
+        skill_3_tag1: 'Websites',
+        skill_3_tag2: 'Accounts',
+        skill_3_tag3: 'Payments',
+        skill_4_title: 'Multilingual products',
+        skill_4_text: 'Interfaces in French, English, Arabic (right-to-left), Spanish and German.',
+        journey_kicker: 'Journey',
+        journey_title: 'From the first launch to today.',
+        journey_now: 'Today',
+        journey_apr: 'April 2026',
+        journey_mar: 'March 2026',
+        journey_fadz_text: 'Booking platform for independent hairdressers and barbers. Website live, iOS and Android apps in the works.',
+        journey_kinto_text: 'Budgeting app with receipt scanning, available on the App Store.',
+        journey_zikr_text: 'Spiritual app — Quran, Adhkar, prayer times — available on the App Store and Google Play.'
     },
     ar: {
         skip_content: 'انتقل إلى المحتوى',
         back_to_top_aria: 'العودة إلى الأعلى',
-        command_open: 'فتح الاختصارات', command_search: 'ماذا تريد أن تفعل؟', command_navigation: 'اختصارات الموقع', command_projects: 'عرض المشاريع', command_services: 'عرض الخدمات', command_about: 'نبذة عني', command_contact: 'التواصل مع محمد', command_french: 'التبديل إلى الفرنسية', command_english: 'التبديل إلى الإنجليزية', command_arabic: 'عرض العربية', command_theme: 'تغيير المظهر', command_theme_auto: 'مظهر تلقائي (النظام)', command_zikr: 'اكتشف ذكر', command_kinto: 'اكتشف كينتو', command_fadz: 'اكتشف Fadz', command_copy_email: 'نسخ البريد الإلكتروني', command_top: 'العودة إلى الأعلى', command_copied: 'تم نسخ البريد الإلكتروني', command_no_results: 'لم يتم العثور على إجراء',
-        gallery_dialog_label: 'معاينة لقطات الشاشة', gallery_close: 'إغلاق المعاينة', gallery_previous: 'الصورة السابقة', gallery_next: 'الصورة التالية', gallery_open: 'تكبير هذه الصورة', gallery_counter: 'الصورة {current} من {total}',
-        theme_to_light: 'التبديل إلى الوضع الفاتح', theme_to_dark: 'التبديل إلى الوضع الداكن',
-        nav_projects: 'المشاريع', nav_services: 'الخدمات', nav_about: 'عني', nav_contact: 'تواصل',
-        ribbon_apps: 'تطبيقات', ribbon_saas: 'منصات وأدوات', ribbon_web: 'مواقع ويب', ribbon_design: 'تصميم', ribbon_code: 'تطوير',
-        opening_skip: 'دخول ↗', opening_kicker: 'تطبيقات · SaaS · ويب', opening_subtitle: 'أفكار تتحول إلى واقع.', opening_footer: 'تصميم · برمجة · حركة',
+        command_open: 'فتح الاختصارات',
+        command_search: 'ماذا تريد أن تفعل؟',
+        command_navigation: 'اختصارات الموقع',
+        command_projects: 'عرض المشاريع',
+        command_about: 'نبذة عني',
+        command_contact: 'التواصل مع محمد',
+        command_french: 'التبديل إلى الفرنسية',
+        command_english: 'التبديل إلى الإنجليزية',
+        command_arabic: 'عرض العربية',
+        command_theme: 'تغيير المظهر',
+        command_theme_auto: 'مظهر تلقائي (النظام)',
+        command_zikr: 'اكتشف ذكر',
+        command_kinto: 'اكتشف كينتو',
+        command_fadz: 'اكتشف Fadz',
+        command_copy_email: 'نسخ البريد الإلكتروني',
+        command_top: 'العودة إلى الأعلى',
+        command_copied: 'تم نسخ البريد الإلكتروني',
+        command_no_results: 'لم يتم العثور على إجراء',
+        gallery_dialog_label: 'معاينة لقطات الشاشة',
+        gallery_close: 'إغلاق المعاينة',
+        gallery_previous: 'الصورة السابقة',
+        gallery_next: 'الصورة التالية',
+        gallery_open: 'تكبير هذه الصورة',
+        gallery_counter: 'الصورة {current} من {total}',
+        theme_to_light: 'التبديل إلى الوضع الفاتح',
+        theme_to_dark: 'التبديل إلى الوضع الداكن',
+        nav_projects: 'المشاريع',
+        nav_about: 'عني',
+        nav_contact: 'تواصل',
+        ribbon_apps: 'تطبيقات',
+        ribbon_saas: 'منصات وأدوات',
+        ribbon_web: 'مواقع ويب',
+        ribbon_design: 'تصميم',
+        ribbon_code: 'تطوير',
+        opening_skip: 'دخول ↗',
+        opening_kicker: 'تطبيقات · SaaS · ويب',
+        opening_subtitle: 'أفكار تتحول إلى واقع.',
+        opening_footer: 'تصميم · برمجة · حركة',
         visual_caption: 'اضغط على M ✦',
         logo_game_hint: 'أطلق النجوم',
-        visual_jump_apps: 'انتقل إلى خدمات التطبيقات', visual_jump_saas: 'انتقل إلى خدمات SaaS', visual_jump_web: 'انتقل إلى خدمات المواقع',
-        visual_chip_apps: 'تطبيقات', visual_chip_saas: 'SAAS', visual_chip_web: 'ويب',
-        hero_eyebrow: 'مطور رقمي مستقل',
-        hero_title: 'أحوّل الأفكار إلى منتجات رقمية.',
-        hero_desc: 'تطبيقات ومنصات SaaS ومواقع ويب: أصمم تجارب مفيدة ومتقنة وجاهزة للإطلاق.',
+        visual_chip_apps: 'تطبيقات',
+        visual_chip_web: 'ويب',
+        hero_eyebrow: 'مطوّر مستقل · متاح لمشاريع جديدة',
+        hero_desc: 'أصمم وأطلق منتجات مفيدة، من الفكرة الأولى حتى App Store وGoogle Play.',
         hero_cta_apps: 'مشاهدة مشاريعي',
-        hero_scroll: 'استكشف المشاريع', projects_swipe: 'اسحب لاستكشاف المشاريع',
+        hero_scroll: 'اعرف المزيد',
+        projects_swipe: 'اسحب لاستكشاف المشاريع',
         link_appstore: 'App Store',
         link_googleplay: 'Google Play',
         link_website: 'زيارة الموقع',
@@ -165,50 +287,63 @@ const translations = {
         link_terms: 'الشروط',
         link_delete: 'حذف الحساب',
         link_back: 'الرئيسية',
-        screens_kicker: 'نظرة على التطبيق', screens_kicker_web: 'نظرة على المشروع', screens_title: 'عناية في كل تفصيل.',
+        screens_kicker: 'نظرة على التطبيق',
+        screens_kicker_web: 'نظرة على المشروع',
+        screens_title: 'عناية في كل تفصيل.',
         project_open: 'اكتشف المشروع',
         portfolio_kicker: 'مشاريع مختارة · 2026',
         portfolio_title: 'أفكار تتحول إلى منتجات.',
         portfolio_intro: 'تطبيقات ومنصات ومواقع صُمّمت بعناية من الفكرة إلى الإطلاق.',
-        services_kicker: 'ما الذي أصممه',
-        services_title: 'أحوّل الأفكار إلى منتجات مفيدة.',
-        services_intro: 'أساعدك في اختيار الشكل المناسب وبنائه من البداية حتى الإطلاق.',
-        service_apps_title: 'تطبيقات الهاتف',
-        service_apps_text: 'تطبيقات iOS وAndroid سريعة وسهلة وممتعة في الاستخدام.',
-        service_saas_title: 'منصات SaaS وأدوات الويب',
-        service_saas_text: 'منصات ويب عملية بميزات واشتراكات تناسب نشاطك.',
-        service_sites_title: 'مواقع الويب',
-        service_sites_text: 'مواقع حديثة وسريعة ومتوافقة مع مختلف الشاشات للتعريف بنشاطك.',
-        service_cta: 'لنتحدث عن مشروعك',
-        service_app_tag1: 'iOS', service_app_tag2: 'Android', service_app_tag3: 'النشر',
-        service_saas_tag1: 'منصة', service_saas_tag2: 'حسابات', service_saas_tag3: 'أدوات العمل',
-        service_web_tag1: 'التصميم', service_web_tag2: 'متوافق مع الهاتف', service_web_tag3: 'تحسين الظهور',
-        approach_kicker: 'طريقة عملي',
-        approach_title: 'من الفكرة إلى الإطلاق.',
-        approach_intro: 'مرافقة كاملة من أول نقاش إلى إطلاق منتجك.',
-        approach_1_title: 'الفهم',
-        approach_1_text: 'تحديد الاحتياج والمستخدمين وما يستحق البناء أولاً.',
-        approach_2_title: 'التصميم',
-        approach_2_text: 'ابتكار تجربة واضحة ومتناسقة ومريحة في الاستخدام.',
-        approach_3_title: 'التطوير',
-        approach_3_text: 'برمجة المنتج وتحسينه وتجهيزه للإطلاق.',
         about_title: 'أعمل بشكل مستقل، وأهتم بكل تفصيل.',
         about_cta: 'لنتحدث عن فكرتك',
-        about_p1: 'أنا محمد سيد، مطور مستقل. أصمم تطبيقات الهاتف ومنتجات SaaS ومواقع الويب من التصميم حتى الإطلاق.',
+        about_p1: 'أنا محمد سيد، مطوّر مستقل مقيم في فرنسا. أصمم وأطوّر تطبيقات الهاتف والمنصات ومواقع الويب، من الفكرة الأولى حتى الإطلاق.',
         contact_title: 'تواصل',
-        contact_subtitle: 'هل لديك فكرة تريد إطلاقها؟ أخبرني عن مشروعك.',
+        contact_subtitle: 'سؤال أو فكرة أو مشروع؟ راسلني.',
         contact_cta: 'راسلني',
-        contact_project_label: 'ما الذي تريد إنشاءه؟', contact_project_app: 'تطبيق', contact_project_saas: 'منصة SaaS', contact_project_site: 'موقع ويب',
-        contact_stage_label: 'ما المرحلة الحالية لمشروعك؟ (اختياري)', contact_stage_idea: 'لدي فكرة', contact_stage_design: 'لدي تصميم', contact_stage_existing: 'لدي منتج قائم',
-        contact_summary: 'ستتضمن رسالتك', contact_stage_unspecified: 'المرحلة تحتاج إلى توضيح', contact_copy: 'نسخ البريد الإلكتروني', contact_copy_done: 'تم نسخ البريد الإلكتروني.', contact_copy_failed: 'تعذر النسخ. راسل contact@mohameds.net.',
-        footer_role: 'تطبيقات · SaaS · مواقع ويب',
-        footer_note: 'منتجات رقمية متقنة من الفكرة الأولى حتى الإطلاق.',
-        footer_contact: 'لنتحدث عن مشروعك',
+        contact_copy: 'نسخ البريد الإلكتروني',
+        contact_copy_done: 'تم نسخ البريد الإلكتروني.',
+        contact_copy_failed: 'تعذر النسخ. راسل contact@mohameds.net.',
+        footer_role: 'مطوّر مستقل',
+        footer_note: 'تطبيقات ومنصات ومواقع ويب مصممة بعناية.',
+        footer_contact: 'تواصل معي',
         footer_top: 'العودة إلى الأعلى',
-        faq_kicker: 'قبل أن نبدأ', faq_title: 'إجابات سريعة ومفيدة.',
-        faq_q1: 'ما أنواع المشاريع التي تنفذها؟', faq_a1: 'أصمم تطبيقات الهاتف ومنتجات SaaS ومواقع الويب وفق احتياجات المشروع والأشخاص الذين سيستخدمونه.',
-        faq_q2: 'هل يمكنك متابعة المشروع حتى إطلاقه؟', faq_a2: 'نعم. نحدد الاحتياج أولاً، ثم أستطيع تصميم المنتج وتطويره وتجهيزه للإطلاق.',
-        faq_q3: 'كيف نبدأ الحديث؟', faq_a3: 'اختر نوع المشروع في قسم التواصل وأخبرني عن فكرتك، ثم نحدد معاً الخطوة التالية.'
+        nav_journey: 'المسار',
+        command_journey: 'عرض المسار',
+        visual_chip_design: 'تصميم',
+        hero_hello: 'مرحباً، أنا',
+        hero_role: 'مطوّر تطبيقات هاتف ومنصات ومواقع ويب.',
+        about_p2: 'في عام 2026 أطلقت «ذكر»، تطبيقاً روحياً متاحاً على App Store وGoogle Play، ثم Kinto، تطبيقاً لإدارة الميزانية. أعمل اليوم على Fadz، منصة حجوزات للحلاقين والمصففين المستقلين.',
+        about_p3: 'أهتم بالتفاصيل: واجهات واضحة ومنتجات متاحة بعدة لغات، منها العربية مع القراءة من اليمين إلى اليسار.',
+        fact_location: 'مقيم في فرنسا',
+        fact_status: 'مطوّر مستقل',
+        fact_languages: 'منتجات بخمس لغات',
+        fact_stores: 'App Store وGoogle Play',
+        skills_kicker: 'المهارات',
+        skills_title: 'ما أتقنه.',
+        skills_intro: 'من الفكرة إلى المنتج المنشور، دون وسيط.',
+        skill_1_title: 'تصميم المنتجات',
+        skill_1_text: 'تحويل الفكرة إلى تجربة واضحة: الحاجة والشاشات والتفاصيل المهمة.',
+        skill_1_tag1: 'التخطيط',
+        skill_1_tag2: 'مسار المستخدم',
+        skill_1_tag3: 'الواجهة',
+        skill_2_title: 'تطبيقات iOS وAndroid',
+        skill_2_text: 'تطبيقات سريعة ومتقنة منشورة على App Store وGoogle Play.',
+        skill_2_tag3: 'النشر',
+        skill_3_title: 'منصات ومواقع ويب',
+        skill_3_text: 'مواقع وحسابات مستخدمين واشتراكات ودفع إلكتروني.',
+        skill_3_tag1: 'مواقع',
+        skill_3_tag2: 'حسابات',
+        skill_3_tag3: 'مدفوعات',
+        skill_4_title: 'منتجات متعددة اللغات',
+        skill_4_text: 'واجهات بالفرنسية والإنجليزية والعربية (من اليمين إلى اليسار) والإسبانية والألمانية.',
+        journey_kicker: 'المسار',
+        journey_title: 'من الإطلاق الأول إلى اليوم.',
+        journey_now: 'اليوم',
+        journey_apr: 'أبريل 2026',
+        journey_mar: 'مارس 2026',
+        journey_fadz_text: 'منصة حجوزات للحلاقين والمصففين المستقلين. الموقع متاح، وتطبيقا iOS وAndroid قيد الإعداد.',
+        journey_kinto_text: 'تطبيق للميزانية مع مسح الفواتير، متاح على App Store.',
+        journey_zikr_text: 'تطبيق روحي — القرآن الكريم والأذكار وأوقات الصلاة — متاح على App Store وGoogle Play.'
     }
 };
 
@@ -287,44 +422,13 @@ let currentLang = detectBrowserLanguage();
 function updateContactMailto() {
     const link = document.getElementById('contact-email-link');
     if (!link) return;
-    const selected = document.querySelector('input[name="contact-project"]:checked')?.value || 'app';
-    const projectNames = {
-        fr: { app: 'une application mobile', saas: 'un SaaS ou un outil web', site: 'un site web' },
-        en: { app: 'a mobile app', saas: 'a SaaS or web tool', site: 'a website' },
-        ar: { app: 'تطبيقاً للهاتف', saas: 'منصة SaaS أو أداة ويب', site: 'موقع ويب' }
-    };
-    const project = projectNames[currentLang]?.[selected] || projectNames.fr[selected];
-    const stage = document.querySelector('input[name="contact-stage"]:checked')?.value;
-    const stageNames = {
-        fr: { idea: 'une idée à préciser', design: 'une maquette à développer', existing: 'un produit à améliorer' },
-        en: { idea: 'an idea to shape', design: 'a design to build', existing: 'an existing product to improve' },
-        ar: { idea: 'فكرة تحتاج إلى تطوير', design: 'تصميماً يحتاج إلى تنفيذ', existing: 'منتجاً قائماً يحتاج إلى تحسين' }
-    };
-    const stagePrompts = {
-        fr: 'Le projet en est à ce stade :',
-        en: 'The project is currently at this stage:',
-        ar: 'مشروعي حالياً في هذه المرحلة:'
-    };
-    const stageLine = stage ? `\n\n${stagePrompts[currentLang]} ${stageNames[currentLang]?.[stage] || stageNames.fr[stage]}.` : '';
     const message = {
-        fr: `Bonjour Mohamed,\n\nJ’aimerais parler avec toi d’un projet concernant ${project}.${stageLine}\n\nVoici quelques détails sur mon idée :\n`,
-        en: `Hi Mohamed,\n\nI’d like to talk with you about ${project}.${stageLine}\n\nHere are a few details about my idea:\n`,
-        ar: `مرحباً محمد،\n\nأود التحدث معك حول ${project}.${stageLine}\n\nإليك بعض التفاصيل عن فكرتي:\n`
+        fr: 'Bonjour Mohamed,\n\n',
+        en: 'Hi Mohamed,\n\n',
+        ar: 'مرحباً محمد،\n\n'
     }[currentLang];
-    const subject = { fr: 'Parlons de mon projet', en: 'Let’s talk about my project', ar: 'لنتحدث عن مشروعي' }[currentLang];
+    const subject = { fr: 'Bonjour Mohamed', en: 'Hello Mohamed', ar: 'مرحباً محمد' }[currentLang];
     link.href = `mailto:contact@mohameds.net?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
-    updateContactSummary();
-}
-
-function updateContactSummary() {
-    const summary = document.getElementById('contact-summary');
-    if (!summary) return;
-    const labels = translations[currentLang] || translations.fr;
-    const project = document.querySelector('input[name="contact-project"]:checked')?.value || 'app';
-    const stage = document.querySelector('input[name="contact-stage"]:checked')?.value;
-    const projectLabel = labels[`contact_project_${project}`];
-    const stageLabel = stage ? labels[`contact_stage_${stage}`] : labels.contact_stage_unspecified;
-    summary.textContent = `${labels.contact_summary} : ${projectLabel} · ${stageLabel}`;
 }
 
 window.setLanguage = function(lang, remember = true) {
@@ -425,7 +529,7 @@ function initCommandPalette() {
     if (!dialog || !input || !list || !opener) return;
     if (window.matchMedia('(max-width: 760px), (hover: none) and (pointer: coarse)').matches) return;
     const commands = [
-        ['projects','command_projects','fa-grid-2'], ['services','command_services','fa-layer-group'],
+        ['projects','command_projects','fa-grid-2'], ['journey','command_journey','fa-route'],
         ['about','command_about','fa-user'], ['contact','command_contact','fa-paper-plane'],
         ['lang-fr','command_french','fa-globe'], ['lang-en','command_english','fa-globe'],
         ['lang-ar','command_arabic','fa-globe'], ['theme','command_theme','fa-circle-half-stroke'], ['theme-auto','command_theme_auto','fa-wand-magic-sparkles'],
@@ -443,7 +547,7 @@ function initCommandPalette() {
     const open = () => { input.value = ''; active = 0; render(); dialog.showModal(); requestAnimationFrame(() => input.focus()); };
     const run = async id => {
         dialog.close();
-        const routes = {projects:'#projects',services:'#services',about:'#about',contact:'#contact',zikr:'zikr.html',kinto:'kinto.html',fadz:'fadz.html',top:'#top'};
+        const routes = {projects:'#projects',journey:'#journey',about:'#about',contact:'#contact',zikr:'zikr.html',kinto:'kinto.html',fadz:'fadz.html',top:'#top'};
         if (routes[id]) { location.href = routes[id]; return; }
         if (id.startsWith('lang-')) { window.setLanguage(id.slice(5)); return; }
         if (id === 'theme') { window.toggleTheme(); return; }
@@ -683,7 +787,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderAppDetail();
     initProjectLightbox();
     initCommandPalette();
-    document.querySelectorAll('input[name="contact-project"], input[name="contact-stage"]').forEach(input => input.addEventListener('change', updateContactMailto));
     const copyButton = document.getElementById('contact-copy');
     copyButton?.addEventListener('click', async () => {
         const status = document.getElementById('contact-copy-status');
@@ -695,14 +798,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             status.textContent = translations[currentLang].contact_copy_failed;
         }
-    });
-    document.querySelectorAll('[data-project-choice]').forEach(link => {
-        link.addEventListener('click', () => {
-            const choice = document.querySelector(`input[name="contact-project"][value="${link.dataset.projectChoice}"]`);
-            if (!choice) return;
-            choice.checked = true;
-            updateContactMailto();
-        });
     });
     setLanguage(savedLang || detectBrowserLanguage(), false);
 
@@ -717,36 +812,6 @@ document.addEventListener('DOMContentLoaded', () => {
         projectsRail.addEventListener('scroll', updateRailProgress, { passive: true });
         window.addEventListener('resize', updateRailProgress, { passive: true });
         updateRailProgress();
-    }
-
-    document.querySelectorAll('.faq-item').forEach(item => {
-        item.addEventListener('toggle', () => {
-            if (!item.open) return;
-            document.querySelectorAll('.faq-item[open]').forEach(other => {
-                if (other !== item) other.open = false;
-            });
-        });
-    });
-
-    const processGrid = document.querySelector('.approach-grid');
-    const processSteps = processGrid ? [...processGrid.querySelectorAll('.approach-card')] : [];
-    if (processGrid && processSteps.length) {
-        let processFrame = 0;
-        const updateProcess = () => {
-            if (processFrame) return;
-            processFrame = requestAnimationFrame(() => {
-                const bounds = processGrid.getBoundingClientRect();
-                const span = window.innerHeight + bounds.height;
-                const progress = span > 0 ? Math.max(0, Math.min(1, (window.innerHeight - bounds.top) / span)) : 0;
-                const activeIndex = Math.min(processSteps.length - 1, Math.floor(progress * processSteps.length));
-                processGrid.style.setProperty('--process-progress', progress.toFixed(3));
-                processSteps.forEach((step, index) => step.classList.toggle('is-current', index === activeIndex));
-                processFrame = 0;
-            });
-        };
-        window.addEventListener('scroll', updateProcess, { passive: true });
-        window.addEventListener('resize', updateProcess, { passive: true });
-        updateProcess();
     }
 
     const navbar = document.getElementById('navbar');
@@ -818,18 +883,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
-    document.querySelectorAll('[data-service-target]').forEach(chip => {
-        chip.addEventListener('click', () => {
-            const service = document.querySelector(`.service-card[data-service="${chip.dataset.serviceTarget}"]`);
-            if (!service) return;
-            service.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
-            service.classList.remove('is-highlighted');
-            void service.offsetWidth;
-            service.classList.add('is-highlighted');
-            window.setTimeout(() => service.classList.remove('is-highlighted'), 1500);
-        });
-    });
 
     const logoTrigger = document.getElementById('hero-play');
     if (logoTrigger) {
