@@ -23,6 +23,7 @@ const translations = {
         link_website: 'Visiter le site',
         link_privacy: 'Confidentialité',
         link_terms: 'Conditions',
+        link_delete: 'Suppression du compte',
         link_back: 'Accueil',
         screens_kicker: 'Aperçu de l’application', screens_kicker_web: 'Aperçu du projet', screens_title: 'Pensée dans chaque détail.',
         project_open: 'Découvrir le projet',
@@ -92,6 +93,7 @@ const translations = {
         link_website: 'Visit the website',
         link_privacy: 'Privacy',
         link_terms: 'Terms',
+        link_delete: 'Account deletion',
         link_back: 'Home',
         screens_kicker: 'App preview', screens_kicker_web: 'Project preview', screens_title: 'Considered in every detail.',
         project_open: 'Explore the project',
@@ -161,6 +163,7 @@ const translations = {
         link_website: 'زيارة الموقع',
         link_privacy: 'سياسة الخصوصية',
         link_terms: 'الشروط',
+        link_delete: 'حذف الحساب',
         link_back: 'الرئيسية',
         screens_kicker: 'نظرة على التطبيق', screens_kicker_web: 'نظرة على المشروع', screens_title: 'عناية في كل تفصيل.',
         project_open: 'اكتشف المشروع',
@@ -223,6 +226,7 @@ const appsData = {
         googlePlay: 'https://play.google.com/store/apps/details?id=com.mohamed.zikr',
         privacy: 'zikr-privacy.html',
         terms: 'zikr-terms.html',
+        deleteAccount: 'zikr-delete-account.html',
         tagline: { fr: 'Votre compagnon spirituel quotidien.', en: 'Your daily spiritual companion.', ar: 'رفيقك الروحي اليومي.' },
         description: {
             fr: 'Zikr vous accompagne au quotidien avec le Coran, les Adhkar et des horaires de prière précis selon votre position. Une interface simple pour garder le lien avec vos routines spirituelles, où que vous soyez.',
@@ -528,6 +532,7 @@ function renderAppDetail() {
             ${app.privacy && app.terms ? `<div class="legal-row">
                 <a href="${app.privacy}" data-i18n="link_privacy">Confidentialité</a>
                 <a href="${app.terms}" data-i18n="link_terms">Conditions</a>
+                ${app.deleteAccount ? `<a href="${app.deleteAccount}" data-i18n="link_delete">Suppression du compte</a>` : ''}
             </div>` : ''}
         </div>
         <section class="app-gallery" aria-label="${name} — captures d’écran">
