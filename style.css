@@ -1617,3 +1617,5 @@ html[dir="rtl"] .visual-chip { text-align: right; }
 @keyframes tour-avatar-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
 @media (max-width: 520px) { .tour-launcher { padding: .3rem; } .tour-launcher-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; } }
 @media (prefers-reduced-motion: reduce) { .tour-avatar { animation: none; } .tour-launcher { transition: none; } }
+
+@media (min-width: 761px) { .apps-grid { grid-template-columns: repeat(auto-fit, minmax(290px, 420px)); justify-content: center; } }

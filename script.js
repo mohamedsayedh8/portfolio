@@ -18,7 +18,6 @@ const translations = {
         command_theme_auto: 'Thème automatique (système)',
         command_zikr: 'Découvrir Zikr',
         command_kinto: 'Découvrir Kinto',
-        command_fadz: 'Découvrir Fadz',
         command_copy_email: 'Copier l’adresse e-mail',
         command_top: 'Retourner en haut',
         command_copied: 'Adresse copiée',
@@ -79,7 +78,7 @@ const translations = {
         visual_chip_design: 'DESIGN',
         hero_hello: 'Bonjour, je suis',
         hero_role: 'Développeur d’applications mobiles, de plateformes et de sites web.',
-        about_p2: 'En 2026, j’ai lancé Zikr, une application spirituelle disponible sur l’App Store et Google Play, puis Kinto, une application de budget. Je développe aujourd’hui Fadz, une plateforme de réservation pour les coiffeurs et barbiers indépendants.',
+        about_p2: 'En 2026, j’ai lancé Zikr, une application spirituelle disponible sur l’App Store et Google Play, puis Kinto, une application de budget.',
         about_p3: 'Je soigne les détails : des interfaces claires, des produits disponibles en plusieurs langues, dont l’arabe avec lecture de droite à gauche.',
         fact_location: 'Basé à Paris',
         fact_status: 'Développeur indépendant',
@@ -104,10 +103,8 @@ const translations = {
         skill_4_text: 'Interfaces en français, anglais, arabe (de droite à gauche), espagnol et allemand.',
         journey_kicker: 'Parcours',
         journey_title: 'Du premier lancement à aujourd’hui.',
-        journey_now: 'Aujourd’hui',
         journey_apr: 'Avril 2026',
         journey_mar: 'Mars 2026',
-        journey_fadz_text: 'Plateforme de réservation pour coiffeurs et barbiers indépendants. Site en ligne, applications iOS et Android en préparation.',
         journey_kinto_text: 'Application de budget avec scan de reçus, disponible sur l’App Store.',
         journey_zikr_text: 'Application spirituelle — Coran, Adhkar, horaires de prière — disponible sur l’App Store et Google Play.',
         fact_study: 'Étudiant en licence 1 d’informatique',
@@ -134,7 +131,6 @@ const translations = {
         command_theme_auto: 'Automatic theme (system)',
         command_zikr: 'Explore Zikr',
         command_kinto: 'Explore Kinto',
-        command_fadz: 'Explore Fadz',
         command_copy_email: 'Copy email address',
         command_top: 'Back to top',
         command_copied: 'Email address copied',
@@ -195,7 +191,7 @@ const translations = {
         visual_chip_design: 'DESIGN',
         hero_hello: 'Hi, I’m',
         hero_role: 'Mobile app, platform and website developer.',
-        about_p2: 'In 2026 I launched Zikr, a spiritual app available on the App Store and Google Play, then Kinto, a budgeting app. I’m now building Fadz, a booking platform for independent hairdressers and barbers.',
+        about_p2: 'In 2026 I launched Zikr, a spiritual app available on the App Store and Google Play, then Kinto, a budgeting app.',
         about_p3: 'I care about the details: clear interfaces and products available in several languages, including Arabic with right-to-left reading.',
         fact_location: 'Based in Paris',
         fact_status: 'Independent developer',
@@ -220,10 +216,8 @@ const translations = {
         skill_4_text: 'Interfaces in French, English, Arabic (right-to-left), Spanish and German.',
         journey_kicker: 'Journey',
         journey_title: 'From the first launch to today.',
-        journey_now: 'Today',
         journey_apr: 'April 2026',
         journey_mar: 'March 2026',
-        journey_fadz_text: 'Booking platform for independent hairdressers and barbers. Website live, iOS and Android apps in the works.',
         journey_kinto_text: 'Budgeting app with receipt scanning, available on the App Store.',
         journey_zikr_text: 'Spiritual app — Quran, Adhkar, prayer times — available on the App Store and Google Play.',
         fact_study: 'First-year computer science student',
@@ -250,7 +244,6 @@ const translations = {
         command_theme_auto: 'مظهر تلقائي (النظام)',
         command_zikr: 'اكتشف ذكر',
         command_kinto: 'اكتشف كينتو',
-        command_fadz: 'اكتشف Fadz',
         command_copy_email: 'نسخ البريد الإلكتروني',
         command_top: 'العودة إلى الأعلى',
         command_copied: 'تم نسخ البريد الإلكتروني',
@@ -311,7 +304,7 @@ const translations = {
         visual_chip_design: 'تصميم',
         hero_hello: 'مرحباً، أنا',
         hero_role: 'مطوّر تطبيقات هاتف ومنصات ومواقع ويب.',
-        about_p2: 'في عام 2026 أطلقت «ذكر»، تطبيقاً روحياً متاحاً على App Store وGoogle Play، ثم Kinto، تطبيقاً لإدارة الميزانية. أعمل اليوم على Fadz، منصة حجوزات للحلاقين والمصففين المستقلين.',
+        about_p2: 'في عام 2026 أطلقت «ذكر»، تطبيقاً روحياً متاحاً على App Store وGoogle Play، ثم Kinto، تطبيقاً لإدارة الميزانية.',
         about_p3: 'أهتم بالتفاصيل: واجهات واضحة ومنتجات متاحة بعدة لغات، منها العربية مع القراءة من اليمين إلى اليسار.',
         fact_location: 'مقيم في باريس',
         fact_status: 'مطوّر مستقل',
@@ -336,10 +329,8 @@ const translations = {
         skill_4_text: 'واجهات بالفرنسية والإنجليزية والعربية (من اليمين إلى اليسار) والإسبانية والألمانية.',
         journey_kicker: 'المسار',
         journey_title: 'من الإطلاق الأول إلى اليوم.',
-        journey_now: 'اليوم',
         journey_apr: 'أبريل 2026',
         journey_mar: 'مارس 2026',
-        journey_fadz_text: 'منصة حجوزات للحلاقين والمصففين المستقلين. الموقع متاح، وتطبيقا iOS وAndroid قيد الإعداد.',
         journey_kinto_text: 'تطبيق للميزانية مع مسح الفواتير، متاح على App Store.',
         journey_zikr_text: 'تطبيق روحي — القرآن الكريم والأذكار وأوقات الصلاة — متاح على App Store وGoogle Play.',
         fact_study: 'طالب في السنة الأولى – علوم الحاسوب',
@@ -389,27 +380,6 @@ const appsData = {
             fr: 'Kinto simplifie la gestion de votre budget : scannez vos reçus, suivez vos dépenses par catégorie et gardez une vue claire sur vos revenus et vos économies, le tout depuis une interface épurée.',
             en: 'Kinto makes budgeting simple: scan your receipts, track spending by category and keep a clear view of your income and savings, all from a clean interface.',
             ar: 'يبسّط Kinto إدارة ميزانيتك: امسح فواتيرك، وتتبّع مصاريفك حسب الفئة، واحصل على رؤية واضحة لدخلك ومدخراتك، كل ذلك من واجهة بسيطة.'
-        }
-    },
-    fadz: {
-        name: 'Fadz',
-        kind: 'web',
-        category: { fr: 'Plateforme de réservation', en: 'Booking platform', ar: 'منصة حجوزات' },
-        icon: 'assets/images/fadz-icon.png',
-        screenshot: 'assets/images/fadz-screen1.jpg',
-        screenshots: ['assets/images/fadz-screen1.jpg', 'assets/images/fadz-screen2.jpg', 'assets/images/fadz-screen3.jpg'],
-        features: { fr: ['Réservation en 3 secondes', 'Salon ou à domicile', 'File d’attente en direct'], en: ['Booking in 3 seconds', 'Salon or at home', 'Live queue'], ar: ['حجز في 3 ثوانٍ', 'في الصالون أو المنزل', 'قائمة انتظار مباشرة'] },
-        website: 'https://fadz.fr',
-        appStore: null,
-        googlePlay: null,
-        privacy: null,
-        terms: null,
-        note: { fr: 'Applications iOS et Android bientôt disponibles.', en: 'iOS and Android apps coming soon.', ar: 'تطبيقات iOS وAndroid قريباً.' },
-        tagline: { fr: 'Ton coiffeur, maintenant.', en: 'Your barber, right now.', ar: 'حلاقك، الآن.' },
-        description: {
-            fr: 'Fadz met en relation clients et coiffeurs ou barbiers indépendants : réservation en quelques secondes, en salon ou à domicile, ou place dans la file d’attente en direct. Les professionnels gèrent leur agenda, leurs clients et leur activité au même endroit.',
-            en: 'Fadz connects clients with independent hairdressers and barbers: book in seconds, in the salon or at home, or join the live queue. Professionals manage their schedule, clients and business in one place.',
-            ar: 'يربط Fadz العملاء بالحلاقين والمصففين المستقلين: احجز في ثوانٍ، في الصالون أو في المنزل، أو انضم إلى قائمة الانتظار المباشرة. ويدير المحترفون مواعيدهم وعملاءهم ونشاطهم في مكان واحد.'
         }
     },
 };
@@ -532,10 +502,10 @@ function loadTour() {
         tourLoading = new Promise((resolve, reject) => {
             const link = document.createElement('link');
             link.rel = 'stylesheet';
-            link.href = 'tour.css?v=6610';
+            link.href = 'tour.css?v=6700';
             document.head.appendChild(link);
             const script = document.createElement('script');
-            script.src = 'tour.js?v=6610';
+            script.src = 'tour.js?v=6700';
             script.onload = () => resolve(window.PortfolioTour);
             script.onerror = reject;
             document.head.appendChild(script);
@@ -557,7 +527,7 @@ function initCommandPalette() {
         ['lang-fr','command_french','fa-globe'], ['lang-en','command_english','fa-globe'],
         ['lang-ar','command_arabic','fa-globe'], ['theme','command_theme','fa-circle-half-stroke'], ['theme-auto','command_theme_auto','fa-wand-magic-sparkles'],
         ['zikr','command_zikr','fa-mobile-screen-button'], ['kinto','command_kinto','fa-mobile-screen-button'],
-        ['fadz','command_fadz','fa-scissors'],
+        
         ['email','command_copy_email','fa-copy'], ['top','command_top','fa-arrow-up']
     ];
     let active = 0;
@@ -570,7 +540,7 @@ function initCommandPalette() {
     const open = () => { input.value = ''; active = 0; render(); dialog.showModal(); requestAnimationFrame(() => input.focus()); };
     const run = async id => {
         dialog.close();
-        const routes = {projects:'#projects',journey:'#journey',about:'#about',contact:'#contact',zikr:'zikr.html',kinto:'kinto.html',fadz:'fadz.html',top:'#top'};
+        const routes = {projects:'#projects',journey:'#journey',about:'#about',contact:'#contact',zikr:'zikr.html',kinto:'kinto.html',top:'#top'};
         if (routes[id]) { location.href = routes[id]; return; }
         if (id.startsWith('lang-')) { window.setLanguage(id.slice(5)); return; }
         if (id === 'theme') { window.toggleTheme(); return; }
