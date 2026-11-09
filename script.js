@@ -2,6 +2,8 @@
 const translations = {
     fr: {
         skip_content: 'Aller au contenu',
+        tour_launch: 'Visite guidée',
+        tour_launch_aria: 'Lancer la visite guidée avec le personnage',
         back_to_top_aria: 'Retourner en haut',
         command_open: 'Ouvrir les raccourcis',
         command_search: 'Que veux-tu faire ?',
@@ -116,6 +118,8 @@ const translations = {
     },
     en: {
         skip_content: 'Skip to content',
+        tour_launch: 'Guided tour',
+        tour_launch_aria: 'Start the guided tour with the character',
         back_to_top_aria: 'Back to top',
         command_open: 'Open shortcuts',
         command_search: 'What would you like to do?',
@@ -230,6 +234,8 @@ const translations = {
     },
     ar: {
         skip_content: 'انتقل إلى المحتوى',
+        tour_launch: 'جولة إرشادية',
+        tour_launch_aria: 'ابدأ الجولة الإرشادية مع الشخصية',
         back_to_top_aria: 'العودة إلى الأعلى',
         command_open: 'فتح الاختصارات',
         command_search: 'ماذا تريد أن تفعل؟',
@@ -489,6 +495,7 @@ window.setLanguage = function(lang, remember = true) {
     }
 
     updateContactMailto();
+    document.dispatchEvent(new CustomEvent('portfolio:lang', { detail: lang }));
 
     if (remember) {
         try { localStorage.setItem('lang-manual', lang); } catch (e) {}
@@ -517,6 +524,25 @@ window.resetThemeToSystem = function() {
     document.body.classList.toggle('dark-mode', dark);
     updateThemeButton();
 };
+
+let tourLoading = null;
+function loadTour() {
+    if (window.PortfolioTour) return Promise.resolve(window.PortfolioTour);
+    if (!tourLoading) {
+        tourLoading = new Promise((resolve, reject) => {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'tour.css?v=6610';
+            document.head.appendChild(link);
+            const script = document.createElement('script');
+            script.src = 'tour.js?v=6610';
+            script.onload = () => resolve(window.PortfolioTour);
+            script.onerror = reject;
+            document.head.appendChild(script);
+        });
+    }
+    return tourLoading;
+}
 
 function initCommandPalette() {
     const dialog = document.getElementById('command-dialog');
@@ -786,6 +812,10 @@ document.addEventListener('DOMContentLoaded', () => {
     renderAppDetail();
     initProjectLightbox();
     initCommandPalette();
+    document.getElementById('tour-launcher')?.addEventListener('click', () => { loadTour().then(tour => tour.open()).catch(() => {}); });
+    let questOn = false;
+    try { questOn = localStorage.getItem('tourQuest') === 'true'; } catch (e) {}
+    if (questOn) loadTour().then(tour => tour.resumeQuest()).catch(() => {});
     const copyButton = document.getElementById('contact-copy');
     copyButton?.addEventListener('click', async () => {
         const status = document.getElementById('contact-copy-status');

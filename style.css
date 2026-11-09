@@ -1607,3 +1607,13 @@ html[dir="rtl"] .visual-chip { text-align: right; }
   .social-row { gap: .55rem; }
   .social-row a { width: 42px; height: 42px; }
 }
+
+/* ── Guided-tour launcher (the tour itself loads on demand from tour.css / tour.js) ── */
+.tour-launcher { position: fixed; z-index: 70; inset-inline-start: 1rem; bottom: calc(env(safe-area-inset-bottom) + 1rem); display: inline-flex; align-items: center; gap: .55rem; padding: .35rem .85rem .35rem .4rem; border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--border)); border-radius: 999px; color: var(--text); background: color-mix(in srgb, var(--bg) 88%, transparent); box-shadow: 0 12px 34px rgba(0, 0, 0, .22); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); font: inherit; font-size: .78rem; font-weight: 700; cursor: pointer; transition: transform .2s ease, border-color .2s ease; }
+.tour-launcher:hover { transform: translateY(-2px); border-color: var(--accent); }
+.tour-launcher:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.tour-avatar { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: color-mix(in srgb, var(--accent) 14%, transparent); animation: tour-avatar-bob 2.8s ease-in-out infinite; }
+.tour-avatar svg { width: 24px; height: auto; display: block; }
+@keyframes tour-avatar-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+@media (max-width: 520px) { .tour-launcher { padding: .3rem; } .tour-launcher-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; } }
+@media (prefers-reduced-motion: reduce) { .tour-avatar { animation: none; } .tour-launcher { transition: none; } }
