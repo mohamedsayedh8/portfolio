@@ -34,7 +34,7 @@
                 <a href="index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> <span data-i18n="link_back">Accueil</span></a>
 
                 <h1 data-page-i18n="title">🔒 Politique de Confidentialité — Kinto</h1>
-                <span class="last-updated" data-page-i18n="updated">Dernière mise à jour : 8 avril 2026</span>
+                <span class="last-updated" data-page-i18n="updated">Dernière mise à jour : 10 novembre 2026</span>
 
                 <div class="legal-content">
                     <p data-page-i18n="intro">Bienvenue sur <strong>Kinto</strong>. Nous prenons la protection de vos données personnelles très au sérieux. Cette politique explique comment nous collectons, utilisons et protégeons vos informations.</p>
@@ -46,6 +46,7 @@
                         <li data-page-i18n="li3"><strong>Photos de reçus</strong> : les images des reçus ainsi que les métadonnées de transaction associées (montant, marchand, date) sont transmises de manière sécurisée pour analyse. Aucune image n'est stockée de façon permanente sur nos serveurs.</li>
                         <li data-page-i18n="li4"><strong>Données de budget et objectifs</strong> : configurées par vos soins, stockées localement (mode invité) ou dans notre base sécurisée (compte).</li>
                         <li data-page-i18n="li5"><strong>Préférences</strong> : langue, devise, thème — stockées localement sur votre appareil.</li>
+                        <li data-page-i18n="li5b"><strong>Statistiques d'utilisation (optionnel, avec votre accord)</strong> : écrans consultés et fonctions utilisées, sans aucune donnée financière — voir section 11.</li>
                     </ul>
 
                     <h2 data-page-i18n="h2">2. Mode invité — Données 100 % locales</h2>
@@ -55,7 +56,7 @@
                     <p data-page-i18n="p3">Si vous créez un compte, vos données sont stockées dans notre base de données sécurisée (Supabase / PostgreSQL) avec chiffrement au repos et en transit (TLS 1.3). Vos données financières ne sont jamais partagées, vendues ou utilisées à des fins publicitaires.</p>
 
                     <h2 data-page-i18n="h4">4. Scanner de reçus IA (Google Gemini)</h2>
-                    <p data-page-i18n="p4">Kinto utilise l'intelligence artificielle pour automatiser la saisie des dépenses. Lorsque vous utilisez le scanner, les images de vos reçus sont transmises de manière sécurisée à <strong>Google (Gemini AI)</strong> pour l'extraction d'informations. Le traitement est instantané : Google ne conserve pas ces images à des fins persistantes et ne les utilise pas pour entraîner ses modèles d'IA ou à des fins publicitaires. Nous veillons à ce que nos partenaires offrent un niveau de protection des données équivalent aux nôtres.</p>
+                    <p data-page-i18n="p4">Kinto utilise l'intelligence artificielle pour automatiser la saisie des dépenses. Lorsque vous utilisez le scanner, les images de vos reçus sont transmises de manière sécurisée à <strong>Google (Gemini AI)</strong> pour l'extraction d'informations. Kinto ne conserve pas ces images après l'analyse. Google peut conserver les images et le texte transmis et les utiliser pour améliorer ses services ; évitez de scanner des documents contenant des informations sensibles (numéro de carte complet, pièce d'identité…).</p>
 
                     <h2 data-page-i18n="h5">5. Abonnement Premium</h2>
                     <p data-page-i18n="p5">Les paiements sont gérés exclusivement via Apple App Store ou Google Play. Nous ne collectons ni ne stockons vos informations bancaires ou de carte de crédit. Les reçus d'abonnement sont fournis par Apple/Google.</p>
@@ -64,8 +65,9 @@
                     <p data-page-i18n="p6">Nous ne vendons, ne louons et ne partageons jamais vos données personnelles avec des tiers à des fins commerciales. Les seuls accès tiers sont :</p>
                     <ul>
                         <li data-page-i18n="li6a"><strong>Supabase</strong> : hébergement base de données (serveurs UE)</li>
-                        <li data-page-i18n="li6b"><strong>Google (Gemini AI)</strong> : analyse de reçus et extraction de données (sans stockage persistant ni entraînement)</li>
+                        <li data-page-i18n="li6b"><strong>Google (Gemini AI)</strong> : analyse de reçus et extraction de données</li>
                         <li data-page-i18n="li6c"><strong>Apple / Google</strong> : gestion des achats in-app</li>
+                        <li data-page-i18n="li6d"><strong>PostHog</strong> : statistiques d'utilisation, uniquement si vous les acceptez (serveurs aux États-Unis)</li>
                     </ul>
 
                     <h2 data-page-i18n="h7">7. Sécurité</h2>
@@ -91,7 +93,12 @@
                     <h2 data-page-i18n="h10">10. Mineurs</h2>
                     <p data-page-i18n="p10">Kinto n'est pas destiné aux personnes de moins de 13 ans. Nous ne collectons pas sciemment de données sur les mineurs.</p>
 
-                    <h2 data-page-i18n="h11">11. Contact</h2>
+                    <h2 data-page-i18n="hA">11. Statistiques d'utilisation (avec votre accord)</h2>
+
+                    <p data-page-i18n="pA">Si vous l'acceptez au premier lancement (choix modifiable à tout moment dans Profil → Sécurité), Kinto utilise <strong>PostHog</strong> (hébergé aux États-Unis, avec des garanties de transfert conformes au RGPD) pour mesurer l'usage de l'application : écrans consultés et fonctions utilisées (par exemple « transaction ajoutée », « scan lancé »), ainsi que des informations techniques générales (langue, thème, version). Nous n'envoyons <strong>jamais</strong> de montants, de noms de commerçants, de descriptions, de notes, de catégories ou de portefeuilles personnalisés, ni aucun texte que vous saisissez. Si vous avez un compte, ces données sont associées à un identifiant technique aléatoire (pas à votre nom ni à votre e-mail) ; en mode invité, elles restent anonymes. Aucun suivi publicitaire, aucune revente. Base légale : votre consentement (art. 6.1.a RGPD). Le retrait du consentement arrête immédiatement toute collecte. Pour demander la suppression des données associées à votre compte, contactez-nous.</p>
+
+
+                    <h2 data-page-i18n="h11">12. Contact</h2>
                     <p><span data-page-i18n="p11">Pour toute question relative à vos données :</span> <a href="mailto:kinto@mohameds.net">kinto@mohameds.net</a></p>
                 </div>
             </div>
@@ -124,7 +131,7 @@
         window.pageTranslations = {
             fr: {
                 title: "🔒 Politique de Confidentialité — Kinto",
-                updated: "Dernière mise à jour : 8 avril 2026",
+                updated: "Dernière mise à jour : 10 novembre 2026",
                 intro: "Bienvenue sur <strong>Kinto</strong>. Nous prenons la protection de vos données personnelles très au sérieux. Cette politique explique comment nous collectons, utilisons et protégeons vos informations.",
                 h1: "1. Données collectées",
                 li1: "<strong>Compte (optionnel)</strong> : email et nom complet si vous créez un compte. L'app fonctionne entièrement sans compte.",
@@ -132,19 +139,21 @@
                 li3: "<strong>Photos de reçus</strong> : les images des reçus ainsi que les métadonnées de transaction associées (montant, marchand, date) sont transmises de manière sécurisée pour analyse. Aucune image n'est stockée de façon permanente sur nos serveurs.",
                 li4: "<strong>Données de budget et objectifs</strong> : configurées par vos soins, stockées localement (mode invité) ou dans notre base sécurisée (compte).",
                 li5: "<strong>Préférences</strong> : langue, devise, thème — stockées localement sur votre appareil.",
+                li5b: "<strong>Statistiques d'utilisation (optionnel, avec votre accord)</strong> : écrans consultés et fonctions utilisées, sans aucune donnée financière — voir section 11.",
                 h2: "2. Mode invité — Données 100 % locales",
                 p2: "Si vous utilisez Kinto sans compte, <strong>toutes vos données restent exclusivement sur votre appareil</strong>. Aucune information n'est transmise à nos serveurs. La suppression de l'app entraîne la perte définitive des données locales.",
                 h3: "3. Compte utilisateur — Stockage sécurisé",
                 p3: "Si vous créez un compte, vos données sont stockées dans notre base de données sécurisée (Supabase / PostgreSQL) avec chiffrement au repos et en transit (TLS 1.3). Vos données financières ne sont jamais partagées, vendues ou utilisées à des fins publicitaires.",
                 h4: "4. Scanner de reçus IA (Google Gemini)",
-                p4: "Kinto utilise l'intelligence artificielle pour automatiser la saisie des dépenses. Lorsque vous utilisez le scanner, les images de vos reçus sont transmises de manière sécurisée à <strong>Google (Gemini AI)</strong> pour l'extraction d'informations. Le traitement est instantané : Google ne conserve pas ces images à des fins persistantes et ne les utilise pas pour entraîner ses modèles d'IA ou à des fins publicitaires. Nous veillons à ce que nos partenaires offrent un niveau de protection des données équivalent aux nôtres.",
+                p4: "Kinto utilise l'intelligence artificielle pour automatiser la saisie des dépenses. Lorsque vous utilisez le scanner, les images de vos reçus sont transmises de manière sécurisée à <strong>Google (Gemini AI)</strong> pour l'extraction d'informations. Kinto ne conserve pas ces images après l'analyse. Google peut conserver les images et le texte transmis et les utiliser pour améliorer ses services ; évitez de scanner des documents contenant des informations sensibles (numéro de carte complet, pièce d'identité…).",
                 h5: "5. Abonnement Premium",
                 p5: "Les paiements sont gérés exclusivement via Apple App Store ou Google Play. Nous ne collectons ni ne stockons vos informations bancaires ou de carte de crédit. Les reçus d'abonnement sont fournis par Apple/Google.",
                 h6: "6. Partage des données",
                 p6: "Nous ne vendons, ne louons et ne partageons jamais vos données personnelles avec des tiers à des fins commerciales. Les seuls accès tiers sont :",
                 li6a: "<strong>Supabase</strong> : hébergement base de données (serveurs UE)",
-                li6b: "<strong>Google (Gemini AI)</strong> : analyse de reçus et extraction de données (sans stockage persistant ni entraînement)",
+                li6b: "<strong>Google (Gemini AI)</strong> : analyse de reçus et extraction de données",
                 li6c: "<strong>Apple / Google</strong> : gestion des achats in-app",
+                li6d: "<strong>PostHog</strong> : statistiques d'utilisation, uniquement si vous les acceptez (serveurs aux États-Unis)",
                 h7: "7. Sécurité",
                 li7a: "Chiffrement TLS 1.3 pour toutes les communications",
                 li7b: "Authentification sécurisée via Supabase Auth",
@@ -160,12 +169,14 @@
                 p9: "Vos données sont conservées tant que votre compte est actif. Après suppression du compte, toutes les données sont effacées sous 30 jours. Les données locales (mode invité) sont supprimées immédiatement à la désinstallation.",
                 h10: "10. Mineurs",
                 p10: "Kinto n'est pas destiné aux personnes de moins de 13 ans. Nous ne collectons pas sciemment de données sur les mineurs.",
-                h11: "11. Contact",
+                hA: "11. Statistiques d'utilisation (avec votre accord)",
+                pA: "Si vous l'acceptez au premier lancement (choix modifiable à tout moment dans Profil → Sécurité), Kinto utilise <strong>PostHog</strong> (hébergé aux États-Unis, avec des garanties de transfert conformes au RGPD) pour mesurer l'usage de l'application : écrans consultés et fonctions utilisées (par exemple « transaction ajoutée », « scan lancé »), ainsi que des informations techniques générales (langue, thème, version). Nous n'envoyons <strong>jamais</strong> de montants, de noms de commerçants, de descriptions, de notes, de catégories ou de portefeuilles personnalisés, ni aucun texte que vous saisissez. Si vous avez un compte, ces données sont associées à un identifiant technique aléatoire (pas à votre nom ni à votre e-mail) ; en mode invité, elles restent anonymes. Aucun suivi publicitaire, aucune revente. Base légale : votre consentement (art. 6.1.a RGPD). Le retrait du consentement arrête immédiatement toute collecte. Pour demander la suppression des données associées à votre compte, contactez-nous.",
+                h11: "12. Contact",
                 p11: "Pour toute question relative à vos données :"
             },
             en: {
                 title: "🔒 Privacy Policy — Kinto",
-                updated: "Last updated: April 8, 2026",
+                updated: "Last updated: November 10, 2026",
                 intro: "Welcome to <strong>Kinto</strong>. We take the protection of your personal data very seriously. This policy explains how we collect, use and protect your information.",
                 h1: "1. Data We Collect",
                 li1: "<strong>Account (optional)</strong>: email and full name if you create an account. The app works entirely without an account.",
@@ -173,19 +184,21 @@
                 li3: "<strong>Receipt photos</strong>: receipt images and their associated transaction metadata (amount, merchant, date) are securely transmitted for analysis. No image is stored permanently on our servers.",
                 li4: "<strong>Budget and goal data</strong>: set up by you, stored locally (guest mode) or in our secure database (account).",
                 li5: "<strong>Preferences</strong>: language, currency, theme — stored locally on your device.",
+                li5b: "<strong>Usage statistics (optional, with your consent)</strong>: screens viewed and features used, with no financial data — see section 11.",
                 h2: "2. Guest Mode — 100% Local Data",
                 p2: "If you use Kinto without an account, <strong>all your data stays exclusively on your device</strong>. No information is transmitted to our servers. Uninstalling the app permanently deletes local data.",
                 h3: "3. User Account — Secure Storage",
                 p3: "If you create an account, your data is stored in our secure database (Supabase / PostgreSQL) with encryption at rest and in transit (TLS 1.3). Your financial data is never shared, sold or used for advertising purposes.",
                 h4: "4. AI Receipt Scanner (Google Gemini)",
-                p4: "Kinto uses artificial intelligence to automate expense entry. When you use the scanner, your receipt images are securely transmitted to <strong>Google (Gemini AI)</strong> for information extraction. Processing is instantaneous: Google does not retain these images for persistent purposes and does not use them to train its AI models or for advertising. We ensure our partners offer a level of data protection equivalent to our own.",
+                p4: "Kinto uses artificial intelligence to automate expense entry. When you use the scanner, your receipt images are securely transmitted to <strong>Google (Gemini AI)</strong> for information extraction. Kinto does not keep these images after analysis. Google may retain the images and text sent and use them to improve its services; avoid scanning documents containing sensitive information (full card number, ID document, etc.).",
                 h5: "5. Premium Subscription",
                 p5: "Payments are managed exclusively via the Apple App Store or Google Play. We do not collect or store your banking or credit card information. Subscription receipts are provided by Apple/Google.",
                 h6: "6. Data Sharing",
                 p6: "We never sell, rent or share your personal data with third parties for commercial purposes. The only third-party access is:",
                 li6a: "<strong>Supabase</strong>: database hosting (EU servers)",
-                li6b: "<strong>Google (Gemini AI)</strong>: receipt analysis and data extraction (no persistent storage or training)",
+                li6b: "<strong>Google (Gemini AI)</strong>: receipt analysis and data extraction",
                 li6c: "<strong>Apple / Google</strong>: in-app purchase management",
+                li6d: "<strong>PostHog</strong>: usage statistics, only if you accept them (servers in the United States)",
                 h7: "7. Security",
                 li7a: "TLS 1.3 encryption for all communications",
                 li7b: "Secure authentication via Supabase Auth",
@@ -201,12 +214,14 @@
                 p9: "Your data is retained as long as your account is active. After account deletion, all data is erased within 30 days. Local data (guest mode) is deleted immediately upon uninstallation.",
                 h10: "10. Minors",
                 p10: "Kinto is not intended for individuals under 13 years old. We do not knowingly collect data from minors.",
-                h11: "11. Contact",
+                hA: "11. Usage statistics (with your consent)",
+                pA: "If you agree at first launch (you can change this at any time in Profile → Security), Kinto uses <strong>PostHog</strong> (hosted in the United States, with GDPR-compliant transfer safeguards) to understand how the app is used: screens viewed and features used (for example “transaction added”, “scan started”), plus general technical information (language, theme, app version). We <strong>never</strong> send amounts, merchant names, descriptions, notes, custom category or wallet names, or any text you type. If you have an account, this data is linked to a random technical identifier (not your name or email); in guest mode it stays anonymous. No advertising tracking and no data resale. Legal basis: your consent (GDPR art. 6(1)(a)). Withdrawing consent stops all collection immediately. To request deletion of data linked to your account, contact us.",
+                h11: "12. Contact",
                 p11: "For any question about your data:"
             },
             ar: {
                 title: "🔒 سياسة الخصوصية — Kinto",
-                updated: "آخر تحديث: 8 أبريل 2026",
+                updated: "آخر تحديث: 10 نوفمبر 2026",
                 intro: "مرحباً بك في <strong>Kinto</strong>. نولي حماية بياناتك الشخصية أهمية قصوى. توضح هذه السياسة كيفية جمع معلوماتك واستخدامها وحمايتها.",
                 h1: "١. البيانات التي نجمعها",
                 li1: "<strong>الحساب (اختياري)</strong>: البريد الإلكتروني والاسم الكامل عند إنشاء حساب. يعمل التطبيق بالكامل دون حساب.",
@@ -214,19 +229,21 @@
                 li3: "<strong>صور الفواتير</strong>: يتم نقل صور الفواتير والبيانات الوصفية للمعاملة المرتبطة بها (المبلغ، التاجر، التاريخ) بشكل آمن لتحليلها. لا يتم تخزين أي صورة بشكل دائم على خوادمنا.",
                 li4: "<strong>بيانات الميزانية والأهداف</strong>: تقوم بإعدادها بنفسك، وتُخزَّن محلياً (وضع الضيف) أو في قاعدة بياناتنا الآمنة (الحساب).",
                 li5: "<strong>التفضيلات</strong>: اللغة والعملة والمظهر — مخزّنة محلياً على جهازك.",
+                li5b: "<strong>إحصاءات الاستخدام (اختيارية وبموافقتك)</strong>: الشاشات المعروضة والميزات المستخدمة، دون أي بيانات مالية — انظر القسم 11.",
                 h2: "٢. وضع الضيف — بيانات محلية بالكامل",
                 p2: "إذا استخدمت Kinto دون حساب، فإن <strong>جميع بياناتك تبقى حصرياً على جهازك</strong>. لا يتم نقل أي معلومة إلى خوادمنا. يؤدي حذف التطبيق إلى فقدان البيانات المحلية نهائياً.",
                 h3: "٣. حساب المستخدم — تخزين آمن",
                 p3: "إذا أنشأت حساباً، تُخزَّن بياناتك في قاعدة بياناتنا الآمنة (Supabase / PostgreSQL) مع تشفير أثناء التخزين والنقل (TLS 1.3). لا تتم مشاركة بياناتك المالية أو بيعها أو استخدامها لأغراض إعلانية أبداً.",
                 h4: "٤. ماسح الفواتير بالذكاء الاصطناعي (Google Gemini)",
-                p4: "يستخدم Kinto الذكاء الاصطناعي لأتمتة إدخال المصاريف. عند استخدام الماسح، تُنقل صور فواتيرك بشكل آمن إلى <strong>Google (Gemini AI)</strong> لاستخراج المعلومات. تتم المعالجة فورياً: لا تحتفظ Google بهذه الصور لأغراض دائمة ولا تستخدمها لتدريب نماذجها أو لأغراض إعلانية. نحرص على أن يوفر شركاؤنا مستوى حماية بيانات يعادل مستوانا.",
+                p4: "يستخدم Kinto الذكاء الاصطناعي لأتمتة إدخال المصاريف. عند استخدام الماسح، تُنقل صور فواتيرك بشكل آمن إلى <strong>Google (Gemini AI)</strong> لاستخراج المعلومات. لا يحتفظ Kinto بهذه الصور بعد التحليل. قد تحتفظ Google بالصور والنصوص المرسلة وتستخدمها لتحسين خدماتها؛ تجنّب مسح مستندات تحتوي على معلومات حساسة (رقم البطاقة الكامل، وثيقة الهوية…).",
                 h5: "٥. الاشتراك المميز",
                 p5: "تُدار المدفوعات حصرياً عبر Apple App Store أو Google Play. نحن لا نجمع ولا نخزّن معلومات حسابك المصرفي أو بطاقتك الائتمانية. تُوفَّر إيصالات الاشتراك من طرف Apple/Google.",
                 h6: "٦. مشاركة البيانات",
                 p6: "نحن لا نبيع بياناتك الشخصية أو نؤجرها أو نشاركها مع أطراف ثالثة لأغراض تجارية أبداً. الأطراف الثالثة الوحيدة التي لديها وصول هي:",
                 li6a: "<strong>Supabase</strong>: استضافة قاعدة البيانات (خوادم في الاتحاد الأوروبي)",
-                li6b: "<strong>Google (Gemini AI)</strong>: تحليل الفواتير واستخراج البيانات (دون تخزين دائم أو تدريب نماذج)",
+                li6b: "<strong>Google (Gemini AI)</strong>: تحليل الفواتير واستخراج البيانات",
                 li6c: "<strong>Apple / Google</strong>: إدارة المشتريات داخل التطبيق",
+                li6d: "<strong>PostHog</strong>: إحصاءات الاستخدام، فقط إذا وافقت عليها (خوادم في الولايات المتحدة)",
                 h7: "٧. الأمان",
                 li7a: "تشفير TLS 1.3 لجميع الاتصالات",
                 li7b: "مصادقة آمنة عبر Supabase Auth",
@@ -242,7 +259,9 @@
                 p9: "تُحفظ بياناتك طالما حسابك نشط. بعد حذف الحساب، تُمحى جميع البيانات خلال 30 يوماً. تُحذف البيانات المحلية (وضع الضيف) فوراً عند إلغاء التثبيت.",
                 h10: "١٠. القاصرون",
                 p10: "Kinto غير موجّه للأشخاص دون سن 13 عاماً. نحن لا نجمع عن قصد بيانات القاصرين.",
-                h11: "١١. التواصل",
+                hA: "11. إحصاءات الاستخدام (بموافقتك)",
+                pA: "إذا وافقت عند أول تشغيل (ويمكنك تغيير ذلك في أي وقت من الملف الشخصي ← الأمان)، يستخدم Kinto خدمة <strong>PostHog</strong> (مستضافة في الولايات المتحدة مع ضمانات نقل البيانات المتوافقة مع اللائحة العامة لحماية البيانات) لفهم كيفية استخدام التطبيق: الشاشات التي تم عرضها والميزات المستخدمة (مثل «تمت إضافة معاملة» و«بدأ المسح»)، إضافةً إلى معلومات تقنية عامة (اللغة والمظهر وإصدار التطبيق). نحن <strong>لا نرسل أبدًا</strong> المبالغ أو أسماء المتاجر أو الأوصاف أو الملاحظات أو أسماء الفئات والمحافظ المخصصة أو أي نص تكتبه. إذا كان لديك حساب، تُربط هذه البيانات بمعرّف تقني عشوائي (وليس باسمك أو بريدك الإلكتروني)، وفي وضع الضيف تبقى مجهولة. لا تتبّع إعلاني ولا بيع للبيانات. الأساس القانوني: موافقتك (المادة 6(1)(أ) من اللائحة العامة لحماية البيانات). سحب الموافقة يوقف كل جمع للبيانات فورًا. لطلب حذف البيانات المرتبطة بحسابك، تواصل معنا.",
+                h11: "12. التواصل",
                 p11: "لأي سؤال يتعلق ببياناتك:"
             }
         };
