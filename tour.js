@@ -52,22 +52,22 @@
     };
 
     const STEPS = [
-        { target: '.hero-copy', key: 'step1' },
-        { target: '#about .about-panel', key: 'step2' },
-        { target: '#skills .skills-grid', key: 'step3' },
+        { target: '.hx-copy', key: 'step1' },
+        { target: '#about .hx-about', key: 'step2' },
+        { target: '#skills .hx-skill-list', key: 'step3' },
         { target: '#projects .apps-grid', key: 'step4' },
-        { target: '#journey .journey', key: 'step5' },
-        { target: '#contact .container-narrow', key: 'step6' }
+        { target: '#journey .hx-timeline', key: 'step5' },
+        { target: '#contact .container', key: 'step6' }
     ];
 
     const COIN_SPOTS = [
         { host: '.hero', x: 6, y: 88 },
-        { host: '.motion-ribbon', x: 24, y: 50 },
-        { host: '#about .about-panel', x: 93, y: 9 },
-        { host: '#skills .service-card:nth-child(3)', x: 88, y: 76 },
-        { host: '#projects .section-heading', x: 84, y: 28 },
-        { host: '#journey .journey-item:nth-child(3)', x: 92, y: 14 },
-        { host: '#contact .container-narrow', x: 8, y: 12 },
+        { host: '.hx-phones', x: 24, y: 50 },
+        { host: '#about .hx-facts', x: 93, y: 9 },
+        { host: '#skills .hx-skill-list li:nth-child(3)', x: 88, y: 76 },
+        { host: '#projects .hx-head', x: 84, y: 28 },
+        { host: '#journey .hx-timeline li:nth-child(3)', x: 92, y: 14 },
+        { host: '#contact .hx-mail', x: 8, y: 12 },
         { host: '.site-footer', x: 52, y: 62 }
     ];
 
