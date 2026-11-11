@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité — Yumii</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg?v=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=6910">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">Mohamed Sayed</a>
+            <div class="nav-controls">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+                    <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">AR</button>
+                </div>
+                <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème">
+                    <i class="icon-sun"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="top">
+        <section class="legal-page">
+            <div class="container-narrow">
+                <a href="index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> <span data-i18n="link_back">Accueil</span></a>
+
+                <h1 data-page-i18n="title">🔒 Politique de Confidentialité — Yumii</h1>
+                <span class="last-updated" data-page-i18n="updated">Dernière mise à jour : 11 novembre 2026</span>
+
+                <div class="legal-content">
+                    <p data-page-i18n="k0">Bienvenue sur <strong>Yumii</strong>, l’application iPhone qui estime les calories et les macros d’un plat à partir d’une photo, éditée par Mohamed Sayed (mohameds.net). Cette politique explique ce qui reste sur ton iPhone et ce qui en sort.</p>
+                    <h2 data-page-i18n="k1">1. Données stockées sur ton iPhone</h2>
+                    <ul>
+                        <li data-page-i18n="k2_0"><strong>Ton journal</strong> : repas, eau, poids, sommeil, objectifs et réglages sont stockés <strong>sur ton iPhone</strong>. Il n’y a pas de compte obligatoire.</li>
+                        <li data-page-i18n="k2_1"><strong>Apple Santé (optionnel)</strong> : si tu l’autorises, Yumii lit tes pas, tes calories actives, ton poids et ton sommeil, et peut y écrire tes repas, ton eau et ton poids. Ces données restent gérées par Apple Santé et ne sont jamais envoyées à nos serveurs ni utilisées à des fins publicitaires.</li>
+                    </ul>
+                    <h2 data-page-i18n="k3">2. Analyse des plats</h2>
+                    <p data-page-i18n="k4">Pour estimer un plat, la photo (ou la description écrite) que tu choisis d’analyser est envoyée à un service d’intelligence artificielle de Google (Gemini, via Firebase AI Logic), protégé par Firebase App Check. Seul ce contenu est envoyé, uniquement quand tu lances une analyse. Si le service ne répond pas, l’app passe en mode démo.</p>
+                    <h2 data-page-i18n="k5">3. Compte et abonnement</h2>
+                    <ul>
+                        <li data-page-i18n="k6_0">La connexion est <strong>facultative</strong> et se fait avec Apple ou Google (Firebase Authentication). Elle sert à retrouver ton abonnement Yumii Pro d’un appareil à l’autre.</li>
+                        <li data-page-i18n="k6_1">Les achats sont gérés par Apple et suivis par RevenueCat. Nous ne voyons ni ne stockons tes informations de paiement.</li>
+                        <li data-page-i18n="k6_2">Tu peux supprimer ton compte depuis les réglages de l’app.</li>
+                    </ul>
+                    <h2 data-page-i18n="k7">4. Statistiques d’utilisation (optionnel)</h2>
+                    <p data-page-i18n="k8">Uniquement si tu les acceptes, Yumii utilise <strong>PostHog</strong> (serveurs dans l’Union européenne) pour mesurer des événements anonymes (analyse lancée, écran consulté). Aucune photo, aucun texte de plat et aucune donnée de santé n’est envoyé. Aucune publicité, aucun pistage. Tu peux retirer ton accord à tout moment.</p>
+                    <h2 data-page-i18n="k9">5. Partage des données</h2>
+                    <p data-page-i18n="k10">Nous ne vendons ni ne partageons tes données personnelles. Les services tiers utilisés sont Google (analyse des plats, connexion), Apple (achats, Santé), RevenueCat (abonnements) et PostHog (statistiques, si tu les acceptes).</p>
+                    <h2 data-page-i18n="k11">6. Estimations nutritionnelles</h2>
+                    <p data-page-i18n="k12">Les calories et macros sont des estimations générées automatiquement et peuvent contenir des erreurs. Yumii ne fournit pas de conseil médical ni diététique.</p>
+                    <h2 data-page-i18n="k13">7. Tes droits et suppression</h2>
+                    <p data-page-i18n="k14">Ton journal étant sur ton appareil, tu le contrôles : supprime Yumii pour tout effacer. Pour toute question ou demande concernant ton compte ou les statistiques anonymes (RGPD) :</p>
+                    <p><a href="mailto:contact@mohameds.net">contact@mohameds.net</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact" id="contact">
+            <div class="container-narrow">
+                <h2 class="section-label" data-i18n="contact_title">Contact</h2>
+                <p class="contact-desc" data-i18n="contact_subtitle">Une idée de projet ? Écrivez-moi.</p>
+                <div class="social-row">
+                    <a href="tel:+33753418824" aria-label="Téléphone"><i class="fas fa-phone"></i></a>
+                    <a href="mailto:contact@mohameds.net" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/mohamed-elhawawshi-6024a92a5?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/msayyyed1?s=11" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/msayyyed?stkn=MWQyd2dsbDV5NDJnaw%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container-narrow footer-inner">
+            <p>&copy; 2026 Mohamed Sayed</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=7005"></script>
+    <script>
+        window.pageTranslations = {
+    "fr": {
+        "title": "🔒 Politique de Confidentialité — Yumii",
+        "updated": "Dernière mise à jour : 11 novembre 2026",
+        "k0": "Bienvenue sur <strong>Yumii</strong>, l’application iPhone qui estime les calories et les macros d’un plat à partir d’une photo, éditée par Mohamed Sayed (mohameds.net). Cette politique explique ce qui reste sur ton iPhone et ce qui en sort.",
+        "k1": "1. Données stockées sur ton iPhone",
+        "k2_0": "<strong>Ton journal</strong> : repas, eau, poids, sommeil, objectifs et réglages sont stockés <strong>sur ton iPhone</strong>. Il n’y a pas de compte obligatoire.",
+        "k2_1": "<strong>Apple Santé (optionnel)</strong> : si tu l’autorises, Yumii lit tes pas, tes calories actives, ton poids et ton sommeil, et peut y écrire tes repas, ton eau et ton poids. Ces données restent gérées par Apple Santé et ne sont jamais envoyées à nos serveurs ni utilisées à des fins publicitaires.",
+        "k3": "2. Analyse des plats",
+        "k4": "Pour estimer un plat, la photo (ou la description écrite) que tu choisis d’analyser est envoyée à un service d’intelligence artificielle de Google (Gemini, via Firebase AI Logic), protégé par Firebase App Check. Seul ce contenu est envoyé, uniquement quand tu lances une analyse. Si le service ne répond pas, l’app passe en mode démo.",
+        "k5": "3. Compte et abonnement",
+        "k6_0": "La connexion est <strong>facultative</strong> et se fait avec Apple ou Google (Firebase Authentication). Elle sert à retrouver ton abonnement Yumii Pro d’un appareil à l’autre.",
+        "k6_1": "Les achats sont gérés par Apple et suivis par RevenueCat. Nous ne voyons ni ne stockons tes informations de paiement.",
+        "k6_2": "Tu peux supprimer ton compte depuis les réglages de l’app.",
+        "k7": "4. Statistiques d’utilisation (optionnel)",
+        "k8": "Uniquement si tu les acceptes, Yumii utilise <strong>PostHog</strong> (serveurs dans l’Union européenne) pour mesurer des événements anonymes (analyse lancée, écran consulté). Aucune photo, aucun texte de plat et aucune donnée de santé n’est envoyé. Aucune publicité, aucun pistage. Tu peux retirer ton accord à tout moment.",
+        "k9": "5. Partage des données",
+        "k10": "Nous ne vendons ni ne partageons tes données personnelles. Les services tiers utilisés sont Google (analyse des plats, connexion), Apple (achats, Santé), RevenueCat (abonnements) et PostHog (statistiques, si tu les acceptes).",
+        "k11": "6. Estimations nutritionnelles",
+        "k12": "Les calories et macros sont des estimations générées automatiquement et peuvent contenir des erreurs. Yumii ne fournit pas de conseil médical ni diététique.",
+        "k13": "7. Tes droits et suppression",
+        "k14": "Ton journal étant sur ton appareil, tu le contrôles : supprime Yumii pour tout effacer. Pour toute question ou demande concernant ton compte ou les statistiques anonymes (RGPD) :"
+    },
+    "en": {
+        "title": "🔒 Privacy Policy — Yumii",
+        "updated": "Last updated: November 11, 2026",
+        "k0": "Welcome to <strong>Yumii</strong>, the iPhone app that estimates a meal’s calories and macros from a photo, published by Mohamed Sayed (mohameds.net). This policy explains what stays on your iPhone and what leaves it.",
+        "k1": "1. Data stored on your iPhone",
+        "k2_0": "<strong>Your journal</strong>: meals, water, weight, sleep, goals and settings are stored <strong>on your iPhone</strong>. No account is required.",
+        "k2_1": "<strong>Apple Health (optional)</strong>: if you allow it, Yumii reads your steps, active calories, weight and sleep, and can write your meals, water and weight to it. This data stays managed by Apple Health and is never sent to our servers or used for advertising.",
+        "k3": "2. Meal analysis",
+        "k4": "To estimate a meal, the photo (or written description) you choose to analyze is sent to a Google artificial intelligence service (Gemini, through Firebase AI Logic), protected by Firebase App Check. Only that content is sent, and only when you start an analysis. If the service does not respond, the app switches to demo mode.",
+        "k5": "3. Account and subscription",
+        "k6_0": "Signing in is <strong>optional</strong> and uses Apple or Google (Firebase Authentication). It lets you keep your Yumii Pro subscription across devices.",
+        "k6_1": "Purchases are handled by Apple and tracked by RevenueCat. We never see or store your payment information.",
+        "k6_2": "You can delete your account from the app’s settings.",
+        "k7": "4. Usage statistics (optional)",
+        "k8": "Only if you accept them, Yumii uses <strong>PostHog</strong> (servers in the European Union) to measure anonymous events (analysis started, screen viewed). No photo, meal text or health data is ever sent. No advertising, no tracking. You can withdraw your consent at any time.",
+        "k9": "5. Data sharing",
+        "k10": "We do not sell or share your personal data. The third-party services used are Google (meal analysis, sign-in), Apple (purchases, Health), RevenueCat (subscriptions) and PostHog (statistics, if you accept them).",
+        "k11": "6. Nutrition estimates",
+        "k12": "Calories and macros are automatically generated estimates and may contain errors. Yumii does not provide medical or dietary advice.",
+        "k13": "7. Your rights and deletion",
+        "k14": "Since your journal is on your device, you control it: delete Yumii to erase everything. For any question or request about your account or anonymous statistics (GDPR):"
+    },
+    "ar": {
+        "title": "🔒 سياسة الخصوصية — Yumii",
+        "updated": "آخر تحديث: 11 نوفمبر 2026",
+        "k0": "مرحباً بك في <strong>Yumii</strong>، تطبيق الآيفون الذي يقدّر سعرات الوجبة وعناصرها الغذائية من صورة، من تطوير محمد سيد (mohameds.net). توضح هذه السياسة ما يبقى على جهازك وما يغادره.",
+        "k1": "١. البيانات المخزّنة على جهازك",
+        "k2_0": "<strong>يومياتك</strong>: الوجبات والماء والوزن والنوم والأهداف والإعدادات مخزّنة <strong>على جهازك</strong>. لا حاجة إلى حساب.",
+        "k2_1": "<strong>Apple Health (اختياري)</strong>: إذا سمحت بذلك، يقرأ Yumii خطواتك وسعراتك النشطة ووزنك ونومك، ويمكنه كتابة وجباتك وماءك ووزنك فيه. تبقى هذه البيانات تحت إدارة Apple Health ولا تُرسل أبداً إلى خوادمنا ولا تُستخدم لأغراض إعلانية.",
+        "k3": "٢. تحليل الوجبات",
+        "k4": "لتقدير وجبة، تُرسل الصورة (أو الوصف المكتوب) التي تختار تحليلها إلى خدمة ذكاء اصطناعي من Google (Gemini عبر Firebase AI Logic) محمية بـ Firebase App Check. يُرسل هذا المحتوى فقط، وعند بدء التحليل فقط. إذا لم تستجب الخدمة، ينتقل التطبيق إلى وضع العرض التجريبي.",
+        "k5": "٣. الحساب والاشتراك",
+        "k6_0": "تسجيل الدخول <strong>اختياري</strong> عبر Apple أو Google (Firebase Authentication). يتيح لك الاحتفاظ باشتراك Yumii Pro بين الأجهزة.",
+        "k6_1": "تتم المشتريات عبر Apple وتتابعها RevenueCat. لا نرى معلومات الدفع الخاصة بك ولا نخزّنها.",
+        "k6_2": "يمكنك حذف حسابك من إعدادات التطبيق.",
+        "k7": "٤. إحصاءات الاستخدام (اختيارية)",
+        "k8": "فقط إذا وافقت، يستخدم Yumii خدمة <strong>PostHog</strong> (خوادم داخل الاتحاد الأوروبي) لقياس أحداث مجهولة (بدء تحليل، شاشة تم عرضها). لا تُرسل أبداً أي صورة أو نص وجبة أو بيانات صحية. لا إعلانات ولا تتبّع. يمكنك سحب موافقتك في أي وقت.",
+        "k9": "٥. مشاركة البيانات",
+        "k10": "لا نبيع بياناتك الشخصية ولا نشاركها. الخدمات الخارجية المستخدمة هي Google (تحليل الوجبات وتسجيل الدخول) وApple (المشتريات وHealth) وRevenueCat (الاشتراكات) وPostHog (الإحصاءات إن وافقت).",
+        "k11": "٦. التقديرات الغذائية",
+        "k12": "السعرات والعناصر الغذائية تقديرات تُنشأ آلياً وقد تحتوي على أخطاء. لا يقدّم Yumii نصائح طبية أو غذائية.",
+        "k13": "٧. حقوقك والحذف",
+        "k14": "بما أن يومياتك على جهازك، فأنت تتحكم بها: احذف Yumii لمسح كل شيء. لأي سؤال أو طلب بخصوص حسابك أو الإحصاءات المجهولة (GDPR):"
+    }
+};
+    </script>
+</body>
+</html>

@@ -102,6 +102,7 @@ body.home-page .app-card .project-preview { grid-column: 1; grid-row: 1 / span 6
 body.home-page .app-card:nth-child(1) .project-preview { background: linear-gradient(160deg, #0f7a52, #0a3a2a); }
 body.home-page .app-card:nth-child(2) .project-preview { background: linear-gradient(160deg, #3d44d8, #1b1d5c); }
 body.home-page .app-card:nth-child(3) .project-preview { background: linear-gradient(160deg, #e2468b, #7b3fe4); }
+body.home-page .app-card:nth-child(4) .project-preview { background: linear-gradient(160deg, #f4b13c, #d9622b); }
 body.home-page .app-card:nth-child(even) .project-preview { grid-column: 2; }
 body.home-page .app-card:nth-child(even) .app-card-inner > :not(.project-preview) { grid-column: 1; }
 body.home-page .app-card .project-preview-device { height: auto; padding: 0; width: 100%; display: flex; justify-content: center; align-items: flex-end; }

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions d’utilisation — Yumii</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg?v=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=6910">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">Mohamed Sayed</a>
+            <div class="nav-controls">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+                    <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">AR</button>
+                </div>
+                <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème">
+                    <i class="icon-sun"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="top">
+        <section class="legal-page">
+            <div class="container-narrow">
+                <a href="index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> <span data-i18n="link_back">Accueil</span></a>
+
+                <h1 data-page-i18n="title">📋 Conditions d’utilisation — Yumii</h1>
+                <span class="last-updated" data-page-i18n="updated">Dernière mise à jour : 11 novembre 2026</span>
+
+                <div class="legal-content">
+                    <p data-page-i18n="k0">En téléchargeant ou utilisant <strong>Yumii</strong>, tu acceptes les présentes conditions d’utilisation.</p>
+                    <h2 data-page-i18n="k1">1. Le service</h2>
+                    <ul>
+                        <li data-page-i18n="k2_0">Estimation des calories et des macros d’un plat à partir d’une photo ou d’une description.</li>
+                        <li data-page-i18n="k2_1">Journal des repas, de l’eau, du poids et du sommeil, avec synchronisation facultative avec Apple Santé.</li>
+                    </ul>
+                    <p data-page-i18n="k3">Yumii fonctionne sans compte. Tes données restent sur ton appareil, comme décrit dans la politique de confidentialité.</p>
+                    <h2 data-page-i18n="k4">2. Abonnement Yumii Pro</h2>
+                    <ul>
+                        <li data-page-i18n="k5_0"><strong>Mensuel</strong> : 5,99 € / mois</li>
+                        <li data-page-i18n="k5_1"><strong>Annuel</strong> : 29,99 € / an, avec <strong>3 jours d’essai gratuit</strong></li>
+                    </ul>
+                    <p data-page-i18n="k6">Le nombre d’analyses gratuites est limité ; Yumii Pro lève cette limite. Les prix sont ceux affichés dans l’app au moment de l’achat et peuvent varier selon ton pays et les taxes. Le paiement est géré par Apple.</p>
+                    <h2 data-page-i18n="k7">3. Renouvellement automatique</h2>
+                    <ul>
+                        <li data-page-i18n="k8_0">Les abonnements <strong>se renouvellent automatiquement</strong> : le montant est débité sur ton compte Apple à la confirmation de l’achat (ou à la fin de l’essai gratuit).</li>
+                        <li data-page-i18n="k8_1">Le renouvellement a lieu sauf annulation au moins 24 h avant la fin de la période en cours.</li>
+                        <li data-page-i18n="k8_2">Tu gères et annules ton abonnement dans les réglages de ton compte Apple.</li>
+                    </ul>
+                    <h2 data-page-i18n="k9">4. Estimations, pas un avis médical</h2>
+                    <p data-page-i18n="k10">Les calories et macros sont des estimations automatiques qui peuvent être inexactes. Yumii ne remplace pas l’avis d’un médecin ou d’un diététicien.</p>
+                    <h2 data-page-i18n="k11">5. Utilisation acceptable</h2>
+                    <p data-page-i18n="k12">Tu t’engages à utiliser Yumii dans le respect de la loi, et à ne pas tenter de contourner, copier ou détourner l’application.</p>
+                    <h2 data-page-i18n="k13">6. Propriété intellectuelle</h2>
+                    <p data-page-i18n="k14">L’application Yumii, son nom et son contenu appartiennent à Mohamed Sayed. Une licence personnelle, non exclusive et non transférable t’est accordée pour l’utiliser.</p>
+                    <h2 data-page-i18n="k15">7. Responsabilité</h2>
+                    <p data-page-i18n="k16">Yumii est fourni « en l’état ». Dans les limites permises par la loi, nous ne sommes pas responsables des décisions prises à partir des estimations, ni de la perte de données (par exemple en cas de suppression de l’app ou de changement d’appareil).</p>
+                    <h2 data-page-i18n="k17">8. Modifications et droit applicable</h2>
+                    <p data-page-i18n="k18">Nous pouvons mettre à jour ces conditions ; la date de dernière mise à jour figure en haut de la page. Elles sont régies par le droit français.</p>
+                    <h2 data-page-i18n="k19">9. Contact</h2>
+                    <p><a href="mailto:contact@mohameds.net">contact@mohameds.net</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact" id="contact">
+            <div class="container-narrow">
+                <h2 class="section-label" data-i18n="contact_title">Contact</h2>
+                <p class="contact-desc" data-i18n="contact_subtitle">Une idée de projet ? Écrivez-moi.</p>
+                <div class="social-row">
+                    <a href="tel:+33753418824" aria-label="Téléphone"><i class="fas fa-phone"></i></a>
+                    <a href="mailto:contact@mohameds.net" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/mohamed-elhawawshi-6024a92a5?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/msayyyed1?s=11" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/msayyyed?stkn=MWQyd2dsbDV5NDJnaw%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container-narrow footer-inner">
+            <p>&copy; 2026 Mohamed Sayed</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=7005"></script>
+    <script>
+        window.pageTranslations = {
+    "fr": {
+        "title": "📋 Conditions d’utilisation — Yumii",
+        "updated": "Dernière mise à jour : 11 novembre 2026",
+        "k0": "En téléchargeant ou utilisant <strong>Yumii</strong>, tu acceptes les présentes conditions d’utilisation.",
+        "k1": "1. Le service",
+        "k2_0": "Estimation des calories et des macros d’un plat à partir d’une photo ou d’une description.",
+        "k2_1": "Journal des repas, de l’eau, du poids et du sommeil, avec synchronisation facultative avec Apple Santé.",
+        "k3": "Yumii fonctionne sans compte. Tes données restent sur ton appareil, comme décrit dans la politique de confidentialité.",
+        "k4": "2. Abonnement Yumii Pro",
+        "k5_0": "<strong>Mensuel</strong> : 5,99 € / mois",
+        "k5_1": "<strong>Annuel</strong> : 29,99 € / an, avec <strong>3 jours d’essai gratuit</strong>",
+        "k6": "Le nombre d’analyses gratuites est limité ; Yumii Pro lève cette limite. Les prix sont ceux affichés dans l’app au moment de l’achat et peuvent varier selon ton pays et les taxes. Le paiement est géré par Apple.",
+        "k7": "3. Renouvellement automatique",
+        "k8_0": "Les abonnements <strong>se renouvellent automatiquement</strong> : le montant est débité sur ton compte Apple à la confirmation de l’achat (ou à la fin de l’essai gratuit).",
+        "k8_1": "Le renouvellement a lieu sauf annulation au moins 24 h avant la fin de la période en cours.",
+        "k8_2": "Tu gères et annules ton abonnement dans les réglages de ton compte Apple.",
+        "k9": "4. Estimations, pas un avis médical",
+        "k10": "Les calories et macros sont des estimations automatiques qui peuvent être inexactes. Yumii ne remplace pas l’avis d’un médecin ou d’un diététicien.",
+        "k11": "5. Utilisation acceptable",
+        "k12": "Tu t’engages à utiliser Yumii dans le respect de la loi, et à ne pas tenter de contourner, copier ou détourner l’application.",
+        "k13": "6. Propriété intellectuelle",
+        "k14": "L’application Yumii, son nom et son contenu appartiennent à Mohamed Sayed. Une licence personnelle, non exclusive et non transférable t’est accordée pour l’utiliser.",
+        "k15": "7. Responsabilité",
+        "k16": "Yumii est fourni « en l’état ». Dans les limites permises par la loi, nous ne sommes pas responsables des décisions prises à partir des estimations, ni de la perte de données (par exemple en cas de suppression de l’app ou de changement d’appareil).",
+        "k17": "8. Modifications et droit applicable",
+        "k18": "Nous pouvons mettre à jour ces conditions ; la date de dernière mise à jour figure en haut de la page. Elles sont régies par le droit français.",
+        "k19": "9. Contact"
+    },
+    "en": {
+        "title": "📋 Terms of Use — Yumii",
+        "updated": "Last updated: November 11, 2026",
+        "k0": "By downloading or using <strong>Yumii</strong>, you agree to these terms of use.",
+        "k1": "1. The service",
+        "k2_0": "Estimating a meal’s calories and macros from a photo or a description.",
+        "k2_1": "Journal of meals, water, weight and sleep, with optional Apple Health sync.",
+        "k3": "Yumii works without an account. Your data stays on your device, as described in the privacy policy.",
+        "k4": "2. Yumii Pro subscription",
+        "k5_0": "<strong>Monthly</strong>: €5.99 / month",
+        "k5_1": "<strong>Yearly</strong>: €29.99 / year, with a <strong>3-day free trial</strong>",
+        "k6": "The number of free analyses is limited; Yumii Pro removes that limit. Prices are those shown in the app at the time of purchase and may vary by country and taxes. Payment is handled by Apple.",
+        "k7": "3. Automatic renewal",
+        "k8_0": "Subscriptions <strong>renew automatically</strong>: the amount is charged to your Apple account when you confirm the purchase (or when the free trial ends).",
+        "k8_1": "Renewal happens unless you cancel at least 24 hours before the end of the current period.",
+        "k8_2": "You manage and cancel your subscription in your Apple account settings.",
+        "k9": "4. Estimates, not medical advice",
+        "k10": "Calories and macros are automatic estimates that may be inaccurate. Yumii does not replace the advice of a doctor or dietitian.",
+        "k11": "5. Acceptable use",
+        "k12": "You agree to use Yumii lawfully and not to attempt to circumvent, copy or misuse the app.",
+        "k13": "6. Intellectual property",
+        "k14": "The Yumii app, its name and its content belong to Mohamed Sayed. You are granted a personal, non-exclusive, non-transferable license to use it.",
+        "k15": "7. Liability",
+        "k16": "Yumii is provided “as is”. To the extent permitted by law, we are not liable for decisions made from the estimates, or for data loss (for example if you delete the app or change device).",
+        "k17": "8. Changes and governing law",
+        "k18": "We may update these terms; the last-updated date is shown at the top of the page. They are governed by French law.",
+        "k19": "9. Contact"
+    },
+    "ar": {
+        "title": "📋 شروط الاستخدام — Yumii",
+        "updated": "آخر تحديث: 11 نوفمبر 2026",
+        "k0": "بتنزيلك <strong>Yumii</strong> أو استخدامه، فإنك توافق على شروط الاستخدام هذه.",
+        "k1": "١. الخدمة",
+        "k2_0": "تقدير سعرات الوجبة وعناصرها الغذائية من صورة أو وصف.",
+        "k2_1": "يوميات للوجبات والماء والوزن والنوم، مع مزامنة اختيارية مع Apple Health.",
+        "k3": "يعمل Yumii دون حساب. تبقى بياناتك على جهازك كما هو موضح في سياسة الخصوصية.",
+        "k4": "٢. اشتراك Yumii Pro",
+        "k5_0": "<strong>شهري</strong>: 5.99 € شهرياً",
+        "k5_1": "<strong>سنوي</strong>: 29.99 € سنوياً، مع <strong>3 أيام تجربة مجانية</strong>",
+        "k6": "عدد التحليلات المجانية محدود، ويزيل Yumii Pro هذا الحد. الأسعار هي المعروضة في التطبيق وقت الشراء وقد تختلف حسب البلد والضرائب. تتم المدفوعات عبر Apple.",
+        "k7": "٣. التجديد التلقائي",
+        "k8_0": "الاشتراكات <strong>تتجدد تلقائياً</strong>: يُخصم المبلغ من حساب Apple عند تأكيد الشراء (أو عند انتهاء التجربة المجانية).",
+        "k8_1": "يتم التجديد ما لم تلغِ قبل 24 ساعة على الأقل من نهاية الفترة الحالية.",
+        "k8_2": "تدير اشتراكك وتلغيه من إعدادات حساب Apple.",
+        "k9": "٤. تقديرات وليست نصيحة طبية",
+        "k10": "السعرات والعناصر الغذائية تقديرات آلية قد تكون غير دقيقة. لا يحل Yumii محل رأي الطبيب أو أخصائي التغذية.",
+        "k11": "٥. الاستخدام المقبول",
+        "k12": "تتعهد باستخدام Yumii وفق القانون وبعدم محاولة التحايل على التطبيق أو نسخه أو إساءة استخدامه.",
+        "k13": "٦. الملكية الفكرية",
+        "k14": "تطبيق Yumii واسمه ومحتواه ملك لمحمد سيد. تُمنح ترخيصاً شخصياً غير حصري وغير قابل للنقل لاستخدامه.",
+        "k15": "٧. المسؤولية",
+        "k16": "يُقدَّم Yumii «كما هو». ضمن الحدود التي يسمح بها القانون، لا نتحمل مسؤولية القرارات المتخذة بناءً على التقديرات ولا فقدان البيانات (مثلاً عند حذف التطبيق أو تغيير الجهاز).",
+        "k17": "٨. التعديلات والقانون الواجب التطبيق",
+        "k18": "قد نحدّث هذه الشروط، ويظهر تاريخ آخر تحديث في أعلى الصفحة. يحكمها القانون الفرنسي.",
+        "k19": "٩. التواصل"
+    }
+};
+    </script>
+</body>
+</html>

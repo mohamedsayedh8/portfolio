@@ -19,6 +19,7 @@ const translations = {
         command_zikr: 'Découvrir Zikr',
         command_kinto: 'Découvrir Kinto',
         command_clipglot: 'Découvrir Clipglot',
+        command_yumii: 'Découvrir Yumii',
         command_copy_email: 'Copier l’adresse e-mail',
         command_top: 'Retourner en haut',
         command_copied: 'Adresse copiée',
@@ -79,7 +80,7 @@ const translations = {
         visual_chip_design: 'DESIGN',
         hero_hello: 'Bonjour, je suis',
         hero_role: 'Développeur d’applications mobiles, de plateformes et de sites web.',
-        about_p2: 'En 2026, j’ai lancé Zikr, une application spirituelle disponible sur l’App Store et Google Play, puis Kinto, une application de budget. Clipglot, un clavier iPhone, arrive bientôt.',
+        about_p2: 'En 2026, j’ai lancé Zikr, une application spirituelle disponible sur l’App Store et Google Play, puis Kinto, une application de budget. Yumii, une application de calories par photo, et Clipglot, un clavier iPhone, arrivent bientôt.',
         about_p3: 'Je soigne les détails : des interfaces claires, des produits disponibles en plusieurs langues, dont l’arabe avec lecture de droite à gauche.',
         fact_location: 'Basé à Paris',
         fact_status: 'Développeur indépendant',
@@ -108,6 +109,7 @@ const translations = {
         journey_mar: 'Mars 2026',
         journey_kinto_text: 'Application de budget avec scan de reçus, disponible sur l’App Store.',
         journey_nov: 'Novembre 2026',
+        journey_yumii_text: 'Application iPhone qui estime calories et macros d’un plat à partir d’une photo, bientôt sur l’App Store.',
         journey_clipglot_text: 'Clavier iPhone avec historique du presse-papier et traduction, bientôt sur l’App Store.',
         journey_zikr_text: 'Application spirituelle — Coran, Adhkar, horaires de prière — disponible sur l’App Store et Google Play.',
         fact_study: 'Étudiant en licence 1 d’informatique',
@@ -135,6 +137,7 @@ const translations = {
         command_zikr: 'Explore Zikr',
         command_kinto: 'Explore Kinto',
         command_clipglot: 'Explore Clipglot',
+        command_yumii: 'Explore Yumii',
         command_copy_email: 'Copy email address',
         command_top: 'Back to top',
         command_copied: 'Email address copied',
@@ -195,7 +198,7 @@ const translations = {
         visual_chip_design: 'DESIGN',
         hero_hello: 'Hi, I’m',
         hero_role: 'Mobile app, platform and website developer.',
-        about_p2: 'In 2026 I launched Zikr, a spiritual app available on the App Store and Google Play, then Kinto, a budgeting app. Clipglot, an iPhone keyboard, is coming soon.',
+        about_p2: 'In 2026 I launched Zikr, a spiritual app available on the App Store and Google Play, then Kinto, a budgeting app. Yumii, a calorie-by-photo app, and Clipglot, an iPhone keyboard, are coming soon.',
         about_p3: 'I care about the details: clear interfaces and products available in several languages, including Arabic with right-to-left reading.',
         fact_location: 'Based in Paris',
         fact_status: 'Independent developer',
@@ -224,6 +227,7 @@ const translations = {
         journey_mar: 'March 2026',
         journey_kinto_text: 'Budgeting app with receipt scanning, available on the App Store.',
         journey_nov: 'November 2026',
+        journey_yumii_text: 'iPhone app that estimates a meal’s calories and macros from a photo, coming soon to the App Store.',
         journey_clipglot_text: 'iPhone keyboard with clipboard history and translation, coming soon to the App Store.',
         journey_zikr_text: 'Spiritual app — Quran, Adhkar, prayer times — available on the App Store and Google Play.',
         fact_study: 'First-year computer science student',
@@ -251,6 +255,7 @@ const translations = {
         command_zikr: 'اكتشف ذكر',
         command_kinto: 'اكتشف كينتو',
         command_clipglot: 'اكتشف Clipglot',
+        command_yumii: 'اكتشف Yumii',
         command_copy_email: 'نسخ البريد الإلكتروني',
         command_top: 'العودة إلى الأعلى',
         command_copied: 'تم نسخ البريد الإلكتروني',
@@ -311,7 +316,7 @@ const translations = {
         visual_chip_design: 'تصميم',
         hero_hello: 'مرحباً، أنا',
         hero_role: 'مطوّر تطبيقات هاتف ومنصات ومواقع ويب.',
-        about_p2: 'في عام 2026 أطلقت «ذكر»، تطبيقاً روحياً متاحاً على App Store وGoogle Play، ثم Kinto، تطبيقاً لإدارة الميزانية. وقريباً Clipglot، لوحة مفاتيح للآيفون.',
+        about_p2: 'في عام 2026 أطلقت «ذكر»، تطبيقاً روحياً متاحاً على App Store وGoogle Play، ثم Kinto، تطبيقاً لإدارة الميزانية. وقريباً Yumii، تطبيق للسعرات بالصورة، وClipglot، لوحة مفاتيح للآيفون.',
         about_p3: 'أهتم بالتفاصيل: واجهات واضحة ومنتجات متاحة بعدة لغات، منها العربية مع القراءة من اليمين إلى اليسار.',
         fact_location: 'مقيم في باريس',
         fact_status: 'مطوّر مستقل',
@@ -340,6 +345,7 @@ const translations = {
         journey_mar: 'مارس 2026',
         journey_kinto_text: 'تطبيق للميزانية مع مسح الفواتير، متاح على App Store.',
         journey_nov: 'نوفمبر 2026',
+        journey_yumii_text: 'تطبيق للآيفون يقدّر سعرات الوجبة وعناصرها الغذائية من صورة، قريباً على App Store.',
         journey_clipglot_text: 'لوحة مفاتيح للآيفون مع سجل الحافظة والترجمة، قريباً على App Store.',
         journey_zikr_text: 'تطبيق روحي — القرآن الكريم والأذكار وأوقات الصلاة — متاح على App Store وGoogle Play.',
         fact_study: 'طالب في السنة الأولى – علوم الحاسوب',
@@ -412,6 +418,26 @@ const appsData = {
             fr: 'Clipglot est un clavier iPhone qui garde l’historique de votre presse-papier (textes, liens, images), avec favoris, catégories et phrases rapides, et traduit sans quitter le clavier. Tout reste sur votre iPhone : pas de compte, pas de serveur.',
             en: 'Clipglot is an iPhone keyboard that keeps your clipboard history (texts, links, images), with favorites, categories and quick phrases, and translates without leaving the keyboard. Everything stays on your iPhone: no account, no server.',
             ar: 'Clipglot لوحة مفاتيح للآيفون تحفظ سجل الحافظة (نصوص وروابط وصور) مع المفضلة والتصنيفات والعبارات السريعة، وتترجم دون مغادرة لوحة المفاتيح. كل شيء يبقى على جهازك: بلا حساب وبلا خادم.'
+        }
+    },
+    yumii: {
+        name: 'Yumii',
+        kind: 'app',
+        category: { fr: 'Application iPhone', en: 'iPhone app', ar: 'تطبيق للآيفون' },
+        icon: 'assets/images/yumii-icon.png',
+        screenshot: 'assets/images/yumii-screen1.jpg',
+        screenshots: ['assets/images/yumii-screen1.jpg', 'assets/images/yumii-screen2.jpg', 'assets/images/yumii-screen3.jpg'],
+        features: { fr: ['Scan par photo', 'Calories et macros', 'Apple Santé'], en: ['Photo scan', 'Calories and macros', 'Apple Health'], ar: ['مسح بالصورة', 'السعرات والعناصر', 'Apple Health'] },
+        appStore: null,
+        googlePlay: null,
+        privacy: 'yumii-privacy.html',
+        terms: 'yumii-terms.html',
+        note: { fr: 'Bientôt sur l’App Store.', en: 'Coming soon to the App Store.', ar: 'قريباً على App Store.' },
+        tagline: { fr: 'Prends ton plat en photo, découvre ses calories.', en: 'Snap your meal, see its calories.', ar: 'صوّر طبقك واعرف سعراته.' },
+        description: {
+            fr: 'Yumii estime les calories et les macros d’un plat à partir d’une photo, avec un journal des repas, de l’eau, du poids et du sommeil. Pensée pour les cuisines maghrébine, africaine et moyen-orientale, avec synchronisation Apple Santé en option.',
+            en: 'Yumii estimates a meal’s calories and macros from a photo, with a journal of meals, water, weight and sleep. Built for North African, African and Middle Eastern cuisines, with optional Apple Health sync.',
+            ar: 'يقدّر Yumii سعرات الوجبة وعناصرها الغذائية من صورة، مع يوميات للوجبات والماء والوزن والنوم. مصمم للمطابخ المغاربية والأفريقية والشرق أوسطية، مع مزامنة اختيارية مع Apple Health.'
         }
     },
 };
@@ -499,9 +525,9 @@ window.setLanguage = function(lang, remember = true) {
     updateContactMailto();
     if (document.body.classList.contains('home-page')) {
         const meta = {
-            fr: ['Mohamed Sayed — Développeur d’applications mobiles', 'Mohamed Sayed, développeur indépendant basé à Paris : applications mobiles, plateformes et sites web. Zikr, Kinto et Clipglot.'],
-            en: ['Mohamed Sayed — Mobile app developer', 'Mohamed Sayed, independent developer based in Paris: mobile apps, platforms and websites. Zikr, Kinto and Clipglot.'],
-            ar: ['محمد سيد — مطوّر تطبيقات الهاتف', 'محمد سيد، مطوّر مستقل مقيم في باريس: تطبيقات هاتف ومنصات ومواقع ويب. Zikr وKinto وClipglot.']
+            fr: ['Mohamed Sayed — Développeur d’applications mobiles', 'Mohamed Sayed, développeur indépendant basé à Paris : applications mobiles, plateformes et sites web. Zikr, Kinto, Yumii et Clipglot.'],
+            en: ['Mohamed Sayed — Mobile app developer', 'Mohamed Sayed, independent developer based in Paris: mobile apps, platforms and websites. Zikr, Kinto, Yumii and Clipglot.'],
+            ar: ['محمد سيد — مطوّر تطبيقات الهاتف', 'محمد سيد، مطوّر مستقل مقيم في باريس: تطبيقات هاتف ومنصات ومواقع ويب. Zikr وKinto وYumii وClipglot.']
         }[lang] || [];
         if (meta[0]) {
             document.title = meta[0];
@@ -569,7 +595,7 @@ function initCommandPalette() {
         ['about','command_about','fa-user'], ['contact','command_contact','fa-paper-plane'],
         ['lang-fr','command_french','fa-globe'], ['lang-en','command_english','fa-globe'],
         ['lang-ar','command_arabic','fa-globe'], ['theme','command_theme','fa-circle-half-stroke'], ['theme-auto','command_theme_auto','fa-wand-magic-sparkles'],
-        ['zikr','command_zikr','fa-mobile-screen-button'], ['kinto','command_kinto','fa-mobile-screen-button'], ['clipglot','command_clipglot','fa-keyboard'],
+        ['zikr','command_zikr','fa-mobile-screen-button'], ['kinto','command_kinto','fa-mobile-screen-button'], ['clipglot','command_clipglot','fa-keyboard'], ['yumii','command_yumii','fa-utensils'],
         
         ['email','command_copy_email','fa-copy'], ['top','command_top','fa-arrow-up']
     ];
@@ -583,7 +609,7 @@ function initCommandPalette() {
     const open = () => { input.value = ''; active = 0; render(); dialog.showModal(); requestAnimationFrame(() => input.focus()); };
     const run = async id => {
         dialog.close();
-        const routes = {projects:'#projects',journey:'#journey',about:'#about',contact:'#contact',zikr:'zikr.html',kinto:'kinto.html',clipglot:'clipglot.html',top:'#top'};
+        const routes = {projects:'#projects',journey:'#journey',about:'#about',contact:'#contact',zikr:'zikr.html',kinto:'kinto.html',clipglot:'clipglot.html',yumii:'yumii.html',top:'#top'};
         if (routes[id]) { location.href = routes[id]; return; }
         if (id.startsWith('lang-')) { window.setLanguage(id.slice(5)); return; }
         if (id === 'theme') { window.toggleTheme(); return; }
