@@ -1619,3 +1619,32 @@ html[dir="rtl"] .visual-chip { text-align: right; }
 @media (prefers-reduced-motion: reduce) { .tour-avatar { animation: none; } .tour-launcher { transition: none; } }
 
 @media (min-width: 761px) { .apps-grid { grid-template-columns: repeat(auto-fit, minmax(290px, 420px)); justify-content: center; } }
+
+/* ── Mobile v2: compact nav, shorter sections, nothing hidden under the floating buttons ── */
+@media (max-width: 620px) {
+  #navbar .nav-inner { flex-direction: row !important; flex-wrap: nowrap !important; justify-content: space-between; align-items: center; gap: .3rem !important; width: calc(100vw - 1rem) !important; padding: .3rem .45rem !important; border-radius: 999px !important; }
+  #navbar .nav-links { flex: 1 1 auto; min-width: 0; justify-content: flex-start; gap: 0 !important; }
+  #navbar .nav-links a { padding: .4rem .42rem; font-size: .72rem; white-space: nowrap; }
+  #navbar .nav-controls { flex: 0 0 auto; margin: 0 !important; gap: .1rem !important; padding: 0 !important; border: 0 !important; background: none !important; box-shadow: none !important; }
+  #navbar .lang-switcher { gap: 0; }
+  #navbar .lang-btn { padding: .3rem .32rem; font-size: .66rem; min-width: 0; }
+  #navbar .theme-btn { width: 30px; height: 30px; }
+  .hero { padding-top: 5.6rem; padding-bottom: 1.5rem; }
+  .eyebrow-status { font-size: .78rem; }
+  section { padding: 2.9rem 0; }
+  .section-heading { margin-bottom: 1.4rem; }
+  .about-panel { padding: 1.4rem 1.2rem; }
+  .skills-grid { gap: .8rem; }
+  .skills-grid .service-card { min-height: 0; padding: 1.1rem 1.1rem 1.2rem; }
+  .skills-grid .service-icon { margin-bottom: .7rem; }
+  .skills-grid .service-orbit, .skills-grid .service-index { display: none; }
+  .skills-grid .service-tags { margin-top: .6rem; }
+  .project-preview-device { height: 250px; }
+  .project-preview-device .iphone-mockup { max-width: 118px; }
+  .app-card-inner { padding: 1.1rem 1rem 1.2rem; }
+  .app-card-description { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .journey-item { padding: 1rem; }
+  .site-footer { padding-bottom: 6.2rem; }
+  .scroll-top { width: 44px; height: 44px; bottom: calc(env(safe-area-inset-bottom) + .7rem); }
+  .tour-launcher { bottom: calc(env(safe-area-inset-bottom) + .7rem); inset-inline-start: .7rem; }
+}
