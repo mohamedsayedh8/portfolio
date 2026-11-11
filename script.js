@@ -502,10 +502,10 @@ function loadTour() {
         tourLoading = new Promise((resolve, reject) => {
             const link = document.createElement('link');
             link.rel = 'stylesheet';
-            link.href = 'tour.css?v=6800';
+            link.href = 'tour.css?v=6810';
             document.head.appendChild(link);
             const script = document.createElement('script');
-            script.src = 'tour.js?v=6800';
+            script.src = 'tour.js?v=6810';
             script.onload = () => resolve(window.PortfolioTour);
             script.onerror = reject;
             document.head.appendChild(script);
