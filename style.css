@@ -1655,3 +1655,5 @@ html[dir="rtl"] .visual-chip { text-align: right; }
 .iphone-mockup .screen { position: absolute; inset: 1.9% 4.5%; width: auto; height: auto; border-radius: 13% / 5.9%; }
 .iphone-mockup .screen img, .project-preview-device .screen img.project-preview-slide { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 .project-preview-device { height: auto; padding-bottom: .4rem; }
+
+.app-tier { margin: .55rem 0 0; color: var(--text-muted); font-size: .92rem; line-height: 1.6; }

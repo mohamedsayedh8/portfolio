@@ -403,6 +403,9 @@ const appsData = {
         googlePlay: null,
         privacy: 'clipglot-privacy.html',
         terms: 'clipglot-terms.html',
+        free: { fr: 'Gratuit : 50 éléments d’historique, 10 favoris, 15 traductions par jour, 5 phrases rapides.', en: 'Free: 50 history items, 10 favorites, 15 translations a day, 5 quick phrases.', ar: 'مجاني: 50 عنصراً في السجل، 10 مفضلات، 15 ترجمة يومياً، 5 عبارات سريعة.' },
+        premium: { fr: 'Premium : historique jusqu’à 1 000 éléments, favoris, traductions et phrases illimités, verrou Face ID, sauvegarde et import, QR codes, nettoyage des liens et extraction. 1,99 €/mois, 12,99 €/an (7 jours offerts) ou 24,99 € à vie.', en: 'Premium: history up to 1,000 items, unlimited favorites, translations and phrases, Face ID lock, backup and import, QR codes, link cleaning and extraction. €1.99/month, €12.99/year (7 days free) or €24.99 lifetime.', ar: 'Premium: سجل حتى 1000 عنصر، مفضلة وترجمات وعبارات غير محدودة، قفل Face ID، نسخ احتياطي واستيراد، رموز QR، تنظيف الروابط والاستخراج. 1.99 € شهرياً أو 12.99 € سنوياً (7 أيام مجانية) أو 24.99 € مدى الحياة.' },
+        extras: { fr: 'Extension de partage « Enregistrer dans Clipglot », widget des favoris, raccourcis Siri, catégories et tri par date.', en: 'Share extension “Save to Clipglot”, favorites widget, Siri shortcuts, categories and date sorting.', ar: 'امتداد المشاركة «حفظ في Clipglot»، وويدجت المفضلة، واختصارات Siri، والتصنيفات والفرز حسب التاريخ.' },
         note: { fr: 'Bientôt sur l’App Store.', en: 'Coming soon to the App Store.', ar: 'قريباً على App Store.' },
         tagline: { fr: 'Tout ce que tu copies, au même endroit.', en: 'Everything you copy, in one place.', ar: 'كل ما تنسخه، في مكان واحد.' },
         description: {
@@ -531,10 +534,10 @@ function loadTour() {
         tourLoading = new Promise((resolve, reject) => {
             const link = document.createElement('link');
             link.rel = 'stylesheet';
-            link.href = 'tour.css?v=6900';
+            link.href = 'tour.css?v=6910';
             document.head.appendChild(link);
             const script = document.createElement('script');
-            script.src = 'tour.js?v=6900';
+            script.src = 'tour.js?v=6910';
             script.onload = () => resolve(window.PortfolioTour);
             script.onerror = reject;
             document.head.appendChild(script);
@@ -656,6 +659,7 @@ function renderAppDetail() {
         </div>
         <div class="app-hero-body app-hero-info">
             <p class="app-description" data-app="${appId}" data-app-field="description">${app.description[currentLang]}</p>
+            ${app.free ? `<p class="app-tier" data-app="${appId}" data-app-field="free">${app.free[currentLang]}</p><p class="app-tier" data-app="${appId}" data-app-field="premium">${app.premium[currentLang]}</p><p class="app-tier" data-app="${appId}" data-app-field="extras">${app.extras[currentLang]}</p>` : ''}
             <ul class="feature-list" data-app="${appId}" data-feature-list aria-label="${name}">${app.features[currentLang].map(feature => `<li>${feature}</li>`).join('')}</ul>
             ${app.privacy && app.terms ? `<div class="legal-row">
                 <a href="${app.privacy}" data-i18n="link_privacy">Confidentialité</a>
