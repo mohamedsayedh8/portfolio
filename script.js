@@ -497,6 +497,17 @@ window.setLanguage = function(lang, remember = true) {
     }
 
     updateContactMailto();
+    if (document.body.classList.contains('home-page')) {
+        const meta = {
+            fr: ['Mohamed Sayed — Développeur d’applications mobiles', 'Mohamed Sayed, développeur indépendant basé à Paris : applications mobiles, plateformes et sites web. Zikr, Kinto et Clipglot.'],
+            en: ['Mohamed Sayed — Mobile app developer', 'Mohamed Sayed, independent developer based in Paris: mobile apps, platforms and websites. Zikr, Kinto and Clipglot.'],
+            ar: ['محمد سيد — مطوّر تطبيقات الهاتف', 'محمد سيد، مطوّر مستقل مقيم في باريس: تطبيقات هاتف ومنصات ومواقع ويب. Zikr وKinto وClipglot.']
+        }[lang] || [];
+        if (meta[0]) {
+            document.title = meta[0];
+            document.querySelector('meta[name="description"]')?.setAttribute('content', meta[1]);
+        }
+    }
     document.dispatchEvent(new CustomEvent('portfolio:lang', { detail: lang }));
 
     if (remember) {
