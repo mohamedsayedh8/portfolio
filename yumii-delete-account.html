@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppression de compte — Yumii</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg?v=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=6910">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">Mohamed Sayed</a>
+            <div class="nav-controls">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+                    <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">AR</button>
+                </div>
+                <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème">
+                    <i class="icon-sun"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="top">
+        <section class="legal-page">
+            <div class="container-narrow">
+                <a href="index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> <span data-i18n="link_back">Accueil</span></a>
+
+                <h1 data-page-i18n="title">🗑️ Suppression de compte — Yumii</h1>
+                <span class="last-updated" data-page-i18n="updated">Dernière mise à jour : 12 novembre 2026</span>
+
+                <div class="legal-content">
+                    <p data-page-i18n="intro">Vous pouvez supprimer votre compte <strong>Yumii</strong> (application éditée par Mohamed Sayed) et les données associées à tout moment. Cette page explique comment faire et ce qui est supprimé.</p>
+
+                    <h2 data-page-i18n="h1">1. Comment supprimer votre compte</h2>
+                    <ul>
+                        <li data-page-i18n="li1"><strong>Depuis l'application</strong> : ouvrez Yumii, puis Réglages → Mon profil → Supprimer mon compte.</li>
+                        <li data-page-i18n="li2"><strong>Par e-mail</strong> : écrivez à <a href="mailto:contact@mohameds.net">contact@mohameds.net</a> depuis l'adresse utilisée pour vous connecter (Google ou Apple), avec l'objet « Supprimer mon compte Yumii ».</li>
+                    </ul>
+
+                    <h2 data-page-i18n="h2">2. Ce qui est supprimé</h2>
+                    <ul>
+                        <li data-page-i18n="li3">Votre compte Firebase (adresse e-mail, nom, identifiant utilisateur).</li>
+                        <li data-page-i18n="li4">Le lien entre votre compte et votre abonnement Yumii Pro.</li>
+                    </ul>
+
+                    <h2 data-page-i18n="h3">3. Ce qui est conservé</h2>
+                    <ul>
+                        <li data-page-i18n="li5">Rien n'est conservé sur nos serveurs. Votre journal de repas, l'eau, le poids et le sommeil restent uniquement sur votre téléphone : supprimer l'application les efface.</li>
+                        <li data-page-i18n="li6">Les statistiques d'usage anonymes (PostHog) ne sont pas rattachées à votre compte.</li>
+                    </ul>
+
+                    <h2 data-page-i18n="h4">4. Abonnements</h2>
+                    <p data-page-i18n="p2">Les abonnements sont gérés par l'App Store ou Google Play. Supprimer votre compte ne résilie pas votre abonnement : pensez à le résilier depuis l'App Store ou Google Play.</p>
+
+                    <h2 data-page-i18n="h6">5. Délai</h2>
+                    <p data-page-i18n="p3">Votre compte est supprimé dans un délai de 30 jours maximum.</p>
+
+                    <h2 data-page-i18n="h5">6. Contact</h2>
+                    <p><a href="mailto:contact@mohameds.net">contact@mohameds.net</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact" id="contact">
+            <div class="container-narrow">
+                <h2 class="section-label" data-i18n="contact_title">Contact</h2>
+                <p class="contact-desc" data-i18n="contact_subtitle">Une idée de projet ? Écrivez-moi.</p>
+                <div class="social-row">
+                    <a href="tel:+33753418824" aria-label="Téléphone"><i class="fas fa-phone"></i></a>
+                    <a href="mailto:contact@mohameds.net" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/mohamed-elhawawshi-6024a92a5?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/msayyyed1?s=11" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/msayyyed?stkn=MWQyd2dsbDV5NDJnaw%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container-narrow footer-inner">
+            <p>&copy; 2026 Mohamed Sayed</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=7006"></script>
+    <script>
+        window.pageTranslations = {
+    "fr": {
+        "title": "🗑️ Suppression de compte — Yumii",
+        "updated": "Dernière mise à jour : 12 novembre 2026",
+        "intro": "Vous pouvez supprimer votre compte <strong>Yumii</strong> (application éditée par Mohamed Sayed) et les données associées à tout moment. Cette page explique comment faire et ce qui est supprimé.",
+        "h1": "1. Comment supprimer votre compte",
+        "li1": "<strong>Depuis l'application</strong> : ouvrez Yumii, puis Réglages → Mon profil → Supprimer mon compte.",
+        "li2": "<strong>Par e-mail</strong> : écrivez à <a href=\"mailto:contact@mohameds.net\">contact@mohameds.net</a> depuis l'adresse utilisée pour vous connecter (Google ou Apple), avec l'objet « Supprimer mon compte Yumii ».",
+        "h2": "2. Ce qui est supprimé",
+        "li3": "Votre compte Firebase (adresse e-mail, nom, identifiant utilisateur).",
+        "li4": "Le lien entre votre compte et votre abonnement Yumii Pro.",
+        "h3": "3. Ce qui est conservé",
+        "li5": "Rien n'est conservé sur nos serveurs. Votre journal de repas, l'eau, le poids et le sommeil restent uniquement sur votre téléphone : supprimer l'application les efface.",
+        "li6": "Les statistiques d'usage anonymes (PostHog) ne sont pas rattachées à votre compte.",
+        "h4": "4. Abonnements",
+        "p2": "Les abonnements sont gérés par l'App Store ou Google Play. Supprimer votre compte ne résilie pas votre abonnement : pensez à le résilier depuis l'App Store ou Google Play.",
+        "h6": "5. Délai",
+        "p3": "Votre compte est supprimé dans un délai de 30 jours maximum.",
+        "h5": "6. Contact"
+    },
+    "en": {
+        "title": "🗑️ Account Deletion — Yumii",
+        "updated": "Last updated: November 12, 2026",
+        "intro": "You can delete your <strong>Yumii</strong> account (app published by Mohamed Sayed) and its associated data at any time. This page explains how, and what is deleted.",
+        "h1": "1. How to delete your account",
+        "li1": "<strong>From the app</strong>: open Yumii, then Settings → My profile → Delete my account (the menu labels are in French in the app).",
+        "li2": "<strong>By email</strong>: write to <a href=\"mailto:contact@mohameds.net\">contact@mohameds.net</a> from the address you use to sign in (Google or Apple), with the subject “Supprimer mon compte Yumii”.",
+        "h2": "2. What is deleted",
+        "li3": "Your Firebase account (email address, name, user ID).",
+        "li4": "The link between your account and your Yumii Pro subscription.",
+        "h3": "3. What is kept",
+        "li5": "Nothing is kept on our servers. Your meal journal, water, weight and sleep stay only on your phone: deleting the app erases them.",
+        "li6": "Anonymous usage statistics (PostHog) are not linked to your account.",
+        "h4": "4. Subscriptions",
+        "p2": "Subscriptions are managed by the App Store or Google Play. Deleting your account does not cancel your subscription: remember to cancel it in the App Store or Google Play.",
+        "h6": "5. Timeframe",
+        "p3": "Your account is deleted within 30 days at most.",
+        "h5": "6. Contact"
+    },
+    "ar": {
+        "title": "🗑️ حذف الحساب — Yumii",
+        "updated": "آخر تحديث: 12 نوفمبر 2026",
+        "intro": "يمكنك حذف حسابك في <strong>Yumii</strong> (تطبيق من تطوير محمد سيد) والبيانات المرتبطة به في أي وقت. توضح هذه الصفحة الطريقة وما الذي يتم حذفه.",
+        "h1": "١. كيفية حذف حسابك",
+        "li1": "<strong>من داخل التطبيق</strong>: افتح Yumii، ثم الإعدادات ← ملفي الشخصي ← حذف حسابي (تظهر أسماء القوائم بالفرنسية في التطبيق).",
+        "li2": "<strong>عبر البريد الإلكتروني</strong>: راسل <a href=\"mailto:contact@mohameds.net\">contact@mohameds.net</a> من العنوان الذي تستخدمه لتسجيل الدخول (Google أو Apple)، بعنوان الرسالة «Supprimer mon compte Yumii».",
+        "h2": "٢. ما الذي يتم حذفه",
+        "li3": "حسابك في Firebase (البريد الإلكتروني والاسم ومعرّف المستخدم).",
+        "li4": "الرابط بين حسابك واشتراك Yumii Pro.",
+        "h3": "٣. ما الذي يتم الاحتفاظ به",
+        "li5": "لا يُحتفظ بأي شيء على خوادمنا. تبقى يوميات وجباتك والماء والوزن والنوم على هاتفك فقط، وحذف التطبيق يمسحها.",
+        "li6": "إحصاءات الاستخدام المجهولة (PostHog) غير مرتبطة بحسابك.",
+        "h4": "٤. الاشتراكات",
+        "p2": "تُدار الاشتراكات عبر App Store أو Google Play. حذف حسابك لا يلغي اشتراكك: تذكّر إلغاءه من App Store أو Google Play.",
+        "h6": "٥. المهلة",
+        "p3": "يُحذف حسابك خلال 30 يوماً كحد أقصى.",
+        "h5": "٦. التواصل"
+    }
+};
+    </script>
+</body>
+</html>

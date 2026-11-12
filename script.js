@@ -432,6 +432,7 @@ const appsData = {
         googlePlay: null,
         privacy: 'yumii-privacy.html',
         terms: 'yumii-terms.html',
+        deleteAccount: 'yumii-delete-account.html',
         note: { fr: 'Bientôt sur l’App Store.', en: 'Coming soon to the App Store.', ar: 'قريباً على App Store.' },
         tagline: { fr: 'Prends ton plat en photo, découvre ses calories.', en: 'Snap your meal, see its calories.', ar: 'صوّر طبقك واعرف سعراته.' },
         description: {
