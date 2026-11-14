@@ -59,6 +59,11 @@ const translations = {
         screens_kicker_web: 'Aperçu du projet',
         screens_title: 'Pensée dans chaque détail.',
         project_open: 'Découvrir le projet',
+        status_live: 'Disponible',
+        status_soon: 'Bientôt',
+        hero_stat_apps: 'apps',
+        hero_stat_stores: 'stores',
+        hero_stat_langs: 'langues',
         portfolio_kicker: 'Sélection · 2026',
         portfolio_title: 'Des idées transformées en produits.',
         portfolio_intro: 'Applications, plateformes et sites web conçus avec soin, de l’idée à leur mise en ligne.',
@@ -177,6 +182,11 @@ const translations = {
         screens_kicker_web: 'Project preview',
         screens_title: 'Considered in every detail.',
         project_open: 'Explore the project',
+        status_live: 'Available',
+        status_soon: 'Coming soon',
+        hero_stat_apps: 'apps',
+        hero_stat_stores: 'stores',
+        hero_stat_langs: 'languages',
         portfolio_kicker: 'Selected work · 2026',
         portfolio_title: 'Ideas, shaped into products.',
         portfolio_intro: 'Apps, platforms and websites, thoughtfully built from the first idea to launch.',
@@ -295,6 +305,11 @@ const translations = {
         screens_kicker_web: 'نظرة على المشروع',
         screens_title: 'عناية في كل تفصيل.',
         project_open: 'اكتشف المشروع',
+        status_live: 'متاح',
+        status_soon: 'قريباً',
+        hero_stat_apps: 'تطبيقات',
+        hero_stat_stores: 'متجران',
+        hero_stat_langs: 'لغات',
         portfolio_kicker: 'مشاريع مختارة · 2026',
         portfolio_title: 'أفكار تتحول إلى منتجات.',
         portfolio_intro: 'تطبيقات ومنصات ومواقع صُمّمت بعناية من الفكرة إلى الإطلاق.',
@@ -653,6 +668,7 @@ function renderAppCards() {
             <a class="app-card" href="${id}.html" data-reveal data-tilt style="--reveal-delay: ${Object.keys(appsData).indexOf(id) * 110}ms">
                 <div class="app-card-inner">
                     ${preview}
+                    <span class="app-card-status ${app.appStore || app.googlePlay ? 'is-live' : 'is-soon'}" data-i18n="${app.appStore || app.googlePlay ? 'status_live' : 'status_soon'}">${translations[currentLang][app.appStore || app.googlePlay ? 'status_live' : 'status_soon']}</span>
                     <span class="app-card-category" data-app="${id}" data-app-field="category">${app.category[currentLang]}</span>
                     <h3 class="app-card-name">${name}</h3>
                     <p class="app-card-tagline" data-app="${id}" data-app-field="tagline">${app.tagline[currentLang]}</p>

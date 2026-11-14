@@ -98,7 +98,7 @@ body.home-page .app-card .app-card-inner {
   transition: transform .35s cubic-bezier(.2,.75,.25,1), border-color .3s ease;
 }
 body.home-page .app-card:hover .app-card-inner { transform: translateY(-4px); border-color: var(--text); }
-body.home-page .app-card .project-preview { grid-column: 1; grid-row: 1 / span 6; margin: 0; border-radius: 0; display: flex; justify-content: center; align-items: flex-end; padding: clamp(1.6rem, 4vw, 3rem) 1rem 0; height: auto; min-height: 420px; overflow: hidden; border: 0; box-shadow: none; }
+body.home-page .app-card .project-preview { grid-column: 1; grid-row: 1 / span 7; margin: 0; border-radius: 0; display: flex; justify-content: center; align-items: flex-end; padding: clamp(1.6rem, 4vw, 3rem) 1rem 0; height: auto; min-height: 420px; overflow: hidden; border: 0; box-shadow: none; }
 body.home-page .app-card:nth-child(1) .project-preview { background: linear-gradient(160deg, #0f7a52, #0a3a2a); }
 body.home-page .app-card:nth-child(2) .project-preview { background: linear-gradient(160deg, #3d44d8, #1b1d5c); }
 body.home-page .app-card:nth-child(3) .project-preview { background: linear-gradient(160deg, #e2468b, #7b3fe4); }
@@ -217,3 +217,18 @@ html[dir="rtl"] .hx-h2, html[dir="rtl"] .hx-big, html[dir="rtl"] body.home-page 
 html[dir="rtl"] .hx-skill-list li + li { border-left: 0; border-right: 1px solid var(--border); padding-left: 0; padding-right: 1.4rem; }
 html[dir="rtl"] .hx-mail { direction: ltr; }
 html[dir="rtl"] .nav-brand, html[dir="rtl"] .hx-title .hero-name { direction: ltr; unicode-bidi: isolate; }
+
+
+/* --- Hero stats, card numbering and status pills --- */
+.hx-stats { display: flex; flex-wrap: wrap; gap: 1.2rem 2.4rem; list-style: none; margin: 2.6rem 0 0; padding: 1.4rem 0 0; border-top: 1px solid var(--border); }
+.hx-stats li { display: flex; align-items: baseline; gap: .55rem; }
+.hx-stats strong { font-size: 1.9rem; font-weight: 800; letter-spacing: -.03em; line-height: 1; color: var(--ink); }
+.hx-stats span { font-size: .85rem; color: var(--text-muted); max-width: 12ch; line-height: 1.25; }
+body.home-page #apps-grid { counter-reset: app; }
+body.home-page .app-card { counter-increment: app; }
+body.home-page .app-card-name::after { content: counter(app, decimal-leading-zero); margin-inline-start: .9rem; font-size: .9rem; font-weight: 600; letter-spacing: .08em; vertical-align: top; color: var(--text-muted); font-family: inherit; }
+body.home-page .app-card-status { justify-self: start; margin-top: clamp(1.8rem, 4vw, 3rem); display: inline-flex; align-items: center; gap: .45rem; padding: .38rem .8rem; border-radius: 99px; font-size: .74rem; font-weight: 700; letter-spacing: .04em; background: var(--accent-soft); color: var(--text); border: 1px solid var(--border); }
+body.home-page .app-card-status + .app-card-category { margin-top: 1.1rem; }
+body.home-page .app-card-status::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: #f2a63b; }
+body.home-page .app-card-status.is-live::before { background: #1fb86a; box-shadow: 0 0 0 3px rgba(31,184,106,.25); }
+@media (max-width: 620px) { .hx-stats { gap: .9rem 1.6rem; } .hx-stats strong { font-size: 1.6rem; } }
