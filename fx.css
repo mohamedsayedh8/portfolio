@@ -61,3 +61,45 @@ body.home-page .hx-stats li { background: color-mix(in srgb, var(--card) 55%, tr
 }
 @media (max-width: 820px) { .fx-aurora span { filter: blur(60px); } .fx-aurora span:nth-child(4) { display: none; } }
 @media (hover: none) { .hx-glare { display: none; } }
+
+/* ======== Motion design v2 (GSAP + Lenis) ======== */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Grain : texture fixe très légère, aucun coût en animation */
+.fx-grain { position: fixed; inset: -50%; z-index: 150; pointer-events: none; opacity: .07; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E"); }
+body.home-page.dark-mode .fx-grain { mix-blend-mode: screen; opacity: .06; }
+
+/* Titre : lettres + dégradé qui bouge */
+.hero-name .fx-l { display: inline-block; will-change: transform, opacity; }
+.hero-name .fx-w { display: inline-block; white-space: nowrap; }
+.hero-name.fx-ready .fx-w.fx-grad .fx-l { background: linear-gradient(100deg, #1fb86a, #5b63ff 30%, #ff5c8a 60%, #f4b13c 90%, #1fb86a); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: fx-hue 7s linear infinite; }
+@keyframes fx-hue { to { background-position: -300% 0; } }
+.hx-h2 .fx-line, .hx-big .fx-line { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .08em; }
+.hx-h2 .fx-line > span, .hx-big .fx-line > span { display: inline-block; will-change: transform; }
+
+/* Bande défilante entre les sections */
+.fx-marquee { overflow: hidden; border-block: 1px solid var(--border); padding: 1.1rem 0; margin: 0; white-space: nowrap; }
+.fx-marquee-track { display: inline-flex; gap: 3rem; will-change: transform; padding-inline-end: 3rem; }
+.fx-marquee span { font-size: clamp(2rem, 6vw, 4.4rem); font-weight: 800; letter-spacing: -.04em; color: transparent; -webkit-text-stroke: 1.5px var(--text); }
+.fx-marquee span:nth-child(4n+2) { color: var(--text); -webkit-text-stroke: 0; }
+.fx-marquee span i { font-style: normal; color: var(--accent); -webkit-text-stroke: 0; margin-inline-start: 3rem; }
+
+/* Curseur personnalisé (ordinateur seulement) */
+.fx-cursor, .fx-cursor-dot { position: fixed; top: 0; left: 0; z-index: 300; pointer-events: none; border-radius: 50%; opacity: 0; }
+.fx-cursor { width: 38px; height: 38px; margin: -19px 0 0 -19px; border: 1.5px solid var(--text); transition: width .25s, height .25s, margin .25s, background .25s, opacity .25s; mix-blend-mode: difference; border-color: #fff; }
+.fx-cursor-dot { width: 6px; height: 6px; margin: -3px 0 0 -3px; background: var(--accent); }
+.fx-cursor.is-on, .fx-cursor-dot.is-on { opacity: 1; }
+.fx-cursor.is-big { width: 70px; height: 70px; margin: -35px 0 0 -35px; background: rgba(255,255,255,.12); }
+html.fx-has-cursor, html.fx-has-cursor a, html.fx-has-cursor button { cursor: none; }
+
+/* Boutons magnétiques */
+.fx-mag { will-change: transform; }
+
+/* Aperçus des cartes : léger tilt scrub */
+body.home-page .app-card .project-preview .iphone-mockup { will-change: transform; }
+
+@media (max-width: 820px) { .fx-grain { opacity: .05; } .fx-marquee { padding: .8rem 0; } }
+@media (prefers-reduced-motion: reduce) { .fx-grain { display: none; } .hero-name.fx-ready .fx-w.fx-grad .fx-l { animation: none; } }
