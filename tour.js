@@ -89,7 +89,7 @@
         return node;
     };
 
-    let root, block, spot, card, parts, hud, toast, toastTimer;
+    let root, block, spot, card, parts, hud, toast, toastTimer, walker;
     let mode = 'closed';
     let index = 0;
     let currentTarget = null;
@@ -120,11 +120,33 @@
         parts.avatar.appendChild(avatar());
         parts.x.addEventListener('click', close);
         block.addEventListener('click', event => { if (mode === 'intro') close(); event.stopPropagation(); });
-        root.append(block, spot, card);
+        walker = make('div', 'tour-walker', { 'aria-hidden': 'true' });
+        walker.appendChild(avatar());
+        root.append(block, spot, walker, card);
         root.hidden = true;
         document.body.appendChild(root);
         document.addEventListener('keydown', onKey);
         document.addEventListener('portfolio:lang', () => { if (mode !== 'closed') render(); updateHud(); });
+    }
+
+    let typeTimer = 0;
+    function typeText(node, full) {
+        clearInterval(typeTimer);
+        node.setAttribute('aria-label', full);
+        node.setAttribute('role', 'text');
+        if (reduceMotion()) { node.textContent = full; return; }
+        node.textContent = '';
+        const visible = document.createElement('span');
+        visible.setAttribute('aria-hidden', 'true');
+        const caret = document.createElement('span');
+        caret.className = 'tour-caret'; caret.setAttribute('aria-hidden', 'true');
+        node.append(visible, caret);
+        let i = 0;
+        typeTimer = setInterval(() => {
+            i += 2;
+            visible.textContent = full.slice(0, i);
+            if (i >= full.length) { clearInterval(typeTimer); setTimeout(() => caret.remove(), 600); }
+        }, 22);
     }
 
     function button(label, className, handler) {
@@ -140,30 +162,33 @@
         parts.actions.replaceChildren();
         parts.bar.style.transform = 'scaleX(0)';
         parts.count.textContent = '';
-        root.classList.toggle('is-dim', mode !== 'step');
+        root.classList.toggle('is-dim', false);
+        card.classList.toggle('is-intro', mode === 'intro');
+        card.classList.toggle('is-reward', mode === 'questdone');
         spot.classList.toggle('is-off', mode !== 'step');
+        if (walker && mode !== 'step') walker.classList.remove('is-on');
 
         if (mode === 'intro') {
             parts.title.textContent = t('hello_title');
-            parts.text.textContent = t('hello_text');
+            typeText(parts.text, t('hello_text'));
             parts.actions.append(button(t('btn_tour'), 'is-primary', startTour), button(t('btn_alone'), '', close), button(t('btn_coins'), 'is-ghost', () => { close(); startQuest(); }));
         } else if (mode === 'step') {
             const step = STEPS[index];
             parts.count.textContent = t('counter', { n: index + 1, total: STEPS.length });
             parts.title.textContent = t(`${step.key}_title`);
-            parts.text.textContent = t(`${step.key}_text`);
+            typeText(parts.text, t(`${step.key}_text`));
             parts.bar.style.transform = `scaleX(${(index + 1) / (STEPS.length + 1)})`;
             const back = button(t('back'), '', () => goTo(index - 1));
             back.disabled = index === 0;
             parts.actions.append(back, button(index === STEPS.length - 1 ? t('finish') : t('next'), 'is-primary', () => (index === STEPS.length - 1 ? finale() : goTo(index + 1))), button(t('skip'), 'is-ghost', close));
         } else if (mode === 'finale') {
             parts.title.textContent = t('end_title');
-            parts.text.textContent = t('end_text');
+            typeText(parts.text, t('end_text'));
             parts.bar.style.transform = 'scaleX(1)';
             parts.actions.append(button(t('btn_coins'), 'is-primary', () => { close(); startQuest(); }), button(t('contact'), '', () => { close(); jumpToContact(); }), button(t('close'), 'is-ghost', close));
         } else if (mode === 'questdone') {
             parts.title.textContent = t('quest_done_title');
-            parts.text.textContent = t('quest_done_text');
+            typeText(parts.text, t('quest_done_text'));
             parts.bar.style.transform = 'scaleX(1)';
             parts.actions.append(button(t('contact'), 'is-primary', () => { close(); jumpToContact(); }), button(t('close'), 'is-ghost', close));
         }
@@ -247,6 +272,10 @@
                 spot.style.top = `${rect.top - pad}px`;
                 spot.style.width = `${rect.width + pad * 2}px`;
                 spot.style.height = `${rect.height + pad * 2}px`;
+                const wx = Math.min(window.innerWidth - 52, Math.max(8, rect.right - 46));
+                const wy = Math.max(64, Math.min(window.innerHeight * 0.55, rect.top - 50));
+                walker.style.transform = `translate(${wx}px, ${wy}px)`;
+                walker.classList.add('is-on');
             }
             frame = requestAnimationFrame(loop);
         };

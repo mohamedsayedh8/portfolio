@@ -71,6 +71,7 @@ const translations = {
         about_cta: 'Parlons de ton idée',
         about_p1: 'Je m’appelle Mohamed Sayed, développeur indépendant basé à Paris et étudiant en première année de licence d’informatique. Je conçois et je développe des applications mobiles, des plateformes et des sites web, de la première idée à la mise en ligne.',
         contact_title: 'Contact',
+        tour_hi: 'Salut',
         contact_subtitle: 'Une question, une idée ou un projet ? Écrivez-moi.',
         contact_cta: 'M’écrire',
         contact_copy: 'Copier l’adresse e-mail',
@@ -194,6 +195,7 @@ const translations = {
         about_cta: 'Let’s talk about your idea',
         about_p1: 'I’m Mohamed Sayed, an independent developer based in Paris and a first-year computer science student. I design and build mobile apps, platforms and websites, from the first idea to launch.',
         contact_title: 'Contact',
+        tour_hi: 'Hi',
         contact_subtitle: 'A question, an idea or a project? Get in touch.',
         contact_cta: 'Email me',
         contact_copy: 'Copy email address',
@@ -317,6 +319,7 @@ const translations = {
         about_cta: 'لنتحدث عن فكرتك',
         about_p1: 'أنا محمد سيد، مطوّر مستقل مقيم في باريس وطالب في السنة الأولى من الإجازة في علوم الحاسوب. أصمم وأطوّر تطبيقات الهاتف والمنصات ومواقع الويب، من الفكرة الأولى حتى الإطلاق.',
         contact_title: 'تواصل',
+        tour_hi: 'مرحباً',
         contact_subtitle: 'سؤال أو فكرة أو مشروع؟ راسلني.',
         contact_cta: 'راسلني',
         contact_copy: 'نسخ البريد الإلكتروني',
@@ -587,10 +590,10 @@ function loadTour() {
         tourLoading = new Promise((resolve, reject) => {
             const link = document.createElement('link');
             link.rel = 'stylesheet';
-            link.href = 'tour.css?v=6910';
+            link.href = 'tour.css?v=7010';
             document.head.appendChild(link);
             const script = document.createElement('script');
-            script.src = 'tour.js?v=6910';
+            script.src = 'tour.js?v=7010';
             script.onload = () => resolve(window.PortfolioTour);
             script.onerror = reject;
             document.head.appendChild(script);

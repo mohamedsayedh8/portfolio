@@ -4,7 +4,7 @@
 .tour-block { position: fixed; inset: 0; z-index: 1; pointer-events: auto; background: transparent; transition: background .3s ease; }
 .tour-root.is-dim .tour-block { background: rgba(4, 7, 6, .62); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
 
-.tour-spot { position: fixed; z-index: 2; border-radius: 18px; pointer-events: none; outline: 2px solid var(--accent); outline-offset: 0; box-shadow: 0 0 0 100vmax rgba(4, 7, 6, .72), 0 0 32px color-mix(in srgb, var(--accent) 55%, transparent); }
+.tour-spot { position: fixed; z-index: 2; border-radius: 18px; pointer-events: none; outline: 2px solid var(--accent); outline-offset: 0; box-shadow: 0 0 0 100vmax rgba(4, 7, 6, .5), 0 0 32px color-mix(in srgb, var(--accent) 55%, transparent); }
 .tour-spot.is-off { opacity: 0; }
 .tour-spot.is-moving { transition: left .42s cubic-bezier(.2, .8, .2, 1), top .42s cubic-bezier(.2, .8, .2, 1), width .42s cubic-bezier(.2, .8, .2, 1), height .42s cubic-bezier(.2, .8, .2, 1), opacity .25s ease; }
 
@@ -68,4 +68,77 @@ html[dir="rtl"] .tour-progress span { transform-origin: right center; }
 
 @media (min-width: 900px) {
     .tour-card { inset-inline-start: auto; inset-inline-end: 1.5rem; width: 420px; margin-inline: 0; }
+}
+
+/* ======== Jumeau pixel v2 : verre, dialogue rétro, pastilles ======== */
+/* Plus de voile ni de flou sur le site : la fenêtre se pose par-dessus, c'est tout */
+.tour-root.is-dim .tour-block, .tour-block { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
+
+.tour-card {
+    max-height: min(36vh, 360px); overflow: auto; padding: .9rem 1rem 1rem; border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, .5);
+    background:
+        radial-gradient(18rem 9rem at 0% 0%, rgba(31, 184, 106, .22), transparent 70%),
+        radial-gradient(16rem 9rem at 100% 100%, rgba(255, 92, 138, .2), transparent 70%),
+        color-mix(in srgb, var(--bg) 90%, transparent);
+    -webkit-backdrop-filter: blur(22px) saturate(170%); backdrop-filter: blur(22px) saturate(170%);
+    box-shadow: 0 18px 50px -12px rgba(0, 0, 0, .35), inset 0 1px 0 rgba(255, 255, 255, .5);
+    animation: tour-pop .55s cubic-bezier(.2, 1.2, .3, 1) both;
+}
+body.dark-mode .tour-card { border-color: rgba(255, 255, 255, .14); box-shadow: 0 18px 50px -12px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .1); }
+@keyframes tour-pop { from { opacity: 0; transform: translateY(26px) scale(.94); } to { opacity: 1; transform: none; } }
+.tour-card-head { gap: .7rem; }
+.tour-card-title { font-size: 1rem; }
+.tour-card-avatar { width: 52px; height: 52px; border-radius: 14px; border: 2px solid var(--text); background: color-mix(in srgb, #1fb86a 18%, var(--card)); box-shadow: 3px 3px 0 var(--text); animation: tour-hop 1.9s cubic-bezier(.3, 0, .3, 1) infinite; transform-origin: 50% 100%; }
+@keyframes tour-hop { 0%, 55%, 100% { transform: translateY(0) scale(1, 1); } 62% { transform: translateY(1px) scale(1.06, .92); } 74% { transform: translateY(-9px) scale(.96, 1.06); } 88% { transform: translateY(0) scale(1.04, .96); } }
+
+/* Texte qui s'écrit, comme un dialogue de jeu */
+.tour-card-text { margin: .6rem 0 .7rem; padding: .6rem .75rem; border: 2px solid var(--text); border-radius: 12px; background: color-mix(in srgb, var(--card) 80%, transparent); color: var(--text); font-size: .9rem; line-height: 1.55; min-height: 3.4em; position: relative; }
+.tour-card-text::before { content: ""; position: absolute; top: -8px; inset-inline-start: 22px; width: 12px; height: 12px; background: color-mix(in srgb, var(--card) 80%, var(--bg)); border-top: 2px solid var(--text); border-inline-start: 2px solid var(--text); transform: rotate(45deg); }
+.tour-caret { display: inline-block; width: .5em; height: 1em; margin-inline-start: 2px; vertical-align: -.12em; background: var(--text); animation: tour-blink .7s steps(2) infinite; }
+@keyframes tour-blink { 50% { opacity: 0; } }
+
+/* Fermer : bouton clair */
+.tour-x { width: 40px; height: 40px; border: 2px solid var(--text); color: var(--text); background: var(--card); font-size: 1.3rem; box-shadow: 2px 2px 0 var(--text); }
+.tour-x:hover { background: var(--text); color: var(--bg); }
+
+/* Choix = petites pastilles qui apparaissent une à une */
+.tour-card.is-intro .tour-card-count, .tour-card.is-intro .tour-progress { display: none; }
+.tour-card.is-intro .tour-actions { flex-wrap: wrap; gap: .45rem; }
+.tour-card.is-intro .tour-btn { flex: 0 0 auto; min-height: 38px; padding: .4rem .95rem; border: 2px solid var(--text); border-radius: 99px; background: var(--card); color: var(--text); font-size: .82rem; box-shadow: 2px 2px 0 var(--text); animation: tour-chip .5s cubic-bezier(.2, 1.3, .3, 1) both; }
+.tour-card.is-intro .tour-btn:nth-child(1) { animation-delay: .5s; background: #1fb86a; color: #fff; border-color: var(--text); }
+.tour-card.is-intro .tour-btn:nth-child(2) { animation-delay: .62s; }
+.tour-card.is-intro .tour-btn:nth-child(3) { animation-delay: .74s; background: #f4b13c; color: #1a1305; }
+.tour-card.is-intro .tour-btn:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--text); }
+.tour-card.is-intro .tour-btn:active { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--text); }
+@keyframes tour-chip { from { opacity: 0; transform: translateY(10px) scale(.7); } to { opacity: 1; transform: none; } }
+.tour-progress span { background: linear-gradient(90deg, #1fb86a, #5b63ff, #ff5c8a); }
+
+/* Le personnage se déplace vers chaque section pendant la visite */
+.tour-walker { position: fixed; z-index: 4; top: 0; left: 0; width: 40px; height: 54px; pointer-events: none; opacity: 0; transition: transform .7s cubic-bezier(.3, 1.25, .4, 1), opacity .3s; filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .3)); }
+.tour-walker.is-on { opacity: 1; }
+.tour-walker svg { width: 100%; height: 100%; animation: tour-hop 1.2s cubic-bezier(.3, 0, .3, 1) infinite; transform-origin: 50% 100%; }
+
+/* Pièces qui brillent */
+.tour-coin { opacity: .9; animation: coin-bob 2.6s ease-in-out infinite, coin-shine 1.8s ease-in-out infinite; }
+@keyframes coin-shine { 0%, 100% { box-shadow: inset 0 0 0 3px rgba(122, 84, 16, .35), 0 0 0 0 rgba(245, 197, 66, .6); } 50% { box-shadow: inset 0 0 0 3px rgba(122, 84, 16, .35), 0 0 16px 6px rgba(245, 197, 66, .55); } }
+/* Compteur en haut de l'écran */
+.tour-hud { bottom: auto; top: calc(max(.7rem, env(safe-area-inset-top)) + 3.4rem); border: 2px solid var(--text); border-radius: 99px; box-shadow: 3px 3px 0 var(--text); }
+.tour-toast { bottom: auto; top: calc(max(.7rem, env(safe-area-inset-top)) + 7rem); }
+.tour-card.is-reward { background-image: radial-gradient(18rem 9rem at 50% 0%, rgba(244, 177, 60, .35), transparent 70%), radial-gradient(16rem 9rem at 100% 100%, rgba(255, 92, 138, .2), transparent 70%); }
+
+@media (max-width: 480px) {
+    .tour-card { padding: .7rem; max-height: none; width: calc(100vw - 1rem); }
+    .tour-card-avatar { width: 44px; height: 44px; }
+    .tour-card-avatar svg { width: 30px; }
+    .tour-card-title { font-size: .92rem; }
+    .tour-x { width: 36px; height: 36px; }
+    .tour-card-text { font-size: .82rem; padding: .45rem .6rem; margin: .5rem 0 .55rem; min-height: 0; line-height: 1.45; }
+    .tour-progress { margin-bottom: .55rem; }
+    .tour-btn { min-height: 38px; padding: .4rem .6rem; font-size: .8rem; }
+    .tour-card.is-intro .tour-btn { flex: 1 1 auto; padding-inline: .6rem; font-size: .78rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .tour-card, .tour-card-avatar, .tour-walker svg, .tour-coin, .tour-caret, .tour-card.is-intro .tour-btn { animation: none; }
+    .tour-walker { transition: opacity .2s; }
 }
