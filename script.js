@@ -80,6 +80,7 @@ const translations = {
         footer_role: 'Développeur indépendant',
         footer_note: 'Applications, plateformes et sites web conçus avec soin.',
         footer_contact: 'Me contacter',
+        footer_404: 'Page 404 : joue à Bug Runner',
         footer_top: 'Retour en haut',
         nav_journey: 'Parcours',
         command_journey: 'Voir le parcours',
@@ -204,6 +205,7 @@ const translations = {
         footer_role: 'Independent developer',
         footer_note: 'Apps, platforms and websites, thoughtfully made.',
         footer_contact: 'Get in touch',
+        footer_404: '404 page: play Bug Runner',
         footer_top: 'Back to top',
         nav_journey: 'Journey',
         command_journey: 'View journey',
@@ -328,6 +330,7 @@ const translations = {
         footer_role: 'مطوّر مستقل',
         footer_note: 'تطبيقات ومنصات ومواقع ويب مصممة بعناية.',
         footer_contact: 'تواصل معي',
+        footer_404: 'صفحة 404: العب Bug Runner',
         footer_top: 'العودة إلى الأعلى',
         nav_journey: 'المسار',
         command_journey: 'عرض المسار',
@@ -590,10 +593,10 @@ function loadTour() {
         tourLoading = new Promise((resolve, reject) => {
             const link = document.createElement('link');
             link.rel = 'stylesheet';
-            link.href = 'tour.css?v=7010';
+            link.href = 'tour.css?v=7011';
             document.head.appendChild(link);
             const script = document.createElement('script');
-            script.src = 'tour.js?v=7010';
+            script.src = 'tour.js?v=7011';
             script.onload = () => resolve(window.PortfolioTour);
             script.onerror = reject;
             document.head.appendChild(script);

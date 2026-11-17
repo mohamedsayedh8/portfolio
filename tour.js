@@ -14,6 +14,7 @@
             step4_title: 'Ses projets', step4_text: 'Zikr, Kinto, Yumii et Clipglot : touche une carte pour découvrir le projet, ses captures et ses liens de téléchargement.',
             step5_title: 'Son parcours', step5_text: 'Zikr en mars 2026, Kinto en avril, puis Yumii et Clipglot en novembre, en parallèle de ses études.',
             step6_title: 'Parlons-en', step6_text: 'Une question, une idée ou un projet ? Écris à contact@mohameds.net ou utilise les boutons de contact.',
+            step7_title: 'Une page secrète', step7_text: 'Tu as perdu un lien ? La page 404 cache un petit jeu : Bug Runner. Attrape les 4 apps et évite les bugs.',
             end_title: 'Visite terminée !', end_text: 'Merci d’être passé. Un petit défi ? 8 pièces sont cachées sur cette page.',
             counter: 'Visite {n}/{total}', back: 'Retour', next: 'Suivant', skip: 'Passer', close: 'Fermer', finish: 'Terminer', contact: 'Me contacter',
             coin_aria: 'Pièce cachée', coin_found: 'Pièce trouvée ! {n}/{total}', hud: 'Pièces {n}/{total}', quest_start: 'Chasse lancée : 8 pièces sont cachées sur la page.',
@@ -29,6 +30,7 @@
             step4_title: 'His projects', step4_text: 'Zikr, Kinto, Yumii and Clipglot: tap a card to explore the project, its screenshots and its download links.',
             step5_title: 'His journey', step5_text: 'Zikr in March 2026, Kinto in April, then Yumii and Clipglot in November, alongside his studies.',
             step6_title: 'Let’s talk', step6_text: 'A question, an idea or a project? Write to contact@mohameds.net or use the contact buttons.',
+            step7_title: 'A secret page', step7_text: 'Lost a link? The 404 page hides a small game: Bug Runner. Catch the 4 apps and dodge the bugs.',
             end_title: 'Tour complete!', end_text: 'Thanks for stopping by. Up for a small challenge? 8 coins are hidden on this page.',
             counter: 'Tour {n}/{total}', back: 'Back', next: 'Next', skip: 'Skip', close: 'Close', finish: 'Finish', contact: 'Get in touch',
             coin_aria: 'Hidden coin', coin_found: 'Coin found! {n}/{total}', hud: 'Coins {n}/{total}', quest_start: 'Hunt started: 8 coins are hidden on the page.',
@@ -44,6 +46,7 @@
             step4_title: 'مشاريعه', step4_text: 'ذكر وKinto وYumii وClipglot: اضغط على أي بطاقة لاكتشاف المشروع ولقطاته وروابط التحميل.',
             step5_title: 'مساره', step5_text: '«ذكر» في مارس 2026، وKinto في أبريل، ثم Yumii وClipglot في نوفمبر، بالتوازي مع دراسته.',
             step6_title: 'لنتحدث', step6_text: 'سؤال أو فكرة أو مشروع؟ راسله على contact@mohameds.net أو استخدم أزرار التواصل.',
+            step7_title: 'صفحة سرية', step7_text: 'ضاع رابط؟ صفحة 404 تخفي لعبة صغيرة: Bug Runner. التقط التطبيقات الأربعة وتجنّب الأخطاء.',
             end_title: 'انتهت الجولة!', end_text: 'شكراً لزيارتك. هل تريد تحدياً صغيراً؟ هناك 8 عملات مخبأة في هذه الصفحة.',
             counter: 'الجولة {n}/{total}', back: 'السابق', next: 'التالي', skip: 'تخطّي', close: 'إغلاق', finish: 'إنهاء', contact: 'تواصل معي',
             coin_aria: 'عملة مخبأة', coin_found: 'وجدت عملة! {n}/{total}', hud: 'العملات {n}/{total}', quest_start: 'بدأ البحث: هناك 8 عملات مخبأة في الصفحة.',
@@ -57,7 +60,8 @@
         { target: '#skills .hx-skill-list', key: 'step3' },
         { target: '#projects .apps-grid', key: 'step4' },
         { target: '#journey .hx-timeline', key: 'step5' },
-        { target: '#contact .container', key: 'step6' }
+        { target: '#contact .container', key: 'step6' },
+        { target: '.footer-404', key: 'step7' }
     ];
 
     const COIN_SPOTS = [

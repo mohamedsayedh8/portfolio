@@ -1667,3 +1667,6 @@ html[dir="rtl"] .visual-chip { text-align: right; }
 @media (hover: hover) { .tour-launcher:hover .tour-hi, .tour-launcher:focus-visible .tour-hi { opacity: 1; transform: none; } }
 @media (hover: none) { .tour-hi { display: none; } }
 @media (prefers-reduced-motion: reduce) { .tour-avatar svg, .tour-lid { animation: none; } }
+
+.footer-404 { display: inline-flex; align-items: center; gap: .45rem; color: var(--text-muted); font-size: .85rem; text-decoration: none; opacity: .85; }
+.footer-404:hover { color: var(--accent); opacity: 1; }
